@@ -1,0 +1,4654 @@
+﻿subject_id,month,state,state_index,age,sex,bmi,smoking
+S00001,0,At Risk,1,71,Female,22.6,0
+S00001,3,At Risk,1,71,Female,22.6,0
+S00001,6,Preclinical,2,71,Female,22.6,0
+S00001,9,Preclinical,2,71,Female,22.6,0
+S00001,12,Preclinical,2,71,Female,22.6,0
+S00001,15,Mild Disease,3,71,Female,22.6,0
+S00001,18,Mild Disease,3,71,Female,22.6,0
+S00001,21,Mild Disease,3,71,Female,22.6,0
+S00001,24,Mild Disease,3,71,Female,22.6,0
+S00001,27,Moderate Disease,4,71,Female,22.6,0
+S00001,30,Moderate Disease,4,71,Female,22.6,0
+S00001,33,Moderate Disease,4,71,Female,22.6,0
+S00001,36,Moderate Disease,4,71,Female,22.6,0
+S00001,39,Severe Disease,5,71,Female,22.6,0
+S00001,42,Severe Disease,5,71,Female,22.6,0
+S00001,45,Severe Disease,5,71,Female,22.6,0
+S00001,48,Severe Disease,5,71,Female,22.6,0
+S00001,51,Death,6,71,Female,22.6,0
+S00002,0,Healthy,0,82,Female,27.3,0
+S00002,3,Healthy,0,82,Female,27.3,0
+S00002,6,At Risk,1,82,Female,27.3,0
+S00002,9,At Risk,1,82,Female,27.3,0
+S00002,12,At Risk,1,82,Female,27.3,0
+S00002,15,Preclinical,2,82,Female,27.3,0
+S00002,18,Preclinical,2,82,Female,27.3,0
+S00002,21,Preclinical,2,82,Female,27.3,0
+S00002,24,Mild Disease,3,82,Female,27.3,0
+S00002,27,Moderate Disease,4,82,Female,27.3,0
+S00002,30,Severe Disease,5,82,Female,27.3,0
+S00002,33,Severe Disease,5,82,Female,27.3,0
+S00002,36,Severe Disease,5,82,Female,27.3,0
+S00002,39,Severe Disease,5,82,Female,27.3,0
+S00002,42,Severe Disease,5,82,Female,27.3,0
+S00002,45,Death,6,82,Female,27.3,0
+S00003,0,Healthy,0,69,Male,20.4,0
+S00003,3,Healthy,0,69,Male,20.4,0
+S00003,6,Healthy,0,69,Male,20.4,0
+S00003,9,Healthy,0,69,Male,20.4,0
+S00003,12,Healthy,0,69,Male,20.4,0
+S00003,15,Healthy,0,69,Male,20.4,0
+S00003,18,Healthy,0,69,Male,20.4,0
+S00003,21,Healthy,0,69,Male,20.4,0
+S00003,24,Healthy,0,69,Male,20.4,0
+S00003,27,At Risk,1,69,Male,20.4,0
+S00003,30,At Risk,1,69,Male,20.4,0
+S00003,33,Preclinical,2,69,Male,20.4,0
+S00003,36,Preclinical,2,69,Male,20.4,0
+S00003,39,Mild Disease,3,69,Male,20.4,0
+S00003,42,Mild Disease,3,69,Male,20.4,0
+S00003,45,Mild Disease,3,69,Male,20.4,0
+S00003,48,Mild Disease,3,69,Male,20.4,0
+S00003,51,Moderate Disease,4,69,Male,20.4,0
+S00003,54,Severe Disease,5,69,Male,20.4,0
+S00003,57,Death,6,69,Male,20.4,0
+S00004,0,Death,6,58,Female,23.0,1
+S00005,0,Preclinical,2,35,Male,28.0,0
+S00005,3,Preclinical,2,35,Male,28.0,0
+S00005,6,Preclinical,2,35,Male,28.0,0
+S00005,9,Preclinical,2,35,Male,28.0,0
+S00005,12,Preclinical,2,35,Male,28.0,0
+S00005,15,Preclinical,2,35,Male,28.0,0
+S00005,18,Preclinical,2,35,Male,28.0,0
+S00005,21,Preclinical,2,35,Male,28.0,0
+S00005,24,Preclinical,2,35,Male,28.0,0
+S00005,27,Preclinical,2,35,Male,28.0,0
+S00005,30,Preclinical,2,35,Male,28.0,0
+S00005,33,Preclinical,2,35,Male,28.0,0
+S00005,36,Preclinical,2,35,Male,28.0,0
+S00005,39,Preclinical,2,35,Male,28.0,0
+S00005,42,Preclinical,2,35,Male,28.0,0
+S00005,45,Preclinical,2,35,Male,28.0,0
+S00005,48,Preclinical,2,35,Male,28.0,0
+S00005,51,Preclinical,2,35,Male,28.0,0
+S00005,54,Preclinical,2,35,Male,28.0,0
+S00005,57,Mild Disease,3,35,Male,28.0,0
+S00005,60,Mild Disease,3,35,Male,28.0,0
+S00005,63,Mild Disease,3,35,Male,28.0,0
+S00005,66,Mild Disease,3,35,Male,28.0,0
+S00005,69,Mild Disease,3,35,Male,28.0,0
+S00005,72,Mild Disease,3,35,Male,28.0,0
+S00006,0,Healthy,0,78,Male,26.2,0
+S00006,3,At Risk,1,78,Male,26.2,0
+S00006,6,At Risk,1,78,Male,26.2,0
+S00006,9,At Risk,1,78,Male,26.2,0
+S00006,12,At Risk,1,78,Male,26.2,0
+S00006,15,Preclinical,2,78,Male,26.2,0
+S00006,18,Mild Disease,3,78,Male,26.2,0
+S00006,21,Moderate Disease,4,78,Male,26.2,0
+S00006,24,Severe Disease,5,78,Male,26.2,0
+S00006,27,Death,6,78,Male,26.2,0
+S00007,0,Moderate Disease,4,62,Male,28.0,0
+S00007,3,Severe Disease,5,62,Male,28.0,0
+S00007,6,Severe Disease,5,62,Male,28.0,0
+S00007,9,Severe Disease,5,62,Male,28.0,0
+S00007,12,Death,6,62,Male,28.0,0
+S00008,0,Mild Disease,3,48,Male,35.5,0
+S00008,3,Mild Disease,3,48,Male,35.5,0
+S00008,6,Moderate Disease,4,48,Male,35.5,0
+S00008,9,Moderate Disease,4,48,Male,35.5,0
+S00008,12,Moderate Disease,4,48,Male,35.5,0
+S00008,15,Moderate Disease,4,48,Male,35.5,0
+S00008,18,Moderate Disease,4,48,Male,35.5,0
+S00008,21,Moderate Disease,4,48,Male,35.5,0
+S00008,24,Severe Disease,5,48,Male,35.5,0
+S00008,27,Death,6,48,Male,35.5,0
+S00009,0,At Risk,1,62,Female,24.6,1
+S00009,3,At Risk,1,62,Female,24.6,1
+S00009,6,At Risk,1,62,Female,24.6,1
+S00009,9,At Risk,1,62,Female,24.6,1
+S00009,12,At Risk,1,62,Female,24.6,1
+S00009,15,At Risk,1,62,Female,24.6,1
+S00009,18,At Risk,1,62,Female,24.6,1
+S00009,21,At Risk,1,62,Female,24.6,1
+S00009,24,At Risk,1,62,Female,24.6,1
+S00009,27,Preclinical,2,62,Female,24.6,1
+S00009,30,Preclinical,2,62,Female,24.6,1
+S00009,33,Mild Disease,3,62,Female,24.6,1
+S00009,36,Mild Disease,3,62,Female,24.6,1
+S00009,39,Mild Disease,3,62,Female,24.6,1
+S00009,42,Mild Disease,3,62,Female,24.6,1
+S00009,45,Moderate Disease,4,62,Female,24.6,1
+S00009,48,Severe Disease,5,62,Female,24.6,1
+S00009,51,Severe Disease,5,62,Female,24.6,1
+S00009,54,Severe Disease,5,62,Female,24.6,1
+S00009,57,Severe Disease,5,62,Female,24.6,1
+S00009,60,Severe Disease,5,62,Female,24.6,1
+S00009,63,Severe Disease,5,62,Female,24.6,1
+S00009,66,Severe Disease,5,62,Female,24.6,1
+S00009,69,Severe Disease,5,62,Female,24.6,1
+S00009,72,Severe Disease,5,62,Female,24.6,1
+S00010,0,Healthy,0,37,Female,25.0,0
+S00010,3,Healthy,0,37,Female,25.0,0
+S00010,6,Healthy,0,37,Female,25.0,0
+S00010,9,Healthy,0,37,Female,25.0,0
+S00010,12,Healthy,0,37,Female,25.0,0
+S00010,15,Healthy,0,37,Female,25.0,0
+S00010,18,Healthy,0,37,Female,25.0,0
+S00010,21,Healthy,0,37,Female,25.0,0
+S00010,24,Healthy,0,37,Female,25.0,0
+S00010,27,Healthy,0,37,Female,25.0,0
+S00010,30,Healthy,0,37,Female,25.0,0
+S00010,33,Healthy,0,37,Female,25.0,0
+S00010,36,Healthy,0,37,Female,25.0,0
+S00010,39,Healthy,0,37,Female,25.0,0
+S00010,42,Healthy,0,37,Female,25.0,0
+S00010,45,Healthy,0,37,Female,25.0,0
+S00010,48,Healthy,0,37,Female,25.0,0
+S00010,51,Healthy,0,37,Female,25.0,0
+S00010,54,Healthy,0,37,Female,25.0,0
+S00010,57,Healthy,0,37,Female,25.0,0
+S00010,60,Healthy,0,37,Female,25.0,0
+S00010,63,Healthy,0,37,Female,25.0,0
+S00010,66,Healthy,0,37,Female,25.0,0
+S00010,69,Healthy,0,37,Female,25.0,0
+S00010,72,Healthy,0,37,Female,25.0,0
+S00011,0,At Risk,1,83,Female,17.8,1
+S00011,3,Preclinical,2,83,Female,17.8,1
+S00011,6,Preclinical,2,83,Female,17.8,1
+S00011,9,Preclinical,2,83,Female,17.8,1
+S00011,12,Mild Disease,3,83,Female,17.8,1
+S00011,15,Mild Disease,3,83,Female,17.8,1
+S00011,18,Mild Disease,3,83,Female,17.8,1
+S00011,21,Moderate Disease,4,83,Female,17.8,1
+S00011,24,Moderate Disease,4,83,Female,17.8,1
+S00011,27,Moderate Disease,4,83,Female,17.8,1
+S00011,30,Moderate Disease,4,83,Female,17.8,1
+S00011,33,Severe Disease,5,83,Female,17.8,1
+S00011,36,Severe Disease,5,83,Female,17.8,1
+S00011,39,Severe Disease,5,83,Female,17.8,1
+S00011,42,Death,6,83,Female,17.8,1
+S00012,0,Severe Disease,5,52,Male,28.5,1
+S00012,3,Severe Disease,5,52,Male,28.5,1
+S00012,6,Death,6,52,Male,28.5,1
+S00013,0,Moderate Disease,4,42,Female,26.9,0
+S00013,3,Moderate Disease,4,42,Female,26.9,0
+S00013,6,Severe Disease,5,42,Female,26.9,0
+S00013,9,Severe Disease,5,42,Female,26.9,0
+S00013,12,Severe Disease,5,42,Female,26.9,0
+S00013,15,Severe Disease,5,42,Female,26.9,0
+S00013,18,Severe Disease,5,42,Female,26.9,0
+S00013,21,Severe Disease,5,42,Female,26.9,0
+S00013,24,Severe Disease,5,42,Female,26.9,0
+S00013,27,Severe Disease,5,42,Female,26.9,0
+S00013,30,Severe Disease,5,42,Female,26.9,0
+S00013,33,Death,6,42,Female,26.9,0
+S00014,0,Healthy,0,70,Female,20.2,0
+S00014,3,Healthy,0,70,Female,20.2,0
+S00014,6,Healthy,0,70,Female,20.2,0
+S00014,9,At Risk,1,70,Female,20.2,0
+S00014,12,Preclinical,2,70,Female,20.2,0
+S00014,15,Mild Disease,3,70,Female,20.2,0
+S00014,18,Mild Disease,3,70,Female,20.2,0
+S00014,21,Mild Disease,3,70,Female,20.2,0
+S00014,24,Moderate Disease,4,70,Female,20.2,0
+S00014,27,Moderate Disease,4,70,Female,20.2,0
+S00014,30,Severe Disease,5,70,Female,20.2,0
+S00014,33,Death,6,70,Female,20.2,0
+S00015,0,Preclinical,2,36,Male,27.7,1
+S00015,3,Preclinical,2,36,Male,27.7,1
+S00015,6,Preclinical,2,36,Male,27.7,1
+S00015,9,Preclinical,2,36,Male,27.7,1
+S00015,12,Mild Disease,3,36,Male,27.7,1
+S00015,15,Mild Disease,3,36,Male,27.7,1
+S00015,18,Mild Disease,3,36,Male,27.7,1
+S00015,21,Mild Disease,3,36,Male,27.7,1
+S00015,24,Mild Disease,3,36,Male,27.7,1
+S00015,27,Mild Disease,3,36,Male,27.7,1
+S00015,30,Mild Disease,3,36,Male,27.7,1
+S00015,33,Mild Disease,3,36,Male,27.7,1
+S00015,36,Moderate Disease,4,36,Male,27.7,1
+S00015,39,Moderate Disease,4,36,Male,27.7,1
+S00015,42,Moderate Disease,4,36,Male,27.7,1
+S00015,45,Severe Disease,5,36,Male,27.7,1
+S00015,48,Severe Disease,5,36,Male,27.7,1
+S00015,51,Death,6,36,Male,27.7,1
+S00016,0,At Risk,1,64,Female,23.4,0
+S00016,3,At Risk,1,64,Female,23.4,0
+S00016,6,At Risk,1,64,Female,23.4,0
+S00016,9,At Risk,1,64,Female,23.4,0
+S00016,12,At Risk,1,64,Female,23.4,0
+S00016,15,Preclinical,2,64,Female,23.4,0
+S00016,18,Preclinical,2,64,Female,23.4,0
+S00016,21,Mild Disease,3,64,Female,23.4,0
+S00016,24,Mild Disease,3,64,Female,23.4,0
+S00016,27,Mild Disease,3,64,Female,23.4,0
+S00016,30,Mild Disease,3,64,Female,23.4,0
+S00016,33,Mild Disease,3,64,Female,23.4,0
+S00016,36,Moderate Disease,4,64,Female,23.4,0
+S00016,39,Moderate Disease,4,64,Female,23.4,0
+S00016,42,Moderate Disease,4,64,Female,23.4,0
+S00016,45,Moderate Disease,4,64,Female,23.4,0
+S00016,48,Moderate Disease,4,64,Female,23.4,0
+S00016,51,Moderate Disease,4,64,Female,23.4,0
+S00016,54,Moderate Disease,4,64,Female,23.4,0
+S00016,57,Severe Disease,5,64,Female,23.4,0
+S00016,60,Death,6,64,Female,23.4,0
+S00017,0,Preclinical,2,43,Male,25.2,1
+S00017,3,Mild Disease,3,43,Male,25.2,1
+S00017,6,Mild Disease,3,43,Male,25.2,1
+S00017,9,Mild Disease,3,43,Male,25.2,1
+S00017,12,Mild Disease,3,43,Male,25.2,1
+S00017,15,Mild Disease,3,43,Male,25.2,1
+S00017,18,Moderate Disease,4,43,Male,25.2,1
+S00017,21,Severe Disease,5,43,Male,25.2,1
+S00017,24,Severe Disease,5,43,Male,25.2,1
+S00017,27,Severe Disease,5,43,Male,25.2,1
+S00017,30,Severe Disease,5,43,Male,25.2,1
+S00017,33,Severe Disease,5,43,Male,25.2,1
+S00017,36,Severe Disease,5,43,Male,25.2,1
+S00017,39,Death,6,43,Male,25.2,1
+S00018,0,At Risk,1,77,Male,20.7,1
+S00018,3,At Risk,1,77,Male,20.7,1
+S00018,6,Preclinical,2,77,Male,20.7,1
+S00018,9,Preclinical,2,77,Male,20.7,1
+S00018,12,Preclinical,2,77,Male,20.7,1
+S00018,15,Mild Disease,3,77,Male,20.7,1
+S00018,18,Mild Disease,3,77,Male,20.7,1
+S00018,21,Mild Disease,3,77,Male,20.7,1
+S00018,24,Moderate Disease,4,77,Male,20.7,1
+S00018,27,Moderate Disease,4,77,Male,20.7,1
+S00018,30,Moderate Disease,4,77,Male,20.7,1
+S00018,33,Severe Disease,5,77,Male,20.7,1
+S00018,36,Severe Disease,5,77,Male,20.7,1
+S00018,39,Death,6,77,Male,20.7,1
+S00019,0,At Risk,1,46,Male,24.4,0
+S00019,3,Healthy,0,46,Male,24.4,0
+S00019,6,Healthy,0,46,Male,24.4,0
+S00019,9,Healthy,0,46,Male,24.4,0
+S00019,12,Healthy,0,46,Male,24.4,0
+S00019,15,Healthy,0,46,Male,24.4,0
+S00019,18,Healthy,0,46,Male,24.4,0
+S00019,21,Healthy,0,46,Male,24.4,0
+S00019,24,Healthy,0,46,Male,24.4,0
+S00019,27,Healthy,0,46,Male,24.4,0
+S00019,30,Healthy,0,46,Male,24.4,0
+S00019,33,Healthy,0,46,Male,24.4,0
+S00019,36,At Risk,1,46,Male,24.4,0
+S00019,39,At Risk,1,46,Male,24.4,0
+S00019,42,At Risk,1,46,Male,24.4,0
+S00019,45,At Risk,1,46,Male,24.4,0
+S00019,48,At Risk,1,46,Male,24.4,0
+S00019,51,At Risk,1,46,Male,24.4,0
+S00019,54,At Risk,1,46,Male,24.4,0
+S00019,57,At Risk,1,46,Male,24.4,0
+S00019,60,At Risk,1,46,Male,24.4,0
+S00019,63,At Risk,1,46,Male,24.4,0
+S00019,66,At Risk,1,46,Male,24.4,0
+S00019,69,At Risk,1,46,Male,24.4,0
+S00019,72,At Risk,1,46,Male,24.4,0
+S00020,0,Healthy,0,61,Female,25.1,0
+S00020,3,At Risk,1,61,Female,25.1,0
+S00020,6,At Risk,1,61,Female,25.1,0
+S00020,9,Preclinical,2,61,Female,25.1,0
+S00020,12,Mild Disease,3,61,Female,25.1,0
+S00020,15,Preclinical,2,61,Female,25.1,0
+S00020,18,Mild Disease,3,61,Female,25.1,0
+S00020,21,Mild Disease,3,61,Female,25.1,0
+S00020,24,Mild Disease,3,61,Female,25.1,0
+S00020,27,Mild Disease,3,61,Female,25.1,0
+S00020,30,Mild Disease,3,61,Female,25.1,0
+S00020,33,Mild Disease,3,61,Female,25.1,0
+S00020,36,Mild Disease,3,61,Female,25.1,0
+S00020,39,Mild Disease,3,61,Female,25.1,0
+S00020,42,Mild Disease,3,61,Female,25.1,0
+S00020,45,Moderate Disease,4,61,Female,25.1,0
+S00020,48,Moderate Disease,4,61,Female,25.1,0
+S00020,51,Severe Disease,5,61,Female,25.1,0
+S00020,54,Death,6,61,Female,25.1,0
+S00021,0,Severe Disease,5,49,Female,28.4,1
+S00021,3,Severe Disease,5,49,Female,28.4,1
+S00021,6,Severe Disease,5,49,Female,28.4,1
+S00021,9,Death,6,49,Female,28.4,1
+S00022,0,Healthy,0,67,Male,22.4,1
+S00022,3,Healthy,0,67,Male,22.4,1
+S00022,6,Healthy,0,67,Male,22.4,1
+S00022,9,Healthy,0,67,Male,22.4,1
+S00022,12,Healthy,0,67,Male,22.4,1
+S00022,15,Healthy,0,67,Male,22.4,1
+S00022,18,Healthy,0,67,Male,22.4,1
+S00022,21,Healthy,0,67,Male,22.4,1
+S00022,24,Healthy,0,67,Male,22.4,1
+S00022,27,Healthy,0,67,Male,22.4,1
+S00022,30,At Risk,1,67,Male,22.4,1
+S00022,33,At Risk,1,67,Male,22.4,1
+S00022,36,At Risk,1,67,Male,22.4,1
+S00022,39,Preclinical,2,67,Male,22.4,1
+S00022,42,Preclinical,2,67,Male,22.4,1
+S00022,45,Mild Disease,3,67,Male,22.4,1
+S00022,48,Mild Disease,3,67,Male,22.4,1
+S00022,51,Mild Disease,3,67,Male,22.4,1
+S00022,54,Mild Disease,3,67,Male,22.4,1
+S00022,57,Moderate Disease,4,67,Male,22.4,1
+S00022,60,Moderate Disease,4,67,Male,22.4,1
+S00022,63,Moderate Disease,4,67,Male,22.4,1
+S00022,66,Moderate Disease,4,67,Male,22.4,1
+S00022,69,Severe Disease,5,67,Male,22.4,1
+S00022,72,Death,6,67,Male,22.4,1
+S00023,0,Preclinical,2,79,Male,21.5,1
+S00023,3,Mild Disease,3,79,Male,21.5,1
+S00023,6,Mild Disease,3,79,Male,21.5,1
+S00023,9,Mild Disease,3,79,Male,21.5,1
+S00023,12,Mild Disease,3,79,Male,21.5,1
+S00023,15,Moderate Disease,4,79,Male,21.5,1
+S00023,18,Moderate Disease,4,79,Male,21.5,1
+S00023,21,Severe Disease,5,79,Male,21.5,1
+S00023,24,Severe Disease,5,79,Male,21.5,1
+S00023,27,Death,6,79,Male,21.5,1
+S00024,0,At Risk,1,42,Female,21.0,0
+S00024,3,At Risk,1,42,Female,21.0,0
+S00024,6,At Risk,1,42,Female,21.0,0
+S00024,9,At Risk,1,42,Female,21.0,0
+S00024,12,Healthy,0,42,Female,21.0,0
+S00024,15,Healthy,0,42,Female,21.0,0
+S00024,18,Healthy,0,42,Female,21.0,0
+S00024,21,Healthy,0,42,Female,21.0,0
+S00024,24,Healthy,0,42,Female,21.0,0
+S00024,27,Healthy,0,42,Female,21.0,0
+S00024,30,Healthy,0,42,Female,21.0,0
+S00024,33,At Risk,1,42,Female,21.0,0
+S00024,36,At Risk,1,42,Female,21.0,0
+S00024,39,Preclinical,2,42,Female,21.0,0
+S00024,42,Preclinical,2,42,Female,21.0,0
+S00024,45,Preclinical,2,42,Female,21.0,0
+S00024,48,Preclinical,2,42,Female,21.0,0
+S00024,51,Preclinical,2,42,Female,21.0,0
+S00024,54,Preclinical,2,42,Female,21.0,0
+S00024,57,Preclinical,2,42,Female,21.0,0
+S00024,60,Mild Disease,3,42,Female,21.0,0
+S00024,63,Mild Disease,3,42,Female,21.0,0
+S00024,66,Mild Disease,3,42,Female,21.0,0
+S00024,69,Mild Disease,3,42,Female,21.0,0
+S00024,72,Mild Disease,3,42,Female,21.0,0
+S00025,0,Preclinical,2,81,Female,24.6,0
+S00025,3,Preclinical,2,81,Female,24.6,0
+S00025,6,Preclinical,2,81,Female,24.6,0
+S00025,9,Preclinical,2,81,Female,24.6,0
+S00025,12,Mild Disease,3,81,Female,24.6,0
+S00025,15,Mild Disease,3,81,Female,24.6,0
+S00025,18,Preclinical,2,81,Female,24.6,0
+S00025,21,Mild Disease,3,81,Female,24.6,0
+S00025,24,Mild Disease,3,81,Female,24.6,0
+S00025,27,Mild Disease,3,81,Female,24.6,0
+S00025,30,Moderate Disease,4,81,Female,24.6,0
+S00025,33,Severe Disease,5,81,Female,24.6,0
+S00025,36,Severe Disease,5,81,Female,24.6,0
+S00025,39,Severe Disease,5,81,Female,24.6,0
+S00025,42,Severe Disease,5,81,Female,24.6,0
+S00025,45,Severe Disease,5,81,Female,24.6,0
+S00025,48,Severe Disease,5,81,Female,24.6,0
+S00025,51,Severe Disease,5,81,Female,24.6,0
+S00025,54,Severe Disease,5,81,Female,24.6,0
+S00025,57,Severe Disease,5,81,Female,24.6,0
+S00025,60,Severe Disease,5,81,Female,24.6,0
+S00025,63,Severe Disease,5,81,Female,24.6,0
+S00025,66,Severe Disease,5,81,Female,24.6,0
+S00025,69,Severe Disease,5,81,Female,24.6,0
+S00025,72,Severe Disease,5,81,Female,24.6,0
+S00026,0,Moderate Disease,4,38,Female,18.3,0
+S00026,3,Moderate Disease,4,38,Female,18.3,0
+S00026,6,Moderate Disease,4,38,Female,18.3,0
+S00026,9,Moderate Disease,4,38,Female,18.3,0
+S00026,12,Moderate Disease,4,38,Female,18.3,0
+S00026,15,Severe Disease,5,38,Female,18.3,0
+S00026,18,Severe Disease,5,38,Female,18.3,0
+S00026,21,Severe Disease,5,38,Female,18.3,0
+S00026,24,Severe Disease,5,38,Female,18.3,0
+S00026,27,Severe Disease,5,38,Female,18.3,0
+S00026,30,Severe Disease,5,38,Female,18.3,0
+S00026,33,Severe Disease,5,38,Female,18.3,0
+S00026,36,Death,6,38,Female,18.3,0
+S00027,0,Mild Disease,3,83,Female,20.8,1
+S00027,3,Moderate Disease,4,83,Female,20.8,1
+S00027,6,Severe Disease,5,83,Female,20.8,1
+S00027,9,Severe Disease,5,83,Female,20.8,1
+S00027,12,Severe Disease,5,83,Female,20.8,1
+S00027,15,Severe Disease,5,83,Female,20.8,1
+S00027,18,Severe Disease,5,83,Female,20.8,1
+S00027,21,Severe Disease,5,83,Female,20.8,1
+S00027,24,Severe Disease,5,83,Female,20.8,1
+S00027,27,Death,6,83,Female,20.8,1
+S00028,0,Severe Disease,5,55,Female,25.4,1
+S00028,3,Death,6,55,Female,25.4,1
+S00029,0,At Risk,1,39,Female,29.9,0
+S00029,3,Preclinical,2,39,Female,29.9,0
+S00029,6,Preclinical,2,39,Female,29.9,0
+S00029,9,Preclinical,2,39,Female,29.9,0
+S00029,12,Mild Disease,3,39,Female,29.9,0
+S00029,15,Mild Disease,3,39,Female,29.9,0
+S00029,18,Mild Disease,3,39,Female,29.9,0
+S00029,21,Mild Disease,3,39,Female,29.9,0
+S00029,24,Mild Disease,3,39,Female,29.9,0
+S00029,27,Mild Disease,3,39,Female,29.9,0
+S00029,30,Moderate Disease,4,39,Female,29.9,0
+S00029,33,Moderate Disease,4,39,Female,29.9,0
+S00029,36,Severe Disease,5,39,Female,29.9,0
+S00029,39,Severe Disease,5,39,Female,29.9,0
+S00029,42,Severe Disease,5,39,Female,29.9,0
+S00029,45,Severe Disease,5,39,Female,29.9,0
+S00029,48,Severe Disease,5,39,Female,29.9,0
+S00029,51,Severe Disease,5,39,Female,29.9,0
+S00029,54,Severe Disease,5,39,Female,29.9,0
+S00029,57,Severe Disease,5,39,Female,29.9,0
+S00029,60,Severe Disease,5,39,Female,29.9,0
+S00029,63,Moderate Disease,4,39,Female,29.9,0
+S00029,66,Severe Disease,5,39,Female,29.9,0
+S00029,69,Severe Disease,5,39,Female,29.9,0
+S00029,72,Severe Disease,5,39,Female,29.9,0
+S00030,0,Healthy,0,53,Male,28.4,1
+S00030,3,Healthy,0,53,Male,28.4,1
+S00030,6,Healthy,0,53,Male,28.4,1
+S00030,9,At Risk,1,53,Male,28.4,1
+S00030,12,Preclinical,2,53,Male,28.4,1
+S00030,15,Preclinical,2,53,Male,28.4,1
+S00030,18,Preclinical,2,53,Male,28.4,1
+S00030,21,Mild Disease,3,53,Male,28.4,1
+S00030,24,Mild Disease,3,53,Male,28.4,1
+S00030,27,Mild Disease,3,53,Male,28.4,1
+S00030,30,Mild Disease,3,53,Male,28.4,1
+S00030,33,Mild Disease,3,53,Male,28.4,1
+S00030,36,Mild Disease,3,53,Male,28.4,1
+S00030,39,Mild Disease,3,53,Male,28.4,1
+S00030,42,Moderate Disease,4,53,Male,28.4,1
+S00030,45,Severe Disease,5,53,Male,28.4,1
+S00030,48,Death,6,53,Male,28.4,1
+S00031,0,Healthy,0,75,Female,25.2,0
+S00031,3,Healthy,0,75,Female,25.2,0
+S00031,6,Healthy,0,75,Female,25.2,0
+S00031,9,Healthy,0,75,Female,25.2,0
+S00031,12,Healthy,0,75,Female,25.2,0
+S00031,15,Healthy,0,75,Female,25.2,0
+S00031,18,Healthy,0,75,Female,25.2,0
+S00031,21,Healthy,0,75,Female,25.2,0
+S00031,24,Healthy,0,75,Female,25.2,0
+S00031,27,Healthy,0,75,Female,25.2,0
+S00031,30,At Risk,1,75,Female,25.2,0
+S00031,33,At Risk,1,75,Female,25.2,0
+S00031,36,At Risk,1,75,Female,25.2,0
+S00031,39,At Risk,1,75,Female,25.2,0
+S00031,42,Preclinical,2,75,Female,25.2,0
+S00031,45,Mild Disease,3,75,Female,25.2,0
+S00031,48,Mild Disease,3,75,Female,25.2,0
+S00031,51,Moderate Disease,4,75,Female,25.2,0
+S00031,54,Moderate Disease,4,75,Female,25.2,0
+S00031,57,Severe Disease,5,75,Female,25.2,0
+S00031,60,Death,6,75,Female,25.2,0
+S00032,0,Mild Disease,3,71,Male,21.2,0
+S00032,3,Moderate Disease,4,71,Male,21.2,0
+S00032,6,Mild Disease,3,71,Male,21.2,0
+S00032,9,Mild Disease,3,71,Male,21.2,0
+S00032,12,Mild Disease,3,71,Male,21.2,0
+S00032,15,Moderate Disease,4,71,Male,21.2,0
+S00032,18,Moderate Disease,4,71,Male,21.2,0
+S00032,21,Moderate Disease,4,71,Male,21.2,0
+S00032,24,Moderate Disease,4,71,Male,21.2,0
+S00032,27,Moderate Disease,4,71,Male,21.2,0
+S00032,30,Severe Disease,5,71,Male,21.2,0
+S00032,33,Severe Disease,5,71,Male,21.2,0
+S00032,36,Severe Disease,5,71,Male,21.2,0
+S00032,39,Severe Disease,5,71,Male,21.2,0
+S00032,42,Death,6,71,Male,21.2,0
+S00033,0,Healthy,0,35,Male,23.2,0
+S00033,3,Healthy,0,35,Male,23.2,0
+S00033,6,Healthy,0,35,Male,23.2,0
+S00033,9,Healthy,0,35,Male,23.2,0
+S00033,12,Healthy,0,35,Male,23.2,0
+S00033,15,Healthy,0,35,Male,23.2,0
+S00033,18,Healthy,0,35,Male,23.2,0
+S00033,21,Healthy,0,35,Male,23.2,0
+S00033,24,Healthy,0,35,Male,23.2,0
+S00033,27,Healthy,0,35,Male,23.2,0
+S00033,30,Healthy,0,35,Male,23.2,0
+S00033,33,Healthy,0,35,Male,23.2,0
+S00033,36,Healthy,0,35,Male,23.2,0
+S00033,39,Healthy,0,35,Male,23.2,0
+S00033,42,Healthy,0,35,Male,23.2,0
+S00033,45,Healthy,0,35,Male,23.2,0
+S00033,48,Healthy,0,35,Male,23.2,0
+S00033,51,Healthy,0,35,Male,23.2,0
+S00033,54,Healthy,0,35,Male,23.2,0
+S00033,57,At Risk,1,35,Male,23.2,0
+S00033,60,Preclinical,2,35,Male,23.2,0
+S00033,63,Preclinical,2,35,Male,23.2,0
+S00033,66,Preclinical,2,35,Male,23.2,0
+S00033,69,Preclinical,2,35,Male,23.2,0
+S00033,72,Preclinical,2,35,Male,23.2,0
+S00034,0,Severe Disease,5,49,Male,35.9,1
+S00034,3,Severe Disease,5,49,Male,35.9,1
+S00034,6,Severe Disease,5,49,Male,35.9,1
+S00034,9,Death,6,49,Male,35.9,1
+S00035,0,Preclinical,2,70,Female,30.2,1
+S00035,3,Mild Disease,3,70,Female,30.2,1
+S00035,6,Moderate Disease,4,70,Female,30.2,1
+S00035,9,Severe Disease,5,70,Female,30.2,1
+S00035,12,Death,6,70,Female,30.2,1
+S00036,0,At Risk,1,41,Female,27.7,0
+S00036,3,At Risk,1,41,Female,27.7,0
+S00036,6,At Risk,1,41,Female,27.7,0
+S00036,9,At Risk,1,41,Female,27.7,0
+S00036,12,At Risk,1,41,Female,27.7,0
+S00036,15,At Risk,1,41,Female,27.7,0
+S00036,18,At Risk,1,41,Female,27.7,0
+S00036,21,At Risk,1,41,Female,27.7,0
+S00036,24,At Risk,1,41,Female,27.7,0
+S00036,27,At Risk,1,41,Female,27.7,0
+S00036,30,At Risk,1,41,Female,27.7,0
+S00036,33,At Risk,1,41,Female,27.7,0
+S00036,36,At Risk,1,41,Female,27.7,0
+S00036,39,At Risk,1,41,Female,27.7,0
+S00036,42,Preclinical,2,41,Female,27.7,0
+S00036,45,Preclinical,2,41,Female,27.7,0
+S00036,48,At Risk,1,41,Female,27.7,0
+S00036,51,At Risk,1,41,Female,27.7,0
+S00036,54,At Risk,1,41,Female,27.7,0
+S00036,57,At Risk,1,41,Female,27.7,0
+S00036,60,At Risk,1,41,Female,27.7,0
+S00036,63,At Risk,1,41,Female,27.7,0
+S00036,66,At Risk,1,41,Female,27.7,0
+S00036,69,At Risk,1,41,Female,27.7,0
+S00036,72,At Risk,1,41,Female,27.7,0
+S00037,0,Preclinical,2,48,Female,29.1,0
+S00037,3,Preclinical,2,48,Female,29.1,0
+S00037,6,Preclinical,2,48,Female,29.1,0
+S00037,9,Preclinical,2,48,Female,29.1,0
+S00037,12,Preclinical,2,48,Female,29.1,0
+S00037,15,Preclinical,2,48,Female,29.1,0
+S00037,18,Preclinical,2,48,Female,29.1,0
+S00037,21,Preclinical,2,48,Female,29.1,0
+S00037,24,Preclinical,2,48,Female,29.1,0
+S00037,27,Preclinical,2,48,Female,29.1,0
+S00037,30,Preclinical,2,48,Female,29.1,0
+S00037,33,Preclinical,2,48,Female,29.1,0
+S00037,36,Preclinical,2,48,Female,29.1,0
+S00037,39,Preclinical,2,48,Female,29.1,0
+S00037,42,Preclinical,2,48,Female,29.1,0
+S00037,45,Mild Disease,3,48,Female,29.1,0
+S00037,48,Mild Disease,3,48,Female,29.1,0
+S00037,51,Mild Disease,3,48,Female,29.1,0
+S00037,54,Mild Disease,3,48,Female,29.1,0
+S00037,57,Moderate Disease,4,48,Female,29.1,0
+S00037,60,Moderate Disease,4,48,Female,29.1,0
+S00037,63,Moderate Disease,4,48,Female,29.1,0
+S00037,66,Severe Disease,5,48,Female,29.1,0
+S00037,69,Severe Disease,5,48,Female,29.1,0
+S00037,72,Severe Disease,5,48,Female,29.1,0
+S00038,0,Moderate Disease,4,74,Male,25.2,1
+S00038,3,Moderate Disease,4,74,Male,25.2,1
+S00038,6,Severe Disease,5,74,Male,25.2,1
+S00038,9,Severe Disease,5,74,Male,25.2,1
+S00038,12,Death,6,74,Male,25.2,1
+S00039,0,At Risk,1,41,Male,28.4,0
+S00039,3,At Risk,1,41,Male,28.4,0
+S00039,6,At Risk,1,41,Male,28.4,0
+S00039,9,At Risk,1,41,Male,28.4,0
+S00039,12,At Risk,1,41,Male,28.4,0
+S00039,15,At Risk,1,41,Male,28.4,0
+S00039,18,At Risk,1,41,Male,28.4,0
+S00039,21,At Risk,1,41,Male,28.4,0
+S00039,24,At Risk,1,41,Male,28.4,0
+S00039,27,At Risk,1,41,Male,28.4,0
+S00039,30,At Risk,1,41,Male,28.4,0
+S00039,33,At Risk,1,41,Male,28.4,0
+S00039,36,At Risk,1,41,Male,28.4,0
+S00039,39,At Risk,1,41,Male,28.4,0
+S00039,42,Healthy,0,41,Male,28.4,0
+S00039,45,Healthy,0,41,Male,28.4,0
+S00039,48,Healthy,0,41,Male,28.4,0
+S00039,51,Healthy,0,41,Male,28.4,0
+S00039,54,At Risk,1,41,Male,28.4,0
+S00039,57,At Risk,1,41,Male,28.4,0
+S00039,60,At Risk,1,41,Male,28.4,0
+S00039,63,At Risk,1,41,Male,28.4,0
+S00039,66,At Risk,1,41,Male,28.4,0
+S00039,69,At Risk,1,41,Male,28.4,0
+S00039,72,At Risk,1,41,Male,28.4,0
+S00040,0,At Risk,1,36,Female,20.5,1
+S00040,3,At Risk,1,36,Female,20.5,1
+S00040,6,Preclinical,2,36,Female,20.5,1
+S00040,9,Preclinical,2,36,Female,20.5,1
+S00040,12,Preclinical,2,36,Female,20.5,1
+S00040,15,Mild Disease,3,36,Female,20.5,1
+S00040,18,Mild Disease,3,36,Female,20.5,1
+S00040,21,Moderate Disease,4,36,Female,20.5,1
+S00040,24,Moderate Disease,4,36,Female,20.5,1
+S00040,27,Moderate Disease,4,36,Female,20.5,1
+S00040,30,Moderate Disease,4,36,Female,20.5,1
+S00040,33,Moderate Disease,4,36,Female,20.5,1
+S00040,36,Moderate Disease,4,36,Female,20.5,1
+S00040,39,Moderate Disease,4,36,Female,20.5,1
+S00040,42,Severe Disease,5,36,Female,20.5,1
+S00040,45,Death,6,36,Female,20.5,1
+S00041,0,Preclinical,2,37,Female,30.6,0
+S00041,3,Preclinical,2,37,Female,30.6,0
+S00041,6,Preclinical,2,37,Female,30.6,0
+S00041,9,Preclinical,2,37,Female,30.6,0
+S00041,12,Preclinical,2,37,Female,30.6,0
+S00041,15,Preclinical,2,37,Female,30.6,0
+S00041,18,Preclinical,2,37,Female,30.6,0
+S00041,21,Preclinical,2,37,Female,30.6,0
+S00041,24,Preclinical,2,37,Female,30.6,0
+S00041,27,Preclinical,2,37,Female,30.6,0
+S00041,30,Preclinical,2,37,Female,30.6,0
+S00041,33,Mild Disease,3,37,Female,30.6,0
+S00041,36,Moderate Disease,4,37,Female,30.6,0
+S00041,39,Moderate Disease,4,37,Female,30.6,0
+S00041,42,Severe Disease,5,37,Female,30.6,0
+S00041,45,Death,6,37,Female,30.6,0
+S00042,0,Healthy,0,66,Female,28.3,1
+S00042,3,Healthy,0,66,Female,28.3,1
+S00042,6,Healthy,0,66,Female,28.3,1
+S00042,9,Healthy,0,66,Female,28.3,1
+S00042,12,Healthy,0,66,Female,28.3,1
+S00042,15,Healthy,0,66,Female,28.3,1
+S00042,18,Healthy,0,66,Female,28.3,1
+S00042,21,Healthy,0,66,Female,28.3,1
+S00042,24,At Risk,1,66,Female,28.3,1
+S00042,27,At Risk,1,66,Female,28.3,1
+S00042,30,At Risk,1,66,Female,28.3,1
+S00042,33,At Risk,1,66,Female,28.3,1
+S00042,36,Preclinical,2,66,Female,28.3,1
+S00042,39,Preclinical,2,66,Female,28.3,1
+S00042,42,Preclinical,2,66,Female,28.3,1
+S00042,45,Preclinical,2,66,Female,28.3,1
+S00042,48,Mild Disease,3,66,Female,28.3,1
+S00042,51,Mild Disease,3,66,Female,28.3,1
+S00042,54,Moderate Disease,4,66,Female,28.3,1
+S00042,57,Moderate Disease,4,66,Female,28.3,1
+S00042,60,Moderate Disease,4,66,Female,28.3,1
+S00042,63,Moderate Disease,4,66,Female,28.3,1
+S00042,66,Moderate Disease,4,66,Female,28.3,1
+S00042,69,Severe Disease,5,66,Female,28.3,1
+S00042,72,Death,6,66,Female,28.3,1
+S00043,0,At Risk,1,65,Female,25.0,0
+S00043,3,Preclinical,2,65,Female,25.0,0
+S00043,6,Mild Disease,3,65,Female,25.0,0
+S00043,9,Mild Disease,3,65,Female,25.0,0
+S00043,12,Mild Disease,3,65,Female,25.0,0
+S00043,15,Moderate Disease,4,65,Female,25.0,0
+S00043,18,Severe Disease,5,65,Female,25.0,0
+S00043,21,Severe Disease,5,65,Female,25.0,0
+S00043,24,Severe Disease,5,65,Female,25.0,0
+S00043,27,Severe Disease,5,65,Female,25.0,0
+S00043,30,Severe Disease,5,65,Female,25.0,0
+S00043,33,Severe Disease,5,65,Female,25.0,0
+S00043,36,Death,6,65,Female,25.0,0
+S00044,0,Mild Disease,3,54,Male,31.7,0
+S00044,3,Mild Disease,3,54,Male,31.7,0
+S00044,6,Mild Disease,3,54,Male,31.7,0
+S00044,9,Mild Disease,3,54,Male,31.7,0
+S00044,12,Mild Disease,3,54,Male,31.7,0
+S00044,15,Mild Disease,3,54,Male,31.7,0
+S00044,18,Mild Disease,3,54,Male,31.7,0
+S00044,21,Mild Disease,3,54,Male,31.7,0
+S00044,24,Moderate Disease,4,54,Male,31.7,0
+S00044,27,Moderate Disease,4,54,Male,31.7,0
+S00044,30,Moderate Disease,4,54,Male,31.7,0
+S00044,33,Moderate Disease,4,54,Male,31.7,0
+S00044,36,Severe Disease,5,54,Male,31.7,0
+S00044,39,Death,6,54,Male,31.7,0
+S00045,0,Healthy,0,84,Female,30.1,1
+S00045,3,Healthy,0,84,Female,30.1,1
+S00045,6,At Risk,1,84,Female,30.1,1
+S00045,9,Preclinical,2,84,Female,30.1,1
+S00045,12,Preclinical,2,84,Female,30.1,1
+S00045,15,Preclinical,2,84,Female,30.1,1
+S00045,18,Mild Disease,3,84,Female,30.1,1
+S00045,21,Moderate Disease,4,84,Female,30.1,1
+S00045,24,Moderate Disease,4,84,Female,30.1,1
+S00045,27,Severe Disease,5,84,Female,30.1,1
+S00045,30,Severe Disease,5,84,Female,30.1,1
+S00045,33,Severe Disease,5,84,Female,30.1,1
+S00045,36,Severe Disease,5,84,Female,30.1,1
+S00045,39,Death,6,84,Female,30.1,1
+S00046,0,Preclinical,2,79,Male,26.6,1
+S00046,3,Mild Disease,3,79,Male,26.6,1
+S00046,6,Mild Disease,3,79,Male,26.6,1
+S00046,9,Mild Disease,3,79,Male,26.6,1
+S00046,12,Mild Disease,3,79,Male,26.6,1
+S00046,15,Mild Disease,3,79,Male,26.6,1
+S00046,18,Mild Disease,3,79,Male,26.6,1
+S00046,21,Moderate Disease,4,79,Male,26.6,1
+S00046,24,Moderate Disease,4,79,Male,26.6,1
+S00046,27,Severe Disease,5,79,Male,26.6,1
+S00046,30,Severe Disease,5,79,Male,26.6,1
+S00046,33,Severe Disease,5,79,Male,26.6,1
+S00046,36,Death,6,79,Male,26.6,1
+S00047,0,Moderate Disease,4,84,Female,28.1,1
+S00047,3,Moderate Disease,4,84,Female,28.1,1
+S00047,6,Moderate Disease,4,84,Female,28.1,1
+S00047,9,Moderate Disease,4,84,Female,28.1,1
+S00047,12,Moderate Disease,4,84,Female,28.1,1
+S00047,15,Moderate Disease,4,84,Female,28.1,1
+S00047,18,Moderate Disease,4,84,Female,28.1,1
+S00047,21,Severe Disease,5,84,Female,28.1,1
+S00047,24,Severe Disease,5,84,Female,28.1,1
+S00047,27,Severe Disease,5,84,Female,28.1,1
+S00047,30,Death,6,84,Female,28.1,1
+S00048,0,Preclinical,2,42,Male,23.5,1
+S00048,3,Preclinical,2,42,Male,23.5,1
+S00048,6,Mild Disease,3,42,Male,23.5,1
+S00048,9,Mild Disease,3,42,Male,23.5,1
+S00048,12,Moderate Disease,4,42,Male,23.5,1
+S00048,15,Moderate Disease,4,42,Male,23.5,1
+S00048,18,Severe Disease,5,42,Male,23.5,1
+S00048,21,Severe Disease,5,42,Male,23.5,1
+S00048,24,Death,6,42,Male,23.5,1
+S00049,0,Preclinical,2,63,Male,26.1,0
+S00049,3,Mild Disease,3,63,Male,26.1,0
+S00049,6,Mild Disease,3,63,Male,26.1,0
+S00049,9,Mild Disease,3,63,Male,26.1,0
+S00049,12,Preclinical,2,63,Male,26.1,0
+S00049,15,Mild Disease,3,63,Male,26.1,0
+S00049,18,Moderate Disease,4,63,Male,26.1,0
+S00049,21,Moderate Disease,4,63,Male,26.1,0
+S00049,24,Severe Disease,5,63,Male,26.1,0
+S00049,27,Severe Disease,5,63,Male,26.1,0
+S00049,30,Death,6,63,Male,26.1,0
+S00050,0,Healthy,0,43,Female,23.6,0
+S00050,3,Healthy,0,43,Female,23.6,0
+S00050,6,Healthy,0,43,Female,23.6,0
+S00050,9,Healthy,0,43,Female,23.6,0
+S00050,12,Healthy,0,43,Female,23.6,0
+S00050,15,Healthy,0,43,Female,23.6,0
+S00050,18,Healthy,0,43,Female,23.6,0
+S00050,21,Healthy,0,43,Female,23.6,0
+S00050,24,Healthy,0,43,Female,23.6,0
+S00050,27,Healthy,0,43,Female,23.6,0
+S00050,30,Healthy,0,43,Female,23.6,0
+S00050,33,Healthy,0,43,Female,23.6,0
+S00050,36,Healthy,0,43,Female,23.6,0
+S00050,39,Healthy,0,43,Female,23.6,0
+S00050,42,Healthy,0,43,Female,23.6,0
+S00050,45,Healthy,0,43,Female,23.6,0
+S00050,48,Healthy,0,43,Female,23.6,0
+S00050,51,Healthy,0,43,Female,23.6,0
+S00050,54,Healthy,0,43,Female,23.6,0
+S00050,57,Healthy,0,43,Female,23.6,0
+S00050,60,Healthy,0,43,Female,23.6,0
+S00050,63,Healthy,0,43,Female,23.6,0
+S00050,66,Healthy,0,43,Female,23.6,0
+S00050,69,Healthy,0,43,Female,23.6,0
+S00050,72,Healthy,0,43,Female,23.6,0
+S00051,0,At Risk,1,44,Female,28.4,1
+S00051,3,At Risk,1,44,Female,28.4,1
+S00051,6,Preclinical,2,44,Female,28.4,1
+S00051,9,Preclinical,2,44,Female,28.4,1
+S00051,12,Mild Disease,3,44,Female,28.4,1
+S00051,15,Mild Disease,3,44,Female,28.4,1
+S00051,18,Mild Disease,3,44,Female,28.4,1
+S00051,21,Moderate Disease,4,44,Female,28.4,1
+S00051,24,Moderate Disease,4,44,Female,28.4,1
+S00051,27,Moderate Disease,4,44,Female,28.4,1
+S00051,30,Severe Disease,5,44,Female,28.4,1
+S00051,33,Severe Disease,5,44,Female,28.4,1
+S00051,36,Severe Disease,5,44,Female,28.4,1
+S00051,39,Death,6,44,Female,28.4,1
+S00052,0,Healthy,0,57,Female,25.5,0
+S00052,3,Healthy,0,57,Female,25.5,0
+S00052,6,Healthy,0,57,Female,25.5,0
+S00052,9,Healthy,0,57,Female,25.5,0
+S00052,12,Healthy,0,57,Female,25.5,0
+S00052,15,Healthy,0,57,Female,25.5,0
+S00052,18,Healthy,0,57,Female,25.5,0
+S00052,21,Healthy,0,57,Female,25.5,0
+S00052,24,Healthy,0,57,Female,25.5,0
+S00052,27,Healthy,0,57,Female,25.5,0
+S00052,30,Healthy,0,57,Female,25.5,0
+S00052,33,Healthy,0,57,Female,25.5,0
+S00052,36,Healthy,0,57,Female,25.5,0
+S00052,39,Healthy,0,57,Female,25.5,0
+S00052,42,Healthy,0,57,Female,25.5,0
+S00052,45,Healthy,0,57,Female,25.5,0
+S00052,48,Healthy,0,57,Female,25.5,0
+S00052,51,Healthy,0,57,Female,25.5,0
+S00052,54,Healthy,0,57,Female,25.5,0
+S00052,57,Healthy,0,57,Female,25.5,0
+S00052,60,Healthy,0,57,Female,25.5,0
+S00052,63,Healthy,0,57,Female,25.5,0
+S00052,66,Healthy,0,57,Female,25.5,0
+S00052,69,Healthy,0,57,Female,25.5,0
+S00052,72,Healthy,0,57,Female,25.5,0
+S00053,0,Mild Disease,3,40,Female,27.3,0
+S00053,3,Mild Disease,3,40,Female,27.3,0
+S00053,6,Mild Disease,3,40,Female,27.3,0
+S00053,9,Mild Disease,3,40,Female,27.3,0
+S00053,12,Mild Disease,3,40,Female,27.3,0
+S00053,15,Mild Disease,3,40,Female,27.3,0
+S00053,18,Mild Disease,3,40,Female,27.3,0
+S00053,21,Mild Disease,3,40,Female,27.3,0
+S00053,24,Mild Disease,3,40,Female,27.3,0
+S00053,27,Mild Disease,3,40,Female,27.3,0
+S00053,30,Mild Disease,3,40,Female,27.3,0
+S00053,33,Moderate Disease,4,40,Female,27.3,0
+S00053,36,Moderate Disease,4,40,Female,27.3,0
+S00053,39,Moderate Disease,4,40,Female,27.3,0
+S00053,42,Moderate Disease,4,40,Female,27.3,0
+S00053,45,Moderate Disease,4,40,Female,27.3,0
+S00053,48,Moderate Disease,4,40,Female,27.3,0
+S00053,51,Moderate Disease,4,40,Female,27.3,0
+S00053,54,Moderate Disease,4,40,Female,27.3,0
+S00053,57,Moderate Disease,4,40,Female,27.3,0
+S00053,60,Moderate Disease,4,40,Female,27.3,0
+S00053,63,Moderate Disease,4,40,Female,27.3,0
+S00053,66,Moderate Disease,4,40,Female,27.3,0
+S00053,69,Moderate Disease,4,40,Female,27.3,0
+S00053,72,Moderate Disease,4,40,Female,27.3,0
+S00054,0,Healthy,0,78,Female,36.3,0
+S00054,3,At Risk,1,78,Female,36.3,0
+S00054,6,Preclinical,2,78,Female,36.3,0
+S00054,9,Preclinical,2,78,Female,36.3,0
+S00054,12,Preclinical,2,78,Female,36.3,0
+S00054,15,Mild Disease,3,78,Female,36.3,0
+S00054,18,Mild Disease,3,78,Female,36.3,0
+S00054,21,Mild Disease,3,78,Female,36.3,0
+S00054,24,Mild Disease,3,78,Female,36.3,0
+S00054,27,Moderate Disease,4,78,Female,36.3,0
+S00054,30,Mild Disease,3,78,Female,36.3,0
+S00054,33,Mild Disease,3,78,Female,36.3,0
+S00054,36,Mild Disease,3,78,Female,36.3,0
+S00054,39,Moderate Disease,4,78,Female,36.3,0
+S00054,42,Moderate Disease,4,78,Female,36.3,0
+S00054,45,Moderate Disease,4,78,Female,36.3,0
+S00054,48,Moderate Disease,4,78,Female,36.3,0
+S00054,51,Moderate Disease,4,78,Female,36.3,0
+S00054,54,Moderate Disease,4,78,Female,36.3,0
+S00054,57,Moderate Disease,4,78,Female,36.3,0
+S00054,60,Severe Disease,5,78,Female,36.3,0
+S00054,63,Severe Disease,5,78,Female,36.3,0
+S00054,66,Death,6,78,Female,36.3,0
+S00055,0,Mild Disease,3,41,Female,15.0,1
+S00055,3,Mild Disease,3,41,Female,15.0,1
+S00055,6,Mild Disease,3,41,Female,15.0,1
+S00055,9,Moderate Disease,4,41,Female,15.0,1
+S00055,12,Moderate Disease,4,41,Female,15.0,1
+S00055,15,Moderate Disease,4,41,Female,15.0,1
+S00055,18,Moderate Disease,4,41,Female,15.0,1
+S00055,21,Moderate Disease,4,41,Female,15.0,1
+S00055,24,Moderate Disease,4,41,Female,15.0,1
+S00055,27,Severe Disease,5,41,Female,15.0,1
+S00055,30,Severe Disease,5,41,Female,15.0,1
+S00055,33,Death,6,41,Female,15.0,1
+S00056,0,Healthy,0,55,Female,25.5,0
+S00056,3,Healthy,0,55,Female,25.5,0
+S00056,6,Healthy,0,55,Female,25.5,0
+S00056,9,Healthy,0,55,Female,25.5,0
+S00056,12,Healthy,0,55,Female,25.5,0
+S00056,15,Healthy,0,55,Female,25.5,0
+S00056,18,Healthy,0,55,Female,25.5,0
+S00056,21,Healthy,0,55,Female,25.5,0
+S00056,24,Healthy,0,55,Female,25.5,0
+S00056,27,Healthy,0,55,Female,25.5,0
+S00056,30,Healthy,0,55,Female,25.5,0
+S00056,33,Healthy,0,55,Female,25.5,0
+S00056,36,Healthy,0,55,Female,25.5,0
+S00056,39,Healthy,0,55,Female,25.5,0
+S00056,42,Healthy,0,55,Female,25.5,0
+S00056,45,Healthy,0,55,Female,25.5,0
+S00056,48,Healthy,0,55,Female,25.5,0
+S00056,51,Healthy,0,55,Female,25.5,0
+S00056,54,Healthy,0,55,Female,25.5,0
+S00056,57,Healthy,0,55,Female,25.5,0
+S00056,60,Healthy,0,55,Female,25.5,0
+S00056,63,Healthy,0,55,Female,25.5,0
+S00056,66,At Risk,1,55,Female,25.5,0
+S00056,69,At Risk,1,55,Female,25.5,0
+S00056,72,At Risk,1,55,Female,25.5,0
+S00057,0,Mild Disease,3,38,Female,22.9,0
+S00057,3,Mild Disease,3,38,Female,22.9,0
+S00057,6,Mild Disease,3,38,Female,22.9,0
+S00057,9,Mild Disease,3,38,Female,22.9,0
+S00057,12,Mild Disease,3,38,Female,22.9,0
+S00057,15,Mild Disease,3,38,Female,22.9,0
+S00057,18,Mild Disease,3,38,Female,22.9,0
+S00057,21,Moderate Disease,4,38,Female,22.9,0
+S00057,24,Moderate Disease,4,38,Female,22.9,0
+S00057,27,Severe Disease,5,38,Female,22.9,0
+S00057,30,Severe Disease,5,38,Female,22.9,0
+S00057,33,Severe Disease,5,38,Female,22.9,0
+S00057,36,Severe Disease,5,38,Female,22.9,0
+S00057,39,Severe Disease,5,38,Female,22.9,0
+S00057,42,Severe Disease,5,38,Female,22.9,0
+S00057,45,Severe Disease,5,38,Female,22.9,0
+S00057,48,Severe Disease,5,38,Female,22.9,0
+S00057,51,Death,6,38,Female,22.9,0
+S00058,0,Preclinical,2,70,Female,21.6,0
+S00058,3,Preclinical,2,70,Female,21.6,0
+S00058,6,Preclinical,2,70,Female,21.6,0
+S00058,9,Mild Disease,3,70,Female,21.6,0
+S00058,12,Moderate Disease,4,70,Female,21.6,0
+S00058,15,Moderate Disease,4,70,Female,21.6,0
+S00058,18,Moderate Disease,4,70,Female,21.6,0
+S00058,21,Moderate Disease,4,70,Female,21.6,0
+S00058,24,Moderate Disease,4,70,Female,21.6,0
+S00058,27,Moderate Disease,4,70,Female,21.6,0
+S00058,30,Severe Disease,5,70,Female,21.6,0
+S00058,33,Death,6,70,Female,21.6,0
+S00059,0,Mild Disease,3,73,Male,33.5,1
+S00059,3,Moderate Disease,4,73,Male,33.5,1
+S00059,6,Severe Disease,5,73,Male,33.5,1
+S00059,9,Severe Disease,5,73,Male,33.5,1
+S00059,12,Severe Disease,5,73,Male,33.5,1
+S00059,15,Death,6,73,Male,33.5,1
+S00060,0,At Risk,1,57,Female,17.8,1
+S00060,3,At Risk,1,57,Female,17.8,1
+S00060,6,At Risk,1,57,Female,17.8,1
+S00060,9,Preclinical,2,57,Female,17.8,1
+S00060,12,Preclinical,2,57,Female,17.8,1
+S00060,15,Mild Disease,3,57,Female,17.8,1
+S00060,18,Moderate Disease,4,57,Female,17.8,1
+S00060,21,Moderate Disease,4,57,Female,17.8,1
+S00060,24,Severe Disease,5,57,Female,17.8,1
+S00060,27,Death,6,57,Female,17.8,1
+S00061,0,Healthy,0,80,Male,28.9,1
+S00061,3,Healthy,0,80,Male,28.9,1
+S00061,6,Healthy,0,80,Male,28.9,1
+S00061,9,At Risk,1,80,Male,28.9,1
+S00061,12,At Risk,1,80,Male,28.9,1
+S00061,15,At Risk,1,80,Male,28.9,1
+S00061,18,At Risk,1,80,Male,28.9,1
+S00061,21,Preclinical,2,80,Male,28.9,1
+S00061,24,Preclinical,2,80,Male,28.9,1
+S00061,27,Preclinical,2,80,Male,28.9,1
+S00061,30,Mild Disease,3,80,Male,28.9,1
+S00061,33,Mild Disease,3,80,Male,28.9,1
+S00061,36,Moderate Disease,4,80,Male,28.9,1
+S00061,39,Severe Disease,5,80,Male,28.9,1
+S00061,42,Severe Disease,5,80,Male,28.9,1
+S00061,45,Death,6,80,Male,28.9,1
+S00062,0,Healthy,0,73,Female,30.1,1
+S00062,3,At Risk,1,73,Female,30.1,1
+S00062,6,At Risk,1,73,Female,30.1,1
+S00062,9,At Risk,1,73,Female,30.1,1
+S00062,12,Preclinical,2,73,Female,30.1,1
+S00062,15,Preclinical,2,73,Female,30.1,1
+S00062,18,Preclinical,2,73,Female,30.1,1
+S00062,21,Preclinical,2,73,Female,30.1,1
+S00062,24,Mild Disease,3,73,Female,30.1,1
+S00062,27,Moderate Disease,4,73,Female,30.1,1
+S00062,30,Severe Disease,5,73,Female,30.1,1
+S00062,33,Severe Disease,5,73,Female,30.1,1
+S00062,36,Severe Disease,5,73,Female,30.1,1
+S00062,39,Moderate Disease,4,73,Female,30.1,1
+S00062,42,Severe Disease,5,73,Female,30.1,1
+S00062,45,Severe Disease,5,73,Female,30.1,1
+S00062,48,Severe Disease,5,73,Female,30.1,1
+S00062,51,Severe Disease,5,73,Female,30.1,1
+S00062,54,Severe Disease,5,73,Female,30.1,1
+S00062,57,Death,6,73,Female,30.1,1
+S00063,0,Healthy,0,79,Male,23.4,0
+S00063,3,Healthy,0,79,Male,23.4,0
+S00063,6,At Risk,1,79,Male,23.4,0
+S00063,9,At Risk,1,79,Male,23.4,0
+S00063,12,At Risk,1,79,Male,23.4,0
+S00063,15,Preclinical,2,79,Male,23.4,0
+S00063,18,Preclinical,2,79,Male,23.4,0
+S00063,21,Preclinical,2,79,Male,23.4,0
+S00063,24,Preclinical,2,79,Male,23.4,0
+S00063,27,At Risk,1,79,Male,23.4,0
+S00063,30,Healthy,0,79,Male,23.4,0
+S00063,33,Healthy,0,79,Male,23.4,0
+S00063,36,At Risk,1,79,Male,23.4,0
+S00063,39,Preclinical,2,79,Male,23.4,0
+S00063,42,Mild Disease,3,79,Male,23.4,0
+S00063,45,Moderate Disease,4,79,Male,23.4,0
+S00063,48,Moderate Disease,4,79,Male,23.4,0
+S00063,51,Moderate Disease,4,79,Male,23.4,0
+S00063,54,Severe Disease,5,79,Male,23.4,0
+S00063,57,Severe Disease,5,79,Male,23.4,0
+S00063,60,Severe Disease,5,79,Male,23.4,0
+S00063,63,Severe Disease,5,79,Male,23.4,0
+S00063,66,Severe Disease,5,79,Male,23.4,0
+S00063,69,Severe Disease,5,79,Male,23.4,0
+S00063,72,Severe Disease,5,79,Male,23.4,0
+S00064,0,Mild Disease,3,70,Male,26.4,1
+S00064,3,Mild Disease,3,70,Male,26.4,1
+S00064,6,Moderate Disease,4,70,Male,26.4,1
+S00064,9,Moderate Disease,4,70,Male,26.4,1
+S00064,12,Moderate Disease,4,70,Male,26.4,1
+S00064,15,Moderate Disease,4,70,Male,26.4,1
+S00064,18,Severe Disease,5,70,Male,26.4,1
+S00064,21,Severe Disease,5,70,Male,26.4,1
+S00064,24,Severe Disease,5,70,Male,26.4,1
+S00064,27,Severe Disease,5,70,Male,26.4,1
+S00064,30,Severe Disease,5,70,Male,26.4,1
+S00064,33,Severe Disease,5,70,Male,26.4,1
+S00064,36,Severe Disease,5,70,Male,26.4,1
+S00064,39,Severe Disease,5,70,Male,26.4,1
+S00064,42,Severe Disease,5,70,Male,26.4,1
+S00064,45,Severe Disease,5,70,Male,26.4,1
+S00064,48,Death,6,70,Male,26.4,1
+S00065,0,Severe Disease,5,40,Female,23.3,0
+S00065,3,Severe Disease,5,40,Female,23.3,0
+S00065,6,Severe Disease,5,40,Female,23.3,0
+S00065,9,Severe Disease,5,40,Female,23.3,0
+S00065,12,Severe Disease,5,40,Female,23.3,0
+S00065,15,Severe Disease,5,40,Female,23.3,0
+S00065,18,Severe Disease,5,40,Female,23.3,0
+S00065,21,Severe Disease,5,40,Female,23.3,0
+S00065,24,Severe Disease,5,40,Female,23.3,0
+S00065,27,Severe Disease,5,40,Female,23.3,0
+S00065,30,Severe Disease,5,40,Female,23.3,0
+S00065,33,Severe Disease,5,40,Female,23.3,0
+S00065,36,Severe Disease,5,40,Female,23.3,0
+S00065,39,Death,6,40,Female,23.3,0
+S00066,0,Mild Disease,3,40,Female,24.1,1
+S00066,3,Mild Disease,3,40,Female,24.1,1
+S00066,6,Moderate Disease,4,40,Female,24.1,1
+S00066,9,Severe Disease,5,40,Female,24.1,1
+S00066,12,Severe Disease,5,40,Female,24.1,1
+S00066,15,Death,6,40,Female,24.1,1
+S00067,0,At Risk,1,75,Female,26.5,1
+S00067,3,At Risk,1,75,Female,26.5,1
+S00067,6,At Risk,1,75,Female,26.5,1
+S00067,9,Preclinical,2,75,Female,26.5,1
+S00067,12,Mild Disease,3,75,Female,26.5,1
+S00067,15,Moderate Disease,4,75,Female,26.5,1
+S00067,18,Moderate Disease,4,75,Female,26.5,1
+S00067,21,Severe Disease,5,75,Female,26.5,1
+S00067,24,Death,6,75,Female,26.5,1
+S00068,0,Preclinical,2,63,Male,23.1,1
+S00068,3,Mild Disease,3,63,Male,23.1,1
+S00068,6,Mild Disease,3,63,Male,23.1,1
+S00068,9,Moderate Disease,4,63,Male,23.1,1
+S00068,12,Moderate Disease,4,63,Male,23.1,1
+S00068,15,Severe Disease,5,63,Male,23.1,1
+S00068,18,Severe Disease,5,63,Male,23.1,1
+S00068,21,Severe Disease,5,63,Male,23.1,1
+S00068,24,Severe Disease,5,63,Male,23.1,1
+S00068,27,Severe Disease,5,63,Male,23.1,1
+S00068,30,Severe Disease,5,63,Male,23.1,1
+S00068,33,Death,6,63,Male,23.1,1
+S00069,0,At Risk,1,73,Female,28.5,0
+S00069,3,At Risk,1,73,Female,28.5,0
+S00069,6,At Risk,1,73,Female,28.5,0
+S00069,9,Preclinical,2,73,Female,28.5,0
+S00069,12,Preclinical,2,73,Female,28.5,0
+S00069,15,Preclinical,2,73,Female,28.5,0
+S00069,18,Mild Disease,3,73,Female,28.5,0
+S00069,21,Mild Disease,3,73,Female,28.5,0
+S00069,24,Mild Disease,3,73,Female,28.5,0
+S00069,27,Mild Disease,3,73,Female,28.5,0
+S00069,30,Mild Disease,3,73,Female,28.5,0
+S00069,33,Moderate Disease,4,73,Female,28.5,0
+S00069,36,Moderate Disease,4,73,Female,28.5,0
+S00069,39,Severe Disease,5,73,Female,28.5,0
+S00069,42,Severe Disease,5,73,Female,28.5,0
+S00069,45,Severe Disease,5,73,Female,28.5,0
+S00069,48,Severe Disease,5,73,Female,28.5,0
+S00069,51,Severe Disease,5,73,Female,28.5,0
+S00069,54,Severe Disease,5,73,Female,28.5,0
+S00069,57,Severe Disease,5,73,Female,28.5,0
+S00069,60,Severe Disease,5,73,Female,28.5,0
+S00069,63,Severe Disease,5,73,Female,28.5,0
+S00069,66,Severe Disease,5,73,Female,28.5,0
+S00069,69,Death,6,73,Female,28.5,0
+S00070,0,Healthy,0,75,Female,26.5,1
+S00070,3,At Risk,1,75,Female,26.5,1
+S00070,6,At Risk,1,75,Female,26.5,1
+S00070,9,At Risk,1,75,Female,26.5,1
+S00070,12,At Risk,1,75,Female,26.5,1
+S00070,15,At Risk,1,75,Female,26.5,1
+S00070,18,At Risk,1,75,Female,26.5,1
+S00070,21,Preclinical,2,75,Female,26.5,1
+S00070,24,Preclinical,2,75,Female,26.5,1
+S00070,27,Preclinical,2,75,Female,26.5,1
+S00070,30,Preclinical,2,75,Female,26.5,1
+S00070,33,Mild Disease,3,75,Female,26.5,1
+S00070,36,Moderate Disease,4,75,Female,26.5,1
+S00070,39,Moderate Disease,4,75,Female,26.5,1
+S00070,42,Moderate Disease,4,75,Female,26.5,1
+S00070,45,Moderate Disease,4,75,Female,26.5,1
+S00070,48,Severe Disease,5,75,Female,26.5,1
+S00070,51,Death,6,75,Female,26.5,1
+S00071,0,At Risk,1,45,Male,17.9,0
+S00071,3,At Risk,1,45,Male,17.9,0
+S00071,6,At Risk,1,45,Male,17.9,0
+S00071,9,At Risk,1,45,Male,17.9,0
+S00071,12,At Risk,1,45,Male,17.9,0
+S00071,15,At Risk,1,45,Male,17.9,0
+S00071,18,At Risk,1,45,Male,17.9,0
+S00071,21,At Risk,1,45,Male,17.9,0
+S00071,24,At Risk,1,45,Male,17.9,0
+S00071,27,At Risk,1,45,Male,17.9,0
+S00071,30,Preclinical,2,45,Male,17.9,0
+S00071,33,Preclinical,2,45,Male,17.9,0
+S00071,36,Preclinical,2,45,Male,17.9,0
+S00071,39,Preclinical,2,45,Male,17.9,0
+S00071,42,Preclinical,2,45,Male,17.9,0
+S00071,45,Preclinical,2,45,Male,17.9,0
+S00071,48,Preclinical,2,45,Male,17.9,0
+S00071,51,Preclinical,2,45,Male,17.9,0
+S00071,54,Preclinical,2,45,Male,17.9,0
+S00071,57,Preclinical,2,45,Male,17.9,0
+S00071,60,Preclinical,2,45,Male,17.9,0
+S00071,63,Preclinical,2,45,Male,17.9,0
+S00071,66,Mild Disease,3,45,Male,17.9,0
+S00071,69,Mild Disease,3,45,Male,17.9,0
+S00071,72,Mild Disease,3,45,Male,17.9,0
+S00072,0,Preclinical,2,78,Male,26.0,1
+S00072,3,Preclinical,2,78,Male,26.0,1
+S00072,6,Preclinical,2,78,Male,26.0,1
+S00072,9,Preclinical,2,78,Male,26.0,1
+S00072,12,Preclinical,2,78,Male,26.0,1
+S00072,15,Mild Disease,3,78,Male,26.0,1
+S00072,18,Moderate Disease,4,78,Male,26.0,1
+S00072,21,Severe Disease,5,78,Male,26.0,1
+S00072,24,Severe Disease,5,78,Male,26.0,1
+S00072,27,Death,6,78,Male,26.0,1
+S00073,0,Healthy,0,82,Male,25.1,1
+S00073,3,At Risk,1,82,Male,25.1,1
+S00073,6,At Risk,1,82,Male,25.1,1
+S00073,9,At Risk,1,82,Male,25.1,1
+S00073,12,At Risk,1,82,Male,25.1,1
+S00073,15,Healthy,0,82,Male,25.1,1
+S00073,18,Healthy,0,82,Male,25.1,1
+S00073,21,Healthy,0,82,Male,25.1,1
+S00073,24,Healthy,0,82,Male,25.1,1
+S00073,27,Healthy,0,82,Male,25.1,1
+S00073,30,Healthy,0,82,Male,25.1,1
+S00073,33,At Risk,1,82,Male,25.1,1
+S00073,36,Preclinical,2,82,Male,25.1,1
+S00073,39,Mild Disease,3,82,Male,25.1,1
+S00073,42,Mild Disease,3,82,Male,25.1,1
+S00073,45,Moderate Disease,4,82,Male,25.1,1
+S00073,48,Severe Disease,5,82,Male,25.1,1
+S00073,51,Severe Disease,5,82,Male,25.1,1
+S00073,54,Severe Disease,5,82,Male,25.1,1
+S00073,57,Severe Disease,5,82,Male,25.1,1
+S00073,60,Severe Disease,5,82,Male,25.1,1
+S00073,63,Severe Disease,5,82,Male,25.1,1
+S00073,66,Death,6,82,Male,25.1,1
+S00074,0,Healthy,0,66,Male,37.4,1
+S00074,3,At Risk,1,66,Male,37.4,1
+S00074,6,At Risk,1,66,Male,37.4,1
+S00074,9,At Risk,1,66,Male,37.4,1
+S00074,12,At Risk,1,66,Male,37.4,1
+S00074,15,Preclinical,2,66,Male,37.4,1
+S00074,18,Preclinical,2,66,Male,37.4,1
+S00074,21,Mild Disease,3,66,Male,37.4,1
+S00074,24,Moderate Disease,4,66,Male,37.4,1
+S00074,27,Moderate Disease,4,66,Male,37.4,1
+S00074,30,Moderate Disease,4,66,Male,37.4,1
+S00074,33,Moderate Disease,4,66,Male,37.4,1
+S00074,36,Moderate Disease,4,66,Male,37.4,1
+S00074,39,Moderate Disease,4,66,Male,37.4,1
+S00074,42,Moderate Disease,4,66,Male,37.4,1
+S00074,45,Moderate Disease,4,66,Male,37.4,1
+S00074,48,Moderate Disease,4,66,Male,37.4,1
+S00074,51,Moderate Disease,4,66,Male,37.4,1
+S00074,54,Moderate Disease,4,66,Male,37.4,1
+S00074,57,Severe Disease,5,66,Male,37.4,1
+S00074,60,Severe Disease,5,66,Male,37.4,1
+S00074,63,Death,6,66,Male,37.4,1
+S00075,0,Moderate Disease,4,66,Male,25.4,1
+S00075,3,Moderate Disease,4,66,Male,25.4,1
+S00075,6,Moderate Disease,4,66,Male,25.4,1
+S00075,9,Moderate Disease,4,66,Male,25.4,1
+S00075,12,Severe Disease,5,66,Male,25.4,1
+S00075,15,Death,6,66,Male,25.4,1
+S00076,0,Mild Disease,3,79,Male,21.8,0
+S00076,3,Mild Disease,3,79,Male,21.8,0
+S00076,6,Mild Disease,3,79,Male,21.8,0
+S00076,9,Moderate Disease,4,79,Male,21.8,0
+S00076,12,Moderate Disease,4,79,Male,21.8,0
+S00076,15,Moderate Disease,4,79,Male,21.8,0
+S00076,18,Moderate Disease,4,79,Male,21.8,0
+S00076,21,Severe Disease,5,79,Male,21.8,0
+S00076,24,Severe Disease,5,79,Male,21.8,0
+S00076,27,Death,6,79,Male,21.8,0
+S00077,0,At Risk,1,61,Female,34.6,1
+S00077,3,At Risk,1,61,Female,34.6,1
+S00077,6,At Risk,1,61,Female,34.6,1
+S00077,9,At Risk,1,61,Female,34.6,1
+S00077,12,At Risk,1,61,Female,34.6,1
+S00077,15,At Risk,1,61,Female,34.6,1
+S00077,18,At Risk,1,61,Female,34.6,1
+S00077,21,At Risk,1,61,Female,34.6,1
+S00077,24,Preclinical,2,61,Female,34.6,1
+S00077,27,Preclinical,2,61,Female,34.6,1
+S00077,30,Preclinical,2,61,Female,34.6,1
+S00077,33,Preclinical,2,61,Female,34.6,1
+S00077,36,Mild Disease,3,61,Female,34.6,1
+S00077,39,Mild Disease,3,61,Female,34.6,1
+S00077,42,Mild Disease,3,61,Female,34.6,1
+S00077,45,Moderate Disease,4,61,Female,34.6,1
+S00077,48,Moderate Disease,4,61,Female,34.6,1
+S00077,51,Severe Disease,5,61,Female,34.6,1
+S00077,54,Death,6,61,Female,34.6,1
+S00078,0,Moderate Disease,4,68,Male,24.0,0
+S00078,3,Moderate Disease,4,68,Male,24.0,0
+S00078,6,Moderate Disease,4,68,Male,24.0,0
+S00078,9,Moderate Disease,4,68,Male,24.0,0
+S00078,12,Moderate Disease,4,68,Male,24.0,0
+S00078,15,Moderate Disease,4,68,Male,24.0,0
+S00078,18,Severe Disease,5,68,Male,24.0,0
+S00078,21,Severe Disease,5,68,Male,24.0,0
+S00078,24,Severe Disease,5,68,Male,24.0,0
+S00078,27,Severe Disease,5,68,Male,24.0,0
+S00078,30,Death,6,68,Male,24.0,0
+S00079,0,Mild Disease,3,47,Male,31.4,1
+S00079,3,Mild Disease,3,47,Male,31.4,1
+S00079,6,Mild Disease,3,47,Male,31.4,1
+S00079,9,Mild Disease,3,47,Male,31.4,1
+S00079,12,Moderate Disease,4,47,Male,31.4,1
+S00079,15,Moderate Disease,4,47,Male,31.4,1
+S00079,18,Moderate Disease,4,47,Male,31.4,1
+S00079,21,Severe Disease,5,47,Male,31.4,1
+S00079,24,Death,6,47,Male,31.4,1
+S00080,0,Healthy,0,38,Female,23.8,0
+S00080,3,Healthy,0,38,Female,23.8,0
+S00080,6,Healthy,0,38,Female,23.8,0
+S00080,9,Healthy,0,38,Female,23.8,0
+S00080,12,Healthy,0,38,Female,23.8,0
+S00080,15,Healthy,0,38,Female,23.8,0
+S00080,18,Healthy,0,38,Female,23.8,0
+S00080,21,Healthy,0,38,Female,23.8,0
+S00080,24,Healthy,0,38,Female,23.8,0
+S00080,27,Healthy,0,38,Female,23.8,0
+S00080,30,Healthy,0,38,Female,23.8,0
+S00080,33,Healthy,0,38,Female,23.8,0
+S00080,36,Healthy,0,38,Female,23.8,0
+S00080,39,Healthy,0,38,Female,23.8,0
+S00080,42,Healthy,0,38,Female,23.8,0
+S00080,45,Healthy,0,38,Female,23.8,0
+S00080,48,Healthy,0,38,Female,23.8,0
+S00080,51,Healthy,0,38,Female,23.8,0
+S00080,54,Healthy,0,38,Female,23.8,0
+S00080,57,Healthy,0,38,Female,23.8,0
+S00080,60,Healthy,0,38,Female,23.8,0
+S00080,63,Healthy,0,38,Female,23.8,0
+S00080,66,Healthy,0,38,Female,23.8,0
+S00080,69,Healthy,0,38,Female,23.8,0
+S00080,72,Healthy,0,38,Female,23.8,0
+S00081,0,Moderate Disease,4,78,Female,28.9,1
+S00081,3,Moderate Disease,4,78,Female,28.9,1
+S00081,6,Severe Disease,5,78,Female,28.9,1
+S00081,9,Death,6,78,Female,28.9,1
+S00082,0,Mild Disease,3,62,Female,27.2,0
+S00082,3,Mild Disease,3,62,Female,27.2,0
+S00082,6,Mild Disease,3,62,Female,27.2,0
+S00082,9,Mild Disease,3,62,Female,27.2,0
+S00082,12,Mild Disease,3,62,Female,27.2,0
+S00082,15,Mild Disease,3,62,Female,27.2,0
+S00082,18,Mild Disease,3,62,Female,27.2,0
+S00082,21,Mild Disease,3,62,Female,27.2,0
+S00082,24,Mild Disease,3,62,Female,27.2,0
+S00082,27,Moderate Disease,4,62,Female,27.2,0
+S00082,30,Severe Disease,5,62,Female,27.2,0
+S00082,33,Death,6,62,Female,27.2,0
+S00083,0,Healthy,0,81,Female,26.8,1
+S00083,3,Healthy,0,81,Female,26.8,1
+S00083,6,At Risk,1,81,Female,26.8,1
+S00083,9,At Risk,1,81,Female,26.8,1
+S00083,12,At Risk,1,81,Female,26.8,1
+S00083,15,At Risk,1,81,Female,26.8,1
+S00083,18,Preclinical,2,81,Female,26.8,1
+S00083,21,Preclinical,2,81,Female,26.8,1
+S00083,24,Preclinical,2,81,Female,26.8,1
+S00083,27,Preclinical,2,81,Female,26.8,1
+S00083,30,Preclinical,2,81,Female,26.8,1
+S00083,33,Mild Disease,3,81,Female,26.8,1
+S00083,36,Mild Disease,3,81,Female,26.8,1
+S00083,39,Mild Disease,3,81,Female,26.8,1
+S00083,42,Moderate Disease,4,81,Female,26.8,1
+S00083,45,Severe Disease,5,81,Female,26.8,1
+S00083,48,Death,6,81,Female,26.8,1
+S00084,0,Healthy,0,49,Male,20.2,1
+S00084,3,At Risk,1,49,Male,20.2,1
+S00084,6,At Risk,1,49,Male,20.2,1
+S00084,9,Preclinical,2,49,Male,20.2,1
+S00084,12,Mild Disease,3,49,Male,20.2,1
+S00084,15,Mild Disease,3,49,Male,20.2,1
+S00084,18,Moderate Disease,4,49,Male,20.2,1
+S00084,21,Severe Disease,5,49,Male,20.2,1
+S00084,24,Death,6,49,Male,20.2,1
+S00085,0,Mild Disease,3,56,Female,21.9,0
+S00085,3,Mild Disease,3,56,Female,21.9,0
+S00085,6,Mild Disease,3,56,Female,21.9,0
+S00085,9,Mild Disease,3,56,Female,21.9,0
+S00085,12,Mild Disease,3,56,Female,21.9,0
+S00085,15,Preclinical,2,56,Female,21.9,0
+S00085,18,Preclinical,2,56,Female,21.9,0
+S00085,21,Preclinical,2,56,Female,21.9,0
+S00085,24,Preclinical,2,56,Female,21.9,0
+S00085,27,Preclinical,2,56,Female,21.9,0
+S00085,30,Preclinical,2,56,Female,21.9,0
+S00085,33,Preclinical,2,56,Female,21.9,0
+S00085,36,Preclinical,2,56,Female,21.9,0
+S00085,39,Preclinical,2,56,Female,21.9,0
+S00085,42,Preclinical,2,56,Female,21.9,0
+S00085,45,Preclinical,2,56,Female,21.9,0
+S00085,48,Preclinical,2,56,Female,21.9,0
+S00085,51,Preclinical,2,56,Female,21.9,0
+S00085,54,Preclinical,2,56,Female,21.9,0
+S00085,57,Preclinical,2,56,Female,21.9,0
+S00085,60,Preclinical,2,56,Female,21.9,0
+S00085,63,Preclinical,2,56,Female,21.9,0
+S00085,66,Preclinical,2,56,Female,21.9,0
+S00085,69,Preclinical,2,56,Female,21.9,0
+S00085,72,Preclinical,2,56,Female,21.9,0
+S00086,0,Healthy,0,57,Female,31.3,0
+S00086,3,Healthy,0,57,Female,31.3,0
+S00086,6,Healthy,0,57,Female,31.3,0
+S00086,9,At Risk,1,57,Female,31.3,0
+S00086,12,At Risk,1,57,Female,31.3,0
+S00086,15,At Risk,1,57,Female,31.3,0
+S00086,18,At Risk,1,57,Female,31.3,0
+S00086,21,At Risk,1,57,Female,31.3,0
+S00086,24,At Risk,1,57,Female,31.3,0
+S00086,27,At Risk,1,57,Female,31.3,0
+S00086,30,At Risk,1,57,Female,31.3,0
+S00086,33,Preclinical,2,57,Female,31.3,0
+S00086,36,Mild Disease,3,57,Female,31.3,0
+S00086,39,Mild Disease,3,57,Female,31.3,0
+S00086,42,Mild Disease,3,57,Female,31.3,0
+S00086,45,Mild Disease,3,57,Female,31.3,0
+S00086,48,Mild Disease,3,57,Female,31.3,0
+S00086,51,Moderate Disease,4,57,Female,31.3,0
+S00086,54,Moderate Disease,4,57,Female,31.3,0
+S00086,57,Moderate Disease,4,57,Female,31.3,0
+S00086,60,Moderate Disease,4,57,Female,31.3,0
+S00086,63,Moderate Disease,4,57,Female,31.3,0
+S00086,66,Severe Disease,5,57,Female,31.3,0
+S00086,69,Death,6,57,Female,31.3,0
+S00087,0,Preclinical,2,75,Female,28.7,0
+S00087,3,Preclinical,2,75,Female,28.7,0
+S00087,6,Mild Disease,3,75,Female,28.7,0
+S00087,9,Preclinical,2,75,Female,28.7,0
+S00087,12,Mild Disease,3,75,Female,28.7,0
+S00087,15,Preclinical,2,75,Female,28.7,0
+S00087,18,Preclinical,2,75,Female,28.7,0
+S00087,21,Preclinical,2,75,Female,28.7,0
+S00087,24,Mild Disease,3,75,Female,28.7,0
+S00087,27,Mild Disease,3,75,Female,28.7,0
+S00087,30,Moderate Disease,4,75,Female,28.7,0
+S00087,33,Moderate Disease,4,75,Female,28.7,0
+S00087,36,Moderate Disease,4,75,Female,28.7,0
+S00087,39,Severe Disease,5,75,Female,28.7,0
+S00087,42,Severe Disease,5,75,Female,28.7,0
+S00087,45,Severe Disease,5,75,Female,28.7,0
+S00087,48,Severe Disease,5,75,Female,28.7,0
+S00087,51,Death,6,75,Female,28.7,0
+S00088,0,Mild Disease,3,71,Male,23.9,1
+S00088,3,Mild Disease,3,71,Male,23.9,1
+S00088,6,Mild Disease,3,71,Male,23.9,1
+S00088,9,Mild Disease,3,71,Male,23.9,1
+S00088,12,Moderate Disease,4,71,Male,23.9,1
+S00088,15,Moderate Disease,4,71,Male,23.9,1
+S00088,18,Severe Disease,5,71,Male,23.9,1
+S00088,21,Death,6,71,Male,23.9,1
+S00089,0,Mild Disease,3,53,Male,28.4,1
+S00089,3,Mild Disease,3,53,Male,28.4,1
+S00089,6,Mild Disease,3,53,Male,28.4,1
+S00089,9,Mild Disease,3,53,Male,28.4,1
+S00089,12,Mild Disease,3,53,Male,28.4,1
+S00089,15,Mild Disease,3,53,Male,28.4,1
+S00089,18,Mild Disease,3,53,Male,28.4,1
+S00089,21,Mild Disease,3,53,Male,28.4,1
+S00089,24,Mild Disease,3,53,Male,28.4,1
+S00089,27,Mild Disease,3,53,Male,28.4,1
+S00089,30,Moderate Disease,4,53,Male,28.4,1
+S00089,33,Severe Disease,5,53,Male,28.4,1
+S00089,36,Severe Disease,5,53,Male,28.4,1
+S00089,39,Severe Disease,5,53,Male,28.4,1
+S00089,42,Severe Disease,5,53,Male,28.4,1
+S00089,45,Death,6,53,Male,28.4,1
+S00090,0,Healthy,0,50,Male,18.6,0
+S00090,3,Healthy,0,50,Male,18.6,0
+S00090,6,Healthy,0,50,Male,18.6,0
+S00090,9,Healthy,0,50,Male,18.6,0
+S00090,12,Healthy,0,50,Male,18.6,0
+S00090,15,Healthy,0,50,Male,18.6,0
+S00090,18,Healthy,0,50,Male,18.6,0
+S00090,21,Healthy,0,50,Male,18.6,0
+S00090,24,Healthy,0,50,Male,18.6,0
+S00090,27,Healthy,0,50,Male,18.6,0
+S00090,30,At Risk,1,50,Male,18.6,0
+S00090,33,At Risk,1,50,Male,18.6,0
+S00090,36,At Risk,1,50,Male,18.6,0
+S00090,39,At Risk,1,50,Male,18.6,0
+S00090,42,At Risk,1,50,Male,18.6,0
+S00090,45,At Risk,1,50,Male,18.6,0
+S00090,48,At Risk,1,50,Male,18.6,0
+S00090,51,At Risk,1,50,Male,18.6,0
+S00090,54,At Risk,1,50,Male,18.6,0
+S00090,57,At Risk,1,50,Male,18.6,0
+S00090,60,At Risk,1,50,Male,18.6,0
+S00090,63,At Risk,1,50,Male,18.6,0
+S00090,66,At Risk,1,50,Male,18.6,0
+S00090,69,At Risk,1,50,Male,18.6,0
+S00090,72,At Risk,1,50,Male,18.6,0
+S00091,0,Healthy,0,47,Female,29.1,0
+S00091,3,Healthy,0,47,Female,29.1,0
+S00091,6,At Risk,1,47,Female,29.1,0
+S00091,9,At Risk,1,47,Female,29.1,0
+S00091,12,At Risk,1,47,Female,29.1,0
+S00091,15,At Risk,1,47,Female,29.1,0
+S00091,18,At Risk,1,47,Female,29.1,0
+S00091,21,At Risk,1,47,Female,29.1,0
+S00091,24,At Risk,1,47,Female,29.1,0
+S00091,27,At Risk,1,47,Female,29.1,0
+S00091,30,At Risk,1,47,Female,29.1,0
+S00091,33,At Risk,1,47,Female,29.1,0
+S00091,36,At Risk,1,47,Female,29.1,0
+S00091,39,At Risk,1,47,Female,29.1,0
+S00091,42,At Risk,1,47,Female,29.1,0
+S00091,45,At Risk,1,47,Female,29.1,0
+S00091,48,At Risk,1,47,Female,29.1,0
+S00091,51,At Risk,1,47,Female,29.1,0
+S00091,54,At Risk,1,47,Female,29.1,0
+S00091,57,At Risk,1,47,Female,29.1,0
+S00091,60,At Risk,1,47,Female,29.1,0
+S00091,63,At Risk,1,47,Female,29.1,0
+S00091,66,At Risk,1,47,Female,29.1,0
+S00091,69,At Risk,1,47,Female,29.1,0
+S00091,72,At Risk,1,47,Female,29.1,0
+S00092,0,Healthy,0,79,Female,24.1,1
+S00092,3,At Risk,1,79,Female,24.1,1
+S00092,6,At Risk,1,79,Female,24.1,1
+S00092,9,Preclinical,2,79,Female,24.1,1
+S00092,12,Preclinical,2,79,Female,24.1,1
+S00092,15,Preclinical,2,79,Female,24.1,1
+S00092,18,Mild Disease,3,79,Female,24.1,1
+S00092,21,Moderate Disease,4,79,Female,24.1,1
+S00092,24,Moderate Disease,4,79,Female,24.1,1
+S00092,27,Moderate Disease,4,79,Female,24.1,1
+S00092,30,Moderate Disease,4,79,Female,24.1,1
+S00092,33,Moderate Disease,4,79,Female,24.1,1
+S00092,36,Moderate Disease,4,79,Female,24.1,1
+S00092,39,Severe Disease,5,79,Female,24.1,1
+S00092,42,Severe Disease,5,79,Female,24.1,1
+S00092,45,Severe Disease,5,79,Female,24.1,1
+S00092,48,Death,6,79,Female,24.1,1
+S00093,0,Mild Disease,3,36,Female,24.8,1
+S00093,3,Moderate Disease,4,36,Female,24.8,1
+S00093,6,Moderate Disease,4,36,Female,24.8,1
+S00093,9,Severe Disease,5,36,Female,24.8,1
+S00093,12,Severe Disease,5,36,Female,24.8,1
+S00093,15,Death,6,36,Female,24.8,1
+S00094,0,Preclinical,2,63,Female,21.5,1
+S00094,3,Preclinical,2,63,Female,21.5,1
+S00094,6,Preclinical,2,63,Female,21.5,1
+S00094,9,Preclinical,2,63,Female,21.5,1
+S00094,12,Preclinical,2,63,Female,21.5,1
+S00094,15,Preclinical,2,63,Female,21.5,1
+S00094,18,Preclinical,2,63,Female,21.5,1
+S00094,21,Preclinical,2,63,Female,21.5,1
+S00094,24,Mild Disease,3,63,Female,21.5,1
+S00094,27,Moderate Disease,4,63,Female,21.5,1
+S00094,30,Severe Disease,5,63,Female,21.5,1
+S00094,33,Death,6,63,Female,21.5,1
+S00095,0,Preclinical,2,42,Female,24.6,0
+S00095,3,Mild Disease,3,42,Female,24.6,0
+S00095,6,Mild Disease,3,42,Female,24.6,0
+S00095,9,Mild Disease,3,42,Female,24.6,0
+S00095,12,Mild Disease,3,42,Female,24.6,0
+S00095,15,Mild Disease,3,42,Female,24.6,0
+S00095,18,Mild Disease,3,42,Female,24.6,0
+S00095,21,Mild Disease,3,42,Female,24.6,0
+S00095,24,Mild Disease,3,42,Female,24.6,0
+S00095,27,Preclinical,2,42,Female,24.6,0
+S00095,30,Preclinical,2,42,Female,24.6,0
+S00095,33,Preclinical,2,42,Female,24.6,0
+S00095,36,Preclinical,2,42,Female,24.6,0
+S00095,39,Preclinical,2,42,Female,24.6,0
+S00095,42,At Risk,1,42,Female,24.6,0
+S00095,45,Preclinical,2,42,Female,24.6,0
+S00095,48,Preclinical,2,42,Female,24.6,0
+S00095,51,Preclinical,2,42,Female,24.6,0
+S00095,54,Preclinical,2,42,Female,24.6,0
+S00095,57,Preclinical,2,42,Female,24.6,0
+S00095,60,Preclinical,2,42,Female,24.6,0
+S00095,63,Preclinical,2,42,Female,24.6,0
+S00095,66,Preclinical,2,42,Female,24.6,0
+S00095,69,Preclinical,2,42,Female,24.6,0
+S00095,72,Preclinical,2,42,Female,24.6,0
+S00096,0,At Risk,1,83,Female,30.8,0
+S00096,3,At Risk,1,83,Female,30.8,0
+S00096,6,Preclinical,2,83,Female,30.8,0
+S00096,9,Mild Disease,3,83,Female,30.8,0
+S00096,12,Mild Disease,3,83,Female,30.8,0
+S00096,15,Moderate Disease,4,83,Female,30.8,0
+S00096,18,Severe Disease,5,83,Female,30.8,0
+S00096,21,Death,6,83,Female,30.8,0
+S00097,0,Preclinical,2,57,Male,21.8,1
+S00097,3,Mild Disease,3,57,Male,21.8,1
+S00097,6,Moderate Disease,4,57,Male,21.8,1
+S00097,9,Severe Disease,5,57,Male,21.8,1
+S00097,12,Death,6,57,Male,21.8,1
+S00098,0,Healthy,0,68,Female,15.9,0
+S00098,3,Healthy,0,68,Female,15.9,0
+S00098,6,At Risk,1,68,Female,15.9,0
+S00098,9,Preclinical,2,68,Female,15.9,0
+S00098,12,Preclinical,2,68,Female,15.9,0
+S00098,15,Mild Disease,3,68,Female,15.9,0
+S00098,18,Moderate Disease,4,68,Female,15.9,0
+S00098,21,Moderate Disease,4,68,Female,15.9,0
+S00098,24,Severe Disease,5,68,Female,15.9,0
+S00098,27,Death,6,68,Female,15.9,0
+S00099,0,Preclinical,2,61,Female,24.6,0
+S00099,3,Mild Disease,3,61,Female,24.6,0
+S00099,6,Moderate Disease,4,61,Female,24.6,0
+S00099,9,Severe Disease,5,61,Female,24.6,0
+S00099,12,Severe Disease,5,61,Female,24.6,0
+S00099,15,Severe Disease,5,61,Female,24.6,0
+S00099,18,Death,6,61,Female,24.6,0
+S00100,0,Moderate Disease,4,65,Female,24.6,0
+S00100,3,Moderate Disease,4,65,Female,24.6,0
+S00100,6,Moderate Disease,4,65,Female,24.6,0
+S00100,9,Severe Disease,5,65,Female,24.6,0
+S00100,12,Severe Disease,5,65,Female,24.6,0
+S00100,15,Death,6,65,Female,24.6,0
+S00101,0,Preclinical,2,77,Male,24.9,0
+S00101,3,Mild Disease,3,77,Male,24.9,0
+S00101,6,Moderate Disease,4,77,Male,24.9,0
+S00101,9,Severe Disease,5,77,Male,24.9,0
+S00101,12,Severe Disease,5,77,Male,24.9,0
+S00101,15,Severe Disease,5,77,Male,24.9,0
+S00101,18,Severe Disease,5,77,Male,24.9,0
+S00101,21,Severe Disease,5,77,Male,24.9,0
+S00101,24,Severe Disease,5,77,Male,24.9,0
+S00101,27,Severe Disease,5,77,Male,24.9,0
+S00101,30,Severe Disease,5,77,Male,24.9,0
+S00101,33,Severe Disease,5,77,Male,24.9,0
+S00101,36,Severe Disease,5,77,Male,24.9,0
+S00101,39,Severe Disease,5,77,Male,24.9,0
+S00101,42,Severe Disease,5,77,Male,24.9,0
+S00101,45,Severe Disease,5,77,Male,24.9,0
+S00101,48,Severe Disease,5,77,Male,24.9,0
+S00101,51,Death,6,77,Male,24.9,0
+S00102,0,Healthy,0,68,Female,18.3,0
+S00102,3,Healthy,0,68,Female,18.3,0
+S00102,6,Healthy,0,68,Female,18.3,0
+S00102,9,Healthy,0,68,Female,18.3,0
+S00102,12,Healthy,0,68,Female,18.3,0
+S00102,15,At Risk,1,68,Female,18.3,0
+S00102,18,At Risk,1,68,Female,18.3,0
+S00102,21,At Risk,1,68,Female,18.3,0
+S00102,24,Preclinical,2,68,Female,18.3,0
+S00102,27,Preclinical,2,68,Female,18.3,0
+S00102,30,Preclinical,2,68,Female,18.3,0
+S00102,33,Preclinical,2,68,Female,18.3,0
+S00102,36,Mild Disease,3,68,Female,18.3,0
+S00102,39,Moderate Disease,4,68,Female,18.3,0
+S00102,42,Severe Disease,5,68,Female,18.3,0
+S00102,45,Death,6,68,Female,18.3,0
+S00103,0,Mild Disease,3,63,Female,27.4,1
+S00103,3,Mild Disease,3,63,Female,27.4,1
+S00103,6,Mild Disease,3,63,Female,27.4,1
+S00103,9,Mild Disease,3,63,Female,27.4,1
+S00103,12,Mild Disease,3,63,Female,27.4,1
+S00103,15,Moderate Disease,4,63,Female,27.4,1
+S00103,18,Moderate Disease,4,63,Female,27.4,1
+S00103,21,Moderate Disease,4,63,Female,27.4,1
+S00103,24,Moderate Disease,4,63,Female,27.4,1
+S00103,27,Moderate Disease,4,63,Female,27.4,1
+S00103,30,Moderate Disease,4,63,Female,27.4,1
+S00103,33,Severe Disease,5,63,Female,27.4,1
+S00103,36,Severe Disease,5,63,Female,27.4,1
+S00103,39,Severe Disease,5,63,Female,27.4,1
+S00103,42,Severe Disease,5,63,Female,27.4,1
+S00103,45,Death,6,63,Female,27.4,1
+S00104,0,Healthy,0,76,Female,22.4,0
+S00104,3,Healthy,0,76,Female,22.4,0
+S00104,6,Healthy,0,76,Female,22.4,0
+S00104,9,At Risk,1,76,Female,22.4,0
+S00104,12,Preclinical,2,76,Female,22.4,0
+S00104,15,Preclinical,2,76,Female,22.4,0
+S00104,18,Preclinical,2,76,Female,22.4,0
+S00104,21,Preclinical,2,76,Female,22.4,0
+S00104,24,Preclinical,2,76,Female,22.4,0
+S00104,27,Preclinical,2,76,Female,22.4,0
+S00104,30,Preclinical,2,76,Female,22.4,0
+S00104,33,Preclinical,2,76,Female,22.4,0
+S00104,36,Preclinical,2,76,Female,22.4,0
+S00104,39,Preclinical,2,76,Female,22.4,0
+S00104,42,Mild Disease,3,76,Female,22.4,0
+S00104,45,Mild Disease,3,76,Female,22.4,0
+S00104,48,Moderate Disease,4,76,Female,22.4,0
+S00104,51,Severe Disease,5,76,Female,22.4,0
+S00104,54,Severe Disease,5,76,Female,22.4,0
+S00104,57,Severe Disease,5,76,Female,22.4,0
+S00104,60,Death,6,76,Female,22.4,0
+S00105,0,Mild Disease,3,69,Male,24.4,0
+S00105,3,Mild Disease,3,69,Male,24.4,0
+S00105,6,Moderate Disease,4,69,Male,24.4,0
+S00105,9,Moderate Disease,4,69,Male,24.4,0
+S00105,12,Severe Disease,5,69,Male,24.4,0
+S00105,15,Death,6,69,Male,24.4,0
+S00106,0,Healthy,0,70,Female,20.2,1
+S00106,3,At Risk,1,70,Female,20.2,1
+S00106,6,At Risk,1,70,Female,20.2,1
+S00106,9,Preclinical,2,70,Female,20.2,1
+S00106,12,Preclinical,2,70,Female,20.2,1
+S00106,15,Mild Disease,3,70,Female,20.2,1
+S00106,18,Mild Disease,3,70,Female,20.2,1
+S00106,21,Mild Disease,3,70,Female,20.2,1
+S00106,24,Moderate Disease,4,70,Female,20.2,1
+S00106,27,Moderate Disease,4,70,Female,20.2,1
+S00106,30,Moderate Disease,4,70,Female,20.2,1
+S00106,33,Moderate Disease,4,70,Female,20.2,1
+S00106,36,Moderate Disease,4,70,Female,20.2,1
+S00106,39,Moderate Disease,4,70,Female,20.2,1
+S00106,42,Severe Disease,5,70,Female,20.2,1
+S00106,45,Death,6,70,Female,20.2,1
+S00107,0,At Risk,1,36,Male,26.3,0
+S00107,3,At Risk,1,36,Male,26.3,0
+S00107,6,At Risk,1,36,Male,26.3,0
+S00107,9,At Risk,1,36,Male,26.3,0
+S00107,12,At Risk,1,36,Male,26.3,0
+S00107,15,At Risk,1,36,Male,26.3,0
+S00107,18,At Risk,1,36,Male,26.3,0
+S00107,21,At Risk,1,36,Male,26.3,0
+S00107,24,At Risk,1,36,Male,26.3,0
+S00107,27,At Risk,1,36,Male,26.3,0
+S00107,30,At Risk,1,36,Male,26.3,0
+S00107,33,At Risk,1,36,Male,26.3,0
+S00107,36,At Risk,1,36,Male,26.3,0
+S00107,39,At Risk,1,36,Male,26.3,0
+S00107,42,Preclinical,2,36,Male,26.3,0
+S00107,45,Preclinical,2,36,Male,26.3,0
+S00107,48,Preclinical,2,36,Male,26.3,0
+S00107,51,Preclinical,2,36,Male,26.3,0
+S00107,54,Preclinical,2,36,Male,26.3,0
+S00107,57,Preclinical,2,36,Male,26.3,0
+S00107,60,Preclinical,2,36,Male,26.3,0
+S00107,63,Preclinical,2,36,Male,26.3,0
+S00107,66,Preclinical,2,36,Male,26.3,0
+S00107,69,Mild Disease,3,36,Male,26.3,0
+S00107,72,Moderate Disease,4,36,Male,26.3,0
+S00108,0,Healthy,0,67,Male,22.2,1
+S00108,3,At Risk,1,67,Male,22.2,1
+S00108,6,At Risk,1,67,Male,22.2,1
+S00108,9,Preclinical,2,67,Male,22.2,1
+S00108,12,Mild Disease,3,67,Male,22.2,1
+S00108,15,Mild Disease,3,67,Male,22.2,1
+S00108,18,Mild Disease,3,67,Male,22.2,1
+S00108,21,Moderate Disease,4,67,Male,22.2,1
+S00108,24,Moderate Disease,4,67,Male,22.2,1
+S00108,27,Severe Disease,5,67,Male,22.2,1
+S00108,30,Severe Disease,5,67,Male,22.2,1
+S00108,33,Moderate Disease,4,67,Male,22.2,1
+S00108,36,Moderate Disease,4,67,Male,22.2,1
+S00108,39,Moderate Disease,4,67,Male,22.2,1
+S00108,42,Moderate Disease,4,67,Male,22.2,1
+S00108,45,Severe Disease,5,67,Male,22.2,1
+S00108,48,Severe Disease,5,67,Male,22.2,1
+S00108,51,Death,6,67,Male,22.2,1
+S00109,0,Mild Disease,3,73,Male,19.0,1
+S00109,3,Mild Disease,3,73,Male,19.0,1
+S00109,6,Mild Disease,3,73,Male,19.0,1
+S00109,9,Mild Disease,3,73,Male,19.0,1
+S00109,12,Mild Disease,3,73,Male,19.0,1
+S00109,15,Mild Disease,3,73,Male,19.0,1
+S00109,18,Mild Disease,3,73,Male,19.0,1
+S00109,21,Moderate Disease,4,73,Male,19.0,1
+S00109,24,Moderate Disease,4,73,Male,19.0,1
+S00109,27,Severe Disease,5,73,Male,19.0,1
+S00109,30,Severe Disease,5,73,Male,19.0,1
+S00109,33,Severe Disease,5,73,Male,19.0,1
+S00109,36,Severe Disease,5,73,Male,19.0,1
+S00109,39,Severe Disease,5,73,Male,19.0,1
+S00109,42,Severe Disease,5,73,Male,19.0,1
+S00109,45,Severe Disease,5,73,Male,19.0,1
+S00109,48,Severe Disease,5,73,Male,19.0,1
+S00109,51,Death,6,73,Male,19.0,1
+S00110,0,At Risk,1,38,Male,21.0,0
+S00110,3,At Risk,1,38,Male,21.0,0
+S00110,6,At Risk,1,38,Male,21.0,0
+S00110,9,At Risk,1,38,Male,21.0,0
+S00110,12,At Risk,1,38,Male,21.0,0
+S00110,15,At Risk,1,38,Male,21.0,0
+S00110,18,At Risk,1,38,Male,21.0,0
+S00110,21,At Risk,1,38,Male,21.0,0
+S00110,24,At Risk,1,38,Male,21.0,0
+S00110,27,At Risk,1,38,Male,21.0,0
+S00110,30,At Risk,1,38,Male,21.0,0
+S00110,33,At Risk,1,38,Male,21.0,0
+S00110,36,At Risk,1,38,Male,21.0,0
+S00110,39,At Risk,1,38,Male,21.0,0
+S00110,42,At Risk,1,38,Male,21.0,0
+S00110,45,At Risk,1,38,Male,21.0,0
+S00110,48,At Risk,1,38,Male,21.0,0
+S00110,51,At Risk,1,38,Male,21.0,0
+S00110,54,At Risk,1,38,Male,21.0,0
+S00110,57,At Risk,1,38,Male,21.0,0
+S00110,60,At Risk,1,38,Male,21.0,0
+S00110,63,At Risk,1,38,Male,21.0,0
+S00110,66,At Risk,1,38,Male,21.0,0
+S00110,69,At Risk,1,38,Male,21.0,0
+S00110,72,At Risk,1,38,Male,21.0,0
+S00111,0,At Risk,1,72,Male,29.1,0
+S00111,3,At Risk,1,72,Male,29.1,0
+S00111,6,Preclinical,2,72,Male,29.1,0
+S00111,9,Preclinical,2,72,Male,29.1,0
+S00111,12,Mild Disease,3,72,Male,29.1,0
+S00111,15,Mild Disease,3,72,Male,29.1,0
+S00111,18,Mild Disease,3,72,Male,29.1,0
+S00111,21,Mild Disease,3,72,Male,29.1,0
+S00111,24,Mild Disease,3,72,Male,29.1,0
+S00111,27,Mild Disease,3,72,Male,29.1,0
+S00111,30,Mild Disease,3,72,Male,29.1,0
+S00111,33,Mild Disease,3,72,Male,29.1,0
+S00111,36,Mild Disease,3,72,Male,29.1,0
+S00111,39,Mild Disease,3,72,Male,29.1,0
+S00111,42,Moderate Disease,4,72,Male,29.1,0
+S00111,45,Moderate Disease,4,72,Male,29.1,0
+S00111,48,Moderate Disease,4,72,Male,29.1,0
+S00111,51,Severe Disease,5,72,Male,29.1,0
+S00111,54,Severe Disease,5,72,Male,29.1,0
+S00111,57,Death,6,72,Male,29.1,0
+S00112,0,At Risk,1,60,Female,24.1,0
+S00112,3,At Risk,1,60,Female,24.1,0
+S00112,6,At Risk,1,60,Female,24.1,0
+S00112,9,At Risk,1,60,Female,24.1,0
+S00112,12,At Risk,1,60,Female,24.1,0
+S00112,15,At Risk,1,60,Female,24.1,0
+S00112,18,At Risk,1,60,Female,24.1,0
+S00112,21,At Risk,1,60,Female,24.1,0
+S00112,24,At Risk,1,60,Female,24.1,0
+S00112,27,At Risk,1,60,Female,24.1,0
+S00112,30,At Risk,1,60,Female,24.1,0
+S00112,33,At Risk,1,60,Female,24.1,0
+S00112,36,At Risk,1,60,Female,24.1,0
+S00112,39,At Risk,1,60,Female,24.1,0
+S00112,42,At Risk,1,60,Female,24.1,0
+S00112,45,At Risk,1,60,Female,24.1,0
+S00112,48,At Risk,1,60,Female,24.1,0
+S00112,51,At Risk,1,60,Female,24.1,0
+S00112,54,At Risk,1,60,Female,24.1,0
+S00112,57,At Risk,1,60,Female,24.1,0
+S00112,60,At Risk,1,60,Female,24.1,0
+S00112,63,At Risk,1,60,Female,24.1,0
+S00112,66,At Risk,1,60,Female,24.1,0
+S00112,69,At Risk,1,60,Female,24.1,0
+S00112,72,At Risk,1,60,Female,24.1,0
+S00113,0,At Risk,1,54,Female,27.5,0
+S00113,3,At Risk,1,54,Female,27.5,0
+S00113,6,Healthy,0,54,Female,27.5,0
+S00113,9,At Risk,1,54,Female,27.5,0
+S00113,12,At Risk,1,54,Female,27.5,0
+S00113,15,At Risk,1,54,Female,27.5,0
+S00113,18,At Risk,1,54,Female,27.5,0
+S00113,21,At Risk,1,54,Female,27.5,0
+S00113,24,At Risk,1,54,Female,27.5,0
+S00113,27,At Risk,1,54,Female,27.5,0
+S00113,30,At Risk,1,54,Female,27.5,0
+S00113,33,Preclinical,2,54,Female,27.5,0
+S00113,36,Mild Disease,3,54,Female,27.5,0
+S00113,39,Mild Disease,3,54,Female,27.5,0
+S00113,42,Mild Disease,3,54,Female,27.5,0
+S00113,45,Mild Disease,3,54,Female,27.5,0
+S00113,48,Moderate Disease,4,54,Female,27.5,0
+S00113,51,Moderate Disease,4,54,Female,27.5,0
+S00113,54,Moderate Disease,4,54,Female,27.5,0
+S00113,57,Moderate Disease,4,54,Female,27.5,0
+S00113,60,Moderate Disease,4,54,Female,27.5,0
+S00113,63,Moderate Disease,4,54,Female,27.5,0
+S00113,66,Severe Disease,5,54,Female,27.5,0
+S00113,69,Severe Disease,5,54,Female,27.5,0
+S00113,72,Death,6,54,Female,27.5,0
+S00114,0,Preclinical,2,59,Male,24.6,1
+S00114,3,Mild Disease,3,59,Male,24.6,1
+S00114,6,Mild Disease,3,59,Male,24.6,1
+S00114,9,Moderate Disease,4,59,Male,24.6,1
+S00114,12,Severe Disease,5,59,Male,24.6,1
+S00114,15,Severe Disease,5,59,Male,24.6,1
+S00114,18,Severe Disease,5,59,Male,24.6,1
+S00114,21,Severe Disease,5,59,Male,24.6,1
+S00114,24,Severe Disease,5,59,Male,24.6,1
+S00114,27,Severe Disease,5,59,Male,24.6,1
+S00114,30,Severe Disease,5,59,Male,24.6,1
+S00114,33,Death,6,59,Male,24.6,1
+S00115,0,Healthy,0,48,Female,25.3,1
+S00115,3,At Risk,1,48,Female,25.3,1
+S00115,6,At Risk,1,48,Female,25.3,1
+S00115,9,At Risk,1,48,Female,25.3,1
+S00115,12,At Risk,1,48,Female,25.3,1
+S00115,15,At Risk,1,48,Female,25.3,1
+S00115,18,At Risk,1,48,Female,25.3,1
+S00115,21,At Risk,1,48,Female,25.3,1
+S00115,24,At Risk,1,48,Female,25.3,1
+S00115,27,At Risk,1,48,Female,25.3,1
+S00115,30,At Risk,1,48,Female,25.3,1
+S00115,33,Preclinical,2,48,Female,25.3,1
+S00115,36,Mild Disease,3,48,Female,25.3,1
+S00115,39,Mild Disease,3,48,Female,25.3,1
+S00115,42,Mild Disease,3,48,Female,25.3,1
+S00115,45,Moderate Disease,4,48,Female,25.3,1
+S00115,48,Severe Disease,5,48,Female,25.3,1
+S00115,51,Severe Disease,5,48,Female,25.3,1
+S00115,54,Death,6,48,Female,25.3,1
+S00116,0,At Risk,1,36,Male,28.1,1
+S00116,3,At Risk,1,36,Male,28.1,1
+S00116,6,At Risk,1,36,Male,28.1,1
+S00116,9,At Risk,1,36,Male,28.1,1
+S00116,12,At Risk,1,36,Male,28.1,1
+S00116,15,At Risk,1,36,Male,28.1,1
+S00116,18,Preclinical,2,36,Male,28.1,1
+S00116,21,Mild Disease,3,36,Male,28.1,1
+S00116,24,Mild Disease,3,36,Male,28.1,1
+S00116,27,Moderate Disease,4,36,Male,28.1,1
+S00116,30,Moderate Disease,4,36,Male,28.1,1
+S00116,33,Severe Disease,5,36,Male,28.1,1
+S00116,36,Death,6,36,Male,28.1,1
+S00117,0,Healthy,0,57,Female,26.7,1
+S00117,3,At Risk,1,57,Female,26.7,1
+S00117,6,At Risk,1,57,Female,26.7,1
+S00117,9,Preclinical,2,57,Female,26.7,1
+S00117,12,Mild Disease,3,57,Female,26.7,1
+S00117,15,Moderate Disease,4,57,Female,26.7,1
+S00117,18,Moderate Disease,4,57,Female,26.7,1
+S00117,21,Moderate Disease,4,57,Female,26.7,1
+S00117,24,Severe Disease,5,57,Female,26.7,1
+S00117,27,Death,6,57,Female,26.7,1
+S00118,0,Preclinical,2,44,Female,25.6,0
+S00118,3,Preclinical,2,44,Female,25.6,0
+S00118,6,Preclinical,2,44,Female,25.6,0
+S00118,9,Preclinical,2,44,Female,25.6,0
+S00118,12,Preclinical,2,44,Female,25.6,0
+S00118,15,Preclinical,2,44,Female,25.6,0
+S00118,18,Preclinical,2,44,Female,25.6,0
+S00118,21,Preclinical,2,44,Female,25.6,0
+S00118,24,Preclinical,2,44,Female,25.6,0
+S00118,27,Preclinical,2,44,Female,25.6,0
+S00118,30,Preclinical,2,44,Female,25.6,0
+S00118,33,Preclinical,2,44,Female,25.6,0
+S00118,36,Preclinical,2,44,Female,25.6,0
+S00118,39,Preclinical,2,44,Female,25.6,0
+S00118,42,Preclinical,2,44,Female,25.6,0
+S00118,45,Preclinical,2,44,Female,25.6,0
+S00118,48,Preclinical,2,44,Female,25.6,0
+S00118,51,Mild Disease,3,44,Female,25.6,0
+S00118,54,Mild Disease,3,44,Female,25.6,0
+S00118,57,Mild Disease,3,44,Female,25.6,0
+S00118,60,Preclinical,2,44,Female,25.6,0
+S00118,63,Preclinical,2,44,Female,25.6,0
+S00118,66,Preclinical,2,44,Female,25.6,0
+S00118,69,Preclinical,2,44,Female,25.6,0
+S00118,72,Preclinical,2,44,Female,25.6,0
+S00119,0,Mild Disease,3,65,Male,23.1,0
+S00119,3,Mild Disease,3,65,Male,23.1,0
+S00119,6,Mild Disease,3,65,Male,23.1,0
+S00119,9,Moderate Disease,4,65,Male,23.1,0
+S00119,12,Severe Disease,5,65,Male,23.1,0
+S00119,15,Death,6,65,Male,23.1,0
+S00120,0,Severe Disease,5,82,Female,22.1,1
+S00120,3,Death,6,82,Female,22.1,1
+S00121,0,Moderate Disease,4,41,Male,26.0,1
+S00121,3,Moderate Disease,4,41,Male,26.0,1
+S00121,6,Moderate Disease,4,41,Male,26.0,1
+S00121,9,Severe Disease,5,41,Male,26.0,1
+S00121,12,Death,6,41,Male,26.0,1
+S00122,0,Severe Disease,5,67,Female,22.1,0
+S00122,3,Severe Disease,5,67,Female,22.1,0
+S00122,6,Death,6,67,Female,22.1,0
+S00123,0,At Risk,1,51,Male,23.3,0
+S00123,3,Healthy,0,51,Male,23.3,0
+S00123,6,Healthy,0,51,Male,23.3,0
+S00123,9,Healthy,0,51,Male,23.3,0
+S00123,12,Healthy,0,51,Male,23.3,0
+S00123,15,Healthy,0,51,Male,23.3,0
+S00123,18,Healthy,0,51,Male,23.3,0
+S00123,21,Healthy,0,51,Male,23.3,0
+S00123,24,Healthy,0,51,Male,23.3,0
+S00123,27,Healthy,0,51,Male,23.3,0
+S00123,30,Healthy,0,51,Male,23.3,0
+S00123,33,Healthy,0,51,Male,23.3,0
+S00123,36,Healthy,0,51,Male,23.3,0
+S00123,39,Healthy,0,51,Male,23.3,0
+S00123,42,Healthy,0,51,Male,23.3,0
+S00123,45,Healthy,0,51,Male,23.3,0
+S00123,48,Healthy,0,51,Male,23.3,0
+S00123,51,Healthy,0,51,Male,23.3,0
+S00123,54,Healthy,0,51,Male,23.3,0
+S00123,57,Healthy,0,51,Male,23.3,0
+S00123,60,Healthy,0,51,Male,23.3,0
+S00123,63,Healthy,0,51,Male,23.3,0
+S00123,66,Healthy,0,51,Male,23.3,0
+S00123,69,Healthy,0,51,Male,23.3,0
+S00123,72,Healthy,0,51,Male,23.3,0
+S00124,0,At Risk,1,43,Female,28.9,0
+S00124,3,Healthy,0,43,Female,28.9,0
+S00124,6,Healthy,0,43,Female,28.9,0
+S00124,9,Healthy,0,43,Female,28.9,0
+S00124,12,Healthy,0,43,Female,28.9,0
+S00124,15,Healthy,0,43,Female,28.9,0
+S00124,18,Healthy,0,43,Female,28.9,0
+S00124,21,Healthy,0,43,Female,28.9,0
+S00124,24,Healthy,0,43,Female,28.9,0
+S00124,27,Healthy,0,43,Female,28.9,0
+S00124,30,Healthy,0,43,Female,28.9,0
+S00124,33,Healthy,0,43,Female,28.9,0
+S00124,36,At Risk,1,43,Female,28.9,0
+S00124,39,At Risk,1,43,Female,28.9,0
+S00124,42,Preclinical,2,43,Female,28.9,0
+S00124,45,Preclinical,2,43,Female,28.9,0
+S00124,48,Preclinical,2,43,Female,28.9,0
+S00124,51,Preclinical,2,43,Female,28.9,0
+S00124,54,Preclinical,2,43,Female,28.9,0
+S00124,57,Preclinical,2,43,Female,28.9,0
+S00124,60,Preclinical,2,43,Female,28.9,0
+S00124,63,Preclinical,2,43,Female,28.9,0
+S00124,66,Preclinical,2,43,Female,28.9,0
+S00124,69,Preclinical,2,43,Female,28.9,0
+S00124,72,Preclinical,2,43,Female,28.9,0
+S00125,0,Moderate Disease,4,35,Female,25.9,0
+S00125,3,Severe Disease,5,35,Female,25.9,0
+S00125,6,Severe Disease,5,35,Female,25.9,0
+S00125,9,Severe Disease,5,35,Female,25.9,0
+S00125,12,Severe Disease,5,35,Female,25.9,0
+S00125,15,Severe Disease,5,35,Female,25.9,0
+S00125,18,Severe Disease,5,35,Female,25.9,0
+S00125,21,Severe Disease,5,35,Female,25.9,0
+S00125,24,Death,6,35,Female,25.9,0
+S00126,0,Preclinical,2,43,Female,20.1,1
+S00126,3,Mild Disease,3,43,Female,20.1,1
+S00126,6,Moderate Disease,4,43,Female,20.1,1
+S00126,9,Moderate Disease,4,43,Female,20.1,1
+S00126,12,Severe Disease,5,43,Female,20.1,1
+S00126,15,Death,6,43,Female,20.1,1
+S00127,0,Mild Disease,3,78,Female,20.8,0
+S00127,3,Mild Disease,3,78,Female,20.8,0
+S00127,6,Mild Disease,3,78,Female,20.8,0
+S00127,9,Mild Disease,3,78,Female,20.8,0
+S00127,12,Mild Disease,3,78,Female,20.8,0
+S00127,15,Mild Disease,3,78,Female,20.8,0
+S00127,18,Mild Disease,3,78,Female,20.8,0
+S00127,21,Mild Disease,3,78,Female,20.8,0
+S00127,24,Mild Disease,3,78,Female,20.8,0
+S00127,27,Mild Disease,3,78,Female,20.8,0
+S00127,30,Mild Disease,3,78,Female,20.8,0
+S00127,33,Mild Disease,3,78,Female,20.8,0
+S00127,36,Mild Disease,3,78,Female,20.8,0
+S00127,39,Mild Disease,3,78,Female,20.8,0
+S00127,42,Mild Disease,3,78,Female,20.8,0
+S00127,45,Mild Disease,3,78,Female,20.8,0
+S00127,48,Mild Disease,3,78,Female,20.8,0
+S00127,51,Moderate Disease,4,78,Female,20.8,0
+S00127,54,Severe Disease,5,78,Female,20.8,0
+S00127,57,Severe Disease,5,78,Female,20.8,0
+S00127,60,Severe Disease,5,78,Female,20.8,0
+S00127,63,Death,6,78,Female,20.8,0
+S00128,0,Severe Disease,5,47,Female,28.5,0
+S00128,3,Severe Disease,5,47,Female,28.5,0
+S00128,6,Severe Disease,5,47,Female,28.5,0
+S00128,9,Severe Disease,5,47,Female,28.5,0
+S00128,12,Death,6,47,Female,28.5,0
+S00129,0,Healthy,0,53,Female,26.4,0
+S00129,3,Healthy,0,53,Female,26.4,0
+S00129,6,Healthy,0,53,Female,26.4,0
+S00129,9,Healthy,0,53,Female,26.4,0
+S00129,12,Healthy,0,53,Female,26.4,0
+S00129,15,Healthy,0,53,Female,26.4,0
+S00129,18,Healthy,0,53,Female,26.4,0
+S00129,21,Healthy,0,53,Female,26.4,0
+S00129,24,Healthy,0,53,Female,26.4,0
+S00129,27,Healthy,0,53,Female,26.4,0
+S00129,30,Healthy,0,53,Female,26.4,0
+S00129,33,Healthy,0,53,Female,26.4,0
+S00129,36,Healthy,0,53,Female,26.4,0
+S00129,39,Healthy,0,53,Female,26.4,0
+S00129,42,Healthy,0,53,Female,26.4,0
+S00129,45,Healthy,0,53,Female,26.4,0
+S00129,48,Healthy,0,53,Female,26.4,0
+S00129,51,At Risk,1,53,Female,26.4,0
+S00129,54,At Risk,1,53,Female,26.4,0
+S00129,57,At Risk,1,53,Female,26.4,0
+S00129,60,At Risk,1,53,Female,26.4,0
+S00129,63,At Risk,1,53,Female,26.4,0
+S00129,66,At Risk,1,53,Female,26.4,0
+S00129,69,Preclinical,2,53,Female,26.4,0
+S00129,72,At Risk,1,53,Female,26.4,0
+S00130,0,Preclinical,2,38,Male,32.3,0
+S00130,3,Mild Disease,3,38,Male,32.3,0
+S00130,6,Mild Disease,3,38,Male,32.3,0
+S00130,9,Mild Disease,3,38,Male,32.3,0
+S00130,12,Moderate Disease,4,38,Male,32.3,0
+S00130,15,Moderate Disease,4,38,Male,32.3,0
+S00130,18,Mild Disease,3,38,Male,32.3,0
+S00130,21,Moderate Disease,4,38,Male,32.3,0
+S00130,24,Moderate Disease,4,38,Male,32.3,0
+S00130,27,Moderate Disease,4,38,Male,32.3,0
+S00130,30,Moderate Disease,4,38,Male,32.3,0
+S00130,33,Moderate Disease,4,38,Male,32.3,0
+S00130,36,Severe Disease,5,38,Male,32.3,0
+S00130,39,Death,6,38,Male,32.3,0
+S00131,0,At Risk,1,70,Female,16.9,0
+S00131,3,At Risk,1,70,Female,16.9,0
+S00131,6,At Risk,1,70,Female,16.9,0
+S00131,9,At Risk,1,70,Female,16.9,0
+S00131,12,Preclinical,2,70,Female,16.9,0
+S00131,15,Preclinical,2,70,Female,16.9,0
+S00131,18,Preclinical,2,70,Female,16.9,0
+S00131,21,Preclinical,2,70,Female,16.9,0
+S00131,24,Mild Disease,3,70,Female,16.9,0
+S00131,27,Mild Disease,3,70,Female,16.9,0
+S00131,30,Mild Disease,3,70,Female,16.9,0
+S00131,33,Moderate Disease,4,70,Female,16.9,0
+S00131,36,Moderate Disease,4,70,Female,16.9,0
+S00131,39,Moderate Disease,4,70,Female,16.9,0
+S00131,42,Moderate Disease,4,70,Female,16.9,0
+S00131,45,Mild Disease,3,70,Female,16.9,0
+S00131,48,Mild Disease,3,70,Female,16.9,0
+S00131,51,Mild Disease,3,70,Female,16.9,0
+S00131,54,Moderate Disease,4,70,Female,16.9,0
+S00131,57,Moderate Disease,4,70,Female,16.9,0
+S00131,60,Severe Disease,5,70,Female,16.9,0
+S00131,63,Severe Disease,5,70,Female,16.9,0
+S00131,66,Moderate Disease,4,70,Female,16.9,0
+S00131,69,Severe Disease,5,70,Female,16.9,0
+S00131,72,Severe Disease,5,70,Female,16.9,0
+S00132,0,Healthy,0,44,Female,26.6,0
+S00132,3,Healthy,0,44,Female,26.6,0
+S00132,6,Healthy,0,44,Female,26.6,0
+S00132,9,Healthy,0,44,Female,26.6,0
+S00132,12,Healthy,0,44,Female,26.6,0
+S00132,15,Healthy,0,44,Female,26.6,0
+S00132,18,Healthy,0,44,Female,26.6,0
+S00132,21,Healthy,0,44,Female,26.6,0
+S00132,24,Healthy,0,44,Female,26.6,0
+S00132,27,Healthy,0,44,Female,26.6,0
+S00132,30,Healthy,0,44,Female,26.6,0
+S00132,33,Healthy,0,44,Female,26.6,0
+S00132,36,Healthy,0,44,Female,26.6,0
+S00132,39,Healthy,0,44,Female,26.6,0
+S00132,42,Healthy,0,44,Female,26.6,0
+S00132,45,At Risk,1,44,Female,26.6,0
+S00132,48,At Risk,1,44,Female,26.6,0
+S00132,51,At Risk,1,44,Female,26.6,0
+S00132,54,At Risk,1,44,Female,26.6,0
+S00132,57,At Risk,1,44,Female,26.6,0
+S00132,60,At Risk,1,44,Female,26.6,0
+S00132,63,At Risk,1,44,Female,26.6,0
+S00132,66,At Risk,1,44,Female,26.6,0
+S00132,69,Healthy,0,44,Female,26.6,0
+S00132,72,Healthy,0,44,Female,26.6,0
+S00133,0,Moderate Disease,4,64,Female,24.0,1
+S00133,3,Moderate Disease,4,64,Female,24.0,1
+S00133,6,Moderate Disease,4,64,Female,24.0,1
+S00133,9,Moderate Disease,4,64,Female,24.0,1
+S00133,12,Moderate Disease,4,64,Female,24.0,1
+S00133,15,Moderate Disease,4,64,Female,24.0,1
+S00133,18,Moderate Disease,4,64,Female,24.0,1
+S00133,21,Moderate Disease,4,64,Female,24.0,1
+S00133,24,Moderate Disease,4,64,Female,24.0,1
+S00133,27,Moderate Disease,4,64,Female,24.0,1
+S00133,30,Moderate Disease,4,64,Female,24.0,1
+S00133,33,Moderate Disease,4,64,Female,24.0,1
+S00133,36,Severe Disease,5,64,Female,24.0,1
+S00133,39,Severe Disease,5,64,Female,24.0,1
+S00133,42,Death,6,64,Female,24.0,1
+S00134,0,Preclinical,2,52,Female,22.4,1
+S00134,3,Preclinical,2,52,Female,22.4,1
+S00134,6,Preclinical,2,52,Female,22.4,1
+S00134,9,Preclinical,2,52,Female,22.4,1
+S00134,12,Preclinical,2,52,Female,22.4,1
+S00134,15,Preclinical,2,52,Female,22.4,1
+S00134,18,Mild Disease,3,52,Female,22.4,1
+S00134,21,Mild Disease,3,52,Female,22.4,1
+S00134,24,Mild Disease,3,52,Female,22.4,1
+S00134,27,Mild Disease,3,52,Female,22.4,1
+S00134,30,Mild Disease,3,52,Female,22.4,1
+S00134,33,Mild Disease,3,52,Female,22.4,1
+S00134,36,Mild Disease,3,52,Female,22.4,1
+S00134,39,Mild Disease,3,52,Female,22.4,1
+S00134,42,Moderate Disease,4,52,Female,22.4,1
+S00134,45,Moderate Disease,4,52,Female,22.4,1
+S00134,48,Severe Disease,5,52,Female,22.4,1
+S00134,51,Severe Disease,5,52,Female,22.4,1
+S00134,54,Death,6,52,Female,22.4,1
+S00135,0,Moderate Disease,4,76,Male,28.3,0
+S00135,3,Moderate Disease,4,76,Male,28.3,0
+S00135,6,Moderate Disease,4,76,Male,28.3,0
+S00135,9,Severe Disease,5,76,Male,28.3,0
+S00135,12,Severe Disease,5,76,Male,28.3,0
+S00135,15,Severe Disease,5,76,Male,28.3,0
+S00135,18,Severe Disease,5,76,Male,28.3,0
+S00135,21,Moderate Disease,4,76,Male,28.3,0
+S00135,24,Severe Disease,5,76,Male,28.3,0
+S00135,27,Severe Disease,5,76,Male,28.3,0
+S00135,30,Death,6,76,Male,28.3,0
+S00136,0,Healthy,0,47,Female,27.3,0
+S00136,3,Healthy,0,47,Female,27.3,0
+S00136,6,Healthy,0,47,Female,27.3,0
+S00136,9,Healthy,0,47,Female,27.3,0
+S00136,12,Healthy,0,47,Female,27.3,0
+S00136,15,Healthy,0,47,Female,27.3,0
+S00136,18,Healthy,0,47,Female,27.3,0
+S00136,21,Healthy,0,47,Female,27.3,0
+S00136,24,Healthy,0,47,Female,27.3,0
+S00136,27,Healthy,0,47,Female,27.3,0
+S00136,30,Healthy,0,47,Female,27.3,0
+S00136,33,Healthy,0,47,Female,27.3,0
+S00136,36,Healthy,0,47,Female,27.3,0
+S00136,39,Healthy,0,47,Female,27.3,0
+S00136,42,Healthy,0,47,Female,27.3,0
+S00136,45,Healthy,0,47,Female,27.3,0
+S00136,48,Healthy,0,47,Female,27.3,0
+S00136,51,Healthy,0,47,Female,27.3,0
+S00136,54,At Risk,1,47,Female,27.3,0
+S00136,57,At Risk,1,47,Female,27.3,0
+S00136,60,At Risk,1,47,Female,27.3,0
+S00136,63,At Risk,1,47,Female,27.3,0
+S00136,66,At Risk,1,47,Female,27.3,0
+S00136,69,At Risk,1,47,Female,27.3,0
+S00136,72,At Risk,1,47,Female,27.3,0
+S00137,0,Healthy,0,42,Male,25.9,0
+S00137,3,Healthy,0,42,Male,25.9,0
+S00137,6,Healthy,0,42,Male,25.9,0
+S00137,9,Healthy,0,42,Male,25.9,0
+S00137,12,Healthy,0,42,Male,25.9,0
+S00137,15,Healthy,0,42,Male,25.9,0
+S00137,18,Healthy,0,42,Male,25.9,0
+S00137,21,Healthy,0,42,Male,25.9,0
+S00137,24,Healthy,0,42,Male,25.9,0
+S00137,27,At Risk,1,42,Male,25.9,0
+S00137,30,At Risk,1,42,Male,25.9,0
+S00137,33,At Risk,1,42,Male,25.9,0
+S00137,36,At Risk,1,42,Male,25.9,0
+S00137,39,At Risk,1,42,Male,25.9,0
+S00137,42,At Risk,1,42,Male,25.9,0
+S00137,45,At Risk,1,42,Male,25.9,0
+S00137,48,At Risk,1,42,Male,25.9,0
+S00137,51,Preclinical,2,42,Male,25.9,0
+S00137,54,Preclinical,2,42,Male,25.9,0
+S00137,57,Preclinical,2,42,Male,25.9,0
+S00137,60,Mild Disease,3,42,Male,25.9,0
+S00137,63,Mild Disease,3,42,Male,25.9,0
+S00137,66,Mild Disease,3,42,Male,25.9,0
+S00137,69,Mild Disease,3,42,Male,25.9,0
+S00137,72,Mild Disease,3,42,Male,25.9,0
+S00138,0,At Risk,1,83,Female,28.0,1
+S00138,3,At Risk,1,83,Female,28.0,1
+S00138,6,Preclinical,2,83,Female,28.0,1
+S00138,9,Preclinical,2,83,Female,28.0,1
+S00138,12,Preclinical,2,83,Female,28.0,1
+S00138,15,Preclinical,2,83,Female,28.0,1
+S00138,18,Mild Disease,3,83,Female,28.0,1
+S00138,21,Mild Disease,3,83,Female,28.0,1
+S00138,24,Mild Disease,3,83,Female,28.0,1
+S00138,27,Mild Disease,3,83,Female,28.0,1
+S00138,30,Moderate Disease,4,83,Female,28.0,1
+S00138,33,Severe Disease,5,83,Female,28.0,1
+S00138,36,Severe Disease,5,83,Female,28.0,1
+S00138,39,Death,6,83,Female,28.0,1
+S00139,0,At Risk,1,57,Female,23.3,1
+S00139,3,Preclinical,2,57,Female,23.3,1
+S00139,6,Preclinical,2,57,Female,23.3,1
+S00139,9,Preclinical,2,57,Female,23.3,1
+S00139,12,Mild Disease,3,57,Female,23.3,1
+S00139,15,Moderate Disease,4,57,Female,23.3,1
+S00139,18,Moderate Disease,4,57,Female,23.3,1
+S00139,21,Moderate Disease,4,57,Female,23.3,1
+S00139,24,Moderate Disease,4,57,Female,23.3,1
+S00139,27,Moderate Disease,4,57,Female,23.3,1
+S00139,30,Mild Disease,3,57,Female,23.3,1
+S00139,33,Moderate Disease,4,57,Female,23.3,1
+S00139,36,Moderate Disease,4,57,Female,23.3,1
+S00139,39,Severe Disease,5,57,Female,23.3,1
+S00139,42,Severe Disease,5,57,Female,23.3,1
+S00139,45,Death,6,57,Female,23.3,1
+S00140,0,Mild Disease,3,71,Female,18.0,1
+S00140,3,Mild Disease,3,71,Female,18.0,1
+S00140,6,Mild Disease,3,71,Female,18.0,1
+S00140,9,Moderate Disease,4,71,Female,18.0,1
+S00140,12,Moderate Disease,4,71,Female,18.0,1
+S00140,15,Moderate Disease,4,71,Female,18.0,1
+S00140,18,Moderate Disease,4,71,Female,18.0,1
+S00140,21,Moderate Disease,4,71,Female,18.0,1
+S00140,24,Moderate Disease,4,71,Female,18.0,1
+S00140,27,Moderate Disease,4,71,Female,18.0,1
+S00140,30,Severe Disease,5,71,Female,18.0,1
+S00140,33,Severe Disease,5,71,Female,18.0,1
+S00140,36,Death,6,71,Female,18.0,1
+S00141,0,At Risk,1,53,Male,26.6,0
+S00141,3,At Risk,1,53,Male,26.6,0
+S00141,6,Preclinical,2,53,Male,26.6,0
+S00141,9,Preclinical,2,53,Male,26.6,0
+S00141,12,Preclinical,2,53,Male,26.6,0
+S00141,15,Preclinical,2,53,Male,26.6,0
+S00141,18,Preclinical,2,53,Male,26.6,0
+S00141,21,Preclinical,2,53,Male,26.6,0
+S00141,24,Preclinical,2,53,Male,26.6,0
+S00141,27,Preclinical,2,53,Male,26.6,0
+S00141,30,Preclinical,2,53,Male,26.6,0
+S00141,33,Preclinical,2,53,Male,26.6,0
+S00141,36,Preclinical,2,53,Male,26.6,0
+S00141,39,Preclinical,2,53,Male,26.6,0
+S00141,42,Preclinical,2,53,Male,26.6,0
+S00141,45,Preclinical,2,53,Male,26.6,0
+S00141,48,Preclinical,2,53,Male,26.6,0
+S00141,51,Preclinical,2,53,Male,26.6,0
+S00141,54,Preclinical,2,53,Male,26.6,0
+S00141,57,Preclinical,2,53,Male,26.6,0
+S00141,60,Preclinical,2,53,Male,26.6,0
+S00141,63,Preclinical,2,53,Male,26.6,0
+S00141,66,Preclinical,2,53,Male,26.6,0
+S00141,69,Preclinical,2,53,Male,26.6,0
+S00141,72,Mild Disease,3,53,Male,26.6,0
+S00142,0,At Risk,1,83,Female,27.6,0
+S00142,3,Preclinical,2,83,Female,27.6,0
+S00142,6,Preclinical,2,83,Female,27.6,0
+S00142,9,Preclinical,2,83,Female,27.6,0
+S00142,12,Preclinical,2,83,Female,27.6,0
+S00142,15,Mild Disease,3,83,Female,27.6,0
+S00142,18,Moderate Disease,4,83,Female,27.6,0
+S00142,21,Moderate Disease,4,83,Female,27.6,0
+S00142,24,Severe Disease,5,83,Female,27.6,0
+S00142,27,Death,6,83,Female,27.6,0
+S00143,0,Mild Disease,3,77,Female,25.0,0
+S00143,3,Mild Disease,3,77,Female,25.0,0
+S00143,6,Mild Disease,3,77,Female,25.0,0
+S00143,9,Mild Disease,3,77,Female,25.0,0
+S00143,12,Mild Disease,3,77,Female,25.0,0
+S00143,15,Mild Disease,3,77,Female,25.0,0
+S00143,18,Mild Disease,3,77,Female,25.0,0
+S00143,21,Mild Disease,3,77,Female,25.0,0
+S00143,24,Moderate Disease,4,77,Female,25.0,0
+S00143,27,Moderate Disease,4,77,Female,25.0,0
+S00143,30,Severe Disease,5,77,Female,25.0,0
+S00143,33,Severe Disease,5,77,Female,25.0,0
+S00143,36,Death,6,77,Female,25.0,0
+S00144,0,Healthy,0,58,Male,25.7,0
+S00144,3,Healthy,0,58,Male,25.7,0
+S00144,6,Healthy,0,58,Male,25.7,0
+S00144,9,Healthy,0,58,Male,25.7,0
+S00144,12,Healthy,0,58,Male,25.7,0
+S00144,15,Healthy,0,58,Male,25.7,0
+S00144,18,Healthy,0,58,Male,25.7,0
+S00144,21,Healthy,0,58,Male,25.7,0
+S00144,24,Healthy,0,58,Male,25.7,0
+S00144,27,Healthy,0,58,Male,25.7,0
+S00144,30,Healthy,0,58,Male,25.7,0
+S00144,33,Healthy,0,58,Male,25.7,0
+S00144,36,Healthy,0,58,Male,25.7,0
+S00144,39,Healthy,0,58,Male,25.7,0
+S00144,42,Healthy,0,58,Male,25.7,0
+S00144,45,Healthy,0,58,Male,25.7,0
+S00144,48,Healthy,0,58,Male,25.7,0
+S00144,51,Healthy,0,58,Male,25.7,0
+S00144,54,Healthy,0,58,Male,25.7,0
+S00144,57,Healthy,0,58,Male,25.7,0
+S00144,60,At Risk,1,58,Male,25.7,0
+S00144,63,At Risk,1,58,Male,25.7,0
+S00144,66,At Risk,1,58,Male,25.7,0
+S00144,69,At Risk,1,58,Male,25.7,0
+S00144,72,At Risk,1,58,Male,25.7,0
+S00145,0,At Risk,1,66,Female,15.0,1
+S00145,3,Preclinical,2,66,Female,15.0,1
+S00145,6,Mild Disease,3,66,Female,15.0,1
+S00145,9,Mild Disease,3,66,Female,15.0,1
+S00145,12,Moderate Disease,4,66,Female,15.0,1
+S00145,15,Severe Disease,5,66,Female,15.0,1
+S00145,18,Death,6,66,Female,15.0,1
+S00146,0,Preclinical,2,47,Female,22.0,1
+S00146,3,Preclinical,2,47,Female,22.0,1
+S00146,6,Mild Disease,3,47,Female,22.0,1
+S00146,9,Mild Disease,3,47,Female,22.0,1
+S00146,12,Mild Disease,3,47,Female,22.0,1
+S00146,15,Mild Disease,3,47,Female,22.0,1
+S00146,18,Moderate Disease,4,47,Female,22.0,1
+S00146,21,Moderate Disease,4,47,Female,22.0,1
+S00146,24,Moderate Disease,4,47,Female,22.0,1
+S00146,27,Severe Disease,5,47,Female,22.0,1
+S00146,30,Death,6,47,Female,22.0,1
+S00147,0,At Risk,1,74,Female,25.7,0
+S00147,3,Preclinical,2,74,Female,25.7,0
+S00147,6,Preclinical,2,74,Female,25.7,0
+S00147,9,Mild Disease,3,74,Female,25.7,0
+S00147,12,Moderate Disease,4,74,Female,25.7,0
+S00147,15,Severe Disease,5,74,Female,25.7,0
+S00147,18,Severe Disease,5,74,Female,25.7,0
+S00147,21,Death,6,74,Female,25.7,0
+S00148,0,Preclinical,2,66,Male,20.9,0
+S00148,3,Preclinical,2,66,Male,20.9,0
+S00148,6,Preclinical,2,66,Male,20.9,0
+S00148,9,Preclinical,2,66,Male,20.9,0
+S00148,12,Preclinical,2,66,Male,20.9,0
+S00148,15,At Risk,1,66,Male,20.9,0
+S00148,18,Preclinical,2,66,Male,20.9,0
+S00148,21,Preclinical,2,66,Male,20.9,0
+S00148,24,Mild Disease,3,66,Male,20.9,0
+S00148,27,Mild Disease,3,66,Male,20.9,0
+S00148,30,Mild Disease,3,66,Male,20.9,0
+S00148,33,Moderate Disease,4,66,Male,20.9,0
+S00148,36,Moderate Disease,4,66,Male,20.9,0
+S00148,39,Moderate Disease,4,66,Male,20.9,0
+S00148,42,Severe Disease,5,66,Male,20.9,0
+S00148,45,Death,6,66,Male,20.9,0
+S00149,0,Moderate Disease,4,79,Male,18.2,1
+S00149,3,Moderate Disease,4,79,Male,18.2,1
+S00149,6,Moderate Disease,4,79,Male,18.2,1
+S00149,9,Moderate Disease,4,79,Male,18.2,1
+S00149,12,Severe Disease,5,79,Male,18.2,1
+S00149,15,Severe Disease,5,79,Male,18.2,1
+S00149,18,Death,6,79,Male,18.2,1
+S00150,0,Mild Disease,3,51,Male,27.3,0
+S00150,3,Moderate Disease,4,51,Male,27.3,0
+S00150,6,Moderate Disease,4,51,Male,27.3,0
+S00150,9,Severe Disease,5,51,Male,27.3,0
+S00150,12,Severe Disease,5,51,Male,27.3,0
+S00150,15,Severe Disease,5,51,Male,27.3,0
+S00150,18,Severe Disease,5,51,Male,27.3,0
+S00150,21,Severe Disease,5,51,Male,27.3,0
+S00150,24,Severe Disease,5,51,Male,27.3,0
+S00150,27,Severe Disease,5,51,Male,27.3,0
+S00150,30,Severe Disease,5,51,Male,27.3,0
+S00150,33,Severe Disease,5,51,Male,27.3,0
+S00150,36,Severe Disease,5,51,Male,27.3,0
+S00150,39,Severe Disease,5,51,Male,27.3,0
+S00150,42,Severe Disease,5,51,Male,27.3,0
+S00150,45,Severe Disease,5,51,Male,27.3,0
+S00150,48,Severe Disease,5,51,Male,27.3,0
+S00150,51,Severe Disease,5,51,Male,27.3,0
+S00150,54,Severe Disease,5,51,Male,27.3,0
+S00150,57,Severe Disease,5,51,Male,27.3,0
+S00150,60,Severe Disease,5,51,Male,27.3,0
+S00150,63,Severe Disease,5,51,Male,27.3,0
+S00150,66,Severe Disease,5,51,Male,27.3,0
+S00150,69,Severe Disease,5,51,Male,27.3,0
+S00150,72,Moderate Disease,4,51,Male,27.3,0
+S00151,0,Mild Disease,3,43,Male,19.4,1
+S00151,3,Moderate Disease,4,43,Male,19.4,1
+S00151,6,Moderate Disease,4,43,Male,19.4,1
+S00151,9,Moderate Disease,4,43,Male,19.4,1
+S00151,12,Moderate Disease,4,43,Male,19.4,1
+S00151,15,Moderate Disease,4,43,Male,19.4,1
+S00151,18,Severe Disease,5,43,Male,19.4,1
+S00151,21,Moderate Disease,4,43,Male,19.4,1
+S00151,24,Severe Disease,5,43,Male,19.4,1
+S00151,27,Severe Disease,5,43,Male,19.4,1
+S00151,30,Death,6,43,Male,19.4,1
+S00152,0,At Risk,1,43,Female,28.9,1
+S00152,3,At Risk,1,43,Female,28.9,1
+S00152,6,At Risk,1,43,Female,28.9,1
+S00152,9,At Risk,1,43,Female,28.9,1
+S00152,12,At Risk,1,43,Female,28.9,1
+S00152,15,At Risk,1,43,Female,28.9,1
+S00152,18,Preclinical,2,43,Female,28.9,1
+S00152,21,Mild Disease,3,43,Female,28.9,1
+S00152,24,Mild Disease,3,43,Female,28.9,1
+S00152,27,Mild Disease,3,43,Female,28.9,1
+S00152,30,Moderate Disease,4,43,Female,28.9,1
+S00152,33,Mild Disease,3,43,Female,28.9,1
+S00152,36,Moderate Disease,4,43,Female,28.9,1
+S00152,39,Severe Disease,5,43,Female,28.9,1
+S00152,42,Severe Disease,5,43,Female,28.9,1
+S00152,45,Death,6,43,Female,28.9,1
+S00153,0,Mild Disease,3,75,Male,25.9,0
+S00153,3,Mild Disease,3,75,Male,25.9,0
+S00153,6,Moderate Disease,4,75,Male,25.9,0
+S00153,9,Moderate Disease,4,75,Male,25.9,0
+S00153,12,Severe Disease,5,75,Male,25.9,0
+S00153,15,Death,6,75,Male,25.9,0
+S00154,0,Moderate Disease,4,35,Male,32.1,0
+S00154,3,Moderate Disease,4,35,Male,32.1,0
+S00154,6,Moderate Disease,4,35,Male,32.1,0
+S00154,9,Moderate Disease,4,35,Male,32.1,0
+S00154,12,Moderate Disease,4,35,Male,32.1,0
+S00154,15,Moderate Disease,4,35,Male,32.1,0
+S00154,18,Severe Disease,5,35,Male,32.1,0
+S00154,21,Severe Disease,5,35,Male,32.1,0
+S00154,24,Severe Disease,5,35,Male,32.1,0
+S00154,27,Severe Disease,5,35,Male,32.1,0
+S00154,30,Severe Disease,5,35,Male,32.1,0
+S00154,33,Severe Disease,5,35,Male,32.1,0
+S00154,36,Severe Disease,5,35,Male,32.1,0
+S00154,39,Severe Disease,5,35,Male,32.1,0
+S00154,42,Death,6,35,Male,32.1,0
+S00155,0,Preclinical,2,75,Male,28.5,0
+S00155,3,Mild Disease,3,75,Male,28.5,0
+S00155,6,Mild Disease,3,75,Male,28.5,0
+S00155,9,Mild Disease,3,75,Male,28.5,0
+S00155,12,Mild Disease,3,75,Male,28.5,0
+S00155,15,Moderate Disease,4,75,Male,28.5,0
+S00155,18,Severe Disease,5,75,Male,28.5,0
+S00155,21,Death,6,75,Male,28.5,0
+S00156,0,Healthy,0,83,Female,28.2,0
+S00156,3,At Risk,1,83,Female,28.2,0
+S00156,6,Preclinical,2,83,Female,28.2,0
+S00156,9,Mild Disease,3,83,Female,28.2,0
+S00156,12,Mild Disease,3,83,Female,28.2,0
+S00156,15,Mild Disease,3,83,Female,28.2,0
+S00156,18,Mild Disease,3,83,Female,28.2,0
+S00156,21,Moderate Disease,4,83,Female,28.2,0
+S00156,24,Moderate Disease,4,83,Female,28.2,0
+S00156,27,Severe Disease,5,83,Female,28.2,0
+S00156,30,Severe Disease,5,83,Female,28.2,0
+S00156,33,Severe Disease,5,83,Female,28.2,0
+S00156,36,Death,6,83,Female,28.2,0
+S00157,0,Healthy,0,63,Female,30.0,0
+S00157,3,At Risk,1,63,Female,30.0,0
+S00157,6,At Risk,1,63,Female,30.0,0
+S00157,9,Preclinical,2,63,Female,30.0,0
+S00157,12,Mild Disease,3,63,Female,30.0,0
+S00157,15,Mild Disease,3,63,Female,30.0,0
+S00157,18,Mild Disease,3,63,Female,30.0,0
+S00157,21,Mild Disease,3,63,Female,30.0,0
+S00157,24,Mild Disease,3,63,Female,30.0,0
+S00157,27,Mild Disease,3,63,Female,30.0,0
+S00157,30,Mild Disease,3,63,Female,30.0,0
+S00157,33,Mild Disease,3,63,Female,30.0,0
+S00157,36,Mild Disease,3,63,Female,30.0,0
+S00157,39,Mild Disease,3,63,Female,30.0,0
+S00157,42,Mild Disease,3,63,Female,30.0,0
+S00157,45,Moderate Disease,4,63,Female,30.0,0
+S00157,48,Severe Disease,5,63,Female,30.0,0
+S00157,51,Severe Disease,5,63,Female,30.0,0
+S00157,54,Severe Disease,5,63,Female,30.0,0
+S00157,57,Death,6,63,Female,30.0,0
+S00158,0,Moderate Disease,4,56,Female,24.2,1
+S00158,3,Moderate Disease,4,56,Female,24.2,1
+S00158,6,Moderate Disease,4,56,Female,24.2,1
+S00158,9,Moderate Disease,4,56,Female,24.2,1
+S00158,12,Severe Disease,5,56,Female,24.2,1
+S00158,15,Moderate Disease,4,56,Female,24.2,1
+S00158,18,Severe Disease,5,56,Female,24.2,1
+S00158,21,Severe Disease,5,56,Female,24.2,1
+S00158,24,Severe Disease,5,56,Female,24.2,1
+S00158,27,Severe Disease,5,56,Female,24.2,1
+S00158,30,Severe Disease,5,56,Female,24.2,1
+S00158,33,Severe Disease,5,56,Female,24.2,1
+S00158,36,Death,6,56,Female,24.2,1
+S00159,0,At Risk,1,35,Female,16.8,1
+S00159,3,At Risk,1,35,Female,16.8,1
+S00159,6,At Risk,1,35,Female,16.8,1
+S00159,9,Preclinical,2,35,Female,16.8,1
+S00159,12,Mild Disease,3,35,Female,16.8,1
+S00159,15,Moderate Disease,4,35,Female,16.8,1
+S00159,18,Moderate Disease,4,35,Female,16.8,1
+S00159,21,Severe Disease,5,35,Female,16.8,1
+S00159,24,Severe Disease,5,35,Female,16.8,1
+S00159,27,Severe Disease,5,35,Female,16.8,1
+S00159,30,Severe Disease,5,35,Female,16.8,1
+S00159,33,Death,6,35,Female,16.8,1
+S00160,0,Healthy,0,54,Female,28.7,1
+S00160,3,Healthy,0,54,Female,28.7,1
+S00160,6,Healthy,0,54,Female,28.7,1
+S00160,9,Healthy,0,54,Female,28.7,1
+S00160,12,Healthy,0,54,Female,28.7,1
+S00160,15,At Risk,1,54,Female,28.7,1
+S00160,18,At Risk,1,54,Female,28.7,1
+S00160,21,Preclinical,2,54,Female,28.7,1
+S00160,24,Preclinical,2,54,Female,28.7,1
+S00160,27,Preclinical,2,54,Female,28.7,1
+S00160,30,Preclinical,2,54,Female,28.7,1
+S00160,33,Preclinical,2,54,Female,28.7,1
+S00160,36,Preclinical,2,54,Female,28.7,1
+S00160,39,Mild Disease,3,54,Female,28.7,1
+S00160,42,Moderate Disease,4,54,Female,28.7,1
+S00160,45,Severe Disease,5,54,Female,28.7,1
+S00160,48,Severe Disease,5,54,Female,28.7,1
+S00160,51,Death,6,54,Female,28.7,1
+S00161,0,At Risk,1,58,Female,29.7,0
+S00161,3,At Risk,1,58,Female,29.7,0
+S00161,6,Healthy,0,58,Female,29.7,0
+S00161,9,Healthy,0,58,Female,29.7,0
+S00161,12,Healthy,0,58,Female,29.7,0
+S00161,15,Healthy,0,58,Female,29.7,0
+S00161,18,Healthy,0,58,Female,29.7,0
+S00161,21,At Risk,1,58,Female,29.7,0
+S00161,24,At Risk,1,58,Female,29.7,0
+S00161,27,At Risk,1,58,Female,29.7,0
+S00161,30,At Risk,1,58,Female,29.7,0
+S00161,33,At Risk,1,58,Female,29.7,0
+S00161,36,Healthy,0,58,Female,29.7,0
+S00161,39,Healthy,0,58,Female,29.7,0
+S00161,42,Healthy,0,58,Female,29.7,0
+S00161,45,Healthy,0,58,Female,29.7,0
+S00161,48,Healthy,0,58,Female,29.7,0
+S00161,51,Healthy,0,58,Female,29.7,0
+S00161,54,Healthy,0,58,Female,29.7,0
+S00161,57,Healthy,0,58,Female,29.7,0
+S00161,60,Healthy,0,58,Female,29.7,0
+S00161,63,Healthy,0,58,Female,29.7,0
+S00161,66,Healthy,0,58,Female,29.7,0
+S00161,69,Healthy,0,58,Female,29.7,0
+S00161,72,Healthy,0,58,Female,29.7,0
+S00162,0,Healthy,0,65,Female,21.5,0
+S00162,3,Healthy,0,65,Female,21.5,0
+S00162,6,Healthy,0,65,Female,21.5,0
+S00162,9,Healthy,0,65,Female,21.5,0
+S00162,12,At Risk,1,65,Female,21.5,0
+S00162,15,At Risk,1,65,Female,21.5,0
+S00162,18,At Risk,1,65,Female,21.5,0
+S00162,21,Preclinical,2,65,Female,21.5,0
+S00162,24,Mild Disease,3,65,Female,21.5,0
+S00162,27,Mild Disease,3,65,Female,21.5,0
+S00162,30,Moderate Disease,4,65,Female,21.5,0
+S00162,33,Moderate Disease,4,65,Female,21.5,0
+S00162,36,Severe Disease,5,65,Female,21.5,0
+S00162,39,Death,6,65,Female,21.5,0
+S00163,0,Healthy,0,82,Male,17.5,1
+S00163,3,Healthy,0,82,Male,17.5,1
+S00163,6,At Risk,1,82,Male,17.5,1
+S00163,9,Preclinical,2,82,Male,17.5,1
+S00163,12,Preclinical,2,82,Male,17.5,1
+S00163,15,Preclinical,2,82,Male,17.5,1
+S00163,18,Mild Disease,3,82,Male,17.5,1
+S00163,21,Mild Disease,3,82,Male,17.5,1
+S00163,24,Moderate Disease,4,82,Male,17.5,1
+S00163,27,Moderate Disease,4,82,Male,17.5,1
+S00163,30,Moderate Disease,4,82,Male,17.5,1
+S00163,33,Moderate Disease,4,82,Male,17.5,1
+S00163,36,Severe Disease,5,82,Male,17.5,1
+S00163,39,Death,6,82,Male,17.5,1
+S00164,0,Moderate Disease,4,38,Female,28.1,0
+S00164,3,Moderate Disease,4,38,Female,28.1,0
+S00164,6,Moderate Disease,4,38,Female,28.1,0
+S00164,9,Moderate Disease,4,38,Female,28.1,0
+S00164,12,Moderate Disease,4,38,Female,28.1,0
+S00164,15,Moderate Disease,4,38,Female,28.1,0
+S00164,18,Moderate Disease,4,38,Female,28.1,0
+S00164,21,Moderate Disease,4,38,Female,28.1,0
+S00164,24,Moderate Disease,4,38,Female,28.1,0
+S00164,27,Moderate Disease,4,38,Female,28.1,0
+S00164,30,Moderate Disease,4,38,Female,28.1,0
+S00164,33,Moderate Disease,4,38,Female,28.1,0
+S00164,36,Moderate Disease,4,38,Female,28.1,0
+S00164,39,Moderate Disease,4,38,Female,28.1,0
+S00164,42,Moderate Disease,4,38,Female,28.1,0
+S00164,45,Moderate Disease,4,38,Female,28.1,0
+S00164,48,Moderate Disease,4,38,Female,28.1,0
+S00164,51,Severe Disease,5,38,Female,28.1,0
+S00164,54,Severe Disease,5,38,Female,28.1,0
+S00164,57,Severe Disease,5,38,Female,28.1,0
+S00164,60,Death,6,38,Female,28.1,0
+S00165,0,Preclinical,2,41,Male,23.3,0
+S00165,3,Preclinical,2,41,Male,23.3,0
+S00165,6,Preclinical,2,41,Male,23.3,0
+S00165,9,Preclinical,2,41,Male,23.3,0
+S00165,12,Preclinical,2,41,Male,23.3,0
+S00165,15,Mild Disease,3,41,Male,23.3,0
+S00165,18,Mild Disease,3,41,Male,23.3,0
+S00165,21,Mild Disease,3,41,Male,23.3,0
+S00165,24,Moderate Disease,4,41,Male,23.3,0
+S00165,27,Moderate Disease,4,41,Male,23.3,0
+S00165,30,Severe Disease,5,41,Male,23.3,0
+S00165,33,Death,6,41,Male,23.3,0
+S00166,0,At Risk,1,35,Male,26.8,1
+S00166,3,Preclinical,2,35,Male,26.8,1
+S00166,6,Preclinical,2,35,Male,26.8,1
+S00166,9,Preclinical,2,35,Male,26.8,1
+S00166,12,Preclinical,2,35,Male,26.8,1
+S00166,15,Preclinical,2,35,Male,26.8,1
+S00166,18,Preclinical,2,35,Male,26.8,1
+S00166,21,Mild Disease,3,35,Male,26.8,1
+S00166,24,Mild Disease,3,35,Male,26.8,1
+S00166,27,Moderate Disease,4,35,Male,26.8,1
+S00166,30,Moderate Disease,4,35,Male,26.8,1
+S00166,33,Moderate Disease,4,35,Male,26.8,1
+S00166,36,Severe Disease,5,35,Male,26.8,1
+S00166,39,Severe Disease,5,35,Male,26.8,1
+S00166,42,Death,6,35,Male,26.8,1
+S00167,0,At Risk,1,41,Female,24.9,1
+S00167,3,Preclinical,2,41,Female,24.9,1
+S00167,6,Preclinical,2,41,Female,24.9,1
+S00167,9,Mild Disease,3,41,Female,24.9,1
+S00167,12,Mild Disease,3,41,Female,24.9,1
+S00167,15,Mild Disease,3,41,Female,24.9,1
+S00167,18,Mild Disease,3,41,Female,24.9,1
+S00167,21,Mild Disease,3,41,Female,24.9,1
+S00167,24,Mild Disease,3,41,Female,24.9,1
+S00167,27,Mild Disease,3,41,Female,24.9,1
+S00167,30,Mild Disease,3,41,Female,24.9,1
+S00167,33,Mild Disease,3,41,Female,24.9,1
+S00167,36,Moderate Disease,4,41,Female,24.9,1
+S00167,39,Severe Disease,5,41,Female,24.9,1
+S00167,42,Severe Disease,5,41,Female,24.9,1
+S00167,45,Severe Disease,5,41,Female,24.9,1
+S00167,48,Death,6,41,Female,24.9,1
+S00168,0,Moderate Disease,4,65,Female,24.0,0
+S00168,3,Moderate Disease,4,65,Female,24.0,0
+S00168,6,Severe Disease,5,65,Female,24.0,0
+S00168,9,Death,6,65,Female,24.0,0
+S00169,0,Moderate Disease,4,72,Female,21.6,1
+S00169,3,Severe Disease,5,72,Female,21.6,1
+S00169,6,Severe Disease,5,72,Female,21.6,1
+S00169,9,Severe Disease,5,72,Female,21.6,1
+S00169,12,Severe Disease,5,72,Female,21.6,1
+S00169,15,Death,6,72,Female,21.6,1
+S00170,0,Preclinical,2,78,Female,23.3,0
+S00170,3,Mild Disease,3,78,Female,23.3,0
+S00170,6,Moderate Disease,4,78,Female,23.3,0
+S00170,9,Severe Disease,5,78,Female,23.3,0
+S00170,12,Death,6,78,Female,23.3,0
+S00171,0,Preclinical,2,57,Female,28.1,1
+S00171,3,Preclinical,2,57,Female,28.1,1
+S00171,6,Mild Disease,3,57,Female,28.1,1
+S00171,9,Mild Disease,3,57,Female,28.1,1
+S00171,12,Moderate Disease,4,57,Female,28.1,1
+S00171,15,Moderate Disease,4,57,Female,28.1,1
+S00171,18,Severe Disease,5,57,Female,28.1,1
+S00171,21,Death,6,57,Female,28.1,1
+S00172,0,Mild Disease,3,78,Female,18.7,0
+S00172,3,Mild Disease,3,78,Female,18.7,0
+S00172,6,Moderate Disease,4,78,Female,18.7,0
+S00172,9,Severe Disease,5,78,Female,18.7,0
+S00172,12,Death,6,78,Female,18.7,0
+S00173,0,Mild Disease,3,59,Female,27.2,1
+S00173,3,Mild Disease,3,59,Female,27.2,1
+S00173,6,Mild Disease,3,59,Female,27.2,1
+S00173,9,Mild Disease,3,59,Female,27.2,1
+S00173,12,Moderate Disease,4,59,Female,27.2,1
+S00173,15,Severe Disease,5,59,Female,27.2,1
+S00173,18,Severe Disease,5,59,Female,27.2,1
+S00173,21,Death,6,59,Female,27.2,1
+S00174,0,Preclinical,2,39,Male,23.9,1
+S00174,3,Preclinical,2,39,Male,23.9,1
+S00174,6,Preclinical,2,39,Male,23.9,1
+S00174,9,Mild Disease,3,39,Male,23.9,1
+S00174,12,Mild Disease,3,39,Male,23.9,1
+S00174,15,Mild Disease,3,39,Male,23.9,1
+S00174,18,Mild Disease,3,39,Male,23.9,1
+S00174,21,Mild Disease,3,39,Male,23.9,1
+S00174,24,Mild Disease,3,39,Male,23.9,1
+S00174,27,Mild Disease,3,39,Male,23.9,1
+S00174,30,Moderate Disease,4,39,Male,23.9,1
+S00174,33,Severe Disease,5,39,Male,23.9,1
+S00174,36,Severe Disease,5,39,Male,23.9,1
+S00174,39,Death,6,39,Male,23.9,1
+S00175,0,Preclinical,2,64,Male,22.2,0
+S00175,3,Preclinical,2,64,Male,22.2,0
+S00175,6,Preclinical,2,64,Male,22.2,0
+S00175,9,Preclinical,2,64,Male,22.2,0
+S00175,12,Preclinical,2,64,Male,22.2,0
+S00175,15,Mild Disease,3,64,Male,22.2,0
+S00175,18,Mild Disease,3,64,Male,22.2,0
+S00175,21,Mild Disease,3,64,Male,22.2,0
+S00175,24,Mild Disease,3,64,Male,22.2,0
+S00175,27,Mild Disease,3,64,Male,22.2,0
+S00175,30,Moderate Disease,4,64,Male,22.2,0
+S00175,33,Severe Disease,5,64,Male,22.2,0
+S00175,36,Death,6,64,Male,22.2,0
+S00176,0,Preclinical,2,74,Male,30.7,0
+S00176,3,Preclinical,2,74,Male,30.7,0
+S00176,6,At Risk,1,74,Male,30.7,0
+S00176,9,Preclinical,2,74,Male,30.7,0
+S00176,12,Preclinical,2,74,Male,30.7,0
+S00176,15,Mild Disease,3,74,Male,30.7,0
+S00176,18,Moderate Disease,4,74,Male,30.7,0
+S00176,21,Severe Disease,5,74,Male,30.7,0
+S00176,24,Severe Disease,5,74,Male,30.7,0
+S00176,27,Death,6,74,Male,30.7,0
+S00177,0,Preclinical,2,70,Male,19.3,0
+S00177,3,Mild Disease,3,70,Male,19.3,0
+S00177,6,Mild Disease,3,70,Male,19.3,0
+S00177,9,Mild Disease,3,70,Male,19.3,0
+S00177,12,Mild Disease,3,70,Male,19.3,0
+S00177,15,Moderate Disease,4,70,Male,19.3,0
+S00177,18,Moderate Disease,4,70,Male,19.3,0
+S00177,21,Severe Disease,5,70,Male,19.3,0
+S00177,24,Severe Disease,5,70,Male,19.3,0
+S00177,27,Severe Disease,5,70,Male,19.3,0
+S00177,30,Death,6,70,Male,19.3,0
+S00178,0,Healthy,0,66,Female,24.0,0
+S00178,3,At Risk,1,66,Female,24.0,0
+S00178,6,At Risk,1,66,Female,24.0,0
+S00178,9,Preclinical,2,66,Female,24.0,0
+S00178,12,Mild Disease,3,66,Female,24.0,0
+S00178,15,Moderate Disease,4,66,Female,24.0,0
+S00178,18,Moderate Disease,4,66,Female,24.0,0
+S00178,21,Moderate Disease,4,66,Female,24.0,0
+S00178,24,Moderate Disease,4,66,Female,24.0,0
+S00178,27,Moderate Disease,4,66,Female,24.0,0
+S00178,30,Severe Disease,5,66,Female,24.0,0
+S00178,33,Death,6,66,Female,24.0,0
+S00179,0,At Risk,1,65,Male,28.8,1
+S00179,3,Preclinical,2,65,Male,28.8,1
+S00179,6,Mild Disease,3,65,Male,28.8,1
+S00179,9,Moderate Disease,4,65,Male,28.8,1
+S00179,12,Moderate Disease,4,65,Male,28.8,1
+S00179,15,Moderate Disease,4,65,Male,28.8,1
+S00179,18,Severe Disease,5,65,Male,28.8,1
+S00179,21,Severe Disease,5,65,Male,28.8,1
+S00179,24,Death,6,65,Male,28.8,1
+S00180,0,Healthy,0,50,Male,29.9,1
+S00180,3,Healthy,0,50,Male,29.9,1
+S00180,6,Healthy,0,50,Male,29.9,1
+S00180,9,Healthy,0,50,Male,29.9,1
+S00180,12,Healthy,0,50,Male,29.9,1
+S00180,15,At Risk,1,50,Male,29.9,1
+S00180,18,At Risk,1,50,Male,29.9,1
+S00180,21,At Risk,1,50,Male,29.9,1
+S00180,24,At Risk,1,50,Male,29.9,1
+S00180,27,Preclinical,2,50,Male,29.9,1
+S00180,30,Preclinical,2,50,Male,29.9,1
+S00180,33,Preclinical,2,50,Male,29.9,1
+S00180,36,Preclinical,2,50,Male,29.9,1
+S00180,39,Mild Disease,3,50,Male,29.9,1
+S00180,42,Mild Disease,3,50,Male,29.9,1
+S00180,45,Mild Disease,3,50,Male,29.9,1
+S00180,48,Mild Disease,3,50,Male,29.9,1
+S00180,51,Moderate Disease,4,50,Male,29.9,1
+S00180,54,Moderate Disease,4,50,Male,29.9,1
+S00180,57,Severe Disease,5,50,Male,29.9,1
+S00180,60,Severe Disease,5,50,Male,29.9,1
+S00180,63,Severe Disease,5,50,Male,29.9,1
+S00180,66,Death,6,50,Male,29.9,1
+S00181,0,Healthy,0,41,Male,27.3,1
+S00181,3,Healthy,0,41,Male,27.3,1
+S00181,6,At Risk,1,41,Male,27.3,1
+S00181,9,Healthy,0,41,Male,27.3,1
+S00181,12,Healthy,0,41,Male,27.3,1
+S00181,15,At Risk,1,41,Male,27.3,1
+S00181,18,At Risk,1,41,Male,27.3,1
+S00181,21,At Risk,1,41,Male,27.3,1
+S00181,24,At Risk,1,41,Male,27.3,1
+S00181,27,At Risk,1,41,Male,27.3,1
+S00181,30,At Risk,1,41,Male,27.3,1
+S00181,33,At Risk,1,41,Male,27.3,1
+S00181,36,Preclinical,2,41,Male,27.3,1
+S00181,39,Mild Disease,3,41,Male,27.3,1
+S00181,42,Mild Disease,3,41,Male,27.3,1
+S00181,45,Mild Disease,3,41,Male,27.3,1
+S00181,48,Moderate Disease,4,41,Male,27.3,1
+S00181,51,Severe Disease,5,41,Male,27.3,1
+S00181,54,Severe Disease,5,41,Male,27.3,1
+S00181,57,Severe Disease,5,41,Male,27.3,1
+S00181,60,Death,6,41,Male,27.3,1
+S00182,0,At Risk,1,53,Male,25.6,0
+S00182,3,At Risk,1,53,Male,25.6,0
+S00182,6,At Risk,1,53,Male,25.6,0
+S00182,9,At Risk,1,53,Male,25.6,0
+S00182,12,At Risk,1,53,Male,25.6,0
+S00182,15,At Risk,1,53,Male,25.6,0
+S00182,18,At Risk,1,53,Male,25.6,0
+S00182,21,At Risk,1,53,Male,25.6,0
+S00182,24,At Risk,1,53,Male,25.6,0
+S00182,27,Preclinical,2,53,Male,25.6,0
+S00182,30,Preclinical,2,53,Male,25.6,0
+S00182,33,Preclinical,2,53,Male,25.6,0
+S00182,36,Preclinical,2,53,Male,25.6,0
+S00182,39,Preclinical,2,53,Male,25.6,0
+S00182,42,Preclinical,2,53,Male,25.6,0
+S00182,45,Preclinical,2,53,Male,25.6,0
+S00182,48,Preclinical,2,53,Male,25.6,0
+S00182,51,Preclinical,2,53,Male,25.6,0
+S00182,54,Preclinical,2,53,Male,25.6,0
+S00182,57,Preclinical,2,53,Male,25.6,0
+S00182,60,Preclinical,2,53,Male,25.6,0
+S00182,63,Preclinical,2,53,Male,25.6,0
+S00182,66,Mild Disease,3,53,Male,25.6,0
+S00182,69,Mild Disease,3,53,Male,25.6,0
+S00182,72,Mild Disease,3,53,Male,25.6,0
+S00183,0,Healthy,0,83,Female,24.4,0
+S00183,3,Healthy,0,83,Female,24.4,0
+S00183,6,Healthy,0,83,Female,24.4,0
+S00183,9,At Risk,1,83,Female,24.4,0
+S00183,12,At Risk,1,83,Female,24.4,0
+S00183,15,Preclinical,2,83,Female,24.4,0
+S00183,18,Preclinical,2,83,Female,24.4,0
+S00183,21,Preclinical,2,83,Female,24.4,0
+S00183,24,Preclinical,2,83,Female,24.4,0
+S00183,27,Preclinical,2,83,Female,24.4,0
+S00183,30,Preclinical,2,83,Female,24.4,0
+S00183,33,Mild Disease,3,83,Female,24.4,0
+S00183,36,Mild Disease,3,83,Female,24.4,0
+S00183,39,Mild Disease,3,83,Female,24.4,0
+S00183,42,Mild Disease,3,83,Female,24.4,0
+S00183,45,Moderate Disease,4,83,Female,24.4,0
+S00183,48,Mild Disease,3,83,Female,24.4,0
+S00183,51,Moderate Disease,4,83,Female,24.4,0
+S00183,54,Moderate Disease,4,83,Female,24.4,0
+S00183,57,Moderate Disease,4,83,Female,24.4,0
+S00183,60,Moderate Disease,4,83,Female,24.4,0
+S00183,63,Moderate Disease,4,83,Female,24.4,0
+S00183,66,Severe Disease,5,83,Female,24.4,0
+S00183,69,Death,6,83,Female,24.4,0
+S00184,0,Mild Disease,3,65,Female,19.3,0
+S00184,3,Mild Disease,3,65,Female,19.3,0
+S00184,6,Mild Disease,3,65,Female,19.3,0
+S00184,9,Mild Disease,3,65,Female,19.3,0
+S00184,12,Mild Disease,3,65,Female,19.3,0
+S00184,15,Mild Disease,3,65,Female,19.3,0
+S00184,18,Moderate Disease,4,65,Female,19.3,0
+S00184,21,Moderate Disease,4,65,Female,19.3,0
+S00184,24,Severe Disease,5,65,Female,19.3,0
+S00184,27,Severe Disease,5,65,Female,19.3,0
+S00184,30,Severe Disease,5,65,Female,19.3,0
+S00184,33,Severe Disease,5,65,Female,19.3,0
+S00184,36,Severe Disease,5,65,Female,19.3,0
+S00184,39,Severe Disease,5,65,Female,19.3,0
+S00184,42,Severe Disease,5,65,Female,19.3,0
+S00184,45,Death,6,65,Female,19.3,0
+S00185,0,Severe Disease,5,58,Female,24.8,1
+S00185,3,Death,6,58,Female,24.8,1
+S00186,0,Moderate Disease,4,65,Female,27.6,1
+S00186,3,Severe Disease,5,65,Female,27.6,1
+S00186,6,Severe Disease,5,65,Female,27.6,1
+S00186,9,Severe Disease,5,65,Female,27.6,1
+S00186,12,Severe Disease,5,65,Female,27.6,1
+S00186,15,Death,6,65,Female,27.6,1
+S00187,0,Preclinical,2,70,Female,24.5,0
+S00187,3,Preclinical,2,70,Female,24.5,0
+S00187,6,Mild Disease,3,70,Female,24.5,0
+S00187,9,Mild Disease,3,70,Female,24.5,0
+S00187,12,Mild Disease,3,70,Female,24.5,0
+S00187,15,Mild Disease,3,70,Female,24.5,0
+S00187,18,Moderate Disease,4,70,Female,24.5,0
+S00187,21,Severe Disease,5,70,Female,24.5,0
+S00187,24,Death,6,70,Female,24.5,0
+S00188,0,Severe Disease,5,83,Female,23.9,1
+S00188,3,Death,6,83,Female,23.9,1
+S00189,0,Severe Disease,5,67,Female,36.4,0
+S00189,3,Severe Disease,5,67,Female,36.4,0
+S00189,6,Severe Disease,5,67,Female,36.4,0
+S00189,9,Severe Disease,5,67,Female,36.4,0
+S00189,12,Severe Disease,5,67,Female,36.4,0
+S00189,15,Severe Disease,5,67,Female,36.4,0
+S00189,18,Death,6,67,Female,36.4,0
+S00190,0,Preclinical,2,38,Female,31.5,0
+S00190,3,Preclinical,2,38,Female,31.5,0
+S00190,6,Preclinical,2,38,Female,31.5,0
+S00190,9,Preclinical,2,38,Female,31.5,0
+S00190,12,Preclinical,2,38,Female,31.5,0
+S00190,15,Preclinical,2,38,Female,31.5,0
+S00190,18,Preclinical,2,38,Female,31.5,0
+S00190,21,Preclinical,2,38,Female,31.5,0
+S00190,24,Mild Disease,3,38,Female,31.5,0
+S00190,27,Mild Disease,3,38,Female,31.5,0
+S00190,30,Mild Disease,3,38,Female,31.5,0
+S00190,33,Mild Disease,3,38,Female,31.5,0
+S00190,36,Mild Disease,3,38,Female,31.5,0
+S00190,39,Mild Disease,3,38,Female,31.5,0
+S00190,42,Preclinical,2,38,Female,31.5,0
+S00190,45,Mild Disease,3,38,Female,31.5,0
+S00190,48,Moderate Disease,4,38,Female,31.5,0
+S00190,51,Moderate Disease,4,38,Female,31.5,0
+S00190,54,Moderate Disease,4,38,Female,31.5,0
+S00190,57,Severe Disease,5,38,Female,31.5,0
+S00190,60,Severe Disease,5,38,Female,31.5,0
+S00190,63,Severe Disease,5,38,Female,31.5,0
+S00190,66,Severe Disease,5,38,Female,31.5,0
+S00190,69,Death,6,38,Female,31.5,0
+S00191,0,Healthy,0,76,Male,19.1,1
+S00191,3,Healthy,0,76,Male,19.1,1
+S00191,6,At Risk,1,76,Male,19.1,1
+S00191,9,At Risk,1,76,Male,19.1,1
+S00191,12,Preclinical,2,76,Male,19.1,1
+S00191,15,Preclinical,2,76,Male,19.1,1
+S00191,18,Preclinical,2,76,Male,19.1,1
+S00191,21,Mild Disease,3,76,Male,19.1,1
+S00191,24,Moderate Disease,4,76,Male,19.1,1
+S00191,27,Severe Disease,5,76,Male,19.1,1
+S00191,30,Severe Disease,5,76,Male,19.1,1
+S00191,33,Death,6,76,Male,19.1,1
+S00192,0,Healthy,0,37,Female,21.2,0
+S00192,3,Healthy,0,37,Female,21.2,0
+S00192,6,Healthy,0,37,Female,21.2,0
+S00192,9,At Risk,1,37,Female,21.2,0
+S00192,12,At Risk,1,37,Female,21.2,0
+S00192,15,At Risk,1,37,Female,21.2,0
+S00192,18,Preclinical,2,37,Female,21.2,0
+S00192,21,Preclinical,2,37,Female,21.2,0
+S00192,24,Preclinical,2,37,Female,21.2,0
+S00192,27,Preclinical,2,37,Female,21.2,0
+S00192,30,Preclinical,2,37,Female,21.2,0
+S00192,33,Preclinical,2,37,Female,21.2,0
+S00192,36,Preclinical,2,37,Female,21.2,0
+S00192,39,Preclinical,2,37,Female,21.2,0
+S00192,42,Preclinical,2,37,Female,21.2,0
+S00192,45,Preclinical,2,37,Female,21.2,0
+S00192,48,Preclinical,2,37,Female,21.2,0
+S00192,51,At Risk,1,37,Female,21.2,0
+S00192,54,At Risk,1,37,Female,21.2,0
+S00192,57,At Risk,1,37,Female,21.2,0
+S00192,60,Preclinical,2,37,Female,21.2,0
+S00192,63,Mild Disease,3,37,Female,21.2,0
+S00192,66,Mild Disease,3,37,Female,21.2,0
+S00192,69,Mild Disease,3,37,Female,21.2,0
+S00192,72,Preclinical,2,37,Female,21.2,0
+S00193,0,At Risk,1,75,Female,21.1,1
+S00193,3,Preclinical,2,75,Female,21.1,1
+S00193,6,Mild Disease,3,75,Female,21.1,1
+S00193,9,Moderate Disease,4,75,Female,21.1,1
+S00193,12,Moderate Disease,4,75,Female,21.1,1
+S00193,15,Moderate Disease,4,75,Female,21.1,1
+S00193,18,Severe Disease,5,75,Female,21.1,1
+S00193,21,Death,6,75,Female,21.1,1
+S00194,0,At Risk,1,63,Female,28.6,0
+S00194,3,Preclinical,2,63,Female,28.6,0
+S00194,6,Preclinical,2,63,Female,28.6,0
+S00194,9,Preclinical,2,63,Female,28.6,0
+S00194,12,Mild Disease,3,63,Female,28.6,0
+S00194,15,Mild Disease,3,63,Female,28.6,0
+S00194,18,Moderate Disease,4,63,Female,28.6,0
+S00194,21,Moderate Disease,4,63,Female,28.6,0
+S00194,24,Moderate Disease,4,63,Female,28.6,0
+S00194,27,Moderate Disease,4,63,Female,28.6,0
+S00194,30,Moderate Disease,4,63,Female,28.6,0
+S00194,33,Severe Disease,5,63,Female,28.6,0
+S00194,36,Death,6,63,Female,28.6,0
+S00195,0,At Risk,1,81,Male,27.1,0
+S00195,3,At Risk,1,81,Male,27.1,0
+S00195,6,Preclinical,2,81,Male,27.1,0
+S00195,9,Mild Disease,3,81,Male,27.1,0
+S00195,12,Moderate Disease,4,81,Male,27.1,0
+S00195,15,Moderate Disease,4,81,Male,27.1,0
+S00195,18,Moderate Disease,4,81,Male,27.1,0
+S00195,21,Moderate Disease,4,81,Male,27.1,0
+S00195,24,Severe Disease,5,81,Male,27.1,0
+S00195,27,Severe Disease,5,81,Male,27.1,0
+S00195,30,Severe Disease,5,81,Male,27.1,0
+S00195,33,Death,6,81,Male,27.1,0
+S00196,0,Moderate Disease,4,61,Female,33.0,1
+S00196,3,Severe Disease,5,61,Female,33.0,1
+S00196,6,Severe Disease,5,61,Female,33.0,1
+S00196,9,Severe Disease,5,61,Female,33.0,1
+S00196,12,Death,6,61,Female,33.0,1
+S00197,0,At Risk,1,38,Male,18.4,1
+S00197,3,At Risk,1,38,Male,18.4,1
+S00197,6,Preclinical,2,38,Male,18.4,1
+S00197,9,Mild Disease,3,38,Male,18.4,1
+S00197,12,Moderate Disease,4,38,Male,18.4,1
+S00197,15,Moderate Disease,4,38,Male,18.4,1
+S00197,18,Moderate Disease,4,38,Male,18.4,1
+S00197,21,Severe Disease,5,38,Male,18.4,1
+S00197,24,Severe Disease,5,38,Male,18.4,1
+S00197,27,Death,6,38,Male,18.4,1
+S00198,0,Mild Disease,3,66,Female,27.7,0
+S00198,3,Moderate Disease,4,66,Female,27.7,0
+S00198,6,Moderate Disease,4,66,Female,27.7,0
+S00198,9,Severe Disease,5,66,Female,27.7,0
+S00198,12,Death,6,66,Female,27.7,0
+S00199,0,Preclinical,2,50,Female,20.2,1
+S00199,3,Preclinical,2,50,Female,20.2,1
+S00199,6,Preclinical,2,50,Female,20.2,1
+S00199,9,Mild Disease,3,50,Female,20.2,1
+S00199,12,Mild Disease,3,50,Female,20.2,1
+S00199,15,Moderate Disease,4,50,Female,20.2,1
+S00199,18,Severe Disease,5,50,Female,20.2,1
+S00199,21,Death,6,50,Female,20.2,1
+S00200,0,Healthy,0,76,Male,25.2,1
+S00200,3,Healthy,0,76,Male,25.2,1
+S00200,6,Healthy,0,76,Male,25.2,1
+S00200,9,At Risk,1,76,Male,25.2,1
+S00200,12,Preclinical,2,76,Male,25.2,1
+S00200,15,Preclinical,2,76,Male,25.2,1
+S00200,18,Mild Disease,3,76,Male,25.2,1
+S00200,21,Moderate Disease,4,76,Male,25.2,1
+S00200,24,Severe Disease,5,76,Male,25.2,1
+S00200,27,Severe Disease,5,76,Male,25.2,1
+S00200,30,Death,6,76,Male,25.2,1
+S00201,0,Preclinical,2,49,Female,19.7,1
+S00201,3,Mild Disease,3,49,Female,19.7,1
+S00201,6,Moderate Disease,4,49,Female,19.7,1
+S00201,9,Moderate Disease,4,49,Female,19.7,1
+S00201,12,Moderate Disease,4,49,Female,19.7,1
+S00201,15,Moderate Disease,4,49,Female,19.7,1
+S00201,18,Moderate Disease,4,49,Female,19.7,1
+S00201,21,Moderate Disease,4,49,Female,19.7,1
+S00201,24,Moderate Disease,4,49,Female,19.7,1
+S00201,27,Severe Disease,5,49,Female,19.7,1
+S00201,30,Severe Disease,5,49,Female,19.7,1
+S00201,33,Severe Disease,5,49,Female,19.7,1
+S00201,36,Death,6,49,Female,19.7,1
+S00202,0,At Risk,1,38,Male,28.8,1
+S00202,3,At Risk,1,38,Male,28.8,1
+S00202,6,Preclinical,2,38,Male,28.8,1
+S00202,9,Mild Disease,3,38,Male,28.8,1
+S00202,12,Mild Disease,3,38,Male,28.8,1
+S00202,15,Mild Disease,3,38,Male,28.8,1
+S00202,18,Mild Disease,3,38,Male,28.8,1
+S00202,21,Mild Disease,3,38,Male,28.8,1
+S00202,24,Moderate Disease,4,38,Male,28.8,1
+S00202,27,Severe Disease,5,38,Male,28.8,1
+S00202,30,Death,6,38,Male,28.8,1
+S00203,0,Preclinical,2,44,Female,27.3,0
+S00203,3,Preclinical,2,44,Female,27.3,0
+S00203,6,Preclinical,2,44,Female,27.3,0
+S00203,9,Preclinical,2,44,Female,27.3,0
+S00203,12,Preclinical,2,44,Female,27.3,0
+S00203,15,Preclinical,2,44,Female,27.3,0
+S00203,18,Preclinical,2,44,Female,27.3,0
+S00203,21,Preclinical,2,44,Female,27.3,0
+S00203,24,Preclinical,2,44,Female,27.3,0
+S00203,27,Preclinical,2,44,Female,27.3,0
+S00203,30,Preclinical,2,44,Female,27.3,0
+S00203,33,Preclinical,2,44,Female,27.3,0
+S00203,36,Preclinical,2,44,Female,27.3,0
+S00203,39,At Risk,1,44,Female,27.3,0
+S00203,42,At Risk,1,44,Female,27.3,0
+S00203,45,At Risk,1,44,Female,27.3,0
+S00203,48,At Risk,1,44,Female,27.3,0
+S00203,51,At Risk,1,44,Female,27.3,0
+S00203,54,At Risk,1,44,Female,27.3,0
+S00203,57,At Risk,1,44,Female,27.3,0
+S00203,60,At Risk,1,44,Female,27.3,0
+S00203,63,At Risk,1,44,Female,27.3,0
+S00203,66,At Risk,1,44,Female,27.3,0
+S00203,69,At Risk,1,44,Female,27.3,0
+S00203,72,Preclinical,2,44,Female,27.3,0
+S00204,0,Moderate Disease,4,37,Female,26.8,1
+S00204,3,Moderate Disease,4,37,Female,26.8,1
+S00204,6,Moderate Disease,4,37,Female,26.8,1
+S00204,9,Moderate Disease,4,37,Female,26.8,1
+S00204,12,Moderate Disease,4,37,Female,26.8,1
+S00204,15,Moderate Disease,4,37,Female,26.8,1
+S00204,18,Moderate Disease,4,37,Female,26.8,1
+S00204,21,Moderate Disease,4,37,Female,26.8,1
+S00204,24,Moderate Disease,4,37,Female,26.8,1
+S00204,27,Severe Disease,5,37,Female,26.8,1
+S00204,30,Death,6,37,Female,26.8,1
+S00205,0,Healthy,0,56,Female,16.3,1
+S00205,3,Healthy,0,56,Female,16.3,1
+S00205,6,Healthy,0,56,Female,16.3,1
+S00205,9,Healthy,0,56,Female,16.3,1
+S00205,12,Healthy,0,56,Female,16.3,1
+S00205,15,Healthy,0,56,Female,16.3,1
+S00205,18,Healthy,0,56,Female,16.3,1
+S00205,21,Healthy,0,56,Female,16.3,1
+S00205,24,At Risk,1,56,Female,16.3,1
+S00205,27,Preclinical,2,56,Female,16.3,1
+S00205,30,Preclinical,2,56,Female,16.3,1
+S00205,33,Preclinical,2,56,Female,16.3,1
+S00205,36,Preclinical,2,56,Female,16.3,1
+S00205,39,Preclinical,2,56,Female,16.3,1
+S00205,42,Preclinical,2,56,Female,16.3,1
+S00205,45,Mild Disease,3,56,Female,16.3,1
+S00205,48,Mild Disease,3,56,Female,16.3,1
+S00205,51,Mild Disease,3,56,Female,16.3,1
+S00205,54,Mild Disease,3,56,Female,16.3,1
+S00205,57,Mild Disease,3,56,Female,16.3,1
+S00205,60,Mild Disease,3,56,Female,16.3,1
+S00205,63,Mild Disease,3,56,Female,16.3,1
+S00205,66,Moderate Disease,4,56,Female,16.3,1
+S00205,69,Moderate Disease,4,56,Female,16.3,1
+S00205,72,Severe Disease,5,56,Female,16.3,1
+S00206,0,Preclinical,2,82,Male,23.1,1
+S00206,3,Mild Disease,3,82,Male,23.1,1
+S00206,6,Mild Disease,3,82,Male,23.1,1
+S00206,9,Mild Disease,3,82,Male,23.1,1
+S00206,12,Mild Disease,3,82,Male,23.1,1
+S00206,15,Mild Disease,3,82,Male,23.1,1
+S00206,18,Mild Disease,3,82,Male,23.1,1
+S00206,21,Moderate Disease,4,82,Male,23.1,1
+S00206,24,Severe Disease,5,82,Male,23.1,1
+S00206,27,Death,6,82,Male,23.1,1
+S00207,0,Moderate Disease,4,61,Male,32.8,0
+S00207,3,Moderate Disease,4,61,Male,32.8,0
+S00207,6,Mild Disease,3,61,Male,32.8,0
+S00207,9,Preclinical,2,61,Male,32.8,0
+S00207,12,Preclinical,2,61,Male,32.8,0
+S00207,15,Mild Disease,3,61,Male,32.8,0
+S00207,18,Mild Disease,3,61,Male,32.8,0
+S00207,21,Moderate Disease,4,61,Male,32.8,0
+S00207,24,Moderate Disease,4,61,Male,32.8,0
+S00207,27,Moderate Disease,4,61,Male,32.8,0
+S00207,30,Severe Disease,5,61,Male,32.8,0
+S00207,33,Severe Disease,5,61,Male,32.8,0
+S00207,36,Moderate Disease,4,61,Male,32.8,0
+S00207,39,Moderate Disease,4,61,Male,32.8,0
+S00207,42,Moderate Disease,4,61,Male,32.8,0
+S00207,45,Moderate Disease,4,61,Male,32.8,0
+S00207,48,Severe Disease,5,61,Male,32.8,0
+S00207,51,Severe Disease,5,61,Male,32.8,0
+S00207,54,Death,6,61,Male,32.8,0
+S00208,0,Healthy,0,60,Male,29.5,0
+S00208,3,Healthy,0,60,Male,29.5,0
+S00208,6,Healthy,0,60,Male,29.5,0
+S00208,9,Healthy,0,60,Male,29.5,0
+S00208,12,Healthy,0,60,Male,29.5,0
+S00208,15,Healthy,0,60,Male,29.5,0
+S00208,18,Healthy,0,60,Male,29.5,0
+S00208,21,Healthy,0,60,Male,29.5,0
+S00208,24,Healthy,0,60,Male,29.5,0
+S00208,27,Healthy,0,60,Male,29.5,0
+S00208,30,Healthy,0,60,Male,29.5,0
+S00208,33,Healthy,0,60,Male,29.5,0
+S00208,36,Healthy,0,60,Male,29.5,0
+S00208,39,Healthy,0,60,Male,29.5,0
+S00208,42,Healthy,0,60,Male,29.5,0
+S00208,45,Healthy,0,60,Male,29.5,0
+S00208,48,At Risk,1,60,Male,29.5,0
+S00208,51,At Risk,1,60,Male,29.5,0
+S00208,54,At Risk,1,60,Male,29.5,0
+S00208,57,At Risk,1,60,Male,29.5,0
+S00208,60,Preclinical,2,60,Male,29.5,0
+S00208,63,Preclinical,2,60,Male,29.5,0
+S00208,66,Mild Disease,3,60,Male,29.5,0
+S00208,69,Mild Disease,3,60,Male,29.5,0
+S00208,72,Moderate Disease,4,60,Male,29.5,0
+S00209,0,Mild Disease,3,64,Female,24.2,0
+S00209,3,Mild Disease,3,64,Female,24.2,0
+S00209,6,Mild Disease,3,64,Female,24.2,0
+S00209,9,Mild Disease,3,64,Female,24.2,0
+S00209,12,Mild Disease,3,64,Female,24.2,0
+S00209,15,Mild Disease,3,64,Female,24.2,0
+S00209,18,Mild Disease,3,64,Female,24.2,0
+S00209,21,Mild Disease,3,64,Female,24.2,0
+S00209,24,Moderate Disease,4,64,Female,24.2,0
+S00209,27,Moderate Disease,4,64,Female,24.2,0
+S00209,30,Severe Disease,5,64,Female,24.2,0
+S00209,33,Moderate Disease,4,64,Female,24.2,0
+S00209,36,Severe Disease,5,64,Female,24.2,0
+S00209,39,Severe Disease,5,64,Female,24.2,0
+S00209,42,Death,6,64,Female,24.2,0
+S00210,0,Healthy,0,56,Female,28.3,1
+S00210,3,Healthy,0,56,Female,28.3,1
+S00210,6,Healthy,0,56,Female,28.3,1
+S00210,9,At Risk,1,56,Female,28.3,1
+S00210,12,At Risk,1,56,Female,28.3,1
+S00210,15,Preclinical,2,56,Female,28.3,1
+S00210,18,Preclinical,2,56,Female,28.3,1
+S00210,21,Mild Disease,3,56,Female,28.3,1
+S00210,24,Mild Disease,3,56,Female,28.3,1
+S00210,27,Mild Disease,3,56,Female,28.3,1
+S00210,30,Mild Disease,3,56,Female,28.3,1
+S00210,33,Mild Disease,3,56,Female,28.3,1
+S00210,36,Moderate Disease,4,56,Female,28.3,1
+S00210,39,Moderate Disease,4,56,Female,28.3,1
+S00210,42,Moderate Disease,4,56,Female,28.3,1
+S00210,45,Moderate Disease,4,56,Female,28.3,1
+S00210,48,Moderate Disease,4,56,Female,28.3,1
+S00210,51,Moderate Disease,4,56,Female,28.3,1
+S00210,54,Severe Disease,5,56,Female,28.3,1
+S00210,57,Death,6,56,Female,28.3,1
+S00211,0,At Risk,1,77,Female,32.5,1
+S00211,3,Preclinical,2,77,Female,32.5,1
+S00211,6,Mild Disease,3,77,Female,32.5,1
+S00211,9,Mild Disease,3,77,Female,32.5,1
+S00211,12,Mild Disease,3,77,Female,32.5,1
+S00211,15,Mild Disease,3,77,Female,32.5,1
+S00211,18,Mild Disease,3,77,Female,32.5,1
+S00211,21,Moderate Disease,4,77,Female,32.5,1
+S00211,24,Moderate Disease,4,77,Female,32.5,1
+S00211,27,Moderate Disease,4,77,Female,32.5,1
+S00211,30,Moderate Disease,4,77,Female,32.5,1
+S00211,33,Severe Disease,5,77,Female,32.5,1
+S00211,36,Severe Disease,5,77,Female,32.5,1
+S00211,39,Severe Disease,5,77,Female,32.5,1
+S00211,42,Severe Disease,5,77,Female,32.5,1
+S00211,45,Severe Disease,5,77,Female,32.5,1
+S00211,48,Severe Disease,5,77,Female,32.5,1
+S00211,51,Severe Disease,5,77,Female,32.5,1
+S00211,54,Severe Disease,5,77,Female,32.5,1
+S00211,57,Severe Disease,5,77,Female,32.5,1
+S00211,60,Death,6,77,Female,32.5,1
+S00212,0,Healthy,0,78,Female,27.8,0
+S00212,3,Healthy,0,78,Female,27.8,0
+S00212,6,Healthy,0,78,Female,27.8,0
+S00212,9,At Risk,1,78,Female,27.8,0
+S00212,12,Preclinical,2,78,Female,27.8,0
+S00212,15,Preclinical,2,78,Female,27.8,0
+S00212,18,Mild Disease,3,78,Female,27.8,0
+S00212,21,Mild Disease,3,78,Female,27.8,0
+S00212,24,Mild Disease,3,78,Female,27.8,0
+S00212,27,Mild Disease,3,78,Female,27.8,0
+S00212,30,Mild Disease,3,78,Female,27.8,0
+S00212,33,Mild Disease,3,78,Female,27.8,0
+S00212,36,Mild Disease,3,78,Female,27.8,0
+S00212,39,Mild Disease,3,78,Female,27.8,0
+S00212,42,Moderate Disease,4,78,Female,27.8,0
+S00212,45,Moderate Disease,4,78,Female,27.8,0
+S00212,48,Moderate Disease,4,78,Female,27.8,0
+S00212,51,Severe Disease,5,78,Female,27.8,0
+S00212,54,Severe Disease,5,78,Female,27.8,0
+S00212,57,Death,6,78,Female,27.8,0
+S00213,0,Moderate Disease,4,82,Female,26.9,0
+S00213,3,Moderate Disease,4,82,Female,26.9,0
+S00213,6,Severe Disease,5,82,Female,26.9,0
+S00213,9,Death,6,82,Female,26.9,0
+S00214,0,At Risk,1,43,Female,27.8,1
+S00214,3,At Risk,1,43,Female,27.8,1
+S00214,6,At Risk,1,43,Female,27.8,1
+S00214,9,At Risk,1,43,Female,27.8,1
+S00214,12,Preclinical,2,43,Female,27.8,1
+S00214,15,Preclinical,2,43,Female,27.8,1
+S00214,18,Mild Disease,3,43,Female,27.8,1
+S00214,21,Mild Disease,3,43,Female,27.8,1
+S00214,24,Moderate Disease,4,43,Female,27.8,1
+S00214,27,Moderate Disease,4,43,Female,27.8,1
+S00214,30,Severe Disease,5,43,Female,27.8,1
+S00214,33,Moderate Disease,4,43,Female,27.8,1
+S00214,36,Severe Disease,5,43,Female,27.8,1
+S00214,39,Severe Disease,5,43,Female,27.8,1
+S00214,42,Severe Disease,5,43,Female,27.8,1
+S00214,45,Severe Disease,5,43,Female,27.8,1
+S00214,48,Severe Disease,5,43,Female,27.8,1
+S00214,51,Severe Disease,5,43,Female,27.8,1
+S00214,54,Severe Disease,5,43,Female,27.8,1
+S00214,57,Death,6,43,Female,27.8,1
+S00215,0,Healthy,0,83,Female,17.8,1
+S00215,3,Healthy,0,83,Female,17.8,1
+S00215,6,Healthy,0,83,Female,17.8,1
+S00215,9,At Risk,1,83,Female,17.8,1
+S00215,12,At Risk,1,83,Female,17.8,1
+S00215,15,At Risk,1,83,Female,17.8,1
+S00215,18,At Risk,1,83,Female,17.8,1
+S00215,21,At Risk,1,83,Female,17.8,1
+S00215,24,At Risk,1,83,Female,17.8,1
+S00215,27,Preclinical,2,83,Female,17.8,1
+S00215,30,Preclinical,2,83,Female,17.8,1
+S00215,33,Mild Disease,3,83,Female,17.8,1
+S00215,36,Mild Disease,3,83,Female,17.8,1
+S00215,39,Moderate Disease,4,83,Female,17.8,1
+S00215,42,Moderate Disease,4,83,Female,17.8,1
+S00215,45,Moderate Disease,4,83,Female,17.8,1
+S00215,48,Severe Disease,5,83,Female,17.8,1
+S00215,51,Severe Disease,5,83,Female,17.8,1
+S00215,54,Death,6,83,Female,17.8,1
+S00216,0,Preclinical,2,50,Female,31.1,1
+S00216,3,Preclinical,2,50,Female,31.1,1
+S00216,6,Preclinical,2,50,Female,31.1,1
+S00216,9,Mild Disease,3,50,Female,31.1,1
+S00216,12,Moderate Disease,4,50,Female,31.1,1
+S00216,15,Severe Disease,5,50,Female,31.1,1
+S00216,18,Severe Disease,5,50,Female,31.1,1
+S00216,21,Severe Disease,5,50,Female,31.1,1
+S00216,24,Severe Disease,5,50,Female,31.1,1
+S00216,27,Severe Disease,5,50,Female,31.1,1
+S00216,30,Death,6,50,Female,31.1,1
+S00217,0,Moderate Disease,4,68,Female,23.5,0
+S00217,3,Moderate Disease,4,68,Female,23.5,0
+S00217,6,Moderate Disease,4,68,Female,23.5,0
+S00217,9,Moderate Disease,4,68,Female,23.5,0
+S00217,12,Moderate Disease,4,68,Female,23.5,0
+S00217,15,Moderate Disease,4,68,Female,23.5,0
+S00217,18,Severe Disease,5,68,Female,23.5,0
+S00217,21,Severe Disease,5,68,Female,23.5,0
+S00217,24,Severe Disease,5,68,Female,23.5,0
+S00217,27,Death,6,68,Female,23.5,0
+S00218,0,Healthy,0,61,Male,17.5,0
+S00218,3,At Risk,1,61,Male,17.5,0
+S00218,6,At Risk,1,61,Male,17.5,0
+S00218,9,Healthy,0,61,Male,17.5,0
+S00218,12,Healthy,0,61,Male,17.5,0
+S00218,15,At Risk,1,61,Male,17.5,0
+S00218,18,At Risk,1,61,Male,17.5,0
+S00218,21,Healthy,0,61,Male,17.5,0
+S00218,24,Healthy,0,61,Male,17.5,0
+S00218,27,Healthy,0,61,Male,17.5,0
+S00218,30,At Risk,1,61,Male,17.5,0
+S00218,33,At Risk,1,61,Male,17.5,0
+S00218,36,Preclinical,2,61,Male,17.5,0
+S00218,39,Mild Disease,3,61,Male,17.5,0
+S00218,42,Preclinical,2,61,Male,17.5,0
+S00218,45,Mild Disease,3,61,Male,17.5,0
+S00218,48,Mild Disease,3,61,Male,17.5,0
+S00218,51,Mild Disease,3,61,Male,17.5,0
+S00218,54,Moderate Disease,4,61,Male,17.5,0
+S00218,57,Moderate Disease,4,61,Male,17.5,0
+S00218,60,Severe Disease,5,61,Male,17.5,0
+S00218,63,Death,6,61,Male,17.5,0
+S00219,0,At Risk,1,47,Female,36.0,1
+S00219,3,At Risk,1,47,Female,36.0,1
+S00219,6,At Risk,1,47,Female,36.0,1
+S00219,9,At Risk,1,47,Female,36.0,1
+S00219,12,At Risk,1,47,Female,36.0,1
+S00219,15,At Risk,1,47,Female,36.0,1
+S00219,18,At Risk,1,47,Female,36.0,1
+S00219,21,Preclinical,2,47,Female,36.0,1
+S00219,24,Preclinical,2,47,Female,36.0,1
+S00219,27,Preclinical,2,47,Female,36.0,1
+S00219,30,Mild Disease,3,47,Female,36.0,1
+S00219,33,Mild Disease,3,47,Female,36.0,1
+S00219,36,Moderate Disease,4,47,Female,36.0,1
+S00219,39,Severe Disease,5,47,Female,36.0,1
+S00219,42,Death,6,47,Female,36.0,1
+S00220,0,Preclinical,2,61,Male,24.7,0
+S00220,3,Mild Disease,3,61,Male,24.7,0
+S00220,6,Moderate Disease,4,61,Male,24.7,0
+S00220,9,Severe Disease,5,61,Male,24.7,0
+S00220,12,Severe Disease,5,61,Male,24.7,0
+S00220,15,Severe Disease,5,61,Male,24.7,0
+S00220,18,Moderate Disease,4,61,Male,24.7,0
+S00220,21,Moderate Disease,4,61,Male,24.7,0
+S00220,24,Moderate Disease,4,61,Male,24.7,0
+S00220,27,Severe Disease,5,61,Male,24.7,0
+S00220,30,Death,6,61,Male,24.7,0
+S00221,0,Moderate Disease,4,48,Male,29.4,1
+S00221,3,Moderate Disease,4,48,Male,29.4,1
+S00221,6,Moderate Disease,4,48,Male,29.4,1
+S00221,9,Severe Disease,5,48,Male,29.4,1
+S00221,12,Severe Disease,5,48,Male,29.4,1
+S00221,15,Death,6,48,Male,29.4,1
+S00222,0,Moderate Disease,4,43,Male,26.3,1
+S00222,3,Moderate Disease,4,43,Male,26.3,1
+S00222,6,Severe Disease,5,43,Male,26.3,1
+S00222,9,Severe Disease,5,43,Male,26.3,1
+S00222,12,Severe Disease,5,43,Male,26.3,1
+S00222,15,Severe Disease,5,43,Male,26.3,1
+S00222,18,Severe Disease,5,43,Male,26.3,1
+S00222,21,Severe Disease,5,43,Male,26.3,1
+S00222,24,Severe Disease,5,43,Male,26.3,1
+S00222,27,Severe Disease,5,43,Male,26.3,1
+S00222,30,Severe Disease,5,43,Male,26.3,1
+S00222,33,Severe Disease,5,43,Male,26.3,1
+S00222,36,Severe Disease,5,43,Male,26.3,1
+S00222,39,Severe Disease,5,43,Male,26.3,1
+S00222,42,Death,6,43,Male,26.3,1
+S00223,0,Healthy,0,38,Female,18.6,0
+S00223,3,Healthy,0,38,Female,18.6,0
+S00223,6,Healthy,0,38,Female,18.6,0
+S00223,9,Healthy,0,38,Female,18.6,0
+S00223,12,Healthy,0,38,Female,18.6,0
+S00223,15,At Risk,1,38,Female,18.6,0
+S00223,18,At Risk,1,38,Female,18.6,0
+S00223,21,At Risk,1,38,Female,18.6,0
+S00223,24,At Risk,1,38,Female,18.6,0
+S00223,27,At Risk,1,38,Female,18.6,0
+S00223,30,At Risk,1,38,Female,18.6,0
+S00223,33,At Risk,1,38,Female,18.6,0
+S00223,36,At Risk,1,38,Female,18.6,0
+S00223,39,At Risk,1,38,Female,18.6,0
+S00223,42,Healthy,0,38,Female,18.6,0
+S00223,45,Healthy,0,38,Female,18.6,0
+S00223,48,Healthy,0,38,Female,18.6,0
+S00223,51,Healthy,0,38,Female,18.6,0
+S00223,54,Healthy,0,38,Female,18.6,0
+S00223,57,Healthy,0,38,Female,18.6,0
+S00223,60,Healthy,0,38,Female,18.6,0
+S00223,63,Healthy,0,38,Female,18.6,0
+S00223,66,Healthy,0,38,Female,18.6,0
+S00223,69,Healthy,0,38,Female,18.6,0
+S00223,72,Healthy,0,38,Female,18.6,0
+S00224,0,Healthy,0,52,Male,20.4,0
+S00224,3,Healthy,0,52,Male,20.4,0
+S00224,6,Healthy,0,52,Male,20.4,0
+S00224,9,At Risk,1,52,Male,20.4,0
+S00224,12,At Risk,1,52,Male,20.4,0
+S00224,15,At Risk,1,52,Male,20.4,0
+S00224,18,At Risk,1,52,Male,20.4,0
+S00224,21,At Risk,1,52,Male,20.4,0
+S00224,24,At Risk,1,52,Male,20.4,0
+S00224,27,At Risk,1,52,Male,20.4,0
+S00224,30,At Risk,1,52,Male,20.4,0
+S00224,33,At Risk,1,52,Male,20.4,0
+S00224,36,At Risk,1,52,Male,20.4,0
+S00224,39,At Risk,1,52,Male,20.4,0
+S00224,42,At Risk,1,52,Male,20.4,0
+S00224,45,At Risk,1,52,Male,20.4,0
+S00224,48,At Risk,1,52,Male,20.4,0
+S00224,51,At Risk,1,52,Male,20.4,0
+S00224,54,At Risk,1,52,Male,20.4,0
+S00224,57,At Risk,1,52,Male,20.4,0
+S00224,60,Preclinical,2,52,Male,20.4,0
+S00224,63,Preclinical,2,52,Male,20.4,0
+S00224,66,Preclinical,2,52,Male,20.4,0
+S00224,69,Preclinical,2,52,Male,20.4,0
+S00224,72,Preclinical,2,52,Male,20.4,0
+S00225,0,Preclinical,2,68,Male,28.2,0
+S00225,3,Preclinical,2,68,Male,28.2,0
+S00225,6,Mild Disease,3,68,Male,28.2,0
+S00225,9,Mild Disease,3,68,Male,28.2,0
+S00225,12,Mild Disease,3,68,Male,28.2,0
+S00225,15,Moderate Disease,4,68,Male,28.2,0
+S00225,18,Moderate Disease,4,68,Male,28.2,0
+S00225,21,Severe Disease,5,68,Male,28.2,0
+S00225,24,Severe Disease,5,68,Male,28.2,0
+S00225,27,Severe Disease,5,68,Male,28.2,0
+S00225,30,Death,6,68,Male,28.2,0
+S00226,0,Preclinical,2,40,Male,27.8,1
+S00226,3,Mild Disease,3,40,Male,27.8,1
+S00226,6,Moderate Disease,4,40,Male,27.8,1
+S00226,9,Moderate Disease,4,40,Male,27.8,1
+S00226,12,Moderate Disease,4,40,Male,27.8,1
+S00226,15,Moderate Disease,4,40,Male,27.8,1
+S00226,18,Severe Disease,5,40,Male,27.8,1
+S00226,21,Moderate Disease,4,40,Male,27.8,1
+S00226,24,Moderate Disease,4,40,Male,27.8,1
+S00226,27,Moderate Disease,4,40,Male,27.8,1
+S00226,30,Severe Disease,5,40,Male,27.8,1
+S00226,33,Severe Disease,5,40,Male,27.8,1
+S00226,36,Death,6,40,Male,27.8,1
+S00227,0,Mild Disease,3,42,Male,28.9,0
+S00227,3,Mild Disease,3,42,Male,28.9,0
+S00227,6,Mild Disease,3,42,Male,28.9,0
+S00227,9,Moderate Disease,4,42,Male,28.9,0
+S00227,12,Moderate Disease,4,42,Male,28.9,0
+S00227,15,Moderate Disease,4,42,Male,28.9,0
+S00227,18,Moderate Disease,4,42,Male,28.9,0
+S00227,21,Moderate Disease,4,42,Male,28.9,0
+S00227,24,Severe Disease,5,42,Male,28.9,0
+S00227,27,Severe Disease,5,42,Male,28.9,0
+S00227,30,Severe Disease,5,42,Male,28.9,0
+S00227,33,Severe Disease,5,42,Male,28.9,0
+S00227,36,Severe Disease,5,42,Male,28.9,0
+S00227,39,Severe Disease,5,42,Male,28.9,0
+S00227,42,Severe Disease,5,42,Male,28.9,0
+S00227,45,Severe Disease,5,42,Male,28.9,0
+S00227,48,Severe Disease,5,42,Male,28.9,0
+S00227,51,Severe Disease,5,42,Male,28.9,0
+S00227,54,Severe Disease,5,42,Male,28.9,0
+S00227,57,Death,6,42,Male,28.9,0
+S00228,0,Healthy,0,78,Male,26.0,0
+S00228,3,At Risk,1,78,Male,26.0,0
+S00228,6,Preclinical,2,78,Male,26.0,0
+S00228,9,Preclinical,2,78,Male,26.0,0
+S00228,12,Mild Disease,3,78,Male,26.0,0
+S00228,15,Mild Disease,3,78,Male,26.0,0
+S00228,18,Mild Disease,3,78,Male,26.0,0
+S00228,21,Mild Disease,3,78,Male,26.0,0
+S00228,24,Moderate Disease,4,78,Male,26.0,0
+S00228,27,Moderate Disease,4,78,Male,26.0,0
+S00228,30,Moderate Disease,4,78,Male,26.0,0
+S00228,33,Moderate Disease,4,78,Male,26.0,0
+S00228,36,Moderate Disease,4,78,Male,26.0,0
+S00228,39,Severe Disease,5,78,Male,26.0,0
+S00228,42,Severe Disease,5,78,Male,26.0,0
+S00228,45,Death,6,78,Male,26.0,0
+S00229,0,At Risk,1,65,Female,29.8,1
+S00229,3,Preclinical,2,65,Female,29.8,1
+S00229,6,Preclinical,2,65,Female,29.8,1
+S00229,9,Preclinical,2,65,Female,29.8,1
+S00229,12,Preclinical,2,65,Female,29.8,1
+S00229,15,Mild Disease,3,65,Female,29.8,1
+S00229,18,Mild Disease,3,65,Female,29.8,1
+S00229,21,Moderate Disease,4,65,Female,29.8,1
+S00229,24,Severe Disease,5,65,Female,29.8,1
+S00229,27,Death,6,65,Female,29.8,1
+S00230,0,Moderate Disease,4,69,Female,30.1,1
+S00230,3,Mild Disease,3,69,Female,30.1,1
+S00230,6,Moderate Disease,4,69,Female,30.1,1
+S00230,9,Severe Disease,5,69,Female,30.1,1
+S00230,12,Severe Disease,5,69,Female,30.1,1
+S00230,15,Severe Disease,5,69,Female,30.1,1
+S00230,18,Death,6,69,Female,30.1,1
+S00231,0,At Risk,1,49,Male,27.9,0
+S00231,3,Preclinical,2,49,Male,27.9,0
+S00231,6,Preclinical,2,49,Male,27.9,0
+S00231,9,Preclinical,2,49,Male,27.9,0
+S00231,12,Preclinical,2,49,Male,27.9,0
+S00231,15,Preclinical,2,49,Male,27.9,0
+S00231,18,Preclinical,2,49,Male,27.9,0
+S00231,21,Preclinical,2,49,Male,27.9,0
+S00231,24,Preclinical,2,49,Male,27.9,0
+S00231,27,Preclinical,2,49,Male,27.9,0
+S00231,30,Preclinical,2,49,Male,27.9,0
+S00231,33,Preclinical,2,49,Male,27.9,0
+S00231,36,Preclinical,2,49,Male,27.9,0
+S00231,39,Preclinical,2,49,Male,27.9,0
+S00231,42,Preclinical,2,49,Male,27.9,0
+S00231,45,Preclinical,2,49,Male,27.9,0
+S00231,48,Preclinical,2,49,Male,27.9,0
+S00231,51,Preclinical,2,49,Male,27.9,0
+S00231,54,Preclinical,2,49,Male,27.9,0
+S00231,57,Preclinical,2,49,Male,27.9,0
+S00231,60,Preclinical,2,49,Male,27.9,0
+S00231,63,Preclinical,2,49,Male,27.9,0
+S00231,66,Preclinical,2,49,Male,27.9,0
+S00231,69,Preclinical,2,49,Male,27.9,0
+S00231,72,Preclinical,2,49,Male,27.9,0
+S00232,0,Preclinical,2,59,Female,23.1,0
+S00232,3,Preclinical,2,59,Female,23.1,0
+S00232,6,Preclinical,2,59,Female,23.1,0
+S00232,9,Preclinical,2,59,Female,23.1,0
+S00232,12,Preclinical,2,59,Female,23.1,0
+S00232,15,Preclinical,2,59,Female,23.1,0
+S00232,18,Preclinical,2,59,Female,23.1,0
+S00232,21,Preclinical,2,59,Female,23.1,0
+S00232,24,Preclinical,2,59,Female,23.1,0
+S00232,27,Mild Disease,3,59,Female,23.1,0
+S00232,30,Mild Disease,3,59,Female,23.1,0
+S00232,33,Mild Disease,3,59,Female,23.1,0
+S00232,36,Mild Disease,3,59,Female,23.1,0
+S00232,39,Mild Disease,3,59,Female,23.1,0
+S00232,42,Mild Disease,3,59,Female,23.1,0
+S00232,45,Mild Disease,3,59,Female,23.1,0
+S00232,48,Mild Disease,3,59,Female,23.1,0
+S00232,51,Mild Disease,3,59,Female,23.1,0
+S00232,54,Mild Disease,3,59,Female,23.1,0
+S00232,57,Mild Disease,3,59,Female,23.1,0
+S00232,60,Mild Disease,3,59,Female,23.1,0
+S00232,63,Mild Disease,3,59,Female,23.1,0
+S00232,66,Mild Disease,3,59,Female,23.1,0
+S00232,69,Mild Disease,3,59,Female,23.1,0
+S00232,72,Mild Disease,3,59,Female,23.1,0
+S00233,0,Healthy,0,72,Male,29.6,1
+S00233,3,At Risk,1,72,Male,29.6,1
+S00233,6,At Risk,1,72,Male,29.6,1
+S00233,9,At Risk,1,72,Male,29.6,1
+S00233,12,At Risk,1,72,Male,29.6,1
+S00233,15,At Risk,1,72,Male,29.6,1
+S00233,18,At Risk,1,72,Male,29.6,1
+S00233,21,At Risk,1,72,Male,29.6,1
+S00233,24,At Risk,1,72,Male,29.6,1
+S00233,27,At Risk,1,72,Male,29.6,1
+S00233,30,At Risk,1,72,Male,29.6,1
+S00233,33,At Risk,1,72,Male,29.6,1
+S00233,36,At Risk,1,72,Male,29.6,1
+S00233,39,Preclinical,2,72,Male,29.6,1
+S00233,42,Preclinical,2,72,Male,29.6,1
+S00233,45,Preclinical,2,72,Male,29.6,1
+S00233,48,Preclinical,2,72,Male,29.6,1
+S00233,51,Mild Disease,3,72,Male,29.6,1
+S00233,54,Moderate Disease,4,72,Male,29.6,1
+S00233,57,Severe Disease,5,72,Male,29.6,1
+S00233,60,Death,6,72,Male,29.6,1
+S00234,0,Preclinical,2,84,Female,28.2,0
+S00234,3,Mild Disease,3,84,Female,28.2,0
+S00234,6,Mild Disease,3,84,Female,28.2,0
+S00234,9,Moderate Disease,4,84,Female,28.2,0
+S00234,12,Moderate Disease,4,84,Female,28.2,0
+S00234,15,Moderate Disease,4,84,Female,28.2,0
+S00234,18,Severe Disease,5,84,Female,28.2,0
+S00234,21,Severe Disease,5,84,Female,28.2,0
+S00234,24,Death,6,84,Female,28.2,0
+S00235,0,Preclinical,2,42,Male,27.5,1
+S00235,3,Preclinical,2,42,Male,27.5,1
+S00235,6,Mild Disease,3,42,Male,27.5,1
+S00235,9,Mild Disease,3,42,Male,27.5,1
+S00235,12,Mild Disease,3,42,Male,27.5,1
+S00235,15,Mild Disease,3,42,Male,27.5,1
+S00235,18,Mild Disease,3,42,Male,27.5,1
+S00235,21,Mild Disease,3,42,Male,27.5,1
+S00235,24,Moderate Disease,4,42,Male,27.5,1
+S00235,27,Moderate Disease,4,42,Male,27.5,1
+S00235,30,Mild Disease,3,42,Male,27.5,1
+S00235,33,Moderate Disease,4,42,Male,27.5,1
+S00235,36,Severe Disease,5,42,Male,27.5,1
+S00235,39,Severe Disease,5,42,Male,27.5,1
+S00235,42,Death,6,42,Male,27.5,1
+S00236,0,Mild Disease,3,79,Male,27.0,0
+S00236,3,Mild Disease,3,79,Male,27.0,0
+S00236,6,Moderate Disease,4,79,Male,27.0,0
+S00236,9,Severe Disease,5,79,Male,27.0,0
+S00236,12,Death,6,79,Male,27.0,0
+S00237,0,At Risk,1,56,Female,20.0,0
+S00237,3,Preclinical,2,56,Female,20.0,0
+S00237,6,Preclinical,2,56,Female,20.0,0
+S00237,9,Preclinical,2,56,Female,20.0,0
+S00237,12,Preclinical,2,56,Female,20.0,0
+S00237,15,Preclinical,2,56,Female,20.0,0
+S00237,18,Preclinical,2,56,Female,20.0,0
+S00237,21,Preclinical,2,56,Female,20.0,0
+S00237,24,Preclinical,2,56,Female,20.0,0
+S00237,27,Preclinical,2,56,Female,20.0,0
+S00237,30,Preclinical,2,56,Female,20.0,0
+S00237,33,Preclinical,2,56,Female,20.0,0
+S00237,36,Preclinical,2,56,Female,20.0,0
+S00237,39,Preclinical,2,56,Female,20.0,0
+S00237,42,Preclinical,2,56,Female,20.0,0
+S00237,45,At Risk,1,56,Female,20.0,0
+S00237,48,At Risk,1,56,Female,20.0,0
+S00237,51,At Risk,1,56,Female,20.0,0
+S00237,54,At Risk,1,56,Female,20.0,0
+S00237,57,Healthy,0,56,Female,20.0,0
+S00237,60,Healthy,0,56,Female,20.0,0
+S00237,63,Healthy,0,56,Female,20.0,0
+S00237,66,Healthy,0,56,Female,20.0,0
+S00237,69,At Risk,1,56,Female,20.0,0
+S00237,72,At Risk,1,56,Female,20.0,0
+S00238,0,Healthy,0,84,Male,17.1,0
+S00238,3,At Risk,1,84,Male,17.1,0
+S00238,6,At Risk,1,84,Male,17.1,0
+S00238,9,Preclinical,2,84,Male,17.1,0
+S00238,12,Preclinical,2,84,Male,17.1,0
+S00238,15,Preclinical,2,84,Male,17.1,0
+S00238,18,Preclinical,2,84,Male,17.1,0
+S00238,21,Preclinical,2,84,Male,17.1,0
+S00238,24,Preclinical,2,84,Male,17.1,0
+S00238,27,Preclinical,2,84,Male,17.1,0
+S00238,30,Preclinical,2,84,Male,17.1,0
+S00238,33,Preclinical,2,84,Male,17.1,0
+S00238,36,Preclinical,2,84,Male,17.1,0
+S00238,39,Preclinical,2,84,Male,17.1,0
+S00238,42,Mild Disease,3,84,Male,17.1,0
+S00238,45,Moderate Disease,4,84,Male,17.1,0
+S00238,48,Moderate Disease,4,84,Male,17.1,0
+S00238,51,Mild Disease,3,84,Male,17.1,0
+S00238,54,Mild Disease,3,84,Male,17.1,0
+S00238,57,Moderate Disease,4,84,Male,17.1,0
+S00238,60,Moderate Disease,4,84,Male,17.1,0
+S00238,63,Moderate Disease,4,84,Male,17.1,0
+S00238,66,Moderate Disease,4,84,Male,17.1,0
+S00238,69,Moderate Disease,4,84,Male,17.1,0
+S00238,72,Severe Disease,5,84,Male,17.1,0
+S00239,0,At Risk,1,49,Male,28.4,0
+S00239,3,Preclinical,2,49,Male,28.4,0
+S00239,6,Preclinical,2,49,Male,28.4,0
+S00239,9,Preclinical,2,49,Male,28.4,0
+S00239,12,Preclinical,2,49,Male,28.4,0
+S00239,15,Preclinical,2,49,Male,28.4,0
+S00239,18,Preclinical,2,49,Male,28.4,0
+S00239,21,Preclinical,2,49,Male,28.4,0
+S00239,24,Mild Disease,3,49,Male,28.4,0
+S00239,27,Mild Disease,3,49,Male,28.4,0
+S00239,30,Mild Disease,3,49,Male,28.4,0
+S00239,33,Mild Disease,3,49,Male,28.4,0
+S00239,36,Mild Disease,3,49,Male,28.4,0
+S00239,39,Moderate Disease,4,49,Male,28.4,0
+S00239,42,Moderate Disease,4,49,Male,28.4,0
+S00239,45,Moderate Disease,4,49,Male,28.4,0
+S00239,48,Moderate Disease,4,49,Male,28.4,0
+S00239,51,Moderate Disease,4,49,Male,28.4,0
+S00239,54,Severe Disease,5,49,Male,28.4,0
+S00239,57,Severe Disease,5,49,Male,28.4,0
+S00239,60,Severe Disease,5,49,Male,28.4,0
+S00239,63,Severe Disease,5,49,Male,28.4,0
+S00239,66,Severe Disease,5,49,Male,28.4,0
+S00239,69,Severe Disease,5,49,Male,28.4,0
+S00239,72,Severe Disease,5,49,Male,28.4,0
+S00240,0,Preclinical,2,70,Male,22.7,0
+S00240,3,At Risk,1,70,Male,22.7,0
+S00240,6,At Risk,1,70,Male,22.7,0
+S00240,9,At Risk,1,70,Male,22.7,0
+S00240,12,Preclinical,2,70,Male,22.7,0
+S00240,15,At Risk,1,70,Male,22.7,0
+S00240,18,Healthy,0,70,Male,22.7,0
+S00240,21,Healthy,0,70,Male,22.7,0
+S00240,24,Healthy,0,70,Male,22.7,0
+S00240,27,Healthy,0,70,Male,22.7,0
+S00240,30,At Risk,1,70,Male,22.7,0
+S00240,33,Preclinical,2,70,Male,22.7,0
+S00240,36,Preclinical,2,70,Male,22.7,0
+S00240,39,Preclinical,2,70,Male,22.7,0
+S00240,42,Mild Disease,3,70,Male,22.7,0
+S00240,45,Mild Disease,3,70,Male,22.7,0
+S00240,48,Mild Disease,3,70,Male,22.7,0
+S00240,51,Mild Disease,3,70,Male,22.7,0
+S00240,54,Mild Disease,3,70,Male,22.7,0
+S00240,57,Mild Disease,3,70,Male,22.7,0
+S00240,60,Mild Disease,3,70,Male,22.7,0
+S00240,63,Mild Disease,3,70,Male,22.7,0
+S00240,66,Mild Disease,3,70,Male,22.7,0
+S00240,69,Mild Disease,3,70,Male,22.7,0
+S00240,72,Moderate Disease,4,70,Male,22.7,0
+S00241,0,At Risk,1,76,Female,30.2,0
+S00241,3,Preclinical,2,76,Female,30.2,0
+S00241,6,Mild Disease,3,76,Female,30.2,0
+S00241,9,Mild Disease,3,76,Female,30.2,0
+S00241,12,Mild Disease,3,76,Female,30.2,0
+S00241,15,Mild Disease,3,76,Female,30.2,0
+S00241,18,Mild Disease,3,76,Female,30.2,0
+S00241,21,Mild Disease,3,76,Female,30.2,0
+S00241,24,Mild Disease,3,76,Female,30.2,0
+S00241,27,Mild Disease,3,76,Female,30.2,0
+S00241,30,Mild Disease,3,76,Female,30.2,0
+S00241,33,Mild Disease,3,76,Female,30.2,0
+S00241,36,Moderate Disease,4,76,Female,30.2,0
+S00241,39,Moderate Disease,4,76,Female,30.2,0
+S00241,42,Severe Disease,5,76,Female,30.2,0
+S00241,45,Death,6,76,Female,30.2,0
+S00242,0,Healthy,0,62,Female,32.3,1
+S00242,3,Healthy,0,62,Female,32.3,1
+S00242,6,Healthy,0,62,Female,32.3,1
+S00242,9,Healthy,0,62,Female,32.3,1
+S00242,12,Healthy,0,62,Female,32.3,1
+S00242,15,Healthy,0,62,Female,32.3,1
+S00242,18,Healthy,0,62,Female,32.3,1
+S00242,21,At Risk,1,62,Female,32.3,1
+S00242,24,Preclinical,2,62,Female,32.3,1
+S00242,27,Preclinical,2,62,Female,32.3,1
+S00242,30,Mild Disease,3,62,Female,32.3,1
+S00242,33,Moderate Disease,4,62,Female,32.3,1
+S00242,36,Severe Disease,5,62,Female,32.3,1
+S00242,39,Death,6,62,Female,32.3,1
+S00243,0,Mild Disease,3,73,Female,19.6,0
+S00243,3,Moderate Disease,4,73,Female,19.6,0
+S00243,6,Severe Disease,5,73,Female,19.6,0
+S00243,9,Severe Disease,5,73,Female,19.6,0
+S00243,12,Severe Disease,5,73,Female,19.6,0
+S00243,15,Severe Disease,5,73,Female,19.6,0
+S00243,18,Severe Disease,5,73,Female,19.6,0
+S00243,21,Death,6,73,Female,19.6,0
+S00244,0,Severe Disease,5,60,Male,18.8,1
+S00244,3,Severe Disease,5,60,Male,18.8,1
+S00244,6,Severe Disease,5,60,Male,18.8,1
+S00244,9,Severe Disease,5,60,Male,18.8,1
+S00244,12,Severe Disease,5,60,Male,18.8,1
+S00244,15,Severe Disease,5,60,Male,18.8,1
+S00244,18,Severe Disease,5,60,Male,18.8,1
+S00244,21,Death,6,60,Male,18.8,1
+S00245,0,Healthy,0,60,Female,26.0,0
+S00245,3,Healthy,0,60,Female,26.0,0
+S00245,6,At Risk,1,60,Female,26.0,0
+S00245,9,At Risk,1,60,Female,26.0,0
+S00245,12,Preclinical,2,60,Female,26.0,0
+S00245,15,Preclinical,2,60,Female,26.0,0
+S00245,18,Preclinical,2,60,Female,26.0,0
+S00245,21,Preclinical,2,60,Female,26.0,0
+S00245,24,Preclinical,2,60,Female,26.0,0
+S00245,27,Preclinical,2,60,Female,26.0,0
+S00245,30,Preclinical,2,60,Female,26.0,0
+S00245,33,Preclinical,2,60,Female,26.0,0
+S00245,36,Mild Disease,3,60,Female,26.0,0
+S00245,39,Mild Disease,3,60,Female,26.0,0
+S00245,42,Mild Disease,3,60,Female,26.0,0
+S00245,45,Mild Disease,3,60,Female,26.0,0
+S00245,48,Mild Disease,3,60,Female,26.0,0
+S00245,51,Mild Disease,3,60,Female,26.0,0
+S00245,54,Mild Disease,3,60,Female,26.0,0
+S00245,57,Mild Disease,3,60,Female,26.0,0
+S00245,60,Mild Disease,3,60,Female,26.0,0
+S00245,63,Mild Disease,3,60,Female,26.0,0
+S00245,66,Mild Disease,3,60,Female,26.0,0
+S00245,69,Mild Disease,3,60,Female,26.0,0
+S00245,72,Moderate Disease,4,60,Female,26.0,0
+S00246,0,Healthy,0,73,Male,24.9,0
+S00246,3,At Risk,1,73,Male,24.9,0
+S00246,6,At Risk,1,73,Male,24.9,0
+S00246,9,At Risk,1,73,Male,24.9,0
+S00246,12,Preclinical,2,73,Male,24.9,0
+S00246,15,Mild Disease,3,73,Male,24.9,0
+S00246,18,Mild Disease,3,73,Male,24.9,0
+S00246,21,Mild Disease,3,73,Male,24.9,0
+S00246,24,Preclinical,2,73,Male,24.9,0
+S00246,27,At Risk,1,73,Male,24.9,0
+S00246,30,Preclinical,2,73,Male,24.9,0
+S00246,33,Preclinical,2,73,Male,24.9,0
+S00246,36,Mild Disease,3,73,Male,24.9,0
+S00246,39,Mild Disease,3,73,Male,24.9,0
+S00246,42,Mild Disease,3,73,Male,24.9,0
+S00246,45,Mild Disease,3,73,Male,24.9,0
+S00246,48,Mild Disease,3,73,Male,24.9,0
+S00246,51,Mild Disease,3,73,Male,24.9,0
+S00246,54,Mild Disease,3,73,Male,24.9,0
+S00246,57,Moderate Disease,4,73,Male,24.9,0
+S00246,60,Mild Disease,3,73,Male,24.9,0
+S00246,63,Preclinical,2,73,Male,24.9,0
+S00246,66,Mild Disease,3,73,Male,24.9,0
+S00246,69,Mild Disease,3,73,Male,24.9,0
+S00246,72,Mild Disease,3,73,Male,24.9,0
+S00247,0,Preclinical,2,54,Male,24.9,0
+S00247,3,Preclinical,2,54,Male,24.9,0
+S00247,6,Preclinical,2,54,Male,24.9,0
+S00247,9,Preclinical,2,54,Male,24.9,0
+S00247,12,At Risk,1,54,Male,24.9,0
+S00247,15,At Risk,1,54,Male,24.9,0
+S00247,18,At Risk,1,54,Male,24.9,0
+S00247,21,At Risk,1,54,Male,24.9,0
+S00247,24,At Risk,1,54,Male,24.9,0
+S00247,27,At Risk,1,54,Male,24.9,0
+S00247,30,At Risk,1,54,Male,24.9,0
+S00247,33,At Risk,1,54,Male,24.9,0
+S00247,36,At Risk,1,54,Male,24.9,0
+S00247,39,At Risk,1,54,Male,24.9,0
+S00247,42,At Risk,1,54,Male,24.9,0
+S00247,45,At Risk,1,54,Male,24.9,0
+S00247,48,At Risk,1,54,Male,24.9,0
+S00247,51,At Risk,1,54,Male,24.9,0
+S00247,54,At Risk,1,54,Male,24.9,0
+S00247,57,At Risk,1,54,Male,24.9,0
+S00247,60,At Risk,1,54,Male,24.9,0
+S00247,63,At Risk,1,54,Male,24.9,0
+S00247,66,At Risk,1,54,Male,24.9,0
+S00247,69,At Risk,1,54,Male,24.9,0
+S00247,72,At Risk,1,54,Male,24.9,0
+S00248,0,Mild Disease,3,61,Female,23.9,0
+S00248,3,Mild Disease,3,61,Female,23.9,0
+S00248,6,Moderate Disease,4,61,Female,23.9,0
+S00248,9,Mild Disease,3,61,Female,23.9,0
+S00248,12,Moderate Disease,4,61,Female,23.9,0
+S00248,15,Moderate Disease,4,61,Female,23.9,0
+S00248,18,Severe Disease,5,61,Female,23.9,0
+S00248,21,Severe Disease,5,61,Female,23.9,0
+S00248,24,Severe Disease,5,61,Female,23.9,0
+S00248,27,Severe Disease,5,61,Female,23.9,0
+S00248,30,Severe Disease,5,61,Female,23.9,0
+S00248,33,Severe Disease,5,61,Female,23.9,0
+S00248,36,Severe Disease,5,61,Female,23.9,0
+S00248,39,Severe Disease,5,61,Female,23.9,0
+S00248,42,Death,6,61,Female,23.9,0
+S00249,0,Preclinical,2,73,Male,25.0,0
+S00249,3,Preclinical,2,73,Male,25.0,0
+S00249,6,Preclinical,2,73,Male,25.0,0
+S00249,9,Mild Disease,3,73,Male,25.0,0
+S00249,12,Mild Disease,3,73,Male,25.0,0
+S00249,15,Mild Disease,3,73,Male,25.0,0
+S00249,18,Mild Disease,3,73,Male,25.0,0
+S00249,21,Mild Disease,3,73,Male,25.0,0
+S00249,24,Mild Disease,3,73,Male,25.0,0
+S00249,27,Mild Disease,3,73,Male,25.0,0
+S00249,30,Moderate Disease,4,73,Male,25.0,0
+S00249,33,Severe Disease,5,73,Male,25.0,0
+S00249,36,Severe Disease,5,73,Male,25.0,0
+S00249,39,Death,6,73,Male,25.0,0
+S00250,0,Healthy,0,62,Female,19.9,1
+S00250,3,Healthy,0,62,Female,19.9,1
+S00250,6,At Risk,1,62,Female,19.9,1
+S00250,9,At Risk,1,62,Female,19.9,1
+S00250,12,At Risk,1,62,Female,19.9,1
+S00250,15,At Risk,1,62,Female,19.9,1
+S00250,18,At Risk,1,62,Female,19.9,1
+S00250,21,Preclinical,2,62,Female,19.9,1
+S00250,24,Preclinical,2,62,Female,19.9,1
+S00250,27,Preclinical,2,62,Female,19.9,1
+S00250,30,Preclinical,2,62,Female,19.9,1
+S00250,33,Preclinical,2,62,Female,19.9,1
+S00250,36,Preclinical,2,62,Female,19.9,1
+S00250,39,At Risk,1,62,Female,19.9,1
+S00250,42,Preclinical,2,62,Female,19.9,1
+S00250,45,Preclinical,2,62,Female,19.9,1
+S00250,48,Mild Disease,3,62,Female,19.9,1
+S00250,51,Mild Disease,3,62,Female,19.9,1
+S00250,54,Mild Disease,3,62,Female,19.9,1
+S00250,57,Mild Disease,3,62,Female,19.9,1
+S00250,60,Mild Disease,3,62,Female,19.9,1
+S00250,63,Mild Disease,3,62,Female,19.9,1
+S00250,66,Moderate Disease,4,62,Female,19.9,1
+S00250,69,Severe Disease,5,62,Female,19.9,1
+S00250,72,Death,6,62,Female,19.9,1
+S00251,0,Severe Disease,5,48,Female,23.4,0
+S00251,3,Severe Disease,5,48,Female,23.4,0
+S00251,6,Severe Disease,5,48,Female,23.4,0
+S00251,9,Moderate Disease,4,48,Female,23.4,0
+S00251,12,Moderate Disease,4,48,Female,23.4,0
+S00251,15,Mild Disease,3,48,Female,23.4,0
+S00251,18,Mild Disease,3,48,Female,23.4,0
+S00251,21,Mild Disease,3,48,Female,23.4,0
+S00251,24,Mild Disease,3,48,Female,23.4,0
+S00251,27,Mild Disease,3,48,Female,23.4,0
+S00251,30,Moderate Disease,4,48,Female,23.4,0
+S00251,33,Moderate Disease,4,48,Female,23.4,0
+S00251,36,Moderate Disease,4,48,Female,23.4,0
+S00251,39,Moderate Disease,4,48,Female,23.4,0
+S00251,42,Moderate Disease,4,48,Female,23.4,0
+S00251,45,Moderate Disease,4,48,Female,23.4,0
+S00251,48,Moderate Disease,4,48,Female,23.4,0
+S00251,51,Moderate Disease,4,48,Female,23.4,0
+S00251,54,Moderate Disease,4,48,Female,23.4,0
+S00251,57,Moderate Disease,4,48,Female,23.4,0
+S00251,60,Moderate Disease,4,48,Female,23.4,0
+S00251,63,Moderate Disease,4,48,Female,23.4,0
+S00251,66,Moderate Disease,4,48,Female,23.4,0
+S00251,69,Moderate Disease,4,48,Female,23.4,0
+S00251,72,Moderate Disease,4,48,Female,23.4,0
+S00252,0,Preclinical,2,83,Male,35.5,0
+S00252,3,Mild Disease,3,83,Male,35.5,0
+S00252,6,Mild Disease,3,83,Male,35.5,0
+S00252,9,Moderate Disease,4,83,Male,35.5,0
+S00252,12,Moderate Disease,4,83,Male,35.5,0
+S00252,15,Severe Disease,5,83,Male,35.5,0
+S00252,18,Severe Disease,5,83,Male,35.5,0
+S00252,21,Severe Disease,5,83,Male,35.5,0
+S00252,24,Severe Disease,5,83,Male,35.5,0
+S00252,27,Severe Disease,5,83,Male,35.5,0
+S00252,30,Severe Disease,5,83,Male,35.5,0
+S00252,33,Severe Disease,5,83,Male,35.5,0
+S00252,36,Severe Disease,5,83,Male,35.5,0
+S00252,39,Death,6,83,Male,35.5,0
+S00253,0,At Risk,1,80,Male,25.3,0
+S00253,3,At Risk,1,80,Male,25.3,0
+S00253,6,At Risk,1,80,Male,25.3,0
+S00253,9,At Risk,1,80,Male,25.3,0
+S00253,12,At Risk,1,80,Male,25.3,0
+S00253,15,Preclinical,2,80,Male,25.3,0
+S00253,18,Preclinical,2,80,Male,25.3,0
+S00253,21,Mild Disease,3,80,Male,25.3,0
+S00253,24,Mild Disease,3,80,Male,25.3,0
+S00253,27,Mild Disease,3,80,Male,25.3,0
+S00253,30,Preclinical,2,80,Male,25.3,0
+S00253,33,Preclinical,2,80,Male,25.3,0
+S00253,36,Preclinical,2,80,Male,25.3,0
+S00253,39,Mild Disease,3,80,Male,25.3,0
+S00253,42,Moderate Disease,4,80,Male,25.3,0
+S00253,45,Severe Disease,5,80,Male,25.3,0
+S00253,48,Severe Disease,5,80,Male,25.3,0
+S00253,51,Severe Disease,5,80,Male,25.3,0
+S00253,54,Severe Disease,5,80,Male,25.3,0
+S00253,57,Severe Disease,5,80,Male,25.3,0
+S00253,60,Severe Disease,5,80,Male,25.3,0
+S00253,63,Death,6,80,Male,25.3,0
+S00254,0,Healthy,0,73,Female,22.9,1
+S00254,3,Healthy,0,73,Female,22.9,1
+S00254,6,Healthy,0,73,Female,22.9,1
+S00254,9,At Risk,1,73,Female,22.9,1
+S00254,12,Preclinical,2,73,Female,22.9,1
+S00254,15,Preclinical,2,73,Female,22.9,1
+S00254,18,Preclinical,2,73,Female,22.9,1
+S00254,21,Preclinical,2,73,Female,22.9,1
+S00254,24,Mild Disease,3,73,Female,22.9,1
+S00254,27,Moderate Disease,4,73,Female,22.9,1
+S00254,30,Moderate Disease,4,73,Female,22.9,1
+S00254,33,Severe Disease,5,73,Female,22.9,1
+S00254,36,Severe Disease,5,73,Female,22.9,1
+S00254,39,Death,6,73,Female,22.9,1
+S00255,0,Preclinical,2,44,Male,17.5,0
+S00255,3,Preclinical,2,44,Male,17.5,0
+S00255,6,Preclinical,2,44,Male,17.5,0
+S00255,9,Preclinical,2,44,Male,17.5,0
+S00255,12,Preclinical,2,44,Male,17.5,0
+S00255,15,Preclinical,2,44,Male,17.5,0
+S00255,18,Preclinical,2,44,Male,17.5,0
+S00255,21,Preclinical,2,44,Male,17.5,0
+S00255,24,Preclinical,2,44,Male,17.5,0
+S00255,27,Preclinical,2,44,Male,17.5,0
+S00255,30,Preclinical,2,44,Male,17.5,0
+S00255,33,Preclinical,2,44,Male,17.5,0
+S00255,36,Preclinical,2,44,Male,17.5,0
+S00255,39,Preclinical,2,44,Male,17.5,0
+S00255,42,Preclinical,2,44,Male,17.5,0
+S00255,45,Mild Disease,3,44,Male,17.5,0
+S00255,48,Mild Disease,3,44,Male,17.5,0
+S00255,51,Mild Disease,3,44,Male,17.5,0
+S00255,54,Mild Disease,3,44,Male,17.5,0
+S00255,57,Mild Disease,3,44,Male,17.5,0
+S00255,60,Mild Disease,3,44,Male,17.5,0
+S00255,63,Mild Disease,3,44,Male,17.5,0
+S00255,66,Moderate Disease,4,44,Male,17.5,0
+S00255,69,Moderate Disease,4,44,Male,17.5,0
+S00255,72,Severe Disease,5,44,Male,17.5,0
+S00256,0,Moderate Disease,4,79,Male,34.3,1
+S00256,3,Severe Disease,5,79,Male,34.3,1
+S00256,6,Severe Disease,5,79,Male,34.3,1
+S00256,9,Death,6,79,Male,34.3,1
+S00257,0,Preclinical,2,38,Female,24.6,0
+S00257,3,Preclinical,2,38,Female,24.6,0
+S00257,6,Preclinical,2,38,Female,24.6,0
+S00257,9,Preclinical,2,38,Female,24.6,0
+S00257,12,Preclinical,2,38,Female,24.6,0
+S00257,15,Mild Disease,3,38,Female,24.6,0
+S00257,18,Mild Disease,3,38,Female,24.6,0
+S00257,21,Mild Disease,3,38,Female,24.6,0
+S00257,24,Mild Disease,3,38,Female,24.6,0
+S00257,27,Mild Disease,3,38,Female,24.6,0
+S00257,30,Mild Disease,3,38,Female,24.6,0
+S00257,33,Mild Disease,3,38,Female,24.6,0
+S00257,36,Mild Disease,3,38,Female,24.6,0
+S00257,39,Mild Disease,3,38,Female,24.6,0
+S00257,42,Mild Disease,3,38,Female,24.6,0
+S00257,45,Moderate Disease,4,38,Female,24.6,0
+S00257,48,Moderate Disease,4,38,Female,24.6,0
+S00257,51,Moderate Disease,4,38,Female,24.6,0
+S00257,54,Moderate Disease,4,38,Female,24.6,0
+S00257,57,Severe Disease,5,38,Female,24.6,0
+S00257,60,Death,6,38,Female,24.6,0
+S00258,0,Moderate Disease,4,63,Male,31.2,0
+S00258,3,Moderate Disease,4,63,Male,31.2,0
+S00258,6,Moderate Disease,4,63,Male,31.2,0
+S00258,9,Moderate Disease,4,63,Male,31.2,0
+S00258,12,Moderate Disease,4,63,Male,31.2,0
+S00258,15,Mild Disease,3,63,Male,31.2,0
+S00258,18,Mild Disease,3,63,Male,31.2,0
+S00258,21,Moderate Disease,4,63,Male,31.2,0
+S00258,24,Moderate Disease,4,63,Male,31.2,0
+S00258,27,Mild Disease,3,63,Male,31.2,0
+S00258,30,Moderate Disease,4,63,Male,31.2,0
+S00258,33,Moderate Disease,4,63,Male,31.2,0
+S00258,36,Moderate Disease,4,63,Male,31.2,0
+S00258,39,Moderate Disease,4,63,Male,31.2,0
+S00258,42,Moderate Disease,4,63,Male,31.2,0
+S00258,45,Severe Disease,5,63,Male,31.2,0
+S00258,48,Death,6,63,Male,31.2,0
+S00259,0,Preclinical,2,54,Female,19.0,1
+S00259,3,Preclinical,2,54,Female,19.0,1
+S00259,6,Preclinical,2,54,Female,19.0,1
+S00259,9,Preclinical,2,54,Female,19.0,1
+S00259,12,Mild Disease,3,54,Female,19.0,1
+S00259,15,Moderate Disease,4,54,Female,19.0,1
+S00259,18,Severe Disease,5,54,Female,19.0,1
+S00259,21,Severe Disease,5,54,Female,19.0,1
+S00259,24,Severe Disease,5,54,Female,19.0,1
+S00259,27,Severe Disease,5,54,Female,19.0,1
+S00259,30,Severe Disease,5,54,Female,19.0,1
+S00259,33,Death,6,54,Female,19.0,1
+S00260,0,Healthy,0,58,Male,27.9,0
+S00260,3,Healthy,0,58,Male,27.9,0
+S00260,6,Healthy,0,58,Male,27.9,0
+S00260,9,At Risk,1,58,Male,27.9,0
+S00260,12,Healthy,0,58,Male,27.9,0
+S00260,15,Healthy,0,58,Male,27.9,0
+S00260,18,Healthy,0,58,Male,27.9,0
+S00260,21,Healthy,0,58,Male,27.9,0
+S00260,24,Healthy,0,58,Male,27.9,0
+S00260,27,Healthy,0,58,Male,27.9,0
+S00260,30,Healthy,0,58,Male,27.9,0
+S00260,33,Healthy,0,58,Male,27.9,0
+S00260,36,At Risk,1,58,Male,27.9,0
+S00260,39,At Risk,1,58,Male,27.9,0
+S00260,42,At Risk,1,58,Male,27.9,0
+S00260,45,At Risk,1,58,Male,27.9,0
+S00260,48,At Risk,1,58,Male,27.9,0
+S00260,51,At Risk,1,58,Male,27.9,0
+S00260,54,At Risk,1,58,Male,27.9,0
+S00260,57,Healthy,0,58,Male,27.9,0
+S00260,60,Healthy,0,58,Male,27.9,0
+S00260,63,Healthy,0,58,Male,27.9,0
+S00260,66,Healthy,0,58,Male,27.9,0
+S00260,69,Healthy,0,58,Male,27.9,0
+S00260,72,Healthy,0,58,Male,27.9,0
+S00261,0,Moderate Disease,4,70,Female,29.6,0
+S00261,3,Severe Disease,5,70,Female,29.6,0
+S00261,6,Severe Disease,5,70,Female,29.6,0
+S00261,9,Severe Disease,5,70,Female,29.6,0
+S00261,12,Moderate Disease,4,70,Female,29.6,0
+S00261,15,Moderate Disease,4,70,Female,29.6,0
+S00261,18,Moderate Disease,4,70,Female,29.6,0
+S00261,21,Moderate Disease,4,70,Female,29.6,0
+S00261,24,Severe Disease,5,70,Female,29.6,0
+S00261,27,Death,6,70,Female,29.6,0
+S00262,0,Severe Disease,5,63,Male,23.0,1
+S00262,3,Death,6,63,Male,23.0,1
+S00263,0,Healthy,0,50,Male,15.0,1
+S00263,3,At Risk,1,50,Male,15.0,1
+S00263,6,Preclinical,2,50,Male,15.0,1
+S00263,9,Preclinical,2,50,Male,15.0,1
+S00263,12,Preclinical,2,50,Male,15.0,1
+S00263,15,Preclinical,2,50,Male,15.0,1
+S00263,18,Preclinical,2,50,Male,15.0,1
+S00263,21,Preclinical,2,50,Male,15.0,1
+S00263,24,Preclinical,2,50,Male,15.0,1
+S00263,27,Mild Disease,3,50,Male,15.0,1
+S00263,30,Mild Disease,3,50,Male,15.0,1
+S00263,33,Mild Disease,3,50,Male,15.0,1
+S00263,36,Mild Disease,3,50,Male,15.0,1
+S00263,39,Mild Disease,3,50,Male,15.0,1
+S00263,42,Moderate Disease,4,50,Male,15.0,1
+S00263,45,Moderate Disease,4,50,Male,15.0,1
+S00263,48,Moderate Disease,4,50,Male,15.0,1
+S00263,51,Severe Disease,5,50,Male,15.0,1
+S00263,54,Severe Disease,5,50,Male,15.0,1
+S00263,57,Severe Disease,5,50,Male,15.0,1
+S00263,60,Severe Disease,5,50,Male,15.0,1
+S00263,63,Severe Disease,5,50,Male,15.0,1
+S00263,66,Severe Disease,5,50,Male,15.0,1
+S00263,69,Severe Disease,5,50,Male,15.0,1
+S00263,72,Death,6,50,Male,15.0,1
+S00264,0,At Risk,1,51,Male,26.2,0
+S00264,3,At Risk,1,51,Male,26.2,0
+S00264,6,Healthy,0,51,Male,26.2,0
+S00264,9,Healthy,0,51,Male,26.2,0
+S00264,12,Healthy,0,51,Male,26.2,0
+S00264,15,Healthy,0,51,Male,26.2,0
+S00264,18,Healthy,0,51,Male,26.2,0
+S00264,21,Healthy,0,51,Male,26.2,0
+S00264,24,Healthy,0,51,Male,26.2,0
+S00264,27,Healthy,0,51,Male,26.2,0
+S00264,30,Healthy,0,51,Male,26.2,0
+S00264,33,Healthy,0,51,Male,26.2,0
+S00264,36,Healthy,0,51,Male,26.2,0
+S00264,39,Healthy,0,51,Male,26.2,0
+S00264,42,Healthy,0,51,Male,26.2,0
+S00264,45,Healthy,0,51,Male,26.2,0
+S00264,48,Healthy,0,51,Male,26.2,0
+S00264,51,Healthy,0,51,Male,26.2,0
+S00264,54,Healthy,0,51,Male,26.2,0
+S00264,57,Healthy,0,51,Male,26.2,0
+S00264,60,Healthy,0,51,Male,26.2,0
+S00264,63,Healthy,0,51,Male,26.2,0
+S00264,66,Healthy,0,51,Male,26.2,0
+S00264,69,At Risk,1,51,Male,26.2,0
+S00264,72,Preclinical,2,51,Male,26.2,0
+S00265,0,At Risk,1,79,Female,20.1,0
+S00265,3,At Risk,1,79,Female,20.1,0
+S00265,6,Preclinical,2,79,Female,20.1,0
+S00265,9,Mild Disease,3,79,Female,20.1,0
+S00265,12,Mild Disease,3,79,Female,20.1,0
+S00265,15,Mild Disease,3,79,Female,20.1,0
+S00265,18,Mild Disease,3,79,Female,20.1,0
+S00265,21,Mild Disease,3,79,Female,20.1,0
+S00265,24,Moderate Disease,4,79,Female,20.1,0
+S00265,27,Severe Disease,5,79,Female,20.1,0
+S00265,30,Severe Disease,5,79,Female,20.1,0
+S00265,33,Severe Disease,5,79,Female,20.1,0
+S00265,36,Severe Disease,5,79,Female,20.1,0
+S00265,39,Severe Disease,5,79,Female,20.1,0
+S00265,42,Severe Disease,5,79,Female,20.1,0
+S00265,45,Severe Disease,5,79,Female,20.1,0
+S00265,48,Severe Disease,5,79,Female,20.1,0
+S00265,51,Severe Disease,5,79,Female,20.1,0
+S00265,54,Severe Disease,5,79,Female,20.1,0
+S00265,57,Severe Disease,5,79,Female,20.1,0
+S00265,60,Severe Disease,5,79,Female,20.1,0
+S00265,63,Severe Disease,5,79,Female,20.1,0
+S00265,66,Death,6,79,Female,20.1,0
+S00266,0,Preclinical,2,73,Male,20.2,1
+S00266,3,Mild Disease,3,73,Male,20.2,1
+S00266,6,Mild Disease,3,73,Male,20.2,1
+S00266,9,Moderate Disease,4,73,Male,20.2,1
+S00266,12,Moderate Disease,4,73,Male,20.2,1
+S00266,15,Severe Disease,5,73,Male,20.2,1
+S00266,18,Death,6,73,Male,20.2,1
+S00267,0,Preclinical,2,38,Female,22.1,1
+S00267,3,Preclinical,2,38,Female,22.1,1
+S00267,6,Mild Disease,3,38,Female,22.1,1
+S00267,9,Mild Disease,3,38,Female,22.1,1
+S00267,12,Mild Disease,3,38,Female,22.1,1
+S00267,15,Mild Disease,3,38,Female,22.1,1
+S00267,18,Mild Disease,3,38,Female,22.1,1
+S00267,21,Moderate Disease,4,38,Female,22.1,1
+S00267,24,Severe Disease,5,38,Female,22.1,1
+S00267,27,Severe Disease,5,38,Female,22.1,1
+S00267,30,Severe Disease,5,38,Female,22.1,1
+S00267,33,Severe Disease,5,38,Female,22.1,1
+S00267,36,Severe Disease,5,38,Female,22.1,1
+S00267,39,Severe Disease,5,38,Female,22.1,1
+S00267,42,Severe Disease,5,38,Female,22.1,1
+S00267,45,Severe Disease,5,38,Female,22.1,1
+S00267,48,Severe Disease,5,38,Female,22.1,1
+S00267,51,Severe Disease,5,38,Female,22.1,1
+S00267,54,Death,6,38,Female,22.1,1
+S00268,0,Healthy,0,65,Female,26.3,0
+S00268,3,At Risk,1,65,Female,26.3,0
+S00268,6,At Risk,1,65,Female,26.3,0
+S00268,9,Preclinical,2,65,Female,26.3,0
+S00268,12,Preclinical,2,65,Female,26.3,0
+S00268,15,Preclinical,2,65,Female,26.3,0
+S00268,18,Mild Disease,3,65,Female,26.3,0
+S00268,21,Moderate Disease,4,65,Female,26.3,0
+S00268,24,Severe Disease,5,65,Female,26.3,0
+S00268,27,Death,6,65,Female,26.3,0
+S00269,0,At Risk,1,56,Female,15.1,0
+S00269,3,At Risk,1,56,Female,15.1,0
+S00269,6,At Risk,1,56,Female,15.1,0
+S00269,9,At Risk,1,56,Female,15.1,0
+S00269,12,At Risk,1,56,Female,15.1,0
+S00269,15,At Risk,1,56,Female,15.1,0
+S00269,18,Preclinical,2,56,Female,15.1,0
+S00269,21,At Risk,1,56,Female,15.1,0
+S00269,24,Healthy,0,56,Female,15.1,0
+S00269,27,Healthy,0,56,Female,15.1,0
+S00269,30,Healthy,0,56,Female,15.1,0
+S00269,33,Healthy,0,56,Female,15.1,0
+S00269,36,Healthy,0,56,Female,15.1,0
+S00269,39,Healthy,0,56,Female,15.1,0
+S00269,42,Healthy,0,56,Female,15.1,0
+S00269,45,Healthy,0,56,Female,15.1,0
+S00269,48,Healthy,0,56,Female,15.1,0
+S00269,51,Healthy,0,56,Female,15.1,0
+S00269,54,Healthy,0,56,Female,15.1,0
+S00269,57,Healthy,0,56,Female,15.1,0
+S00269,60,Healthy,0,56,Female,15.1,0
+S00269,63,Healthy,0,56,Female,15.1,0
+S00269,66,Healthy,0,56,Female,15.1,0
+S00269,69,Healthy,0,56,Female,15.1,0
+S00269,72,Healthy,0,56,Female,15.1,0
+S00270,0,Severe Disease,5,46,Female,17.3,0
+S00270,3,Severe Disease,5,46,Female,17.3,0
+S00270,6,Severe Disease,5,46,Female,17.3,0
+S00270,9,Moderate Disease,4,46,Female,17.3,0
+S00270,12,Moderate Disease,4,46,Female,17.3,0
+S00270,15,Moderate Disease,4,46,Female,17.3,0
+S00270,18,Moderate Disease,4,46,Female,17.3,0
+S00270,21,Moderate Disease,4,46,Female,17.3,0
+S00270,24,Moderate Disease,4,46,Female,17.3,0
+S00270,27,Moderate Disease,4,46,Female,17.3,0
+S00270,30,Moderate Disease,4,46,Female,17.3,0
+S00270,33,Moderate Disease,4,46,Female,17.3,0
+S00270,36,Moderate Disease,4,46,Female,17.3,0
+S00270,39,Moderate Disease,4,46,Female,17.3,0
+S00270,42,Moderate Disease,4,46,Female,17.3,0
+S00270,45,Moderate Disease,4,46,Female,17.3,0
+S00270,48,Moderate Disease,4,46,Female,17.3,0
+S00270,51,Moderate Disease,4,46,Female,17.3,0
+S00270,54,Moderate Disease,4,46,Female,17.3,0
+S00270,57,Moderate Disease,4,46,Female,17.3,0
+S00270,60,Moderate Disease,4,46,Female,17.3,0
+S00270,63,Severe Disease,5,46,Female,17.3,0
+S00270,66,Death,6,46,Female,17.3,0
+S00271,0,At Risk,1,84,Female,34.7,0
+S00271,3,At Risk,1,84,Female,34.7,0
+S00271,6,At Risk,1,84,Female,34.7,0
+S00271,9,Preclinical,2,84,Female,34.7,0
+S00271,12,Mild Disease,3,84,Female,34.7,0
+S00271,15,Mild Disease,3,84,Female,34.7,0
+S00271,18,Moderate Disease,4,84,Female,34.7,0
+S00271,21,Severe Disease,5,84,Female,34.7,0
+S00271,24,Severe Disease,5,84,Female,34.7,0
+S00271,27,Severe Disease,5,84,Female,34.7,0
+S00271,30,Death,6,84,Female,34.7,0
+S00272,0,Mild Disease,3,53,Female,23.8,1
+S00272,3,Mild Disease,3,53,Female,23.8,1
+S00272,6,Moderate Disease,4,53,Female,23.8,1
+S00272,9,Severe Disease,5,53,Female,23.8,1
+S00272,12,Severe Disease,5,53,Female,23.8,1
+S00272,15,Death,6,53,Female,23.8,1
+S00273,0,Moderate Disease,4,39,Female,24.0,1
+S00273,3,Severe Disease,5,39,Female,24.0,1
+S00273,6,Severe Disease,5,39,Female,24.0,1
+S00273,9,Severe Disease,5,39,Female,24.0,1
+S00273,12,Severe Disease,5,39,Female,24.0,1
+S00273,15,Death,6,39,Female,24.0,1
+S00274,0,Healthy,0,75,Female,32.9,0
+S00274,3,Healthy,0,75,Female,32.9,0
+S00274,6,Healthy,0,75,Female,32.9,0
+S00274,9,Healthy,0,75,Female,32.9,0
+S00274,12,At Risk,1,75,Female,32.9,0
+S00274,15,At Risk,1,75,Female,32.9,0
+S00274,18,At Risk,1,75,Female,32.9,0
+S00274,21,Preclinical,2,75,Female,32.9,0
+S00274,24,Mild Disease,3,75,Female,32.9,0
+S00274,27,Mild Disease,3,75,Female,32.9,0
+S00274,30,Moderate Disease,4,75,Female,32.9,0
+S00274,33,Moderate Disease,4,75,Female,32.9,0
+S00274,36,Moderate Disease,4,75,Female,32.9,0
+S00274,39,Severe Disease,5,75,Female,32.9,0
+S00274,42,Severe Disease,5,75,Female,32.9,0
+S00274,45,Death,6,75,Female,32.9,0
+S00275,0,At Risk,1,84,Female,30.5,0
+S00275,3,At Risk,1,84,Female,30.5,0
+S00275,6,Preclinical,2,84,Female,30.5,0
+S00275,9,Mild Disease,3,84,Female,30.5,0
+S00275,12,Mild Disease,3,84,Female,30.5,0
+S00275,15,Mild Disease,3,84,Female,30.5,0
+S00275,18,Mild Disease,3,84,Female,30.5,0
+S00275,21,Preclinical,2,84,Female,30.5,0
+S00275,24,Preclinical,2,84,Female,30.5,0
+S00275,27,At Risk,1,84,Female,30.5,0
+S00275,30,Preclinical,2,84,Female,30.5,0
+S00275,33,Preclinical,2,84,Female,30.5,0
+S00275,36,Preclinical,2,84,Female,30.5,0
+S00275,39,Preclinical,2,84,Female,30.5,0
+S00275,42,Preclinical,2,84,Female,30.5,0
+S00275,45,Preclinical,2,84,Female,30.5,0
+S00275,48,Preclinical,2,84,Female,30.5,0
+S00275,51,Preclinical,2,84,Female,30.5,0
+S00275,54,Mild Disease,3,84,Female,30.5,0
+S00275,57,Moderate Disease,4,84,Female,30.5,0
+S00275,60,Severe Disease,5,84,Female,30.5,0
+S00275,63,Severe Disease,5,84,Female,30.5,0
+S00275,66,Severe Disease,5,84,Female,30.5,0
+S00275,69,Severe Disease,5,84,Female,30.5,0
+S00275,72,Severe Disease,5,84,Female,30.5,0
+S00276,0,Severe Disease,5,62,Female,23.8,0
+S00276,3,Death,6,62,Female,23.8,0
+S00277,0,Moderate Disease,4,41,Female,24.3,0
+S00277,3,Moderate Disease,4,41,Female,24.3,0
+S00277,6,Moderate Disease,4,41,Female,24.3,0
+S00277,9,Moderate Disease,4,41,Female,24.3,0
+S00277,12,Moderate Disease,4,41,Female,24.3,0
+S00277,15,Moderate Disease,4,41,Female,24.3,0
+S00277,18,Moderate Disease,4,41,Female,24.3,0
+S00277,21,Moderate Disease,4,41,Female,24.3,0
+S00277,24,Moderate Disease,4,41,Female,24.3,0
+S00277,27,Moderate Disease,4,41,Female,24.3,0
+S00277,30,Moderate Disease,4,41,Female,24.3,0
+S00277,33,Moderate Disease,4,41,Female,24.3,0
+S00277,36,Moderate Disease,4,41,Female,24.3,0
+S00277,39,Moderate Disease,4,41,Female,24.3,0
+S00277,42,Moderate Disease,4,41,Female,24.3,0
+S00277,45,Moderate Disease,4,41,Female,24.3,0
+S00277,48,Severe Disease,5,41,Female,24.3,0
+S00277,51,Severe Disease,5,41,Female,24.3,0
+S00277,54,Severe Disease,5,41,Female,24.3,0
+S00277,57,Severe Disease,5,41,Female,24.3,0
+S00277,60,Death,6,41,Female,24.3,0
+S00278,0,Moderate Disease,4,55,Male,21.7,0
+S00278,3,Moderate Disease,4,55,Male,21.7,0
+S00278,6,Moderate Disease,4,55,Male,21.7,0
+S00278,9,Moderate Disease,4,55,Male,21.7,0
+S00278,12,Moderate Disease,4,55,Male,21.7,0
+S00278,15,Moderate Disease,4,55,Male,21.7,0
+S00278,18,Moderate Disease,4,55,Male,21.7,0
+S00278,21,Moderate Disease,4,55,Male,21.7,0
+S00278,24,Moderate Disease,4,55,Male,21.7,0
+S00278,27,Moderate Disease,4,55,Male,21.7,0
+S00278,30,Moderate Disease,4,55,Male,21.7,0
+S00278,33,Moderate Disease,4,55,Male,21.7,0
+S00278,36,Moderate Disease,4,55,Male,21.7,0
+S00278,39,Moderate Disease,4,55,Male,21.7,0
+S00278,42,Severe Disease,5,55,Male,21.7,0
+S00278,45,Severe Disease,5,55,Male,21.7,0
+S00278,48,Death,6,55,Male,21.7,0
+S00279,0,Mild Disease,3,56,Male,32.0,0
+S00279,3,Moderate Disease,4,56,Male,32.0,0
+S00279,6,Moderate Disease,4,56,Male,32.0,0
+S00279,9,Moderate Disease,4,56,Male,32.0,0
+S00279,12,Moderate Disease,4,56,Male,32.0,0
+S00279,15,Severe Disease,5,56,Male,32.0,0
+S00279,18,Death,6,56,Male,32.0,0
+S00280,0,Healthy,0,39,Male,25.3,1
+S00280,3,Healthy,0,39,Male,25.3,1
+S00280,6,Healthy,0,39,Male,25.3,1
+S00280,9,At Risk,1,39,Male,25.3,1
+S00280,12,At Risk,1,39,Male,25.3,1
+S00280,15,At Risk,1,39,Male,25.3,1
+S00280,18,Preclinical,2,39,Male,25.3,1
+S00280,21,Mild Disease,3,39,Male,25.3,1
+S00280,24,Mild Disease,3,39,Male,25.3,1
+S00280,27,Mild Disease,3,39,Male,25.3,1
+S00280,30,Mild Disease,3,39,Male,25.3,1
+S00280,33,Mild Disease,3,39,Male,25.3,1
+S00280,36,Mild Disease,3,39,Male,25.3,1
+S00280,39,Mild Disease,3,39,Male,25.3,1
+S00280,42,Mild Disease,3,39,Male,25.3,1
+S00280,45,Moderate Disease,4,39,Male,25.3,1
+S00280,48,Moderate Disease,4,39,Male,25.3,1
+S00280,51,Severe Disease,5,39,Male,25.3,1
+S00280,54,Death,6,39,Male,25.3,1
+S00281,0,Healthy,0,65,Female,35.8,0
+S00281,3,Healthy,0,65,Female,35.8,0
+S00281,6,Healthy,0,65,Female,35.8,0
+S00281,9,At Risk,1,65,Female,35.8,0
+S00281,12,Preclinical,2,65,Female,35.8,0
+S00281,15,Preclinical,2,65,Female,35.8,0
+S00281,18,Mild Disease,3,65,Female,35.8,0
+S00281,21,Mild Disease,3,65,Female,35.8,0
+S00281,24,Moderate Disease,4,65,Female,35.8,0
+S00281,27,Moderate Disease,4,65,Female,35.8,0
+S00281,30,Moderate Disease,4,65,Female,35.8,0
+S00281,33,Moderate Disease,4,65,Female,35.8,0
+S00281,36,Severe Disease,5,65,Female,35.8,0
+S00281,39,Severe Disease,5,65,Female,35.8,0
+S00281,42,Severe Disease,5,65,Female,35.8,0
+S00281,45,Severe Disease,5,65,Female,35.8,0
+S00281,48,Death,6,65,Female,35.8,0
+S00282,0,Healthy,0,80,Male,21.7,0
+S00282,3,Healthy,0,80,Male,21.7,0
+S00282,6,Healthy,0,80,Male,21.7,0
+S00282,9,Healthy,0,80,Male,21.7,0
+S00282,12,At Risk,1,80,Male,21.7,0
+S00282,15,At Risk,1,80,Male,21.7,0
+S00282,18,At Risk,1,80,Male,21.7,0
+S00282,21,At Risk,1,80,Male,21.7,0
+S00282,24,Preclinical,2,80,Male,21.7,0
+S00282,27,Preclinical,2,80,Male,21.7,0
+S00282,30,Preclinical,2,80,Male,21.7,0
+S00282,33,Mild Disease,3,80,Male,21.7,0
+S00282,36,Mild Disease,3,80,Male,21.7,0
+S00282,39,Preclinical,2,80,Male,21.7,0
+S00282,42,Preclinical,2,80,Male,21.7,0
+S00282,45,Preclinical,2,80,Male,21.7,0
+S00282,48,Mild Disease,3,80,Male,21.7,0
+S00282,51,Mild Disease,3,80,Male,21.7,0
+S00282,54,Mild Disease,3,80,Male,21.7,0
+S00282,57,Moderate Disease,4,80,Male,21.7,0
+S00282,60,Severe Disease,5,80,Male,21.7,0
+S00282,63,Severe Disease,5,80,Male,21.7,0
+S00282,66,Death,6,80,Male,21.7,0
+S00283,0,Severe Disease,5,59,Male,22.4,0
+S00283,3,Death,6,59,Male,22.4,0
+S00284,0,Healthy,0,64,Male,33.3,1
+S00284,3,Healthy,0,64,Male,33.3,1
+S00284,6,Healthy,0,64,Male,33.3,1
+S00284,9,Healthy,0,64,Male,33.3,1
+S00284,12,Healthy,0,64,Male,33.3,1
+S00284,15,Healthy,0,64,Male,33.3,1
+S00284,18,At Risk,1,64,Male,33.3,1
+S00284,21,At Risk,1,64,Male,33.3,1
+S00284,24,Preclinical,2,64,Male,33.3,1
+S00284,27,Preclinical,2,64,Male,33.3,1
+S00284,30,Preclinical,2,64,Male,33.3,1
+S00284,33,Preclinical,2,64,Male,33.3,1
+S00284,36,Preclinical,2,64,Male,33.3,1
+S00284,39,Preclinical,2,64,Male,33.3,1
+S00284,42,Preclinical,2,64,Male,33.3,1
+S00284,45,Preclinical,2,64,Male,33.3,1
+S00284,48,Preclinical,2,64,Male,33.3,1
+S00284,51,Mild Disease,3,64,Male,33.3,1
+S00284,54,Moderate Disease,4,64,Male,33.3,1
+S00284,57,Moderate Disease,4,64,Male,33.3,1
+S00284,60,Moderate Disease,4,64,Male,33.3,1
+S00284,63,Severe Disease,5,64,Male,33.3,1
+S00284,66,Severe Disease,5,64,Male,33.3,1
+S00284,69,Severe Disease,5,64,Male,33.3,1
+S00284,72,Severe Disease,5,64,Male,33.3,1
+S00285,0,Moderate Disease,4,71,Female,31.2,0
+S00285,3,Moderate Disease,4,71,Female,31.2,0
+S00285,6,Moderate Disease,4,71,Female,31.2,0
+S00285,9,Severe Disease,5,71,Female,31.2,0
+S00285,12,Severe Disease,5,71,Female,31.2,0
+S00285,15,Severe Disease,5,71,Female,31.2,0
+S00285,18,Death,6,71,Female,31.2,0
+S00286,0,At Risk,1,82,Female,23.9,0
+S00286,3,Preclinical,2,82,Female,23.9,0
+S00286,6,Preclinical,2,82,Female,23.9,0
+S00286,9,Mild Disease,3,82,Female,23.9,0
+S00286,12,Mild Disease,3,82,Female,23.9,0
+S00286,15,Mild Disease,3,82,Female,23.9,0
+S00286,18,Mild Disease,3,82,Female,23.9,0
+S00286,21,Preclinical,2,82,Female,23.9,0
+S00286,24,Preclinical,2,82,Female,23.9,0
+S00286,27,Mild Disease,3,82,Female,23.9,0
+S00286,30,Moderate Disease,4,82,Female,23.9,0
+S00286,33,Severe Disease,5,82,Female,23.9,0
+S00286,36,Severe Disease,5,82,Female,23.9,0
+S00286,39,Severe Disease,5,82,Female,23.9,0
+S00286,42,Severe Disease,5,82,Female,23.9,0
+S00286,45,Severe Disease,5,82,Female,23.9,0
+S00286,48,Death,6,82,Female,23.9,0
+S00287,0,Preclinical,2,82,Male,21.0,0
+S00287,3,Preclinical,2,82,Male,21.0,0
+S00287,6,Preclinical,2,82,Male,21.0,0
+S00287,9,Preclinical,2,82,Male,21.0,0
+S00287,12,Mild Disease,3,82,Male,21.0,0
+S00287,15,Mild Disease,3,82,Male,21.0,0
+S00287,18,Moderate Disease,4,82,Male,21.0,0
+S00287,21,Severe Disease,5,82,Male,21.0,0
+S00287,24,Severe Disease,5,82,Male,21.0,0
+S00287,27,Severe Disease,5,82,Male,21.0,0
+S00287,30,Severe Disease,5,82,Male,21.0,0
+S00287,33,Severe Disease,5,82,Male,21.0,0
+S00287,36,Death,6,82,Male,21.0,0
+S00288,0,At Risk,1,35,Female,20.3,1
+S00288,3,At Risk,1,35,Female,20.3,1
+S00288,6,At Risk,1,35,Female,20.3,1
+S00288,9,At Risk,1,35,Female,20.3,1
+S00288,12,At Risk,1,35,Female,20.3,1
+S00288,15,Preclinical,2,35,Female,20.3,1
+S00288,18,Mild Disease,3,35,Female,20.3,1
+S00288,21,Mild Disease,3,35,Female,20.3,1
+S00288,24,Moderate Disease,4,35,Female,20.3,1
+S00288,27,Severe Disease,5,35,Female,20.3,1
+S00288,30,Death,6,35,Female,20.3,1
+S00289,0,Healthy,0,83,Female,29.8,1
+S00289,3,Healthy,0,83,Female,29.8,1
+S00289,6,At Risk,1,83,Female,29.8,1
+S00289,9,At Risk,1,83,Female,29.8,1
+S00289,12,At Risk,1,83,Female,29.8,1
+S00289,15,At Risk,1,83,Female,29.8,1
+S00289,18,At Risk,1,83,Female,29.8,1
+S00289,21,Healthy,0,83,Female,29.8,1
+S00289,24,Healthy,0,83,Female,29.8,1
+S00289,27,Healthy,0,83,Female,29.8,1
+S00289,30,At Risk,1,83,Female,29.8,1
+S00289,33,Preclinical,2,83,Female,29.8,1
+S00289,36,Mild Disease,3,83,Female,29.8,1
+S00289,39,Moderate Disease,4,83,Female,29.8,1
+S00289,42,Moderate Disease,4,83,Female,29.8,1
+S00289,45,Severe Disease,5,83,Female,29.8,1
+S00289,48,Severe Disease,5,83,Female,29.8,1
+S00289,51,Severe Disease,5,83,Female,29.8,1
+S00289,54,Severe Disease,5,83,Female,29.8,1
+S00289,57,Death,6,83,Female,29.8,1
+S00290,0,At Risk,1,35,Male,26.1,1
+S00290,3,At Risk,1,35,Male,26.1,1
+S00290,6,At Risk,1,35,Male,26.1,1
+S00290,9,At Risk,1,35,Male,26.1,1
+S00290,12,At Risk,1,35,Male,26.1,1
+S00290,15,At Risk,1,35,Male,26.1,1
+S00290,18,At Risk,1,35,Male,26.1,1
+S00290,21,At Risk,1,35,Male,26.1,1
+S00290,24,Preclinical,2,35,Male,26.1,1
+S00290,27,Preclinical,2,35,Male,26.1,1
+S00290,30,Mild Disease,3,35,Male,26.1,1
+S00290,33,Mild Disease,3,35,Male,26.1,1
+S00290,36,Mild Disease,3,35,Male,26.1,1
+S00290,39,Moderate Disease,4,35,Male,26.1,1
+S00290,42,Moderate Disease,4,35,Male,26.1,1
+S00290,45,Moderate Disease,4,35,Male,26.1,1
+S00290,48,Moderate Disease,4,35,Male,26.1,1
+S00290,51,Moderate Disease,4,35,Male,26.1,1
+S00290,54,Moderate Disease,4,35,Male,26.1,1
+S00290,57,Moderate Disease,4,35,Male,26.1,1
+S00290,60,Severe Disease,5,35,Male,26.1,1
+S00290,63,Death,6,35,Male,26.1,1
+S00291,0,At Risk,1,39,Male,15.0,0
+S00291,3,At Risk,1,39,Male,15.0,0
+S00291,6,At Risk,1,39,Male,15.0,0
+S00291,9,Preclinical,2,39,Male,15.0,0
+S00291,12,Preclinical,2,39,Male,15.0,0
+S00291,15,Preclinical,2,39,Male,15.0,0
+S00291,18,Preclinical,2,39,Male,15.0,0
+S00291,21,Preclinical,2,39,Male,15.0,0
+S00291,24,Preclinical,2,39,Male,15.0,0
+S00291,27,Preclinical,2,39,Male,15.0,0
+S00291,30,At Risk,1,39,Male,15.0,0
+S00291,33,At Risk,1,39,Male,15.0,0
+S00291,36,At Risk,1,39,Male,15.0,0
+S00291,39,At Risk,1,39,Male,15.0,0
+S00291,42,At Risk,1,39,Male,15.0,0
+S00291,45,At Risk,1,39,Male,15.0,0
+S00291,48,At Risk,1,39,Male,15.0,0
+S00291,51,At Risk,1,39,Male,15.0,0
+S00291,54,At Risk,1,39,Male,15.0,0
+S00291,57,At Risk,1,39,Male,15.0,0
+S00291,60,At Risk,1,39,Male,15.0,0
+S00291,63,At Risk,1,39,Male,15.0,0
+S00291,66,At Risk,1,39,Male,15.0,0
+S00291,69,At Risk,1,39,Male,15.0,0
+S00291,72,At Risk,1,39,Male,15.0,0
+S00292,0,At Risk,1,49,Female,30.9,1
+S00292,3,Preclinical,2,49,Female,30.9,1
+S00292,6,Preclinical,2,49,Female,30.9,1
+S00292,9,Mild Disease,3,49,Female,30.9,1
+S00292,12,Mild Disease,3,49,Female,30.9,1
+S00292,15,Moderate Disease,4,49,Female,30.9,1
+S00292,18,Moderate Disease,4,49,Female,30.9,1
+S00292,21,Moderate Disease,4,49,Female,30.9,1
+S00292,24,Moderate Disease,4,49,Female,30.9,1
+S00292,27,Moderate Disease,4,49,Female,30.9,1
+S00292,30,Moderate Disease,4,49,Female,30.9,1
+S00292,33,Moderate Disease,4,49,Female,30.9,1
+S00292,36,Moderate Disease,4,49,Female,30.9,1
+S00292,39,Moderate Disease,4,49,Female,30.9,1
+S00292,42,Moderate Disease,4,49,Female,30.9,1
+S00292,45,Moderate Disease,4,49,Female,30.9,1
+S00292,48,Moderate Disease,4,49,Female,30.9,1
+S00292,51,Moderate Disease,4,49,Female,30.9,1
+S00292,54,Moderate Disease,4,49,Female,30.9,1
+S00292,57,Moderate Disease,4,49,Female,30.9,1
+S00292,60,Moderate Disease,4,49,Female,30.9,1
+S00292,63,Moderate Disease,4,49,Female,30.9,1
+S00292,66,Severe Disease,5,49,Female,30.9,1
+S00292,69,Severe Disease,5,49,Female,30.9,1
+S00292,72,Severe Disease,5,49,Female,30.9,1
+S00293,0,At Risk,1,40,Male,23.9,1
+S00293,3,Preclinical,2,40,Male,23.9,1
+S00293,6,Preclinical,2,40,Male,23.9,1
+S00293,9,Preclinical,2,40,Male,23.9,1
+S00293,12,Preclinical,2,40,Male,23.9,1
+S00293,15,Preclinical,2,40,Male,23.9,1
+S00293,18,Mild Disease,3,40,Male,23.9,1
+S00293,21,Mild Disease,3,40,Male,23.9,1
+S00293,24,Mild Disease,3,40,Male,23.9,1
+S00293,27,Moderate Disease,4,40,Male,23.9,1
+S00293,30,Moderate Disease,4,40,Male,23.9,1
+S00293,33,Moderate Disease,4,40,Male,23.9,1
+S00293,36,Severe Disease,5,40,Male,23.9,1
+S00293,39,Death,6,40,Male,23.9,1
+S00294,0,At Risk,1,69,Female,25.7,1
+S00294,3,At Risk,1,69,Female,25.7,1
+S00294,6,At Risk,1,69,Female,25.7,1
+S00294,9,At Risk,1,69,Female,25.7,1
+S00294,12,At Risk,1,69,Female,25.7,1
+S00294,15,At Risk,1,69,Female,25.7,1
+S00294,18,At Risk,1,69,Female,25.7,1
+S00294,21,Preclinical,2,69,Female,25.7,1
+S00294,24,Mild Disease,3,69,Female,25.7,1
+S00294,27,Mild Disease,3,69,Female,25.7,1
+S00294,30,Moderate Disease,4,69,Female,25.7,1
+S00294,33,Moderate Disease,4,69,Female,25.7,1
+S00294,36,Moderate Disease,4,69,Female,25.7,1
+S00294,39,Severe Disease,5,69,Female,25.7,1
+S00294,42,Severe Disease,5,69,Female,25.7,1
+S00294,45,Death,6,69,Female,25.7,1
+S00295,0,At Risk,1,56,Female,25.4,1
+S00295,3,At Risk,1,56,Female,25.4,1
+S00295,6,At Risk,1,56,Female,25.4,1
+S00295,9,At Risk,1,56,Female,25.4,1
+S00295,12,At Risk,1,56,Female,25.4,1
+S00295,15,At Risk,1,56,Female,25.4,1
+S00295,18,At Risk,1,56,Female,25.4,1
+S00295,21,Preclinical,2,56,Female,25.4,1
+S00295,24,Preclinical,2,56,Female,25.4,1
+S00295,27,Preclinical,2,56,Female,25.4,1
+S00295,30,Mild Disease,3,56,Female,25.4,1
+S00295,33,Mild Disease,3,56,Female,25.4,1
+S00295,36,Mild Disease,3,56,Female,25.4,1
+S00295,39,Moderate Disease,4,56,Female,25.4,1
+S00295,42,Moderate Disease,4,56,Female,25.4,1
+S00295,45,Severe Disease,5,56,Female,25.4,1
+S00295,48,Severe Disease,5,56,Female,25.4,1
+S00295,51,Death,6,56,Female,25.4,1
+S00296,0,Healthy,0,42,Female,28.1,1
+S00296,3,Healthy,0,42,Female,28.1,1
+S00296,6,Healthy,0,42,Female,28.1,1
+S00296,9,At Risk,1,42,Female,28.1,1
+S00296,12,At Risk,1,42,Female,28.1,1
+S00296,15,Preclinical,2,42,Female,28.1,1
+S00296,18,Preclinical,2,42,Female,28.1,1
+S00296,21,Preclinical,2,42,Female,28.1,1
+S00296,24,Mild Disease,3,42,Female,28.1,1
+S00296,27,Mild Disease,3,42,Female,28.1,1
+S00296,30,Mild Disease,3,42,Female,28.1,1
+S00296,33,Moderate Disease,4,42,Female,28.1,1
+S00296,36,Moderate Disease,4,42,Female,28.1,1
+S00296,39,Moderate Disease,4,42,Female,28.1,1
+S00296,42,Severe Disease,5,42,Female,28.1,1
+S00296,45,Severe Disease,5,42,Female,28.1,1
+S00296,48,Severe Disease,5,42,Female,28.1,1
+S00296,51,Severe Disease,5,42,Female,28.1,1
+S00296,54,Severe Disease,5,42,Female,28.1,1
+S00296,57,Severe Disease,5,42,Female,28.1,1
+S00296,60,Death,6,42,Female,28.1,1
+S00297,0,Severe Disease,5,38,Female,19.1,1
+S00297,3,Severe Disease,5,38,Female,19.1,1
+S00297,6,Severe Disease,5,38,Female,19.1,1
+S00297,9,Severe Disease,5,38,Female,19.1,1
+S00297,12,Severe Disease,5,38,Female,19.1,1
+S00297,15,Death,6,38,Female,19.1,1
+S00298,0,At Risk,1,51,Male,21.5,0
+S00298,3,Healthy,0,51,Male,21.5,0
+S00298,6,Healthy,0,51,Male,21.5,0
+S00298,9,Healthy,0,51,Male,21.5,0
+S00298,12,Healthy,0,51,Male,21.5,0
+S00298,15,Healthy,0,51,Male,21.5,0
+S00298,18,Healthy,0,51,Male,21.5,0
+S00298,21,Healthy,0,51,Male,21.5,0
+S00298,24,Healthy,0,51,Male,21.5,0
+S00298,27,Healthy,0,51,Male,21.5,0
+S00298,30,Healthy,0,51,Male,21.5,0
+S00298,33,Healthy,0,51,Male,21.5,0
+S00298,36,Healthy,0,51,Male,21.5,0
+S00298,39,Healthy,0,51,Male,21.5,0
+S00298,42,Healthy,0,51,Male,21.5,0
+S00298,45,Healthy,0,51,Male,21.5,0
+S00298,48,Healthy,0,51,Male,21.5,0
+S00298,51,Healthy,0,51,Male,21.5,0
+S00298,54,Healthy,0,51,Male,21.5,0
+S00298,57,Healthy,0,51,Male,21.5,0
+S00298,60,Healthy,0,51,Male,21.5,0
+S00298,63,Healthy,0,51,Male,21.5,0
+S00298,66,Healthy,0,51,Male,21.5,0
+S00298,69,Healthy,0,51,Male,21.5,0
+S00298,72,Healthy,0,51,Male,21.5,0
+S00299,0,Mild Disease,3,50,Male,25.2,1
+S00299,3,Mild Disease,3,50,Male,25.2,1
+S00299,6,Mild Disease,3,50,Male,25.2,1
+S00299,9,Mild Disease,3,50,Male,25.2,1
+S00299,12,Mild Disease,3,50,Male,25.2,1
+S00299,15,Moderate Disease,4,50,Male,25.2,1
+S00299,18,Severe Disease,5,50,Male,25.2,1
+S00299,21,Severe Disease,5,50,Male,25.2,1
+S00299,24,Severe Disease,5,50,Male,25.2,1
+S00299,27,Death,6,50,Male,25.2,1
+S00300,0,Healthy,0,78,Female,17.0,1
+S00300,3,Healthy,0,78,Female,17.0,1
+S00300,6,Healthy,0,78,Female,17.0,1
+S00300,9,Healthy,0,78,Female,17.0,1
+S00300,12,At Risk,1,78,Female,17.0,1
+S00300,15,At Risk,1,78,Female,17.0,1
+S00300,18,At Risk,1,78,Female,17.0,1
+S00300,21,At Risk,1,78,Female,17.0,1
+S00300,24,Preclinical,2,78,Female,17.0,1
+S00300,27,Preclinical,2,78,Female,17.0,1
+S00300,30,Preclinical,2,78,Female,17.0,1
+S00300,33,Preclinical,2,78,Female,17.0,1
+S00300,36,Mild Disease,3,78,Female,17.0,1
+S00300,39,Moderate Disease,4,78,Female,17.0,1
+S00300,42,Moderate Disease,4,78,Female,17.0,1
+S00300,45,Moderate Disease,4,78,Female,17.0,1
+S00300,48,Moderate Disease,4,78,Female,17.0,1
+S00300,51,Moderate Disease,4,78,Female,17.0,1
+S00300,54,Moderate Disease,4,78,Female,17.0,1
+S00300,57,Moderate Disease,4,78,Female,17.0,1
+S00300,60,Moderate Disease,4,78,Female,17.0,1
+S00300,63,Severe Disease,5,78,Female,17.0,1
+S00300,66,Severe Disease,5,78,Female,17.0,1
+S00300,69,Death,6,78,Female,17.0,1

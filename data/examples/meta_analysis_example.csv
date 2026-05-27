@@ -1,0 +1,21 @@
+﻿study,sample_size,effect_size,ci_lower,ci_upper,standard_error,study_design,risk_of_bias,country,weight_random
+Beijing Union Hospital,185,0.68,0.504,0.856,0.09,RCT,Low,China,123.457
+Shanghai Renji,142,0.73,0.514,0.946,0.11,RCT,Low,China,82.645
+Guangzhou Nanfang,128,0.55,0.354,0.746,0.1,RCT,Unclear,China,100.0
+Chengdu Huaxi,105,0.82,0.565,1.075,0.13,RCT,Low,China,59.172
+Wuhan Tongji,98,0.7,0.465,0.935,0.12,Observational,High,China,69.444
+Nanjing Zhongda,112,0.52,0.363,0.677,0.08,RCT,Low,China,156.25
+Hangzhou Sir Run Run,88,0.76,0.525,0.995,0.12,RCT,Unclear,China,69.444
+Shenyang Shengjing,75,0.61,0.336,0.884,0.14,Observational,High,China,51.02
+Tianjin Medical,95,0.79,0.594,0.986,0.1,RCT,Low,China,100.0
+Changsha Xiangya,115,0.58,0.404,0.756,0.09,RCT,Low,China,123.457
+"Mayo Clinic, MN",220,0.64,0.503,0.777,0.07,RCT,Low,USA,204.082
+"Mass General, MA",195,0.71,0.553,0.867,0.08,RCT,Low,USA,156.25
+"Charité, Berlin",168,0.66,0.484,0.836,0.09,RCT,Low,Germany,123.457
+"St Thomas', London",155,0.6,0.404,0.796,0.1,Observational,Unclear,UK,100.0
+"Karolinska, Stockholm",138,0.75,0.534,0.966,0.11,RCT,Low,Sweden,82.645
+Toronto General,178,0.69,0.533,0.847,0.08,RCT,Low,Canada,156.25
+Royal Melbourne,122,0.57,0.335,0.805,0.12,Observational,High,Australia,69.444
+Seoul National,108,0.8,0.545,1.055,0.13,RCT,Unclear,Korea,59.172
+Singapore General,92,0.72,0.446,0.994,0.14,RCT,Low,Singapore,51.02
+Sao Paulo Clinicas,85,0.63,0.336,0.924,0.15,Observational,High,Brazil,44.444

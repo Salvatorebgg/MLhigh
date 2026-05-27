@@ -1,0 +1,601 @@
+﻿patient_id,age,sex,stage,grade,histology,treatment,bmi,albumin,ldh,hemoglobin,wbc,platelets,nlr,ecog,comorbidity_count,tumor_size_cm,risk_score,time_os,event_os,time_pfs,event_pfs,cause_of_death
+P00001,62,Female,III,G2,Squamous,Chemo+Radio,26.9,29.1,294,12.1,9.4,384,2137.32,2,0,11.1,3.515,1,1,1,1,Alive
+P00002,73,Male,IV,G4,Large Cell,Palliative,22.4,42.8,142,14.3,5.8,281,1493.13,0,2,15.0,6.193,1,1,1,1,Cancer Death
+P00003,47,Male,III,G2,Squamous,Surgery+Chemo+Radio,32.0,49.4,111,11.4,8.2,207,3941.31,2,5,15.0,2.882,1,0,1,1,Cardiovascular
+P00004,56,Female,II,G2,Adenocarcinoma,Surgery Only,22.1,31.4,156,15.8,12.1,162,7403.64,1,1,15.0,3.101,1,1,1,1,Cancer Death
+P00005,46,Male,I,G3,Squamous,Surgery Only,27.7,32.3,144,14.8,6.7,239,3057.82,2,1,15.0,2.52,1,0,1,0,Cancer Death
+P00006,62,Female,II,G3,Squamous,Chemo+Radio,25.6,37.2,224,12.5,6.2,313,1468.48,0,1,15.0,2.916,2,1,1,0,Alive
+P00007,66,Female,II,G3,Large Cell,Chemo+Radio,31.1,36.2,324,12.7,7.7,203,4197.78,2,0,5.2,3.517,3,1,2,1,Cancer Death
+P00008,77,Male,I,G3,Small Cell,Surgery+Chemo,21.9,44.8,313,13.2,7.1,247,3176.81,0,0,15.0,2.854,3,1,3,1,Other
+P00009,46,Female,III,G2,Adenocarcinoma,Surgery+Chemo,28.1,38.8,274,12.7,7.2,201,4450.25,2,1,15.0,3.555,5,0,3,1,Alive
+P00010,65,Male,II,G1,Squamous,Chemo+Radio,36.4,35.1,146,15.4,6.3,217,2708.77,0,0,15.0,3.84,4,1,2,1,Alive
+P00011,78,Female,I,G2,Adenocarcinoma,Surgery+Chemo,19.0,33.2,170,12.0,6.2,148,3788.27,0,2,15.0,3.182,2,0,2,1,Cancer Death
+P00012,48,Female,II,G4,Adenocarcinoma,Surgery Only,21.4,27.1,213,10.3,4.9,267,1644.77,1,1,15.0,2.986,2,1,2,1,Cardiovascular
+P00013,46,Female,I,G4,Large Cell,Palliative,34.9,45.9,135,12.5,8.0,257,2329.41,0,3,15.0,2.548,1,1,1,0,Alive
+P00014,43,Female,III,G4,Large Cell,Surgery+Chemo+Radio,24.9,41.1,140,14.4,4.9,363,1238.08,0,0,10.5,2.534,1,1,1,0,Cancer Death
+P00015,68,Female,III,G2,Adenocarcinoma,Chemo+Radio,26.0,36.4,209,14.8,5.2,253,2559.63,0,1,8.1,3.42,1,1,1,1,Cancer Death
+P00016,52,Female,IV,G2,Small Cell,Palliative,24.0,37.7,108,13.2,4.7,188,2038.13,2,1,14.0,5.056,1,0,1,1,Cancer Death
+P00017,66,Female,III,G3,Adenocarcinoma,Chemo+Radio,32.9,36.3,275,11.9,6.1,361,1836.96,1,2,15.0,4.759,1,1,1,1,Cardiovascular
+P00018,58,Female,III,G1,Adenocarcinoma,Surgery+Chemo+Radio,18.2,25.5,156,12.9,6.7,274,2991.05,0,1,15.0,2.832,7,0,1,1,Other
+P00019,82,Female,II,G4,Large Cell,Surgery+Chemo+Radio,31.1,27.8,223,11.8,4.8,260,1373.46,0,2,10.4,4.455,1,1,1,1,Alive
+P00020,70,Male,III,G3,Small Cell,Surgery+Chemo+Radio,18.9,35.7,196,8.9,6.2,244,2613.95,1,1,15.0,3.595,4,1,1,1,Alive
+P00021,51,Male,III,G4,Adenocarcinoma,Palliative,18.4,35.6,292,11.5,7.0,257,2049.92,1,2,11.3,4.244,5,1,2,1,Alive
+P00022,57,Male,IV,G4,Small Cell,Surgery Only,20.6,36.9,81,13.9,4.2,175,1921.22,0,3,15.0,5.096,1,1,1,1,Alive
+P00023,70,Male,III,G2,Adenocarcinoma,Chemo+Radio,24.9,48.0,293,12.5,5.3,238,1570.09,0,1,15.0,3.291,2,0,1,1,Cancer Death
+P00024,48,Male,IV,G2,Squamous,Chemo+Radio,22.3,35.1,290,12.4,11.5,227,4821.57,1,1,15.0,3.473,1,1,1,0,Cancer Death
+P00025,75,Male,IV,G4,Large Cell,Surgery+Chemo,22.0,32.0,202,15.0,5.4,273,1576.05,0,0,15.0,5.159,3,1,2,1,Alive
+P00026,57,Male,IV,G3,Small Cell,Chemo+Radio,21.3,37.3,221,11.3,8.3,334,2074.74,3,2,15.0,4.677,5,1,2,0,Alive
+P00027,70,Female,III,G4,Squamous,Surgery+Chemo,21.4,27.9,227,11.4,5.7,322,1313.24,0,2,14.0,4.334,7,1,4,1,Alive
+P00028,58,Female,II,G2,Adenocarcinoma,Surgery Only,21.3,38.0,129,13.6,7.1,285,2417.41,0,2,15.0,2.715,2,1,1,1,Cancer Death
+P00029,54,Female,III,G3,Small Cell,Surgery Only,26.6,32.3,185,11.7,5.3,106,4099.56,0,1,15.0,3.588,1,1,1,1,Cancer Death
+P00030,52,Male,IV,G3,Large Cell,Surgery+Chemo+Radio,22.6,38.5,254,11.7,3.8,210,1535.3,1,1,15.0,3.088,1,1,1,1,Alive
+P00031,81,Female,IV,G2,Adenocarcinoma,Surgery Only,15.0,35.8,92,15.8,5.9,99,7175.84,0,2,15.0,3.973,2,1,1,0,Cancer Death
+P00032,57,Male,IV,G3,Adenocarcinoma,Surgery+Chemo+Radio,25.3,36.1,217,11.1,7.6,331,2787.16,0,1,15.0,4.378,7,1,5,1,Alive
+P00033,90,Female,III,G1,Adenocarcinoma,Surgery+Chemo,28.9,41.1,187,11.7,8.2,235,2436.53,0,3,8.2,4.329,1,0,1,1,Cancer Death
+P00034,62,Female,IV,G2,Squamous,Surgery Only,24.2,41.8,230,13.8,7.0,233,2406.26,0,0,15.0,3.1,1,0,1,1,Alive
+P00035,50,Male,III,G3,Adenocarcinoma,Surgery+Chemo,19.8,50.2,112,12.9,5.3,189,2281.37,0,0,11.2,2.508,7,1,3,1,Cancer Death
+P00036,41,Female,III,G2,Squamous,Chemo+Radio,28.9,41.5,137,10.5,8.8,345,1932.12,0,0,15.0,2.684,1,1,1,1,Alive
+P00037,75,Female,III,G3,Adenocarcinoma,Surgery+Chemo,19.3,35.4,107,16.2,5.4,252,2642.37,1,1,12.2,3.286,2,1,1,1,Other
+P00038,58,Male,II,G2,Large Cell,Chemo+Radio,24.1,32.9,106,11.6,5.5,235,2431.73,0,0,14.7,3.043,2,1,1,1,Alive
+P00039,70,Female,III,G3,Adenocarcinoma,Chemo+Radio,25.4,39.3,249,12.6,5.0,254,1568.42,0,2,15.0,4.723,1,0,1,1,Cancer Death
+P00040,88,Male,II,G1,Small Cell,Chemo+Radio,30.4,46.5,145,13.8,5.9,260,1741.72,3,2,15.0,4.541,1,0,1,1,Cancer Death
+P00041,69,Male,III,G3,Large Cell,Surgery+Chemo+Radio,28.1,42.6,141,16.9,6.1,234,2101.05,1,0,15.0,4.048,1,0,1,0,Cancer Death
+P00042,65,Male,III,G2,Squamous,Chemo+Radio,26.6,32.4,274,12.3,7.3,345,1945.32,3,2,11.5,4.485,2,1,1,1,Alive
+P00043,75,Female,II,G3,Adenocarcinoma,Surgery+Chemo+Radio,29.7,39.9,159,11.3,4.5,345,1076.01,0,0,15.0,2.595,2,0,1,1,Cancer Death
+P00044,70,Female,III,G3,Large Cell,Surgery+Chemo+Radio,20.3,38.4,261,13.9,5.8,252,1784.28,1,0,11.7,3.233,1,1,1,0,Alive
+P00045,45,Female,I,G2,Squamous,Surgery Only,32.6,43.8,122,16.8,5.3,182,2685.25,0,1,14.0,2.204,5,1,3,1,Cancer Death
+P00046,76,Female,I,G3,Squamous,Palliative,15.0,39.0,159,13.2,7.6,270,2355.89,3,2,15.0,5.193,4,1,3,1,Alive
+P00047,60,Male,II,G2,Adenocarcinoma,Chemo+Radio,31.9,38.7,128,12.5,7.3,197,4332.55,3,1,4.3,2.226,5,1,3,1,Cancer Death
+P00048,79,Female,II,G2,Adenocarcinoma,Surgery+Chemo+Radio,21.7,29.3,223,13.7,4.9,358,1489.86,1,1,15.0,2.93,3,1,2,0,Alive
+P00049,67,Male,IV,G3,Squamous,Surgery+Chemo+Radio,27.2,42.1,168,9.3,7.7,370,1552.12,0,1,15.0,3.581,3,0,3,0,Cancer Death
+P00050,75,Male,III,G3,Small Cell,Surgery+Chemo+Radio,32.0,28.0,239,11.9,6.6,302,2050.12,1,2,15.0,4.574,1,1,1,1,Alive
+P00051,58,Female,III,G3,Large Cell,Surgery Only,28.0,37.6,192,9.7,8.5,152,4158.86,2,0,14.7,4.05,3,1,2,0,Other
+P00052,42,Female,III,G4,Squamous,Surgery+Chemo,27.2,33.4,87,12.4,5.5,207,2088.84,1,0,15.0,2.738,2,1,1,1,Cancer Death
+P00053,67,Male,III,G1,Adenocarcinoma,Surgery+Chemo,29.4,33.0,164,12.1,8.0,228,3329.56,2,1,9.7,3.804,1,1,1,1,Alive
+P00054,72,Male,IV,G2,Squamous,Chemo+Radio,18.8,40.8,101,8.3,8.7,177,3669.21,1,1,15.0,4.514,3,1,2,0,Cancer Death
+P00055,54,Female,III,G3,Adenocarcinoma,Surgery+Chemo+Radio,19.5,37.0,207,13.3,6.8,220,3478.99,0,5,7.3,2.569,5,1,4,1,Alive
+P00056,58,Female,I,G3,Adenocarcinoma,Surgery+Chemo,26.7,21.4,224,14.1,12.5,263,5209.11,2,0,9.4,3.429,1,0,1,1,Other
+P00057,34,Female,IV,G1,Adenocarcinoma,Surgery+Chemo,24.6,35.7,233,12.7,7.7,287,2469.54,0,1,13.1,2.12,1,0,1,1,Alive
+P00058,59,Male,III,G2,Adenocarcinoma,Chemo+Radio,24.1,34.5,173,10.2,11.3,347,2586.44,2,1,15.0,4.01,4,0,3,1,Cancer Death
+P00059,45,Male,IV,G4,Adenocarcinoma,Chemo+Radio,31.1,45.2,97,15.3,14.2,243,5794.74,0,1,10.4,3.783,4,1,3,1,Cancer Death
+P00060,67,Male,IV,G2,Adenocarcinoma,Chemo+Radio,30.7,28.9,196,16.4,4.0,220,1771.66,1,1,15.0,4.117,1,1,1,1,Alive
+P00061,65,Male,II,G2,Adenocarcinoma,Surgery+Chemo,21.4,49.5,212,13.7,9.4,141,4751.04,0,0,5.8,1.582,1,1,1,1,Cancer Death
+P00062,61,Male,IV,G2,Small Cell,Surgery+Chemo+Radio,27.5,42.6,169,12.4,7.8,272,2005.46,0,2,15.0,3.593,1,1,1,0,Alive
+P00063,76,Male,I,G1,Adenocarcinoma,Surgery+Chemo+Radio,18.5,35.2,187,12.4,7.2,208,2405.89,2,0,15.0,3.853,1,1,1,1,Alive
+P00064,63,Female,III,G2,Large Cell,Surgery+Chemo,18.4,34.3,88,13.8,5.5,228,2958.45,2,0,15.0,3.999,2,1,1,0,Cancer Death
+P00065,63,Male,III,G2,Large Cell,Surgery+Chemo,21.5,32.9,186,13.2,5.1,199,1885.97,3,0,5.8,2.985,1,0,1,1,Cancer Death
+P00066,64,Male,IV,G2,Large Cell,Surgery+Chemo+Radio,25.3,39.1,174,13.8,4.9,202,1819.39,1,0,15.0,2.766,5,1,3,1,Cancer Death
+P00067,54,Female,III,G2,Adenocarcinoma,Surgery+Chemo+Radio,22.6,31.9,114,13.8,13.0,302,4389.34,0,1,15.0,2.72,2,1,1,1,Alive
+P00068,72,Male,II,G2,Adenocarcinoma,Surgery+Chemo,27.5,36.2,222,11.7,7.7,240,3346.75,0,2,15.0,2.812,3,1,2,1,Alive
+P00069,50,Male,I,G2,Squamous,Surgery Only,25.4,29.9,150,11.5,4.4,370,1442.49,0,0,15.0,2.987,1,0,1,1,Alive
+P00070,66,Female,III,G4,Squamous,Surgery+Chemo,30.5,41.6,198,12.5,4.9,155,2298.37,0,0,8.5,3.271,2,0,1,0,Cancer Death
+P00071,75,Male,III,G2,Adenocarcinoma,Surgery+Chemo+Radio,28.0,38.1,218,13.8,3.6,345,851.63,1,0,15.0,3.499,1,0,1,1,Cardiovascular
+P00072,48,Male,II,G2,Adenocarcinoma,Surgery+Chemo+Radio,20.8,34.0,205,10.2,9.6,205,5773.62,0,1,13.2,2.243,1,1,1,1,Alive
+P00073,44,Female,III,G3,Squamous,Chemo+Radio,29.6,35.4,109,12.6,6.8,240,2958.53,3,1,5.5,3.597,7,0,4,0,Alive
+P00074,48,Male,III,G4,Squamous,Surgery+Chemo,21.6,32.5,157,12.9,7.8,284,1987.98,0,0,15.0,3.901,1,1,1,1,Cancer Death
+P00075,82,Male,I,G3,Adenocarcinoma,Surgery+Chemo+Radio,27.4,39.0,407,12.1,6.7,327,1677.41,2,1,15.0,3.963,4,0,3,1,Cancer Death
+P00076,53,Male,I,G2,Adenocarcinoma,Surgery+Chemo,23.3,28.8,308,15.5,8.9,330,1927.72,1,3,15.0,2.626,2,0,1,1,Cancer Death
+P00077,46,Female,IV,G4,Squamous,Chemo+Radio,31.5,42.9,249,15.2,5.9,328,1992.68,1,3,15.0,4.761,6,1,2,1,Alive
+P00078,65,Male,III,G3,Squamous,Chemo+Radio,28.8,38.1,201,13.7,7.3,228,2182.79,1,2,15.0,4.109,1,1,1,1,Cancer Death
+P00079,28,Male,III,G2,Small Cell,Surgery+Chemo+Radio,22.4,34.1,125,16.2,7.3,390,1980.31,3,1,8.2,2.148,4,0,2,1,Cancer Death
+P00080,49,Female,III,G2,Small Cell,Chemo+Radio,23.8,40.8,170,14.6,4.7,294,1578.96,1,1,12.2,2.594,1,1,1,0,Alive
+P00081,77,Male,I,G1,Squamous,Surgery Only,40.2,39.5,154,13.2,5.4,50,7457.23,0,1,15.0,3.719,6,1,3,1,Cancer Death
+P00082,49,Male,II,G1,Adenocarcinoma,Palliative,19.8,30.2,176,12.1,6.1,249,2404.04,0,2,15.0,3.179,1,1,1,1,Cancer Death
+P00083,57,Male,IV,G2,Adenocarcinoma,Chemo+Radio,22.3,45.5,105,12.3,7.4,216,2815.9,2,1,15.0,4.562,1,1,1,0,Alive
+P00084,64,Male,I,G2,Adenocarcinoma,Surgery Only,22.5,20.8,261,13.7,10.1,222,4370.92,1,1,15.0,2.891,3,0,1,1,Alive
+P00085,64,Female,I,G4,Squamous,Surgery+Chemo+Radio,20.3,44.1,65,12.3,6.9,298,1757.07,2,2,15.0,3.328,2,0,1,1,Other
+P00086,54,Female,III,G4,Large Cell,Surgery+Chemo+Radio,20.8,35.9,251,10.3,6.5,271,2356.18,0,1,15.0,3.621,1,1,1,1,Alive
+P00087,67,Female,IV,G1,Squamous,Palliative,25.0,43.4,253,12.3,7.3,193,3410.93,2,2,15.0,5.287,4,1,2,1,Alive
+P00088,78,Male,II,G1,Squamous,Surgery+Chemo,27.6,46.4,439,14.8,6.4,367,2030.96,1,0,15.0,1.781,2,1,1,1,Cancer Death
+P00089,48,Female,III,G3,Adenocarcinoma,Surgery+Chemo+Radio,18.3,34.2,165,8.4,6.6,144,3172.6,1,1,15.0,2.481,2,1,2,0,Cancer Death
+P00090,55,Female,IV,G2,Squamous,Surgery+Chemo+Radio,23.2,34.5,149,15.5,10.5,139,5266.94,3,1,15.0,4.249,1,0,1,1,Cancer Death
+P00091,59,Male,IV,G4,Adenocarcinoma,Surgery+Chemo,21.9,39.0,190,14.0,6.3,160,2888.98,1,0,13.4,4.814,2,1,1,1,Other
+P00092,69,Female,III,G4,Adenocarcinoma,Chemo+Radio,20.2,29.6,224,12.6,7.2,282,1809.28,0,1,7.9,3.964,4,1,3,1,Alive
+P00093,61,Male,II,G3,Squamous,Chemo+Radio,30.0,34.8,175,13.5,5.5,276,1630.84,1,0,7.1,2.237,2,1,1,1,Alive
+P00094,59,Male,III,G2,Adenocarcinoma,Surgery+Chemo+Radio,22.1,34.3,116,14.7,9.8,182,6262.46,0,2,13.0,3.468,1,1,1,1,Other
+P00095,42,Female,IV,G4,Adenocarcinoma,Palliative,19.3,29.3,224,13.1,5.1,199,3017.16,0,0,15.0,4.742,1,1,1,0,Cancer Death
+P00096,47,Female,III,G3,Adenocarcinoma,Palliative,29.5,34.0,181,14.7,6.5,246,1956.87,1,2,15.0,4.292,2,1,2,0,Cancer Death
+P00097,63,Female,IV,G2,Adenocarcinoma,Chemo+Radio,31.1,41.9,124,14.5,9.0,161,4810.9,0,1,10.3,3.813,6,1,4,1,Cardiovascular
+P00098,54,Female,III,G3,Adenocarcinoma,Surgery Only,26.6,41.4,98,13.3,5.2,311,1682.28,1,0,15.0,3.193,1,1,1,1,Cancer Death
+P00099,56,Male,I,G2,Small Cell,Palliative,21.3,35.8,463,11.0,8.7,372,2830.59,1,3,15.0,3.744,2,1,1,1,Cancer Death
+P00100,60,Male,III,G2,Adenocarcinoma,Surgery+Chemo,24.3,37.4,249,12.8,3.6,233,1037.77,0,1,13.0,3.274,1,0,1,1,Alive
+P00101,89,Female,IV,G3,Adenocarcinoma,Surgery+Chemo+Radio,22.6,35.0,224,9.3,4.8,275,2011.62,0,0,15.0,4.912,1,1,1,1,Other
+P00102,55,Male,I,G2,Adenocarcinoma,Palliative,25.3,25.6,174,13.8,6.5,255,2416.17,1,1,15.0,2.885,1,1,1,1,Other
+P00103,77,Female,III,G1,Adenocarcinoma,Surgery+Chemo,28.7,30.4,236,12.2,13.8,356,3037.6,3,4,15.0,4.117,2,1,1,1,Cancer Death
+P00104,76,Male,II,G3,Small Cell,Surgery+Chemo,25.4,43.2,122,11.9,7.0,402,1408.62,0,1,15.0,2.565,1,0,1,1,Alive
+P00105,70,Female,II,G1,Small Cell,Chemo+Radio,25.5,44.8,196,14.2,7.0,218,3614.11,0,1,7.9,2.159,6,1,4,0,Alive
+P00106,50,Male,III,G3,Squamous,Surgery Only,23.2,31.4,199,10.7,9.4,249,3058.45,3,2,15.0,4.292,1,1,1,1,Cancer Death
+P00107,62,Female,II,G4,Squamous,Surgery Only,28.5,44.3,123,13.2,4.8,315,1471.6,2,3,15.0,3.346,1,1,1,0,Cancer Death
+P00108,56,Male,IV,G4,Small Cell,Surgery+Chemo,27.2,29.2,174,12.4,2.7,274,1071.76,3,1,15.0,4.39,3,1,2,1,Alive
+P00109,85,Female,II,G2,Adenocarcinoma,Chemo+Radio,17.2,33.6,155,12.7,11.2,174,5224.87,0,0,12.9,3.618,1,0,1,1,Other
+P00110,65,Male,III,G4,Squamous,Surgery+Chemo+Radio,17.5,36.2,136,13.5,8.0,102,5483.51,3,1,13.6,4.735,8,1,5,1,Alive
+P00111,58,Female,I,G1,Squamous,Surgery+Chemo,24.0,35.2,148,16.3,5.8,199,2197.91,2,0,15.0,3.136,1,1,1,0,Cardiovascular
+P00112,82,Female,II,G2,Squamous,Palliative,29.9,32.5,95,13.7,6.8,273,2726.02,0,1,15.0,3.371,1,1,1,0,Alive
+P00113,56,Female,I,G1,Small Cell,Chemo+Radio,30.7,37.8,271,15.4,9.2,215,4641.67,1,3,15.0,3.122,1,1,1,0,Alive
+P00114,67,Male,II,G4,Small Cell,Surgery+Chemo+Radio,28.9,42.0,328,15.5,6.4,162,3500.67,0,2,12.9,3.409,1,1,1,1,Cancer Death
+P00115,69,Male,III,G2,Squamous,Surgery+Chemo,24.8,27.6,127,14.4,7.0,200,4295.58,1,1,15.0,3.527,2,1,1,1,Alive
+P00116,65,Female,II,G3,Large Cell,Chemo+Radio,32.1,37.8,276,9.7,12.3,393,3842.47,1,2,5.7,2.591,1,0,1,1,Cancer Death
+P00117,59,Male,I,G3,Squamous,Surgery+Chemo,22.2,43.3,179,12.6,4.6,157,3000.94,0,0,4.6,1.734,1,0,1,0,Cardiovascular
+P00118,71,Male,IV,G2,Squamous,Palliative,24.0,34.3,181,11.0,7.8,222,4016.86,3,3,15.0,6.073,1,0,1,0,Cancer Death
+P00119,53,Female,III,G3,Squamous,Surgery+Chemo,19.1,33.4,111,18.0,4.6,206,1888.06,3,1,12.0,3.631,1,1,1,1,Cancer Death
+P00120,74,Female,IV,G2,Small Cell,Chemo+Radio,23.9,31.5,147,11.2,10.7,403,3197.33,2,3,6.1,5.23,1,1,1,0,Alive
+P00121,57,Male,IV,G2,Large Cell,Palliative,21.6,50.0,222,10.3,7.3,129,5831.1,0,1,10.0,3.981,4,0,2,1,Cancer Death
+P00122,77,Female,III,G3,Small Cell,Surgery+Chemo,32.4,46.7,125,8.0,5.4,184,3490.7,1,2,15.0,3.727,3,1,1,0,Cancer Death
+P00123,73,Male,III,G3,Adenocarcinoma,Surgery+Chemo,31.5,35.1,137,11.1,4.3,252,1456.77,2,0,15.0,4.049,1,1,1,1,Cardiovascular
+P00124,67,Male,IV,G1,Squamous,Surgery Only,25.8,44.7,149,13.2,6.0,260,2204.45,0,1,7.5,3.466,1,0,1,1,Cancer Death
+P00125,59,Female,III,G4,Adenocarcinoma,Surgery+Chemo,27.6,33.6,50,15.0,7.1,337,2455.16,1,2,15.0,3.791,2,1,1,1,Cancer Death
+P00126,74,Male,III,G2,Squamous,Surgery+Chemo+Radio,22.8,36.0,205,11.1,9.5,328,2763.54,0,4,13.2,4.071,3,1,2,1,Alive
+P00127,67,Female,II,G3,Large Cell,Surgery Only,15.0,30.1,231,15.1,4.8,191,3139.58,1,5,15.0,3.833,1,0,1,1,Other
+P00128,22,Male,II,G1,Large Cell,Surgery Only,22.1,25.0,208,12.9,5.2,272,1387.53,1,1,15.0,2.223,1,1,1,0,Alive
+P00129,51,Male,IV,G2,Squamous,Surgery+Chemo,28.9,33.2,259,12.1,5.8,233,2360.37,2,1,15.0,3.76,1,1,1,0,Alive
+P00130,63,Male,II,G3,Adenocarcinoma,Surgery+Chemo,27.5,34.2,153,13.3,5.3,210,1993.33,1,1,11.4,2.743,1,0,1,1,Other
+P00131,64,Male,I,G3,Squamous,Chemo+Radio,23.7,39.8,361,15.6,5.7,328,1340.76,2,2,15.0,4.079,1,1,1,1,Cancer Death
+P00132,69,Male,III,G2,Adenocarcinoma,Surgery+Chemo,28.8,41.3,131,13.1,5.0,267,1575.73,0,2,15.0,3.712,1,1,1,1,Cancer Death
+P00133,79,Female,IV,G3,Large Cell,Surgery Only,23.4,36.2,166,11.0,7.6,375,1671.91,1,1,15.0,4.571,1,1,1,0,Other
+P00134,68,Female,IV,G2,Adenocarcinoma,Surgery Only,20.4,30.6,160,13.8,5.8,285,1850.02,2,2,15.0,5.368,1,0,1,1,Cardiovascular
+P00135,35,Female,III,G2,Small Cell,Surgery+Chemo,28.8,32.7,195,13.7,6.7,321,1923.33,2,2,15.0,2.662,1,1,1,1,Cancer Death
+P00136,63,Female,II,G2,Squamous,Surgery Only,22.7,47.3,165,12.7,7.3,50,14396.07,2,1,15.0,2.544,12,1,8,0,Cardiovascular
+P00137,75,Female,III,G4,Squamous,Surgery+Chemo,30.1,41.1,174,14.8,4.4,254,2038.3,1,1,15.0,4.287,1,0,1,0,Cancer Death
+P00138,62,Male,II,G2,Large Cell,Surgery+Chemo,16.5,46.2,140,8.9,8.0,282,2715.69,1,0,15.0,1.665,1,0,1,1,Cardiovascular
+P00139,63,Male,II,G2,Squamous,Surgery+Chemo,22.9,48.6,153,13.6,7.1,289,2186.18,3,0,15.0,2.638,5,1,2,1,Cancer Death
+P00140,55,Female,IV,G2,Squamous,Surgery+Chemo+Radio,28.2,32.7,78,14.4,7.1,371,2141.58,0,0,8.6,3.678,2,1,1,0,Other
+P00141,72,Female,IV,G3,Adenocarcinoma,Surgery+Chemo+Radio,27.7,42.3,246,10.4,6.4,297,1501.0,2,0,15.0,4.783,1,0,1,0,Other
+P00142,56,Female,II,G2,Adenocarcinoma,Palliative,24.5,31.1,123,10.3,6.2,150,5129.06,1,1,14.6,3.107,2,0,1,1,Alive
+P00143,68,Female,II,G2,Squamous,Chemo+Radio,26.8,43.7,150,14.8,6.8,290,2451.08,2,0,15.0,3.123,1,1,1,0,Alive
+P00144,66,Male,IV,G4,Adenocarcinoma,Surgery+Chemo,26.1,42.4,121,15.1,6.9,314,1722.32,1,2,15.0,5.166,1,1,1,1,Alive
+P00145,61,Female,II,G4,Squamous,Surgery+Chemo,18.8,23.3,225,15.4,4.7,199,1715.9,1,2,15.0,3.48,1,1,1,0,Alive
+P00146,66,Female,II,G2,Adenocarcinoma,Chemo+Radio,23.9,39.6,147,11.8,10.7,214,4418.44,0,3,15.0,3.084,1,1,1,1,Cancer Death
+P00147,63,Female,II,G3,Adenocarcinoma,Surgery+Chemo+Radio,26.5,31.4,72,13.4,5.4,310,1437.21,3,2,15.0,3.047,1,0,1,1,Alive
+P00148,76,Male,II,G4,Small Cell,Surgery Only,27.8,34.8,202,13.6,6.8,248,2766.55,0,1,15.0,3.682,6,0,4,0,Cancer Death
+P00149,69,Female,II,G4,Small Cell,Chemo+Radio,25.2,32.7,136,9.9,9.5,335,1931.71,1,0,15.0,4.055,7,1,6,1,Alive
+P00150,73,Female,III,G2,Large Cell,Surgery+Chemo,23.0,42.9,180,13.3,6.0,263,1823.76,0,1,15.0,3.288,1,1,1,0,Cancer Death
+P00151,51,Male,II,G3,Adenocarcinoma,Surgery+Chemo,19.5,32.6,249,13.2,7.2,73,11056.86,1,1,2.7,1.808,1,0,1,1,Cancer Death
+P00152,51,Female,III,G2,Adenocarcinoma,Chemo+Radio,28.9,28.7,125,14.3,3.5,252,1055.79,0,1,13.6,3.56,1,1,1,1,Alive
+P00153,61,Male,II,G3,Adenocarcinoma,Palliative,28.4,31.8,178,12.0,3.7,216,1925.89,1,0,15.0,3.158,5,1,2,1,Cancer Death
+P00154,69,Male,II,G3,Large Cell,Palliative,29.9,35.6,135,15.3,6.6,297,2053.14,2,1,15.0,3.957,6,1,4,1,Cardiovascular
+P00155,67,Male,II,G3,Squamous,Palliative,20.6,39.7,264,13.1,7.1,282,2201.1,1,3,15.0,4.233,1,0,1,0,Cancer Death
+P00156,51,Male,III,G4,Large Cell,Surgery+Chemo,26.0,44.8,187,16.1,9.3,173,4117.15,0,0,15.0,3.171,1,1,1,1,Cancer Death
+P00157,70,Male,III,G1,Large Cell,Surgery+Chemo,22.4,40.3,180,14.3,8.5,264,2150.15,2,0,15.0,3.621,6,1,4,0,Alive
+P00158,53,Female,I,G2,Adenocarcinoma,Surgery Only,25.7,40.8,113,13.5,4.1,291,1329.13,1,2,15.0,2.82,1,1,1,1,Alive
+P00159,69,Male,IV,G3,Squamous,Surgery+Chemo+Radio,38.6,41.8,241,10.9,9.8,283,2720.23,0,3,15.0,5.025,1,1,1,1,Alive
+P00160,64,Male,II,G2,Squamous,Chemo+Radio,29.6,42.3,253,10.6,4.7,326,1134.61,0,1,15.0,2.817,4,1,3,1,Cancer Death
+P00161,58,Male,III,G3,Squamous,Surgery Only,22.1,43.7,135,15.9,8.7,166,5641.92,2,1,15.0,3.76,1,1,1,1,Cancer Death
+P00162,54,Female,IV,G3,Large Cell,Surgery+Chemo,24.4,52.0,192,14.6,5.8,235,1974.48,3,3,15.0,4.437,2,0,1,1,Alive
+P00163,62,Female,I,G3,Adenocarcinoma,Palliative,23.9,42.2,227,12.5,15.1,70,15238.44,2,2,15.0,3.693,1,1,1,1,Cancer Death
+P00164,61,Female,I,G3,Small Cell,Surgery+Chemo,26.1,38.9,421,12.2,5.6,342,1377.13,2,1,15.0,3.22,1,0,1,1,Cancer Death
+P00165,48,Male,II,G2,Adenocarcinoma,Surgery+Chemo,18.6,34.0,210,13.4,6.5,258,2218.07,1,0,15.0,1.981,1,0,1,1,Cardiovascular
+P00166,68,Male,IV,G1,Small Cell,Palliative,27.0,39.0,181,10.6,7.0,241,2317.56,1,3,15.0,4.929,2,0,1,1,Cancer Death
+P00167,74,Female,III,G4,Adenocarcinoma,Surgery+Chemo,16.0,44.5,171,12.2,6.2,240,1892.84,2,1,15.0,4.316,5,0,3,0,Alive
+P00168,71,Male,II,G3,Squamous,Chemo+Radio,18.0,29.1,175,14.1,5.0,288,1812.8,0,0,11.7,3.164,1,0,1,1,Other
+P00169,64,Female,I,G3,Squamous,Surgery+Chemo,34.5,45.2,243,14.3,13.0,333,4270.42,2,5,15.0,4.003,1,1,1,1,Cancer Death
+P00170,55,Female,I,G1,Squamous,Surgery+Chemo,23.9,34.2,130,12.3,5.6,227,1964.35,1,1,15.0,2.02,1,1,1,1,Cardiovascular
+P00171,62,Male,III,G3,Large Cell,Surgery+Chemo,31.9,35.5,258,15.9,5.5,283,2357.97,0,0,15.0,3.109,1,1,1,1,Other
+P00172,59,Female,III,G1,Small Cell,Surgery Only,21.9,40.4,101,14.9,6.5,282,1673.06,0,3,15.0,3.556,1,1,1,0,Cancer Death
+P00173,62,Male,II,G3,Adenocarcinoma,Surgery+Chemo,16.0,33.6,234,11.6,7.1,74,9485.96,0,2,14.0,3.226,1,1,1,1,Alive
+P00174,72,Female,II,G1,Adenocarcinoma,Chemo+Radio,20.8,40.0,260,10.7,5.4,193,3187.85,0,2,15.0,3.611,1,1,1,1,Other
+P00175,59,Male,IV,G1,Adenocarcinoma,Surgery+Chemo+Radio,37.6,29.5,246,14.1,8.9,285,2338.71,1,1,12.3,3.866,1,0,1,1,Cancer Death
+P00176,38,Male,IV,G2,Adenocarcinoma,Surgery+Chemo,19.2,42.7,201,12.2,7.0,349,2097.99,0,0,15.0,3.198,3,1,2,0,Other
+P00177,70,Female,II,G2,Adenocarcinoma,Surgery+Chemo,33.5,38.3,211,11.8,6.7,359,1726.45,0,0,11.9,2.859,9,0,3,1,Alive
+P00178,65,Female,III,G4,Adenocarcinoma,Chemo+Radio,27.1,37.0,156,13.4,7.9,152,4769.51,0,1,15.0,4.363,1,1,1,0,Cancer Death
+P00179,62,Male,IV,G3,Large Cell,Surgery+Chemo,26.0,38.8,118,14.3,5.2,330,1146.7,1,1,15.0,3.979,1,1,1,1,Alive
+P00180,46,Male,II,G3,Large Cell,Surgery Only,22.1,36.9,199,14.4,5.6,333,1707.12,2,0,15.0,2.857,3,0,2,1,Cancer Death
+P00181,51,Female,II,G1,Adenocarcinoma,Palliative,21.4,39.9,186,13.1,6.6,283,1875.87,1,3,15.0,2.593,4,1,2,0,Cancer Death
+P00182,52,Male,II,G3,Small Cell,Palliative,28.0,35.7,257,8.9,8.8,88,6670.89,1,3,15.0,3.735,1,1,1,1,Alive
+P00183,53,Female,I,G1,Adenocarcinoma,Surgery+Chemo,31.4,35.1,172,14.7,6.2,207,2455.97,1,3,15.0,2.381,5,0,3,1,Cancer Death
+P00184,55,Male,I,G3,Squamous,Surgery+Chemo,26.4,25.5,193,11.5,6.1,259,2620.74,1,3,13.3,3.096,3,1,2,0,Cancer Death
+P00185,46,Female,IV,G4,Adenocarcinoma,Surgery+Chemo+Radio,28.8,45.9,202,13.6,3.6,231,1561.12,3,2,7.3,3.613,2,0,1,1,Cancer Death
+P00186,86,Female,IV,G2,Adenocarcinoma,Surgery+Chemo,23.6,29.4,225,12.8,5.4,77,5970.61,1,3,9.1,4.75,4,1,2,1,Alive
+P00187,79,Female,III,G4,Squamous,Palliative,35.3,47.5,260,17.0,4.1,229,1745.69,1,1,7.6,4.426,1,1,1,0,Cancer Death
+P00188,64,Female,IV,G4,Small Cell,Surgery+Chemo,26.6,35.4,126,16.7,4.4,176,2152.22,2,0,15.0,4.955,6,0,2,1,Alive
+P00189,60,Male,IV,G4,Squamous,Surgery Only,34.6,44.9,237,12.2,7.5,297,2139.58,1,2,12.3,4.409,1,1,1,1,Alive
+P00190,82,Female,III,G3,Small Cell,Surgery+Chemo+Radio,21.2,43.8,169,10.6,18.1,288,4779.72,1,1,15.0,3.486,1,1,1,0,Alive
+P00191,80,Female,IV,G4,Adenocarcinoma,Surgery Only,25.3,43.3,231,10.7,7.1,292,1967.14,2,2,15.0,6.16,4,0,4,0,Alive
+P00192,52,Female,IV,G2,Squamous,Surgery+Chemo,30.3,37.3,318,13.5,7.4,220,2610.38,0,1,6.7,2.541,5,1,2,1,Alive
+P00193,63,Female,II,G3,Adenocarcinoma,Surgery+Chemo+Radio,26.1,29.2,81,12.0,5.3,252,2207.33,1,0,15.0,3.493,4,1,2,1,Cancer Death
+P00194,58,Male,IV,G3,Adenocarcinoma,Palliative,27.8,35.8,288,11.0,4.9,243,1839.42,2,1,5.6,5.148,1,1,1,1,Alive
+P00195,57,Female,IV,G2,Adenocarcinoma,Surgery+Chemo,21.1,35.0,173,12.1,12.4,323,2786.76,1,3,10.1,3.192,5,1,3,1,Cancer Death
+P00196,59,Female,II,G2,Adenocarcinoma,Surgery+Chemo+Radio,23.7,36.3,131,13.8,5.3,207,1930.1,0,1,15.0,2.559,1,1,1,1,Alive
+P00197,59,Female,III,G2,Small Cell,Surgery Only,21.6,29.0,154,12.9,3.7,189,2110.86,1,0,11.4,3.707,3,1,1,1,Other
+P00198,63,Female,II,G1,Squamous,Chemo+Radio,25.1,35.1,122,12.1,7.2,327,2606.41,2,1,15.0,3.143,2,0,1,1,Cancer Death
+P00199,63,Female,II,G3,Squamous,Surgery+Chemo,24.7,18.0,220,12.4,5.9,316,1485.1,1,1,15.0,3.495,1,1,1,1,Alive
+P00200,78,Female,III,G3,Adenocarcinoma,Surgery+Chemo,23.1,35.0,122,12.7,8.0,287,2509.29,3,3,15.0,4.805,1,0,1,1,Alive
+P00201,51,Male,I,G3,Adenocarcinoma,Surgery Only,28.3,37.8,286,13.4,10.7,376,2617.18,0,5,15.0,3.663,1,1,1,0,Alive
+P00202,72,Female,III,G3,Squamous,Chemo+Radio,20.7,31.9,236,13.5,7.5,417,2200.04,1,2,11.2,4.04,1,0,1,1,Cancer Death
+P00203,48,Female,III,G3,Adenocarcinoma,Surgery Only,15.8,35.2,198,10.0,7.2,348,1938.76,0,2,15.0,4.006,1,0,1,1,Alive
+P00204,63,Male,I,G1,Adenocarcinoma,Surgery+Chemo+Radio,22.9,38.1,84,13.3,8.1,190,4608.36,1,1,15.0,2.345,4,0,3,0,Cardiovascular
+P00205,73,Male,III,G1,Adenocarcinoma,Surgery+Chemo,35.2,43.6,110,12.3,15.1,316,5798.8,3,1,10.3,3.362,1,1,1,1,Other
+P00206,67,Male,IV,G2,Large Cell,Chemo+Radio,27.8,43.9,176,11.2,13.2,259,4722.38,1,3,15.0,4.957,3,0,2,1,Cancer Death
+P00207,57,Female,I,G4,Squamous,Palliative,21.7,39.0,180,12.3,6.1,205,2160.35,1,0,15.0,3.88,1,1,1,1,Cancer Death
+P00208,64,Female,III,G4,Adenocarcinoma,Surgery+Chemo,27.5,36.8,259,15.1,8.9,191,3272.34,2,2,15.0,3.535,2,1,2,1,Alive
+P00209,80,Female,I,G3,Squamous,Surgery+Chemo+Radio,24.9,39.3,60,14.5,11.4,272,4335.42,1,3,15.0,2.406,3,0,2,1,Alive
+P00210,53,Male,II,G2,Large Cell,Surgery+Chemo,27.2,48.7,136,13.2,8.2,315,2622.9,1,3,15.0,2.374,1,1,1,1,Alive
+P00211,67,Female,III,G4,Adenocarcinoma,Surgery+Chemo+Radio,29.5,40.3,249,11.4,6.6,360,2109.71,0,3,15.0,3.823,1,0,1,1,Alive
+P00212,72,Male,II,G1,Adenocarcinoma,Surgery Only,26.4,38.7,159,10.6,5.8,304,1328.15,1,3,8.2,2.43,2,1,2,1,Alive
+P00213,56,Female,III,G1,Large Cell,Surgery+Chemo,26.0,44.0,152,11.3,6.9,296,2756.56,2,2,15.0,3.26,1,0,1,0,Alive
+P00214,81,Female,II,G3,Large Cell,Chemo+Radio,32.2,37.3,98,13.0,4.7,234,1379.41,1,1,15.0,5.017,1,1,1,0,Alive
+P00215,85,Male,IV,G3,Squamous,Surgery+Chemo,27.9,31.5,271,13.1,8.7,267,2608.8,0,2,15.0,4.905,4,1,1,1,Cardiovascular
+P00216,74,Female,II,G4,Adenocarcinoma,Surgery Only,26.4,40.0,151,11.8,10.1,130,5752.65,0,0,15.0,4.044,1,0,1,1,Cardiovascular
+P00217,74,Female,IV,G4,Adenocarcinoma,Surgery+Chemo,25.7,38.1,275,14.6,5.9,295,2096.46,0,1,15.0,4.733,1,1,1,1,Alive
+P00218,40,Male,II,G4,Large Cell,Surgery+Chemo+Radio,23.0,35.6,316,13.7,5.8,285,1660.94,2,1,11.1,1.767,1,1,1,1,Other
+P00219,45,Female,I,G3,Squamous,Palliative,19.9,40.5,299,8.2,4.9,403,1387.74,3,3,15.0,3.368,2,1,2,0,Cancer Death
+P00220,59,Male,I,G4,Adenocarcinoma,Chemo+Radio,28.5,25.2,179,13.2,7.7,247,2472.04,1,2,10.8,2.93,7,0,5,1,Cancer Death
+P00221,53,Female,III,G3,Adenocarcinoma,Chemo+Radio,31.2,33.5,151,14.4,6.7,345,1591.5,2,2,6.8,2.934,1,0,1,1,Cancer Death
+P00222,68,Male,IV,G3,Adenocarcinoma,Palliative,27.4,31.3,147,13.4,4.3,212,1473.28,0,0,15.0,5.008,3,1,2,1,Alive
+P00223,26,Female,III,G3,Small Cell,Surgery+Chemo+Radio,28.0,32.0,383,14.0,16.0,386,3312.25,2,4,15.0,2.674,1,0,1,1,Alive
+P00224,68,Male,III,G4,Squamous,Surgery+Chemo+Radio,21.5,36.0,167,12.5,3.9,366,719.95,0,0,12.6,3.53,5,0,2,1,Alive
+P00225,58,Female,IV,G1,Adenocarcinoma,Surgery+Chemo+Radio,22.8,31.1,270,12.9,4.3,341,1103.01,0,0,15.0,3.82,1,0,1,1,Alive
+P00226,54,Male,II,G3,Squamous,Palliative,19.7,47.9,218,12.9,8.9,255,2942.0,0,3,15.0,3.027,2,0,1,0,Alive
+P00227,83,Female,III,G2,Small Cell,Surgery Only,24.4,39.9,155,13.3,8.1,232,4092.6,1,0,10.8,4.023,1,0,1,0,Cardiovascular
+P00228,57,Male,II,G3,Squamous,Surgery+Chemo+Radio,29.9,31.8,165,12.0,5.4,220,2802.72,1,2,15.0,2.534,3,0,2,1,Cancer Death
+P00229,41,Female,IV,G3,Adenocarcinoma,Chemo+Radio,22.4,25.7,284,15.0,5.3,172,3344.07,0,2,13.6,4.219,4,0,2,1,Alive
+P00230,66,Female,IV,G2,Large Cell,Surgery Only,25.2,33.2,183,15.6,7.7,287,3038.85,0,2,15.0,3.912,2,1,1,1,Alive
+P00231,65,Female,II,G3,Adenocarcinoma,Chemo+Radio,28.7,34.9,153,12.0,7.5,230,3638.9,2,1,8.4,3.257,1,1,1,1,Cardiovascular
+P00232,58,Male,I,G3,Squamous,Chemo+Radio,30.9,32.9,133,10.9,5.4,281,1956.28,2,2,15.0,4.608,1,1,1,0,Alive
+P00233,89,Male,III,G2,Adenocarcinoma,Surgery+Chemo+Radio,18.1,52.0,205,10.6,9.0,264,3426.52,0,0,15.0,3.833,1,1,1,1,Alive
+P00234,63,Male,III,G3,Small Cell,Chemo+Radio,23.4,26.2,149,13.7,7.9,164,3743.17,0,3,15.0,4.431,7,1,4,0,Cancer Death
+P00235,73,Male,III,G1,Squamous,Surgery Only,22.2,37.3,227,14.1,10.0,335,2617.33,1,1,15.0,3.509,1,0,1,1,Cardiovascular
+P00236,64,Female,III,G4,Adenocarcinoma,Palliative,21.6,36.2,477,13.7,6.6,258,1765.53,1,3,15.0,5.638,1,1,1,1,Cardiovascular
+P00237,76,Male,I,G4,Squamous,Surgery Only,23.8,35.4,221,13.9,8.5,319,2561.96,1,1,15.0,3.961,2,1,2,1,Cardiovascular
+P00238,57,Male,III,G1,Squamous,Surgery Only,16.7,24.4,360,12.0,6.2,157,4676.81,1,1,15.0,3.466,4,1,4,0,Cancer Death
+P00239,48,Female,II,G2,Squamous,Surgery+Chemo+Radio,23.8,36.7,138,9.4,7.9,189,3005.1,1,1,15.0,1.653,4,0,3,1,Cardiovascular
+P00240,70,Female,III,G2,Adenocarcinoma,Chemo+Radio,25.7,38.2,235,12.1,7.4,219,2431.16,1,2,15.0,4.824,6,1,4,1,Alive
+P00241,64,Male,II,G3,Adenocarcinoma,Chemo+Radio,20.8,41.6,292,16.0,8.6,269,3032.36,2,1,15.0,3.503,2,1,1,1,Alive
+P00242,70,Male,II,G1,Large Cell,Surgery+Chemo+Radio,23.3,40.1,306,13.5,7.8,242,3795.12,2,2,15.0,3.328,1,1,1,1,Alive
+P00243,53,Male,IV,G3,Adenocarcinoma,Chemo+Radio,25.6,44.9,295,13.8,3.8,359,747.2,1,1,15.0,4.101,1,1,1,1,Alive
+P00244,66,Male,III,G2,Squamous,Surgery+Chemo+Radio,26.0,23.7,182,14.6,5.5,333,1136.35,0,3,9.3,3.385,1,0,1,1,Alive
+P00245,41,Male,III,G3,Adenocarcinoma,Chemo+Radio,18.1,35.5,254,11.5,6.9,192,2399.0,3,0,15.0,3.278,2,0,1,1,Cancer Death
+P00246,55,Male,IV,G3,Small Cell,Surgery Only,28.7,52.0,123,13.4,7.7,486,1475.56,0,3,11.4,4.656,1,0,1,0,Cancer Death
+P00247,52,Male,III,G3,Squamous,Palliative,28.8,43.9,334,13.9,8.6,243,3981.02,3,0,15.0,4.04,3,1,2,1,Cardiovascular
+P00248,66,Male,IV,G3,Small Cell,Palliative,22.2,27.6,126,11.3,7.9,353,2102.45,1,1,15.0,4.907,1,0,1,0,Alive
+P00249,55,Female,IV,G3,Squamous,Palliative,33.1,37.6,292,13.7,5.4,227,1966.16,2,3,13.9,5.605,4,1,2,1,Cancer Death
+P00250,44,Male,III,G3,Squamous,Surgery+Chemo,27.6,30.2,269,15.3,8.8,300,3532.91,1,3,10.8,3.003,1,1,1,1,Alive
+P00251,54,Female,I,G2,Large Cell,Palliative,26.9,34.2,269,12.3,5.2,326,1608.04,0,1,15.0,3.237,1,1,1,0,Alive
+P00252,68,Female,I,G1,Small Cell,Surgery Only,28.6,50.0,397,9.9,9.8,130,5165.59,0,0,11.7,2.233,9,1,6,0,Cancer Death
+P00253,62,Male,III,G2,Small Cell,Surgery Only,20.9,43.2,270,13.3,10.0,390,3085.82,0,0,12.1,2.842,1,1,1,1,Cancer Death
+P00254,52,Female,I,G2,Small Cell,Surgery+Chemo,23.9,27.1,109,11.8,6.7,187,3956.09,0,1,14.8,2.784,1,1,1,1,Alive
+P00255,71,Female,II,G3,Squamous,Palliative,28.3,32.0,227,13.3,5.5,222,2053.07,0,1,15.0,4.779,2,1,1,1,Other
+P00256,79,Female,II,G3,Squamous,Palliative,21.9,37.0,88,11.5,5.4,202,1818.04,1,2,8.2,3.052,3,1,2,1,Cancer Death
+P00257,71,Female,I,G4,Squamous,Surgery+Chemo+Radio,23.9,35.3,175,13.1,4.8,205,1605.7,2,1,12.8,3.609,2,1,1,1,Other
+P00258,33,Female,II,G2,Large Cell,Chemo+Radio,28.2,39.0,154,15.2,5.1,208,2501.29,0,3,15.0,1.914,1,1,1,1,Cancer Death
+P00259,63,Female,II,G3,Large Cell,Surgery+Chemo+Radio,26.9,32.0,231,12.9,6.3,154,3326.94,2,2,15.0,3.04,5,0,1,1,Other
+P00260,59,Male,I,G3,Squamous,Surgery Only,25.6,34.6,133,10.0,5.7,311,1242.15,0,1,15.0,2.287,3,1,2,1,Alive
+P00261,36,Male,III,G2,Squamous,Surgery+Chemo+Radio,25.8,31.9,134,13.7,4.1,259,1275.82,1,0,15.0,2.307,1,1,1,0,Cancer Death
+P00262,45,Female,IV,G3,Adenocarcinoma,Surgery Only,24.7,34.6,219,13.0,5.8,239,2540.87,1,0,15.0,3.817,1,0,1,1,Cardiovascular
+P00263,70,Female,III,G2,Small Cell,Surgery+Chemo+Radio,29.3,41.6,283,13.4,6.9,331,1621.56,2,4,15.0,3.893,5,1,4,1,Alive
+P00264,63,Female,IV,G2,Small Cell,Surgery+Chemo,34.9,38.9,181,14.8,6.0,391,1325.31,0,0,4.0,3.484,3,1,3,1,Cardiovascular
+P00265,61,Male,II,G1,Large Cell,Surgery+Chemo,26.8,32.4,438,12.1,5.1,125,3561.31,0,1,14.3,2.393,5,1,4,1,Cancer Death
+P00266,53,Male,III,G1,Squamous,Surgery+Chemo+Radio,31.3,44.4,159,12.5,3.3,380,760.53,0,1,15.0,2.402,1,1,1,0,Other
+P00267,73,Male,II,G2,Small Cell,Surgery+Chemo+Radio,23.5,43.9,235,11.1,9.4,248,4313.22,3,2,15.0,2.623,1,1,1,1,Alive
+P00268,46,Female,III,G4,Adenocarcinoma,Chemo+Radio,22.4,37.0,206,13.3,6.6,142,3436.25,0,3,15.0,3.572,4,1,2,1,Alive
+P00269,50,Male,III,G2,Squamous,Chemo+Radio,22.0,35.3,159,13.3,7.4,283,2507.35,1,2,15.0,3.954,3,1,2,0,Cancer Death
+P00270,57,Female,IV,G1,Adenocarcinoma,Surgery+Chemo,21.4,48.5,298,12.5,7.1,241,3170.1,0,3,15.0,4.127,3,1,2,1,Alive
+P00271,42,Female,I,G3,Squamous,Chemo+Radio,24.2,47.4,129,14.3,7.8,319,2205.61,1,0,11.0,2.28,1,1,1,1,Cancer Death
+P00272,50,Female,II,G4,Adenocarcinoma,Surgery Only,29.5,27.2,82,11.1,7.2,262,2198.24,1,2,15.0,3.134,3,0,2,1,Cancer Death
+P00273,73,Male,III,G1,Adenocarcinoma,Chemo+Radio,30.0,44.8,173,13.2,6.9,279,2082.79,0,0,15.0,3.779,1,1,1,1,Alive
+P00274,50,Female,III,G3,Small Cell,Surgery+Chemo,23.2,48.2,164,14.1,8.4,215,2844.81,0,3,15.0,3.564,15,0,5,1,Alive
+P00275,70,Male,II,G1,Squamous,Surgery+Chemo,24.0,41.3,271,12.0,9.0,168,3853.18,0,2,12.4,2.891,1,1,1,0,Cancer Death
+P00276,68,Female,I,G2,Adenocarcinoma,Surgery+Chemo+Radio,25.5,34.0,113,10.5,10.1,309,2647.91,0,2,15.0,3.462,1,0,1,1,Cancer Death
+P00277,58,Male,I,G4,Small Cell,Palliative,26.6,34.8,221,9.9,5.2,208,2107.58,1,4,10.1,4.029,5,1,4,1,Cancer Death
+P00278,43,Female,III,G3,Adenocarcinoma,Surgery+Chemo,28.1,48.1,211,13.3,7.2,282,2133.51,2,0,11.9,2.604,2,0,1,1,Cardiovascular
+P00279,61,Male,III,G3,Adenocarcinoma,Palliative,23.7,42.4,205,16.0,4.1,369,1033.42,0,1,15.0,3.183,2,1,1,1,Cardiovascular
+P00280,35,Female,II,G2,Adenocarcinoma,Surgery+Chemo+Radio,24.6,40.6,270,11.9,5.8,237,2168.61,0,3,12.5,1.627,1,1,1,1,Other
+P00281,54,Male,IV,G3,Adenocarcinoma,Surgery+Chemo,31.6,52.0,180,13.8,6.3,306,1761.64,0,1,15.0,3.929,7,0,3,1,Cancer Death
+P00282,63,Female,III,G1,Small Cell,Chemo+Radio,24.2,30.4,185,8.6,8.4,248,2489.4,2,1,15.0,4.654,5,1,3,1,Cancer Death
+P00283,71,Female,II,G2,Squamous,Chemo+Radio,22.9,36.4,215,13.7,6.5,221,2224.61,0,1,15.0,2.907,2,0,1,1,Alive
+P00284,59,Male,II,G3,Squamous,Surgery+Chemo+Radio,25.1,38.2,174,11.0,8.2,125,7001.76,2,4,11.2,3.093,2,0,2,1,Cancer Death
+P00285,53,Female,IV,G3,Squamous,Surgery Only,25.9,35.6,108,12.3,6.0,247,1636.37,0,2,15.0,3.929,3,1,2,1,Cancer Death
+P00286,52,Female,IV,G3,Adenocarcinoma,Chemo+Radio,18.6,25.0,155,13.1,5.6,237,1601.14,0,1,11.6,3.728,1,0,1,1,Cancer Death
+P00287,55,Female,IV,G1,Squamous,Chemo+Radio,23.5,43.5,164,10.0,5.3,180,2957.89,0,1,15.0,4.193,1,1,1,1,Other
+P00288,68,Female,III,G3,Small Cell,Chemo+Radio,27.4,32.1,146,18.0,8.2,87,6286.89,1,2,15.0,4.884,1,0,1,0,Alive
+P00289,65,Female,IV,G4,Squamous,Chemo+Radio,34.5,32.0,161,11.9,6.0,116,4430.05,1,0,15.0,5.596,1,1,1,1,Cancer Death
+P00290,60,Male,I,G4,Squamous,Surgery+Chemo,23.1,34.7,194,14.1,3.2,393,849.31,0,2,15.0,3.458,6,1,2,1,Cancer Death
+P00291,68,Male,I,G1,Adenocarcinoma,Surgery+Chemo+Radio,28.9,35.5,163,15.7,8.1,253,2454.54,3,1,15.0,3.861,2,1,1,1,Alive
+P00292,61,Female,I,G1,Adenocarcinoma,Surgery+Chemo+Radio,26.3,36.2,251,13.5,5.1,135,4532.05,1,0,11.2,1.769,1,0,1,0,Alive
+P00293,44,Male,III,G3,Adenocarcinoma,Surgery Only,30.7,43.3,252,10.8,7.1,202,2743.1,2,0,15.0,3.717,1,0,1,1,Alive
+P00294,47,Male,II,G3,Small Cell,Surgery+Chemo+Radio,22.7,44.6,73,13.2,4.8,251,1381.25,2,1,8.6,1.341,1,1,1,1,Cancer Death
+P00295,68,Female,III,G4,Adenocarcinoma,Surgery Only,30.5,35.3,105,9.7,6.7,286,2240.96,1,1,9.4,2.742,8,0,3,1,Cardiovascular
+P00296,44,Male,I,G2,Small Cell,Chemo+Radio,31.8,33.1,73,12.4,2.8,231,1171.99,2,1,15.0,2.57,6,1,4,0,Alive
+P00297,56,Female,III,G3,Squamous,Surgery Only,32.0,36.2,163,16.0,6.6,412,1616.99,1,3,15.0,3.957,6,1,2,1,Alive
+P00298,59,Female,IV,G2,Squamous,Chemo+Radio,31.9,31.2,160,10.5,5.1,415,1132.38,1,0,13.1,4.227,1,1,1,1,Alive
+P00299,48,Female,III,G4,Squamous,Surgery+Chemo,26.4,36.8,192,11.5,4.6,281,1362.58,2,1,14.9,3.678,1,0,1,0,Cardiovascular
+P00300,40,Female,II,G2,Adenocarcinoma,Palliative,28.1,30.9,250,16.3,8.4,221,2850.45,1,2,12.5,2.772,5,1,3,1,Cancer Death
+P00301,46,Male,I,G4,Large Cell,Surgery+Chemo+Radio,23.6,50.8,178,12.7,6.5,281,1628.27,1,1,15.0,2.786,2,1,1,1,Cancer Death
+P00302,39,Male,II,G4,Adenocarcinoma,Surgery+Chemo,15.5,37.8,144,11.4,6.2,144,3636.48,0,1,15.0,2.615,4,1,3,1,Alive
+P00303,68,Female,III,G1,Small Cell,Surgery Only,26.7,33.5,181,13.7,5.4,330,1444.92,3,0,12.2,3.612,5,1,1,1,Cardiovascular
+P00304,65,Female,II,G3,Adenocarcinoma,Surgery+Chemo+Radio,24.8,41.6,150,12.2,8.7,264,3102.25,0,1,15.0,1.68,1,0,1,0,Cancer Death
+P00305,51,Female,IV,G2,Squamous,Surgery+Chemo,29.8,29.0,103,8.1,5.9,153,3169.29,0,1,15.0,3.43,2,1,1,1,Alive
+P00306,44,Male,IV,G2,Squamous,Chemo+Radio,29.4,32.4,261,10.6,10.4,203,5683.51,0,1,11.2,4.113,1,0,1,1,Alive
+P00307,74,Male,II,G2,Adenocarcinoma,Chemo+Radio,20.7,39.8,213,16.7,9.7,296,2908.08,1,1,14.4,2.996,1,0,1,0,Cardiovascular
+P00308,66,Female,I,G4,Adenocarcinoma,Chemo+Radio,36.0,37.9,314,13.6,10.3,117,7614.41,0,2,15.0,4.034,6,1,3,1,Cancer Death
+P00309,53,Male,I,G2,Squamous,Surgery+Chemo,27.2,43.8,113,15.6,8.9,179,4008.1,2,0,11.8,2.31,1,1,1,1,Alive
+P00310,75,Female,IV,G2,Small Cell,Surgery Only,19.7,19.3,98,11.1,5.6,213,3100.49,1,0,15.0,5.12,1,0,1,0,Cancer Death
+P00311,62,Male,I,G3,Squamous,Surgery+Chemo+Radio,20.4,42.3,127,12.9,6.8,328,1883.37,2,5,13.1,3.376,1,0,1,0,Other
+P00312,64,Female,III,G2,Adenocarcinoma,Surgery+Chemo,15.7,33.5,211,12.7,6.3,387,1221.02,0,2,15.0,3.287,1,1,1,0,Alive
+P00313,48,Female,II,G1,Adenocarcinoma,Surgery+Chemo+Radio,28.9,29.4,251,12.0,8.6,280,2277.11,1,2,15.0,3.136,6,1,5,1,Cardiovascular
+P00314,42,Male,III,G2,Large Cell,Surgery+Chemo+Radio,23.1,25.8,202,13.4,6.7,50,11353.57,1,1,15.0,2.293,1,1,1,0,Cancer Death
+P00315,42,Male,III,G1,Adenocarcinoma,Surgery+Chemo+Radio,21.7,33.4,191,11.0,6.2,161,2730.53,0,0,15.0,2.783,1,1,1,1,Alive
+P00316,85,Female,II,G3,Squamous,Surgery+Chemo+Radio,22.6,47.3,251,15.2,11.0,530,1562.46,0,1,15.0,3.575,1,1,1,1,Alive
+P00317,51,Female,IV,G3,Adenocarcinoma,Surgery+Chemo+Radio,24.1,43.3,152,13.8,6.1,263,1707.81,2,0,15.0,4.149,1,0,1,1,Cancer Death
+P00318,61,Female,I,G3,Squamous,Chemo+Radio,28.1,47.6,271,12.7,5.5,50,8117.61,1,0,15.0,2.697,2,0,1,1,Cancer Death
+P00319,66,Male,III,G2,Adenocarcinoma,Surgery Only,18.1,36.3,385,13.2,5.9,440,1023.58,3,0,15.0,3.411,1,1,1,1,Alive
+P00320,60,Male,IV,G4,Large Cell,Surgery Only,20.7,37.7,121,12.5,9.2,143,4597.49,1,2,15.0,4.598,1,1,1,0,Cancer Death
+P00321,59,Male,II,G2,Squamous,Surgery+Chemo,27.6,26.7,165,9.9,7.1,296,2764.01,0,2,15.0,2.538,3,0,2,1,Alive
+P00322,58,Male,III,G1,Adenocarcinoma,Surgery+Chemo,22.8,26.7,107,11.2,7.7,158,4228.08,2,2,15.0,4.06,1,0,1,1,Cancer Death
+P00323,66,Male,III,G4,Squamous,Surgery+Chemo+Radio,28.1,36.0,126,12.7,7.2,426,1226.69,3,1,15.0,4.616,1,1,1,1,Cancer Death
+P00324,48,Female,I,G3,Adenocarcinoma,Chemo+Radio,23.3,28.1,210,12.4,3.5,137,2914.66,1,3,12.7,3.169,4,1,3,1,Cancer Death
+P00325,55,Female,III,G3,Large Cell,Chemo+Radio,32.6,31.4,96,14.2,4.9,203,2656.5,0,2,15.0,4.044,1,1,1,1,Alive
+P00326,33,Male,II,G1,Adenocarcinoma,Palliative,26.4,37.3,135,14.0,6.1,334,1689.3,0,0,15.0,2.539,1,1,1,1,Cancer Death
+P00327,38,Female,III,G1,Large Cell,Surgery Only,31.0,45.3,271,12.0,7.3,206,2965.83,2,2,10.8,1.926,2,1,2,0,Alive
+P00328,45,Female,III,G3,Small Cell,Surgery+Chemo,27.8,37.1,197,11.3,5.0,289,1323.99,0,0,15.0,1.915,6,1,4,1,Alive
+P00329,71,Male,II,G4,Adenocarcinoma,Surgery Only,28.1,28.2,243,14.4,4.9,316,1300.23,0,1,15.0,3.411,1,1,1,0,Cancer Death
+P00330,57,Male,III,G3,Large Cell,Surgery+Chemo+Radio,22.1,25.2,111,13.3,6.1,264,2428.02,0,1,15.0,3.885,1,1,1,1,Alive
+P00331,69,Female,III,G1,Large Cell,Surgery+Chemo,30.8,37.8,186,11.9,10.0,161,4457.16,2,2,15.0,3.216,2,1,1,1,Alive
+P00332,65,Female,II,G3,Small Cell,Surgery+Chemo,26.5,32.9,371,10.9,3.5,187,1899.22,1,0,13.5,2.779,2,1,1,1,Cancer Death
+P00333,64,Male,I,G2,Squamous,Surgery+Chemo,21.2,37.8,141,11.8,3.0,219,978.04,1,1,15.0,2.231,2,1,1,0,Alive
+P00334,49,Male,II,G2,Squamous,Palliative,16.0,35.7,151,13.7,11.3,297,3318.4,1,0,15.0,2.785,4,0,3,1,Alive
+P00335,61,Male,IV,G4,Adenocarcinoma,Surgery Only,26.1,36.5,226,16.0,4.2,315,1609.66,2,2,15.0,5.466,1,1,1,1,Cancer Death
+P00336,64,Male,II,G3,Large Cell,Surgery+Chemo,32.3,44.8,129,12.6,5.9,266,1953.05,0,4,15.0,3.27,1,1,1,0,Alive
+P00337,87,Male,II,G3,Adenocarcinoma,Surgery+Chemo+Radio,21.4,43.8,238,11.5,4.3,306,1117.18,0,3,15.0,3.54,2,1,2,0,Other
+P00338,56,Male,II,G2,Small Cell,Surgery+Chemo,21.3,39.4,92,16.9,6.1,123,3502.44,0,0,12.6,2.216,1,1,1,1,Alive
+P00339,69,Female,II,G1,Small Cell,Chemo+Radio,24.1,31.2,72,12.3,6.4,274,1934.4,0,2,15.0,4.02,2,1,2,1,Other
+P00340,59,Female,III,G3,Large Cell,Surgery+Chemo+Radio,30.5,33.4,204,11.6,10.8,245,2950.57,0,1,15.0,3.886,2,0,1,1,Alive
+P00341,52,Male,III,G3,Small Cell,Chemo+Radio,17.2,42.0,125,12.3,8.3,290,2683.56,1,2,14.3,3.369,2,0,1,1,Alive
+P00342,71,Female,II,G3,Small Cell,Chemo+Radio,22.6,45.5,146,12.2,4.5,310,1493.44,0,0,15.0,2.801,1,1,1,1,Alive
+P00343,83,Female,II,G3,Small Cell,Surgery+Chemo,21.0,28.7,253,15.3,3.8,166,2061.65,2,0,15.0,4.116,2,1,1,1,Cancer Death
+P00344,64,Male,IV,G3,Squamous,Chemo+Radio,28.0,46.9,230,10.0,7.8,241,2566.83,0,1,8.5,4.788,1,1,1,0,Alive
+P00345,52,Male,III,G3,Adenocarcinoma,Surgery+Chemo+Radio,24.9,31.9,114,14.1,5.7,357,1842.66,3,0,15.0,3.401,1,1,1,1,Alive
+P00346,66,Female,III,G2,Large Cell,Chemo+Radio,23.9,41.3,221,13.0,5.4,274,2283.65,0,0,15.0,3.813,2,0,1,1,Alive
+P00347,64,Male,II,G2,Squamous,Surgery+Chemo+Radio,24.7,52.0,162,12.0,9.5,242,3173.48,0,1,15.0,2.404,1,1,1,1,Alive
+P00348,87,Male,IV,G3,Small Cell,Surgery Only,29.0,26.7,212,12.4,3.9,153,2385.2,2,1,8.4,6.008,1,1,1,1,Cancer Death
+P00349,69,Male,I,G3,Adenocarcinoma,Surgery+Chemo+Radio,30.5,40.3,180,12.5,6.0,293,1518.84,2,1,14.8,3.751,1,1,1,1,Alive
+P00350,49,Male,III,G2,Squamous,Palliative,30.1,35.0,102,13.2,8.1,139,5918.57,0,1,12.8,2.887,3,1,1,1,Cancer Death
+P00351,76,Female,III,G4,Squamous,Palliative,28.1,39.9,138,12.2,4.7,236,1804.88,2,1,15.0,5.027,1,1,1,0,Alive
+P00352,70,Female,II,G2,Large Cell,Surgery Only,31.7,33.0,72,12.9,9.9,211,4042.99,2,1,14.5,3.654,1,0,1,1,Cardiovascular
+P00353,72,Female,I,G4,Adenocarcinoma,Surgery+Chemo+Radio,21.3,20.9,194,11.6,4.9,281,1194.65,1,2,15.0,4.39,4,0,3,0,Alive
+P00354,66,Male,III,G3,Squamous,Chemo+Radio,27.2,32.1,211,16.9,6.5,202,3996.6,1,1,15.0,4.649,1,0,1,1,Cardiovascular
+P00355,73,Male,III,G3,Adenocarcinoma,Surgery+Chemo,36.1,39.3,139,14.8,5.4,224,2532.54,0,0,15.0,3.704,1,1,1,1,Cardiovascular
+P00356,66,Male,IV,G2,Squamous,Surgery+Chemo+Radio,17.2,45.8,173,13.9,2.9,177,1895.39,0,1,15.0,4.214,1,1,1,0,Alive
+P00357,57,Male,III,G3,Squamous,Palliative,23.1,39.6,125,12.2,5.9,230,1717.1,0,2,9.8,3.62,1,1,1,1,Cancer Death
+P00358,62,Female,IV,G1,Adenocarcinoma,Surgery+Chemo+Radio,20.8,46.6,292,14.5,8.5,267,3566.78,0,1,15.0,3.324,4,1,2,1,Cardiovascular
+P00359,59,Male,III,G4,Small Cell,Surgery+Chemo,26.8,33.8,111,13.5,4.9,222,1603.8,1,1,15.0,3.288,1,0,1,1,Alive
+P00360,65,Female,III,G2,Small Cell,Surgery Only,32.0,33.3,161,13.2,5.5,225,2099.96,0,0,15.0,3.588,3,1,2,1,Cancer Death
+P00361,61,Female,IV,G2,Small Cell,Surgery+Chemo+Radio,27.9,39.2,111,12.0,5.7,263,1608.14,0,1,9.2,3.202,1,1,1,1,Cancer Death
+P00362,57,Male,IV,G3,Small Cell,Surgery+Chemo+Radio,24.5,34.6,198,13.5,7.9,330,2367.43,0,1,15.0,4.481,3,0,2,1,Alive
+P00363,58,Male,I,G1,Adenocarcinoma,Palliative,28.0,44.3,269,16.0,6.0,310,1708.55,1,2,15.0,3.348,1,0,1,1,Alive
+P00364,60,Male,III,G3,Squamous,Chemo+Radio,24.2,27.9,82,13.1,6.7,146,3091.27,1,1,15.0,4.074,2,0,1,0,Cancer Death
+P00365,39,Female,I,G3,Small Cell,Surgery Only,26.4,42.6,232,12.5,6.8,311,2522.96,2,2,15.0,2.823,3,0,1,1,Cardiovascular
+P00366,73,Female,IV,G2,Small Cell,Chemo+Radio,28.3,44.9,337,13.2,5.7,359,1286.19,3,1,3.0,3.855,1,1,1,1,Cancer Death
+P00367,65,Male,III,G2,Small Cell,Surgery Only,33.4,39.4,190,13.1,11.1,306,2466.26,3,2,15.0,3.478,2,0,1,1,Alive
+P00368,53,Female,III,G3,Squamous,Surgery Only,27.5,42.9,140,12.0,4.9,57,9673.42,0,0,15.0,2.81,3,0,3,0,Other
+P00369,68,Female,IV,G3,Small Cell,Surgery+Chemo+Radio,26.5,32.8,179,11.7,8.3,271,2206.54,0,3,15.0,5.125,1,1,1,1,Cancer Death
+P00370,54,Male,II,G3,Large Cell,Surgery+Chemo+Radio,34.7,31.6,147,14.4,9.8,361,2733.04,1,2,8.2,2.101,1,0,1,0,Alive
+P00371,54,Male,III,G2,Squamous,Surgery+Chemo,16.7,39.3,382,15.2,6.4,214,3179.98,0,0,14.6,2.201,1,1,1,1,Alive
+P00372,65,Female,II,G2,Adenocarcinoma,Surgery+Chemo+Radio,25.1,32.3,249,17.1,6.8,482,1539.25,0,1,15.0,3.164,1,0,1,1,Alive
+P00373,78,Female,I,G2,Small Cell,Palliative,22.2,39.0,255,13.8,7.8,76,7805.05,2,1,15.0,4.884,2,1,1,0,Alive
+P00374,64,Female,I,G2,Squamous,Surgery+Chemo+Radio,24.4,39.0,411,13.2,6.0,262,2775.64,1,2,15.0,3.047,2,1,1,1,Cancer Death
+P00375,51,Male,III,G3,Small Cell,Surgery+Chemo,28.2,36.6,302,14.6,3.8,308,1127.39,1,3,15.0,3.64,3,1,2,1,Cancer Death
+P00376,56,Male,I,G2,Adenocarcinoma,Palliative,29.9,38.8,173,11.4,6.2,264,1823.56,2,4,15.0,4.004,1,0,1,1,Alive
+P00377,71,Female,IV,G3,Adenocarcinoma,Surgery Only,23.2,41.1,183,14.2,11.0,262,4676.71,2,1,9.1,4.826,3,0,2,0,Cancer Death
+P00378,65,Male,II,G1,Small Cell,Surgery Only,28.5,36.3,444,14.9,7.9,167,4943.84,2,1,15.0,3.483,1,1,1,1,Cardiovascular
+P00379,72,Female,II,G3,Adenocarcinoma,Surgery+Chemo,21.5,33.9,137,14.8,6.8,204,3676.2,2,2,15.0,4.074,1,1,1,0,Alive
+P00380,65,Female,I,G1,Squamous,Surgery+Chemo,19.7,42.3,170,16.0,8.4,296,3468.08,0,0,11.6,2.378,12,1,11,1,Alive
+P00381,70,Male,II,G2,Squamous,Surgery Only,25.8,38.8,123,11.9,6.4,81,7057.48,1,0,15.0,3.162,1,1,1,1,Alive
+P00382,85,Male,III,G4,Adenocarcinoma,Surgery+Chemo,24.5,39.9,91,12.1,6.7,322,1812.92,0,3,15.0,3.567,5,1,2,0,Alive
+P00383,44,Male,IV,G4,Squamous,Surgery+Chemo+Radio,32.2,40.8,130,12.6,5.9,241,1674.52,3,2,15.0,4.78,2,0,2,0,Cardiovascular
+P00384,89,Male,II,G4,Adenocarcinoma,Surgery+Chemo,35.1,38.0,131,11.0,7.7,294,1999.8,0,1,15.0,4.145,1,1,1,1,Other
+P00385,72,Male,II,G3,Adenocarcinoma,Surgery Only,22.8,34.8,143,14.0,5.7,318,1211.85,0,2,15.0,3.207,2,1,1,0,Other
+P00386,90,Female,I,G2,Large Cell,Surgery+Chemo+Radio,17.3,33.0,229,14.2,6.1,548,837.05,3,1,15.0,3.954,1,1,1,1,Cancer Death
+P00387,49,Female,III,G4,Squamous,Surgery+Chemo,19.3,36.4,180,14.0,8.7,362,1618.25,1,2,15.0,3.676,1,0,1,1,Alive
+P00388,65,Female,I,G3,Large Cell,Surgery+Chemo+Radio,21.7,40.1,266,13.3,6.3,154,4201.22,0,3,15.0,2.394,1,0,1,1,Cancer Death
+P00389,62,Male,I,G4,Squamous,Surgery+Chemo,26.4,40.4,192,14.8,7.9,423,2035.95,0,0,15.0,2.653,3,0,1,0,Cancer Death
+P00390,71,Female,III,G3,Small Cell,Chemo+Radio,24.3,37.9,194,14.0,8.1,50,15085.0,1,3,11.1,3.733,1,0,1,1,Alive
+P00391,66,Female,IV,G3,Adenocarcinoma,Palliative,19.8,39.3,162,11.9,6.5,215,2642.14,1,2,8.8,4.442,1,0,1,1,Cancer Death
+P00392,65,Female,II,G1,Adenocarcinoma,Surgery+Chemo,33.5,29.8,380,7.7,6.0,264,1650.18,1,2,13.9,3.12,2,0,1,1,Cancer Death
+P00393,70,Male,III,G2,Adenocarcinoma,Surgery+Chemo+Radio,28.5,34.0,154,12.4,4.5,224,1703.91,0,0,13.8,2.955,3,1,2,1,Alive
+P00394,59,Female,III,G3,Adenocarcinoma,Chemo+Radio,33.4,41.4,257,13.1,4.8,273,1198.75,2,4,13.1,4.415,2,1,1,1,Cardiovascular
+P00395,54,Male,I,G4,Large Cell,Surgery+Chemo+Radio,17.4,31.6,116,13.1,8.0,236,3383.18,0,1,9.9,2.737,1,1,1,0,Alive
+P00396,66,Female,III,G3,Squamous,Surgery+Chemo,31.2,37.9,165,12.7,8.0,353,1880.36,3,1,15.0,3.889,1,1,1,0,Cancer Death
+P00397,54,Male,II,G1,Squamous,Surgery+Chemo,24.8,37.3,389,12.0,5.0,211,1886.44,1,0,11.4,2.131,3,1,2,1,Alive
+P00398,59,Female,II,G2,Squamous,Surgery+Chemo+Radio,23.7,36.3,235,11.5,7.5,241,3423.18,3,0,15.0,3.1,1,1,1,1,Cancer Death
+P00399,43,Female,II,G2,Adenocarcinoma,Surgery+Chemo+Radio,25.6,41.4,106,11.1,7.1,392,1341.79,0,1,15.0,1.958,1,1,1,1,Cancer Death
+P00400,61,Female,III,G4,Large Cell,Chemo+Radio,22.4,38.5,122,13.8,8.9,327,2181.59,3,2,15.0,4.912,3,0,1,0,Cancer Death
+P00401,49,Female,III,G2,Squamous,Surgery Only,24.9,29.2,333,15.0,12.8,236,5804.9,2,2,15.0,4.227,1,0,1,1,Cancer Death
+P00402,60,Male,III,G1,Adenocarcinoma,Surgery Only,29.8,40.4,187,10.7,7.9,288,2517.81,1,0,15.0,3.448,8,1,6,1,Alive
+P00403,47,Female,II,G3,Squamous,Surgery+Chemo,16.7,33.7,163,12.9,5.4,400,1081.27,3,1,12.8,2.966,2,1,2,1,Cancer Death
+P00404,60,Female,III,G3,Adenocarcinoma,Surgery+Chemo+Radio,32.2,28.1,135,14.4,8.4,139,4601.25,2,2,9.9,3.22,1,0,1,1,Cardiovascular
+P00405,71,Female,IV,G3,Squamous,Surgery+Chemo+Radio,27.3,41.8,161,12.7,4.9,163,2752.47,3,3,15.0,5.06,2,1,1,1,Cardiovascular
+P00406,53,Female,III,G2,Squamous,Surgery Only,25.0,29.3,310,14.3,13.0,204,4880.41,2,0,12.6,3.687,1,1,1,0,Cancer Death
+P00407,49,Female,III,G4,Large Cell,Surgery+Chemo+Radio,29.7,34.7,139,14.9,4.6,267,1753.58,3,3,9.9,3.56,5,0,4,0,Cardiovascular
+P00408,70,Male,III,G3,Large Cell,Chemo+Radio,27.1,38.9,144,13.7,7.6,327,2293.2,0,2,15.0,5.278,1,0,1,1,Alive
+P00409,71,Male,IV,G1,Adenocarcinoma,Palliative,23.3,36.5,228,12.1,6.7,189,4386.05,0,0,10.6,4.544,6,1,4,1,Alive
+P00410,66,Male,III,G1,Adenocarcinoma,Palliative,22.0,32.9,122,15.4,5.9,175,2954.05,1,2,15.0,3.674,1,0,1,1,Cancer Death
+P00411,55,Female,III,G3,Large Cell,Surgery+Chemo+Radio,32.2,30.5,127,12.5,5.8,145,4292.61,2,2,15.0,3.885,1,0,1,1,Cancer Death
+P00412,53,Male,IV,G3,Squamous,Palliative,18.8,32.1,182,12.5,10.1,175,4725.12,0,0,12.0,4.844,1,1,1,1,Cardiovascular
+P00413,57,Male,IV,G3,Squamous,Surgery+Chemo+Radio,24.6,30.0,183,13.9,7.9,198,2703.26,1,0,15.0,3.696,1,1,1,1,Cancer Death
+P00414,60,Male,IV,G1,Squamous,Surgery Only,19.2,36.2,133,12.5,6.4,77,5542.03,0,1,15.0,4.33,6,0,4,1,Cancer Death
+P00415,40,Male,I,G1,Squamous,Palliative,27.7,33.5,217,12.6,11.2,205,5144.06,3,1,15.0,2.983,7,0,3,1,Cancer Death
+P00416,49,Male,III,G1,Squamous,Surgery Only,25.1,28.0,197,12.3,6.5,166,2981.0,2,3,6.9,3.393,3,1,2,1,Cancer Death
+P00417,76,Male,II,G3,Large Cell,Surgery+Chemo,19.9,35.1,86,12.7,8.3,237,2378.35,0,2,7.2,2.669,2,1,2,1,Alive
+P00418,63,Male,II,G3,Squamous,Surgery Only,21.6,32.8,244,13.4,4.5,386,999.49,0,2,15.0,3.924,1,1,1,1,Cancer Death
+P00419,75,Male,III,G2,Adenocarcinoma,Surgery+Chemo+Radio,25.7,38.7,146,9.4,4.5,123,3539.09,3,3,15.0,5.074,1,1,1,1,Cancer Death
+P00420,73,Male,I,G3,Adenocarcinoma,Surgery+Chemo+Radio,26.8,39.4,246,12.8,8.3,331,2758.43,0,2,15.0,2.834,3,1,2,1,Other
+P00421,57,Female,III,G4,Large Cell,Surgery+Chemo+Radio,16.8,45.7,400,9.8,7.3,383,2064.46,1,2,15.0,2.93,3,0,2,1,Cardiovascular
+P00422,57,Male,II,G1,Squamous,Surgery Only,22.3,41.2,177,12.3,12.7,327,2778.38,3,2,15.0,2.99,1,1,1,0,Other
+P00423,72,Male,IV,G2,Squamous,Surgery Only,26.2,29.9,142,13.6,5.4,277,1986.61,3,1,15.0,5.885,2,1,1,0,Other
+P00424,70,Female,II,G2,Adenocarcinoma,Surgery+Chemo,30.9,22.9,306,12.4,8.2,355,2334.45,0,4,15.0,3.524,1,1,1,1,Cancer Death
+P00425,72,Female,I,G2,Large Cell,Surgery Only,29.3,27.1,132,14.3,6.2,301,1557.31,1,2,13.3,3.653,3,1,2,1,Alive
+P00426,60,Female,III,G2,Squamous,Surgery Only,23.5,33.7,372,13.6,8.6,339,1830.67,3,1,15.0,3.643,1,1,1,1,Cancer Death
+P00427,62,Male,III,G4,Large Cell,Surgery+Chemo,30.0,26.5,152,9.1,8.4,259,3428.7,0,1,15.0,4.821,1,1,1,1,Alive
+P00428,57,Female,III,G3,Adenocarcinoma,Palliative,24.1,33.0,143,15.2,6.6,165,3120.03,1,1,15.0,4.102,1,1,1,1,Other
+P00429,60,Female,IV,G3,Adenocarcinoma,Chemo+Radio,15.0,37.2,445,13.4,5.4,343,1414.99,2,1,15.0,5.12,2,0,2,1,Cardiovascular
+P00430,52,Female,IV,G4,Adenocarcinoma,Surgery+Chemo,32.0,33.3,208,12.0,6.0,459,1315.45,0,0,5.9,3.191,1,1,1,1,Cancer Death
+P00431,60,Male,I,G2,Adenocarcinoma,Surgery+Chemo,27.6,38.8,336,12.2,4.8,223,1848.94,0,0,8.1,1.371,1,0,1,1,Other
+P00432,59,Male,I,G4,Large Cell,Palliative,26.3,33.0,179,9.2,7.5,252,2214.03,0,2,15.0,4.039,1,0,1,0,Cardiovascular
+P00433,55,Female,II,G4,Squamous,Surgery+Chemo+Radio,25.5,32.0,175,13.4,2.9,259,1287.53,0,2,14.8,3.051,1,1,1,0,Other
+P00434,70,Female,II,G3,Small Cell,Chemo+Radio,26.9,48.1,60,14.2,5.6,132,4992.34,0,1,15.0,3.543,1,1,1,0,Alive
+P00435,44,Male,III,G4,Small Cell,Chemo+Radio,25.5,36.8,266,11.8,8.8,182,3361.92,0,1,9.7,2.471,4,0,3,0,Cancer Death
+P00436,65,Female,II,G4,Adenocarcinoma,Surgery Only,24.2,37.7,210,11.4,8.7,274,2153.57,1,0,15.0,3.052,2,1,1,1,Cancer Death
+P00437,49,Female,II,G2,Squamous,Surgery Only,22.6,42.5,174,13.3,4.1,242,1448.05,3,2,11.4,2.29,1,0,1,0,Cardiovascular
+P00438,50,Female,III,G2,Large Cell,Surgery+Chemo,25.8,42.7,227,15.2,8.0,251,3539.3,3,1,15.0,3.131,2,0,2,1,Cancer Death
+P00439,51,Female,III,G3,Squamous,Surgery+Chemo+Radio,21.5,34.6,184,15.0,4.7,252,2181.4,2,1,7.9,2.45,1,1,1,1,Cardiovascular
+P00440,66,Female,IV,G3,Adenocarcinoma,Palliative,20.4,43.8,127,14.5,6.0,241,2738.27,2,2,15.0,5.577,2,0,1,1,Alive
+P00441,33,Female,III,G2,Large Cell,Surgery+Chemo,26.7,34.1,208,16.6,8.4,189,4454.07,0,0,11.5,1.615,1,1,1,1,Cancer Death
+P00442,63,Male,II,G1,Squamous,Chemo+Radio,29.9,43.6,169,14.7,5.0,285,1372.01,1,1,15.0,2.711,2,1,1,1,Cancer Death
+P00443,61,Male,II,G1,Large Cell,Surgery+Chemo+Radio,21.9,29.0,240,15.1,10.3,276,4254.45,2,0,15.0,2.5,2,1,1,1,Cancer Death
+P00444,49,Female,I,G1,Squamous,Surgery+Chemo+Radio,22.7,35.0,163,13.2,7.2,180,4465.0,3,2,15.0,2.135,5,1,3,0,Alive
+P00445,63,Female,II,G2,Squamous,Chemo+Radio,17.9,38.4,152,12.4,7.7,283,2094.37,1,0,12.3,2.643,1,1,1,1,Alive
+P00446,46,Female,III,G1,Squamous,Surgery+Chemo+Radio,19.6,39.3,147,15.0,9.2,200,4693.0,2,2,13.9,3.385,1,1,1,1,Alive
+P00447,60,Male,IV,G2,Large Cell,Surgery+Chemo+Radio,19.7,31.5,130,11.2,8.7,302,3028.46,3,1,7.8,4.112,2,0,1,1,Alive
+P00448,45,Male,II,G4,Large Cell,Chemo+Radio,29.9,26.3,149,13.8,8.5,247,2849.1,1,0,6.9,2.815,3,1,2,1,Alive
+P00449,85,Male,II,G3,Squamous,Surgery+Chemo+Radio,17.7,40.0,214,11.9,5.5,282,2280.71,2,3,12.2,4.393,1,1,1,0,Alive
+P00450,71,Male,I,G4,Adenocarcinoma,Surgery Only,27.6,35.7,136,13.6,4.8,264,1465.83,3,2,12.0,4.088,2,1,1,1,Cancer Death
+P00451,63,Male,III,G2,Adenocarcinoma,Surgery+Chemo+Radio,24.3,34.5,116,13.5,6.1,245,3060.76,2,0,8.1,3.639,4,0,2,0,Other
+P00452,49,Male,IV,G2,Adenocarcinoma,Surgery+Chemo+Radio,28.2,47.8,245,13.3,7.7,276,2896.69,0,1,15.0,3.472,3,1,1,1,Alive
+P00453,57,Female,II,G3,Adenocarcinoma,Chemo+Radio,30.7,35.1,172,13.0,4.5,317,1272.75,3,1,15.0,3.088,3,1,2,1,Cancer Death
+P00454,58,Male,III,G4,Squamous,Surgery Only,25.4,33.6,243,14.0,8.0,260,2478.07,2,1,15.0,4.273,1,0,1,0,Alive
+P00455,63,Male,I,G3,Adenocarcinoma,Surgery Only,30.6,25.3,167,14.2,7.5,258,3083.69,0,0,12.4,3.225,1,1,1,1,Alive
+P00456,65,Female,III,G4,Squamous,Surgery+Chemo,32.5,30.0,146,10.5,6.3,222,2004.92,3,0,14.2,4.663,1,1,1,1,Cancer Death
+P00457,63,Female,II,G1,Large Cell,Chemo+Radio,31.6,42.7,93,12.9,6.8,105,4487.02,0,1,15.0,2.696,2,1,2,1,Cancer Death
+P00458,65,Female,I,G2,Adenocarcinoma,Surgery+Chemo+Radio,22.5,32.3,118,12.2,6.8,253,2364.92,3,2,15.0,2.779,2,1,1,1,Alive
+P00459,58,Female,III,G4,Small Cell,Surgery+Chemo,16.6,41.1,130,13.3,7.6,149,5148.61,2,2,13.4,4.341,1,1,1,0,Cancer Death
+P00460,65,Male,I,G3,Adenocarcinoma,Chemo+Radio,24.9,28.6,202,12.3,8.4,205,4670.44,0,3,7.3,2.747,1,1,1,0,Cardiovascular
+P00461,53,Female,I,G2,Squamous,Surgery+Chemo+Radio,26.3,31.4,174,15.3,15.8,181,5990.92,2,0,15.0,2.592,1,1,1,0,Cancer Death
+P00462,48,Male,II,G2,Large Cell,Surgery+Chemo+Radio,16.7,31.2,123,12.9,7.0,193,4059.25,0,0,15.0,1.917,1,0,1,1,Alive
+P00463,83,Female,I,G3,Adenocarcinoma,Surgery+Chemo,25.8,40.1,63,14.8,5.5,198,2752.77,3,1,7.6,2.774,4,0,2,0,Other
+P00464,65,Female,III,G2,Small Cell,Chemo+Radio,15.0,35.6,216,11.3,3.8,289,1276.25,1,4,15.0,4.896,4,1,2,1,Cancer Death
+P00465,82,Male,II,G3,Adenocarcinoma,Surgery Only,32.5,29.8,253,12.5,4.4,277,1607.98,1,0,11.8,3.676,1,1,1,1,Alive
+P00466,57,Female,III,G2,Adenocarcinoma,Surgery Only,27.6,41.6,262,11.9,5.3,259,2553.32,3,1,15.0,3.231,1,0,1,1,Cancer Death
+P00467,89,Female,III,G2,Adenocarcinoma,Chemo+Radio,21.8,40.2,126,13.7,8.2,347,2500.73,0,1,15.0,4.479,1,1,1,1,Alive
+P00468,61,Female,II,G2,Adenocarcinoma,Surgery Only,26.1,39.2,268,10.9,5.9,495,900.27,1,1,14.6,2.081,1,0,1,1,Alive
+P00469,74,Female,II,G1,Adenocarcinoma,Surgery+Chemo,26.6,38.9,225,9.9,7.6,291,2767.25,2,2,15.0,3.612,4,1,3,0,Alive
+P00470,61,Male,III,G3,Small Cell,Surgery+Chemo,27.7,31.4,224,11.9,5.4,323,1252.44,0,2,15.0,4.144,1,1,1,1,Alive
+P00471,62,Female,III,G2,Adenocarcinoma,Surgery+Chemo+Radio,25.8,45.2,144,14.0,7.7,272,2594.47,0,2,15.0,4.121,1,0,1,1,Alive
+P00472,59,Female,III,G3,Small Cell,Chemo+Radio,29.8,36.3,172,11.5,8.7,302,3362.61,1,0,15.0,3.697,2,1,1,0,Cardiovascular
+P00473,55,Male,III,G3,Adenocarcinoma,Chemo+Radio,19.8,38.7,364,13.5,5.9,120,3565.68,0,3,15.0,3.644,1,1,1,1,Cancer Death
+P00474,72,Male,IV,G2,Adenocarcinoma,Surgery+Chemo,24.9,39.5,343,11.8,7.6,50,12212.7,1,1,8.8,3.919,4,0,3,0,Cancer Death
+P00475,60,Female,III,G3,Squamous,Surgery Only,33.5,30.9,178,9.8,5.9,81,5929.2,1,0,6.7,3.74,2,0,2,0,Cancer Death
+P00476,70,Male,IV,G2,Squamous,Palliative,23.9,49.3,195,14.5,4.6,200,2541.0,0,1,15.0,4.968,5,1,2,1,Cardiovascular
+P00477,71,Male,III,G1,Large Cell,Surgery Only,26.6,36.8,79,14.2,7.9,359,1779.89,0,3,15.0,4.548,2,1,1,1,Cancer Death
+P00478,77,Male,IV,G2,Small Cell,Chemo+Radio,21.0,37.2,286,12.9,7.6,270,2073.4,0,0,14.5,5.029,1,1,1,1,Cardiovascular
+P00479,66,Male,IV,G3,Squamous,Surgery Only,35.2,34.3,241,13.1,8.0,219,2439.44,0,2,15.0,5.255,2,0,1,0,Cancer Death
+P00480,42,Female,II,G1,Large Cell,Surgery+Chemo+Radio,26.8,44.5,207,12.6,8.9,296,2368.29,2,2,15.0,1.497,2,0,1,1,Alive
+P00481,57,Female,III,G3,Adenocarcinoma,Surgery+Chemo+Radio,19.8,44.7,144,11.1,6.2,278,2022.83,0,2,8.2,2.051,1,0,1,1,Cancer Death
+P00482,60,Female,I,G2,Large Cell,Surgery+Chemo+Radio,30.4,38.0,186,15.4,6.3,142,3230.83,3,1,15.0,2.068,2,1,1,1,Alive
+P00483,61,Male,IV,G2,Adenocarcinoma,Surgery+Chemo+Radio,20.7,27.5,316,12.8,6.1,288,2535.78,0,1,15.0,3.619,3,1,2,0,Cancer Death
+P00484,76,Male,II,G1,Adenocarcinoma,Surgery Only,28.6,35.9,208,13.7,7.4,317,2134.78,0,3,7.6,2.688,1,1,1,1,Other
+P00485,74,Female,III,G1,Adenocarcinoma,Surgery Only,30.1,36.6,493,12.1,6.4,418,1166.52,2,2,8.0,4.759,1,1,1,1,Cancer Death
+P00486,59,Female,I,G2,Squamous,Surgery+Chemo+Radio,34.6,34.1,247,13.8,6.9,244,2689.09,0,1,15.0,2.08,1,0,1,1,Other
+P00487,90,Male,IV,G2,Squamous,Chemo+Radio,26.5,30.6,128,15.1,5.4,386,1662.97,1,0,15.0,5.425,1,1,1,0,Cancer Death
+P00488,56,Female,IV,G2,Adenocarcinoma,Surgery+Chemo+Radio,25.7,26.9,155,13.3,4.9,218,2561.03,0,1,13.2,3.696,1,0,1,1,Cardiovascular
+P00489,57,Female,III,G3,Adenocarcinoma,Surgery+Chemo+Radio,16.4,46.6,138,13.6,5.1,436,1275.55,3,0,7.5,2.707,1,1,1,1,Cardiovascular
+P00490,47,Male,II,G2,Squamous,Palliative,23.4,41.8,251,14.6,7.6,202,2722.62,0,2,15.0,2.828,1,1,1,1,Alive
+P00491,42,Female,III,G4,Squamous,Surgery+Chemo,22.3,37.2,281,14.3,6.6,301,1680.76,0,0,8.7,1.984,1,1,1,1,Cancer Death
+P00492,46,Male,II,G3,Large Cell,Surgery+Chemo,24.7,32.8,348,14.9,5.8,273,1591.77,1,1,10.9,2.301,2,0,1,0,Cancer Death
+P00493,73,Female,IV,G3,Large Cell,Surgery Only,23.2,39.3,160,13.6,8.2,369,1546.94,0,0,11.3,4.305,2,1,2,1,Alive
+P00494,69,Male,II,G3,Squamous,Chemo+Radio,29.0,38.3,217,13.6,10.4,358,2871.08,3,0,15.0,3.372,2,1,1,1,Cardiovascular
+P00495,50,Male,III,G2,Squamous,Surgery Only,23.0,34.4,295,13.4,5.8,167,2630.8,3,1,10.4,3.149,4,0,3,1,Alive
+P00496,62,Male,I,G3,Small Cell,Surgery Only,27.6,39.5,327,14.6,4.8,223,2039.86,2,2,11.4,3.718,2,1,1,1,Cancer Death
+P00497,70,Male,IV,G2,Small Cell,Surgery Only,25.0,40.3,114,12.2,8.9,420,1569.69,0,2,15.0,4.493,1,0,1,1,Alive
+P00498,36,Female,III,G3,Small Cell,Surgery+Chemo,22.7,41.5,229,14.0,6.7,258,2017.6,1,0,15.0,2.409,2,1,1,1,Cardiovascular
+P00499,82,Male,IV,G4,Small Cell,Surgery+Chemo,22.3,31.2,115,17.1,6.3,315,1339.71,0,1,15.0,5.651,1,1,1,1,Alive
+P00500,73,Male,II,G2,Squamous,Surgery Only,26.5,39.8,144,13.6,9.1,164,4172.17,0,1,15.0,3.313,2,1,1,0,Cardiovascular
+P00501,70,Male,III,G1,Large Cell,Surgery+Chemo,31.7,44.7,110,10.8,6.2,230,3352.24,0,1,10.6,3.061,1,1,1,0,Alive
+P00502,75,Male,I,G3,Squamous,Surgery+Chemo+Radio,22.2,38.9,143,12.5,7.5,193,3012.72,1,1,15.0,2.541,4,1,2,1,Cancer Death
+P00503,36,Male,IV,G1,Adenocarcinoma,Surgery Only,25.7,51.4,104,14.1,7.0,324,2480.05,1,0,15.0,3.026,2,1,1,1,Cancer Death
+P00504,58,Male,II,G3,Squamous,Surgery Only,27.7,35.8,116,11.8,17.7,309,4845.06,2,3,10.9,3.091,1,0,1,1,Cancer Death
+P00505,76,Male,III,G3,Adenocarcinoma,Surgery+Chemo,25.4,25.8,129,11.2,6.4,348,2020.69,1,1,15.0,3.611,3,1,2,1,Other
+P00506,60,Male,III,G4,Adenocarcinoma,Surgery+Chemo+Radio,17.6,31.5,203,10.5,8.9,163,4763.22,0,0,15.0,3.427,3,0,2,1,Cardiovascular
+P00507,69,Female,I,G1,Squamous,Surgery+Chemo+Radio,27.7,32.6,184,12.6,6.2,294,1556.53,0,1,15.0,2.542,9,1,4,1,Alive
+P00508,78,Male,IV,G2,Squamous,Surgery Only,18.7,40.6,97,15.9,7.7,252,3048.31,1,1,15.0,6.049,3,1,2,0,Alive
+P00509,69,Male,IV,G3,Large Cell,Surgery Only,18.8,42.4,514,12.0,6.3,54,12864.62,1,1,15.0,5.195,3,0,3,1,Cancer Death
+P00510,57,Female,III,G2,Large Cell,Surgery+Chemo,19.6,37.9,151,14.6,8.5,287,2903.18,0,1,11.5,3.081,2,0,1,1,Alive
+P00511,67,Female,III,G4,Squamous,Chemo+Radio,24.8,38.9,109,12.5,6.5,353,1998.1,1,2,15.0,4.309,1,1,1,1,Alive
+P00512,40,Male,I,G3,Adenocarcinoma,Palliative,21.2,49.4,226,12.3,7.8,376,2234.23,2,0,15.0,2.691,4,0,2,0,Alive
+P00513,66,Male,III,G3,Adenocarcinoma,Surgery+Chemo+Radio,19.0,31.6,181,13.9,5.3,247,1665.88,0,1,10.3,4.323,3,1,2,1,Alive
+P00514,69,Male,IV,G2,Large Cell,Palliative,27.2,36.5,133,10.2,5.3,316,1297.12,2,0,6.0,4.328,2,0,1,1,Alive
+P00515,62,Male,I,G3,Adenocarcinoma,Surgery Only,25.4,34.1,210,16.0,3.8,294,1104.34,3,0,15.0,3.619,1,1,1,1,Alive
+P00516,74,Male,IV,G2,Adenocarcinoma,Surgery+Chemo+Radio,28.9,29.4,140,14.0,7.5,189,4063.52,3,0,15.0,5.492,3,1,1,0,Cancer Death
+P00517,64,Female,III,G3,Squamous,Surgery+Chemo+Radio,22.2,23.8,162,14.9,5.5,178,2639.23,0,2,15.0,3.656,1,1,1,0,Alive
+P00518,62,Female,I,G2,Adenocarcinoma,Surgery+Chemo,25.2,45.4,316,12.5,12.9,246,3581.95,0,1,15.0,2.395,3,1,2,1,Other
+P00519,82,Female,II,G3,Squamous,Chemo+Radio,29.1,32.0,190,13.9,5.8,231,2349.67,2,4,15.0,4.863,5,1,3,0,Cancer Death
+P00520,49,Female,III,G4,Large Cell,Surgery+Chemo+Radio,19.6,35.4,229,14.7,9.7,257,3442.17,0,1,15.0,2.924,1,0,1,0,Cancer Death
+P00521,77,Male,IV,G1,Small Cell,Chemo+Radio,22.5,39.8,149,12.8,9.4,217,3779.98,0,1,15.0,5.16,1,1,1,1,Cardiovascular
+P00522,76,Female,III,G2,Squamous,Surgery Only,30.0,29.3,192,11.4,6.2,267,2510.68,1,0,15.0,3.681,2,1,1,0,Cardiovascular
+P00523,71,Female,III,G3,Adenocarcinoma,Surgery Only,25.6,31.6,135,11.3,5.4,165,3369.43,1,4,12.9,4.937,2,1,1,1,Other
+P00524,56,Male,IV,G3,Adenocarcinoma,Surgery+Chemo,24.8,36.9,133,12.2,6.4,372,1340.25,0,2,9.4,4.011,2,1,1,1,Alive
+P00525,65,Female,II,G2,Adenocarcinoma,Surgery Only,25.3,34.2,155,13.4,9.4,104,9898.63,0,1,11.2,3.125,1,0,1,0,Alive
+P00526,51,Female,II,G2,Adenocarcinoma,Surgery Only,31.0,28.7,139,12.7,13.3,244,4456.35,2,1,15.0,3.04,1,1,1,1,Cancer Death
+P00527,54,Female,III,G3,Adenocarcinoma,Surgery Only,25.4,40.9,269,12.1,4.6,234,1837.0,1,2,15.0,3.823,1,1,1,1,Cancer Death
+P00528,62,Female,III,G3,Squamous,Surgery+Chemo,25.7,34.0,226,14.2,6.7,239,2763.56,0,3,8.4,3.802,1,1,1,1,Alive
+P00529,50,Female,II,G2,Adenocarcinoma,Chemo+Radio,25.4,37.9,76,12.2,5.6,182,2596.94,3,0,11.2,1.835,1,1,1,0,Cancer Death
+P00530,58,Male,III,G1,Squamous,Surgery+Chemo+Radio,18.2,37.4,349,11.9,6.0,129,4855.18,2,2,15.0,3.012,3,1,2,1,Alive
+P00531,47,Female,II,G3,Adenocarcinoma,Surgery+Chemo,27.8,43.3,231,14.7,11.2,269,4094.91,1,1,15.0,2.395,1,0,1,1,Alive
+P00532,68,Female,III,G2,Squamous,Surgery Only,21.8,39.3,280,14.0,5.3,234,1940.55,0,1,15.0,4.077,4,1,2,1,Cancer Death
+P00533,80,Female,IV,G3,Small Cell,Surgery+Chemo+Radio,19.8,31.4,170,10.8,4.1,281,1157.9,2,1,15.0,5.419,1,0,1,0,Cancer Death
+P00534,87,Female,II,G3,Adenocarcinoma,Surgery+Chemo,17.6,44.6,103,10.6,7.1,118,4342.97,2,0,15.0,4.148,1,0,1,1,Alive
+P00535,48,Male,III,G3,Squamous,Surgery+Chemo,18.6,33.9,110,11.0,7.5,387,1407.13,2,1,15.0,3.388,1,0,1,0,Cancer Death
+P00536,50,Female,IV,G2,Squamous,Surgery+Chemo,15.3,31.7,347,12.9,5.9,244,2105.53,0,1,15.0,4.264,1,1,1,1,Cancer Death
+P00537,60,Male,II,G2,Squamous,Surgery Only,20.9,30.7,98,15.1,5.4,50,12676.76,1,3,15.0,3.253,1,1,1,1,Cancer Death
+P00538,70,Male,II,G3,Large Cell,Surgery+Chemo,23.5,21.8,105,15.6,7.0,265,2835.32,0,0,15.0,3.044,2,0,1,1,Alive
+P00539,59,Female,IV,G4,Small Cell,Palliative,30.3,33.0,154,14.4,4.5,212,2652.21,3,1,15.0,6.36,8,1,5,1,Alive
+P00540,73,Male,III,G4,Small Cell,Surgery+Chemo+Radio,25.8,39.6,107,16.4,7.6,159,5140.09,0,0,15.0,4.196,1,1,1,0,Cancer Death
+P00541,68,Male,II,G4,Large Cell,Palliative,26.6,28.1,222,13.4,6.0,349,2092.71,1,2,15.0,4.297,1,1,1,0,Alive
+P00542,41,Female,I,G3,Large Cell,Surgery+Chemo+Radio,31.3,48.1,229,15.0,10.1,324,2397.33,2,0,15.0,1.76,2,1,2,1,Alive
+P00543,63,Male,II,G4,Small Cell,Surgery Only,15.0,22.4,212,12.0,7.4,277,2259.55,2,2,15.0,4.685,2,1,1,1,Alive
+P00544,47,Male,III,G2,Squamous,Surgery+Chemo+Radio,27.3,31.9,144,10.2,6.4,256,3030.26,1,2,15.0,2.447,1,0,1,1,Cancer Death
+P00545,55,Male,IV,G4,Small Cell,Chemo+Radio,26.9,27.3,202,12.4,6.2,290,1734.84,1,4,14.1,5.499,1,1,1,0,Cancer Death
+P00546,57,Male,III,G3,Adenocarcinoma,Palliative,29.2,43.0,357,12.8,3.7,124,2178.16,3,2,15.0,4.453,1,1,1,1,Alive
+P00547,71,Female,II,G3,Large Cell,Surgery+Chemo+Radio,17.4,41.2,105,17.7,6.4,265,2945.33,1,2,15.0,3.141,3,1,2,1,Cardiovascular
+P00548,62,Female,IV,G2,Adenocarcinoma,Surgery Only,22.9,35.3,277,13.0,6.3,349,2030.7,1,1,8.7,3.125,4,0,3,1,Alive
+P00549,56,Female,II,G3,Adenocarcinoma,Surgery+Chemo+Radio,21.3,27.8,246,11.2,6.8,333,1807.37,2,3,15.0,3.052,1,0,1,1,Alive
+P00550,87,Male,II,G2,Adenocarcinoma,Surgery Only,19.7,29.2,174,14.7,6.3,166,4574.63,1,4,15.0,4.516,1,0,1,1,Cancer Death
+P00551,51,Female,IV,G2,Small Cell,Surgery Only,35.9,38.6,193,11.6,10.3,265,4769.69,1,0,15.0,4.241,2,0,1,1,Cardiovascular
+P00552,65,Male,II,G3,Squamous,Surgery+Chemo,23.0,32.6,208,13.3,6.2,160,3208.6,0,1,13.7,2.904,4,1,2,1,Cancer Death
+P00553,70,Female,III,G4,Small Cell,Surgery Only,29.7,33.3,125,14.6,5.2,263,1656.21,0,3,8.9,4.669,1,0,1,1,Alive
+P00554,64,Male,IV,G4,Squamous,Surgery+Chemo,28.7,36.5,97,11.3,4.1,190,1581.27,1,2,15.0,4.285,2,0,1,1,Cancer Death
+P00555,51,Female,II,G2,Squamous,Palliative,19.0,34.3,256,15.7,5.8,180,3770.76,0,0,10.5,2.288,1,1,1,1,Alive
+P00556,50,Male,III,G3,Large Cell,Surgery+Chemo+Radio,23.1,25.6,113,15.0,4.9,279,1229.85,0,1,11.2,3.068,1,0,1,1,Alive
+P00557,69,Male,IV,G3,Squamous,Chemo+Radio,25.8,28.3,120,13.6,4.5,192,2882.69,1,2,15.0,5.283,1,1,1,0,Other
+P00558,74,Male,II,G2,Squamous,Chemo+Radio,27.3,28.5,149,16.2,6.1,186,3244.04,1,2,15.0,3.983,3,0,3,1,Other
+P00559,61,Male,IV,G4,Large Cell,Surgery+Chemo,27.0,32.3,202,12.3,9.4,278,4053.97,0,0,15.0,4.475,1,1,1,1,Alive
+P00560,46,Female,II,G2,Adenocarcinoma,Surgery+Chemo+Radio,33.4,37.6,150,14.4,8.9,131,6996.92,1,0,15.0,1.571,2,1,2,1,Alive
+P00561,62,Male,IV,G4,Squamous,Chemo+Radio,29.6,37.3,138,13.5,4.6,224,1498.28,0,1,15.0,5.249,1,1,1,1,Alive
+P00562,80,Female,II,G2,Adenocarcinoma,Surgery+Chemo,28.5,44.7,260,11.9,6.8,127,6032.39,0,0,11.6,2.346,2,0,1,1,Alive
+P00563,50,Male,III,G4,Squamous,Surgery+Chemo,29.9,27.9,160,11.9,7.6,142,5685.78,0,1,15.0,3.289,2,1,1,1,Cancer Death
+P00564,58,Male,III,G3,Small Cell,Chemo+Radio,31.6,39.0,134,16.7,8.0,344,1893.86,2,1,7.6,3.699,2,1,1,0,Cancer Death
+P00565,63,Female,II,G3,Adenocarcinoma,Chemo+Radio,22.7,31.9,211,14.9,10.8,217,6105.47,1,2,15.0,3.122,1,0,1,0,Cancer Death
+P00566,75,Female,II,G1,Adenocarcinoma,Surgery+Chemo,18.4,49.8,185,14.6,4.7,193,1993.32,3,2,15.0,3.797,1,1,1,1,Alive
+P00567,55,Female,III,G2,Small Cell,Surgery+Chemo+Radio,22.8,36.3,183,11.9,5.1,318,1124.62,1,3,15.0,2.431,1,0,1,1,Alive
+P00568,68,Male,IV,G2,Small Cell,Surgery+Chemo+Radio,19.3,33.3,215,14.3,5.5,379,1709.92,3,0,15.0,4.328,2,0,1,1,Cancer Death
+P00569,79,Male,I,G3,Squamous,Palliative,21.1,38.8,172,12.3,7.5,270,3454.37,0,1,15.0,4.796,2,1,1,1,Cancer Death
+P00570,44,Male,III,G3,Adenocarcinoma,Chemo+Radio,25.9,38.3,250,16.1,3.0,332,833.47,1,2,9.0,3.693,3,1,2,1,Alive
+P00571,46,Female,II,G2,Adenocarcinoma,Surgery+Chemo,23.0,34.5,105,15.2,6.2,206,2158.52,1,1,15.0,2.011,1,1,1,0,Other
+P00572,61,Female,III,G2,Adenocarcinoma,Surgery+Chemo+Radio,28.4,40.9,291,14.7,3.9,254,1055.55,1,3,12.1,3.472,3,1,2,1,Other
+P00573,74,Female,III,G2,Squamous,Palliative,26.9,46.8,128,14.5,6.7,251,1961.56,2,0,15.0,4.73,1,0,1,1,Alive
+P00574,66,Female,III,G3,Squamous,Surgery+Chemo,27.1,43.0,97,12.8,12.4,276,3581.22,1,3,15.0,3.638,2,0,1,1,Other
+P00575,75,Male,III,G2,Large Cell,Chemo+Radio,19.8,36.0,134,13.9,8.8,327,2449.62,0,2,15.0,4.412,1,0,1,0,Other
+P00576,41,Male,I,G3,Squamous,Surgery+Chemo+Radio,21.6,48.5,159,15.8,4.6,132,2577.01,2,1,15.0,1.728,1,1,1,0,Alive
+P00577,66,Female,II,G3,Adenocarcinoma,Surgery+Chemo,16.9,40.1,137,13.8,5.9,179,2478.85,0,0,10.0,1.733,1,0,1,1,Cardiovascular
+P00578,28,Female,II,G2,Adenocarcinoma,Surgery+Chemo+Radio,28.1,29.9,126,11.5,5.1,211,2603.09,0,2,13.5,1.614,3,1,2,1,Other
+P00579,78,Male,III,G2,Small Cell,Surgery+Chemo,34.1,37.4,266,15.3,9.9,172,4423.99,1,0,15.0,3.87,1,1,1,0,Alive
+P00580,76,Male,II,G3,Squamous,Surgery+Chemo,26.3,35.6,130,11.8,3.5,268,963.95,0,0,15.0,2.746,1,1,1,1,Alive
+P00581,58,Male,II,G4,Small Cell,Chemo+Radio,26.7,33.5,77,12.9,5.9,267,1544.61,2,3,15.0,4.085,10,1,8,0,Alive
+P00582,34,Female,I,G1,Squamous,Surgery+Chemo+Radio,23.1,39.0,159,12.1,5.4,255,1615.62,1,4,15.0,1.341,5,1,2,0,Alive
+P00583,59,Male,II,G2,Adenocarcinoma,Palliative,24.5,24.8,394,8.3,4.7,218,1642.42,2,1,15.0,3.71,3,1,1,0,Cancer Death
+P00584,75,Female,III,G3,Large Cell,Surgery Only,31.2,47.4,121,13.3,11.0,358,2146.99,1,2,9.3,3.609,1,1,1,1,Alive
+P00585,67,Male,IV,G2,Adenocarcinoma,Chemo+Radio,25.9,41.0,129,16.9,4.2,267,1680.61,0,0,15.0,4.616,3,0,2,0,Alive
+P00586,84,Female,II,G2,Adenocarcinoma,Surgery Only,28.4,25.0,155,13.6,4.7,238,1666.45,1,3,15.0,4.065,1,1,1,1,Cancer Death
+P00587,58,Female,I,G3,Squamous,Chemo+Radio,31.4,40.9,326,18.0,10.8,255,2971.2,2,4,12.5,3.103,4,0,4,1,Alive
+P00588,86,Female,II,G2,Small Cell,Chemo+Radio,30.5,39.9,158,12.7,6.5,310,1688.01,0,2,13.3,4.363,1,1,1,1,Cardiovascular
+P00589,38,Female,III,G3,Squamous,Chemo+Radio,25.6,46.5,123,13.4,6.3,267,1625.1,0,1,15.0,3.015,2,1,1,1,Alive
+P00590,53,Female,III,G4,Squamous,Surgery+Chemo+Radio,26.0,48.2,208,12.8,5.5,181,3637.82,0,0,15.0,3.308,1,0,1,1,Cancer Death
+P00591,46,Male,II,G4,Squamous,Surgery Only,23.8,49.3,202,13.1,6.7,391,1804.18,0,2,15.0,3.021,2,1,1,1,Cardiovascular
+P00592,71,Female,I,G3,Small Cell,Palliative,27.7,35.2,218,13.7,5.9,287,2152.75,3,2,15.0,4.881,1,1,1,1,Alive
+P00593,47,Female,IV,G2,Small Cell,Surgery+Chemo,23.6,40.5,121,15.7,5.4,158,3997.47,1,1,15.0,3.607,1,1,1,1,Cancer Death
+P00594,74,Male,III,G2,Small Cell,Surgery Only,27.1,33.9,146,11.5,4.4,105,3390.61,1,1,15.0,4.279,1,1,1,1,Other
+P00595,70,Female,IV,G2,Adenocarcinoma,Surgery Only,30.2,43.4,278,13.0,6.8,305,2062.42,0,2,10.5,4.356,2,0,1,1,Cardiovascular
+P00596,64,Female,II,G3,Squamous,Chemo+Radio,17.9,23.0,212,14.1,5.6,353,1635.93,1,0,9.2,2.825,1,1,1,1,Cancer Death
+P00597,60,Male,IV,G2,Small Cell,Chemo+Radio,17.1,28.7,246,15.3,5.8,286,1548.76,2,1,8.7,4.783,1,1,1,1,Cancer Death
+P00598,49,Female,IV,G2,Adenocarcinoma,Chemo+Radio,25.3,34.2,178,9.1,8.1,299,2127.53,0,1,2.8,2.928,1,1,1,0,Cancer Death
+P00599,69,Male,I,G2,Adenocarcinoma,Surgery+Chemo+Radio,28.5,36.6,271,10.5,5.7,301,2288.58,3,1,15.0,3.097,4,1,3,1,Alive
+P00600,56,Male,I,G2,Large Cell,Surgery+Chemo+Radio,26.8,38.1,203,13.1,6.5,250,2347.31,0,2,9.2,1.992,1,0,1,1,Other

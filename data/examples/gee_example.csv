@@ -1,0 +1,1001 @@
+﻿subject_id,site,arm,week,time,sbp,dbp,heart_rate,adverse_events,age,sex,bmi
+S00001,Site D,Active High,0,0,159.2,70.7,59.6,0,64,Male,28.9
+S00001,Site D,Active High,2,1,160.1,68.5,67.2,0,64,Male,28.9
+S00001,Site D,Active High,4,2,147.4,67.1,58.5,1,64,Male,28.9
+S00001,Site D,Active High,8,3,146.3,60.9,67.0,2,64,Male,28.9
+S00001,Site D,Active High,12,4,145.4,62.1,63.4,3,64,Male,28.9
+S00002,Site B,Placebo,0,0,152.8,83.9,65.1,1,33,Male,30.6
+S00002,Site B,Placebo,2,1,149.4,84.6,68.3,0,33,Male,30.6
+S00002,Site B,Placebo,4,2,147.9,82.1,69.7,2,33,Male,30.6
+S00002,Site B,Placebo,8,3,143.5,79.7,72.8,1,33,Male,30.6
+S00002,Site B,Placebo,12,4,137.5,79.1,67.2,1,33,Male,30.6
+S00003,Site B,Placebo,0,0,150.0,85.3,63.8,0,61,Male,23.4
+S00003,Site B,Placebo,2,1,151.7,83.7,65.4,0,61,Male,23.4
+S00003,Site B,Placebo,4,2,155.3,80.4,61.2,0,61,Male,23.4
+S00003,Site B,Placebo,8,3,146.2,83.9,60.5,1,61,Male,23.4
+S00003,Site B,Placebo,12,4,153.7,84.1,61.6,0,61,Male,23.4
+S00004,Site D,Placebo,0,0,125.3,81.4,78.6,1,61,Male,19.0
+S00004,Site D,Placebo,2,1,125.4,73.1,78.3,0,61,Male,19.0
+S00004,Site D,Placebo,4,2,116.9,77.5,80.3,0,61,Male,19.0
+S00004,Site D,Placebo,8,3,117.6,75.8,77.0,0,61,Male,19.0
+S00004,Site D,Placebo,12,4,124.1,80.7,77.8,0,61,Male,19.0
+S00005,Site C,Placebo,0,0,150.9,85.1,89.1,0,70,Male,31.6
+S00005,Site C,Placebo,2,1,156.5,87.1,84.4,0,70,Male,31.6
+S00005,Site C,Placebo,4,2,154.1,90.4,98.0,0,70,Male,31.6
+S00005,Site C,Placebo,8,3,153.8,83.6,81.2,0,70,Male,31.6
+S00005,Site C,Placebo,12,4,146.8,85.1,87.0,0,70,Male,31.6
+S00006,Site E,Active Low,0,0,143.2,73.3,75.1,1,30,Female,24.8
+S00006,Site E,Active Low,2,1,126.7,68.7,79.4,2,30,Female,24.8
+S00006,Site E,Active Low,4,2,133.4,71.1,69.9,0,30,Female,24.8
+S00006,Site E,Active Low,8,3,122.6,69.7,68.4,0,30,Female,24.8
+S00006,Site E,Active Low,12,4,116.7,67.2,76.3,2,30,Female,24.8
+S00007,Site B,Active Low,0,0,157.0,87.5,98.0,1,31,Female,23.7
+S00007,Site B,Active Low,2,1,158.4,95.9,86.6,0,31,Female,23.7
+S00007,Site B,Active Low,4,2,160.7,87.8,90.7,0,31,Female,23.7
+S00007,Site B,Active Low,8,3,156.4,92.6,90.8,1,31,Female,23.7
+S00007,Site B,Active Low,12,4,151.7,83.2,85.3,0,31,Female,23.7
+S00008,Site E,Placebo,0,0,155.1,90.7,72.1,1,31,Female,19.5
+S00008,Site E,Placebo,2,1,152.8,86.2,68.1,0,31,Female,19.5
+S00008,Site E,Placebo,4,2,152.0,94.0,79.6,2,31,Female,19.5
+S00008,Site E,Placebo,8,3,147.1,85.8,76.6,2,31,Female,19.5
+S00008,Site E,Placebo,12,4,148.4,80.6,69.4,0,31,Female,19.5
+S00009,Site C,Placebo,0,0,133.7,114.7,58.4,0,35,Female,17.6
+S00009,Site C,Placebo,2,1,125.4,110.1,58.9,0,35,Female,17.6
+S00009,Site C,Placebo,4,2,126.8,105.2,61.0,0,35,Female,17.6
+S00009,Site C,Placebo,8,3,115.3,102.4,61.2,0,35,Female,17.6
+S00009,Site C,Placebo,12,4,118.6,104.4,66.0,0,35,Female,17.6
+S00010,Site B,Placebo,0,0,154.9,97.2,72.0,0,81,Female,25.5
+S00010,Site B,Placebo,2,1,147.5,91.5,79.5,0,81,Female,25.5
+S00010,Site B,Placebo,4,2,147.8,88.9,78.1,4,81,Female,25.5
+S00010,Site B,Placebo,8,3,143.1,94.2,73.1,1,81,Female,25.5
+S00010,Site B,Placebo,12,4,131.0,93.3,74.5,0,81,Female,25.5
+S00011,Site A,Active High,0,0,168.8,69.7,83.3,2,52,Male,27.0
+S00011,Site A,Active High,2,1,170.5,72.5,91.3,1,52,Male,27.0
+S00011,Site A,Active High,4,2,158.7,68.7,81.2,1,52,Male,27.0
+S00011,Site A,Active High,8,3,159.6,65.3,88.4,0,52,Male,27.0
+S00011,Site A,Active High,12,4,160.2,66.1,77.2,0,52,Male,27.0
+S00012,Site E,Placebo,0,0,150.3,79.4,67.1,0,38,Female,32.3
+S00012,Site E,Placebo,2,1,158.7,73.3,66.8,2,38,Female,32.3
+S00012,Site E,Placebo,4,2,144.5,78.8,67.6,0,38,Female,32.3
+S00012,Site E,Placebo,8,3,161.4,81.8,68.3,2,38,Female,32.3
+S00012,Site E,Placebo,12,4,154.4,80.8,65.7,0,38,Female,32.3
+S00013,Site B,Active Low,0,0,163.2,79.2,75.6,0,46,Male,27.2
+S00013,Site B,Active Low,2,1,164.2,85.1,77.9,1,46,Male,27.2
+S00013,Site B,Active Low,4,2,173.0,78.2,66.1,1,46,Male,27.2
+S00013,Site B,Active Low,8,3,159.1,82.0,67.4,0,46,Male,27.2
+S00013,Site B,Active Low,12,4,147.7,73.1,75.3,2,46,Male,27.2
+S00014,Site E,Active Low,0,0,158.2,98.0,74.6,0,32,Female,23.4
+S00014,Site E,Active Low,2,1,155.2,97.5,75.5,1,32,Female,23.4
+S00014,Site E,Active Low,4,2,150.8,96.0,68.8,1,32,Female,23.4
+S00014,Site E,Active Low,8,3,136.9,89.1,79.5,3,32,Female,23.4
+S00014,Site E,Active Low,12,4,145.5,94.7,76.6,1,32,Female,23.4
+S00015,Site D,Placebo,0,0,154.8,106.1,61.7,1,32,Male,23.9
+S00015,Site D,Placebo,2,1,156.2,102.1,57.6,0,32,Male,23.9
+S00015,Site D,Placebo,4,2,160.6,102.9,62.9,0,32,Male,23.9
+S00015,Site D,Placebo,8,3,164.2,101.9,55.4,1,32,Male,23.9
+S00015,Site D,Placebo,12,4,162.4,104.0,60.5,0,32,Male,23.9
+S00016,Site C,Placebo,0,0,151.3,99.6,64.2,0,36,Male,25.8
+S00016,Site C,Placebo,2,1,140.2,94.1,65.4,0,36,Male,25.8
+S00016,Site C,Placebo,4,2,159.5,101.5,63.1,1,36,Male,25.8
+S00016,Site C,Placebo,8,3,147.6,97.8,69.1,1,36,Male,25.8
+S00016,Site C,Placebo,12,4,142.5,96.7,76.7,1,36,Male,25.8
+S00017,Site E,Active Low,0,0,145.7,82.7,81.8,0,36,Female,25.2
+S00017,Site E,Active Low,2,1,141.8,76.3,83.7,1,36,Female,25.2
+S00017,Site E,Active Low,4,2,126.8,70.6,85.2,0,36,Female,25.2
+S00017,Site E,Active Low,8,3,130.4,69.1,67.5,3,36,Female,25.2
+S00017,Site E,Active Low,12,4,133.5,67.3,77.9,1,36,Female,25.2
+S00018,Site B,Placebo,0,0,130.7,98.4,91.5,0,69,Female,28.5
+S00018,Site B,Placebo,2,1,132.2,98.4,92.5,0,69,Female,28.5
+S00018,Site B,Placebo,4,2,141.4,91.6,87.9,1,69,Female,28.5
+S00018,Site B,Placebo,8,3,124.9,94.7,89.2,1,69,Female,28.5
+S00018,Site B,Placebo,12,4,128.0,86.1,87.8,1,69,Female,28.5
+S00019,Site D,Active Low,0,0,139.2,96.3,90.8,0,71,Female,26.4
+S00019,Site D,Active Low,2,1,132.1,91.1,78.2,0,71,Female,26.4
+S00019,Site D,Active Low,4,2,126.4,92.0,83.4,1,71,Female,26.4
+S00019,Site D,Active Low,8,3,132.5,93.3,81.1,1,71,Female,26.4
+S00019,Site D,Active Low,12,4,126.2,84.1,81.2,0,71,Female,26.4
+S00020,Site D,Active High,0,0,154.8,96.1,72.3,1,57,Female,19.0
+S00020,Site D,Active High,2,1,172.3,93.5,69.8,3,57,Female,19.0
+S00020,Site D,Active High,4,2,166.9,89.4,67.8,1,57,Female,19.0
+S00020,Site D,Active High,8,3,157.4,93.5,65.5,0,57,Female,19.0
+S00020,Site D,Active High,12,4,145.9,94.7,69.8,3,57,Female,19.0
+S00021,Site B,Active High,0,0,141.4,75.7,81.4,0,79,Male,20.8
+S00021,Site B,Active High,2,1,150.6,69.2,80.3,0,79,Male,20.8
+S00021,Site B,Active High,4,2,135.7,69.9,77.7,2,79,Male,20.8
+S00021,Site B,Active High,8,3,122.3,71.5,89.8,0,79,Male,20.8
+S00021,Site B,Active High,12,4,120.1,62.3,78.1,1,79,Male,20.8
+S00022,Site A,Placebo,0,0,155.0,107.8,70.8,0,65,Male,18.8
+S00022,Site A,Placebo,2,1,153.0,111.7,76.7,0,65,Male,18.8
+S00022,Site A,Placebo,4,2,148.6,106.8,78.4,0,65,Male,18.8
+S00022,Site A,Placebo,8,3,154.2,108.6,75.5,2,65,Male,18.8
+S00022,Site A,Placebo,12,4,150.8,103.6,69.7,0,65,Male,18.8
+S00023,Site E,Placebo,0,0,157.1,88.5,78.4,0,45,Female,15.0
+S00023,Site E,Placebo,2,1,154.1,86.3,71.8,0,45,Female,15.0
+S00023,Site E,Placebo,4,2,157.6,84.6,66.5,0,45,Female,15.0
+S00023,Site E,Placebo,8,3,154.5,91.2,66.1,1,45,Female,15.0
+S00023,Site E,Placebo,12,4,148.5,88.9,58.7,0,45,Female,15.0
+S00024,Site A,Active High,0,0,130.0,85.4,91.3,1,32,Male,21.2
+S00024,Site A,Active High,2,1,133.4,82.4,89.4,0,32,Male,21.2
+S00024,Site A,Active High,4,2,129.6,77.0,86.5,0,32,Male,21.2
+S00024,Site A,Active High,8,3,115.5,72.7,89.0,2,32,Male,21.2
+S00024,Site A,Active High,12,4,122.8,67.7,79.9,1,32,Male,21.2
+S00025,Site B,Placebo,0,0,134.7,94.3,77.2,0,42,Female,20.4
+S00025,Site B,Placebo,2,1,138.9,87.2,67.3,0,42,Female,20.4
+S00025,Site B,Placebo,4,2,140.0,88.9,68.5,0,42,Female,20.4
+S00025,Site B,Placebo,8,3,137.9,98.3,77.7,2,42,Female,20.4
+S00025,Site B,Placebo,12,4,130.9,88.0,83.6,1,42,Female,20.4
+S00026,Site E,Placebo,0,0,159.9,102.2,75.2,0,37,Male,28.4
+S00026,Site E,Placebo,2,1,153.1,96.1,88.8,1,37,Male,28.4
+S00026,Site E,Placebo,4,2,156.4,104.9,81.8,0,37,Male,28.4
+S00026,Site E,Placebo,8,3,148.8,101.1,81.7,1,37,Male,28.4
+S00026,Site E,Placebo,12,4,153.1,105.6,84.7,0,37,Male,28.4
+S00027,Site E,Active Low,0,0,131.5,85.0,61.4,0,34,Female,24.6
+S00027,Site E,Active Low,2,1,131.1,85.8,72.3,0,34,Female,24.6
+S00027,Site E,Active Low,4,2,119.1,76.8,69.3,1,34,Female,24.6
+S00027,Site E,Active Low,8,3,126.0,78.6,62.7,0,34,Female,24.6
+S00027,Site E,Active Low,12,4,118.8,76.8,65.0,1,34,Female,24.6
+S00028,Site A,Placebo,0,0,156.4,85.2,56.1,1,70,Female,23.7
+S00028,Site A,Placebo,2,1,148.6,88.5,69.2,1,70,Female,23.7
+S00028,Site A,Placebo,4,2,155.5,84.5,62.5,2,70,Female,23.7
+S00028,Site A,Placebo,8,3,154.0,94.4,62.4,1,70,Female,23.7
+S00028,Site A,Placebo,12,4,154.8,87.2,63.9,0,70,Female,23.7
+S00029,Site D,Active Low,0,0,164.4,87.9,71.2,0,59,Female,22.3
+S00029,Site D,Active Low,2,1,163.6,78.6,73.5,0,59,Female,22.3
+S00029,Site D,Active Low,4,2,151.4,83.6,70.8,0,59,Female,22.3
+S00029,Site D,Active Low,8,3,160.0,77.6,68.6,0,59,Female,22.3
+S00029,Site D,Active Low,12,4,152.8,81.7,65.9,2,59,Female,22.3
+S00030,Site A,Placebo,0,0,144.9,85.9,73.9,0,42,Male,24.5
+S00030,Site A,Placebo,2,1,155.9,88.1,67.9,1,42,Male,24.5
+S00030,Site A,Placebo,4,2,146.1,87.7,77.8,0,42,Male,24.5
+S00030,Site A,Placebo,8,3,153.3,86.3,73.9,0,42,Male,24.5
+S00030,Site A,Placebo,12,4,139.6,89.6,77.5,1,42,Male,24.5
+S00031,Site E,Active Low,0,0,130.4,88.8,62.7,1,51,Male,24.5
+S00031,Site E,Active Low,2,1,132.8,87.1,70.4,0,51,Male,24.5
+S00031,Site E,Active Low,4,2,121.2,80.7,65.1,1,51,Male,24.5
+S00031,Site E,Active Low,8,3,129.4,81.6,66.0,0,51,Male,24.5
+S00031,Site E,Active Low,12,4,117.6,80.7,65.8,2,51,Male,24.5
+S00032,Site C,Active Low,0,0,166.2,102.1,79.3,0,79,Male,25.1
+S00032,Site C,Active Low,2,1,162.6,86.1,79.3,1,79,Male,25.1
+S00032,Site C,Active Low,4,2,160.4,96.5,72.9,0,79,Male,25.1
+S00032,Site C,Active Low,8,3,162.2,91.6,86.2,2,79,Male,25.1
+S00032,Site C,Active Low,12,4,153.2,88.3,76.5,0,79,Male,25.1
+S00033,Site E,Active Low,0,0,160.7,90.2,69.2,1,44,Male,22.2
+S00033,Site E,Active Low,2,1,154.7,81.6,74.6,1,44,Male,22.2
+S00033,Site E,Active Low,4,2,155.1,87.6,74.1,0,44,Male,22.2
+S00033,Site E,Active Low,8,3,144.2,84.6,71.1,1,44,Male,22.2
+S00033,Site E,Active Low,12,4,155.8,88.2,77.2,0,44,Male,22.2
+S00034,Site C,Placebo,0,0,144.7,95.9,75.4,0,37,Female,26.0
+S00034,Site C,Placebo,2,1,149.3,91.9,78.1,0,37,Female,26.0
+S00034,Site C,Placebo,4,2,139.0,97.8,72.8,1,37,Female,26.0
+S00034,Site C,Placebo,8,3,139.3,92.5,73.4,0,37,Female,26.0
+S00034,Site C,Placebo,12,4,146.7,93.1,75.5,0,37,Female,26.0
+S00035,Site C,Placebo,0,0,129.8,91.5,74.0,0,58,Female,23.9
+S00035,Site C,Placebo,2,1,120.4,90.4,79.6,0,58,Female,23.9
+S00035,Site C,Placebo,4,2,126.3,92.3,71.5,0,58,Female,23.9
+S00035,Site C,Placebo,8,3,124.9,89.9,72.0,0,58,Female,23.9
+S00035,Site C,Placebo,12,4,118.0,91.0,70.9,3,58,Female,23.9
+S00036,Site C,Active High,0,0,151.0,97.9,75.4,1,62,Male,32.1
+S00036,Site C,Active High,2,1,146.9,86.5,78.7,1,62,Male,32.1
+S00036,Site C,Active High,4,2,141.7,83.9,75.7,1,62,Male,32.1
+S00036,Site C,Active High,8,3,139.4,90.0,87.5,2,62,Male,32.1
+S00036,Site C,Active High,12,4,133.0,84.4,76.2,2,62,Male,32.1
+S00037,Site E,Placebo,0,0,137.7,92.8,90.3,2,59,Male,24.3
+S00037,Site E,Placebo,2,1,145.8,90.2,86.0,1,59,Male,24.3
+S00037,Site E,Placebo,4,2,142.9,82.9,80.2,0,59,Male,24.3
+S00037,Site E,Placebo,8,3,142.8,92.4,82.0,0,59,Male,24.3
+S00037,Site E,Placebo,12,4,136.6,87.1,83.1,0,59,Male,24.3
+S00038,Site A,Active High,0,0,152.0,86.5,75.6,0,46,Female,21.1
+S00038,Site A,Active High,2,1,147.2,77.6,64.6,0,46,Female,21.1
+S00038,Site A,Active High,4,2,140.5,87.3,67.2,1,46,Female,21.1
+S00038,Site A,Active High,8,3,139.6,79.7,67.6,0,46,Female,21.1
+S00038,Site A,Active High,12,4,123.3,70.6,65.1,1,46,Female,21.1
+S00039,Site A,Placebo,0,0,159.7,92.8,86.1,3,47,Male,30.1
+S00039,Site A,Placebo,2,1,155.7,88.6,84.3,1,47,Male,30.1
+S00039,Site A,Placebo,4,2,156.6,98.0,92.2,0,47,Male,30.1
+S00039,Site A,Placebo,8,3,158.3,85.0,77.1,0,47,Male,30.1
+S00039,Site A,Placebo,12,4,154.3,88.3,78.0,1,47,Male,30.1
+S00040,Site B,Placebo,0,0,152.2,79.7,83.8,0,36,Female,19.6
+S00040,Site B,Placebo,2,1,157.6,85.7,86.1,1,36,Female,19.6
+S00040,Site B,Placebo,4,2,167.1,86.8,76.8,1,36,Female,19.6
+S00040,Site B,Placebo,8,3,151.4,74.8,79.5,0,36,Female,19.6
+S00040,Site B,Placebo,12,4,155.4,76.7,78.4,0,36,Female,19.6
+S00041,Site A,Active High,0,0,143.4,77.1,66.9,0,57,Male,26.8
+S00041,Site A,Active High,2,1,146.2,84.0,73.7,1,57,Male,26.8
+S00041,Site A,Active High,4,2,151.6,73.8,75.6,0,57,Male,26.8
+S00041,Site A,Active High,8,3,140.3,76.4,75.5,0,57,Male,26.8
+S00041,Site A,Active High,12,4,133.1,67.8,73.3,0,57,Male,26.8
+S00042,Site C,Placebo,0,0,160.4,97.7,92.9,0,54,Male,28.1
+S00042,Site C,Placebo,2,1,149.2,92.8,87.8,0,54,Male,28.1
+S00042,Site C,Placebo,4,2,155.3,104.0,85.0,1,54,Male,28.1
+S00042,Site C,Placebo,8,3,146.5,101.0,87.7,0,54,Male,28.1
+S00042,Site C,Placebo,12,4,146.4,101.3,88.0,0,54,Male,28.1
+S00043,Site C,Placebo,0,0,147.2,100.5,81.0,1,69,Female,25.0
+S00043,Site C,Placebo,2,1,138.8,92.8,88.7,0,69,Female,25.0
+S00043,Site C,Placebo,4,2,136.8,98.7,73.2,0,69,Female,25.0
+S00043,Site C,Placebo,8,3,141.1,94.3,82.6,0,69,Female,25.0
+S00043,Site C,Placebo,12,4,136.2,100.6,84.6,0,69,Female,25.0
+S00044,Site A,Placebo,0,0,142.9,90.6,60.5,0,52,Female,15.9
+S00044,Site A,Placebo,2,1,135.2,95.7,63.0,0,52,Female,15.9
+S00044,Site A,Placebo,4,2,134.7,89.7,64.6,0,52,Female,15.9
+S00044,Site A,Placebo,8,3,144.6,88.6,62.6,1,52,Female,15.9
+S00044,Site A,Placebo,12,4,148.3,98.7,58.2,1,52,Female,15.9
+S00045,Site D,Active Low,0,0,153.0,70.7,77.8,0,60,Male,23.0
+S00045,Site D,Active Low,2,1,139.4,71.0,81.5,0,60,Male,23.0
+S00045,Site D,Active Low,4,2,148.0,79.7,79.6,2,60,Male,23.0
+S00045,Site D,Active Low,8,3,139.2,73.1,79.1,3,60,Male,23.0
+S00045,Site D,Active Low,12,4,136.7,73.3,76.7,0,60,Male,23.0
+S00046,Site E,Active High,0,0,168.8,90.1,70.7,0,69,Female,27.1
+S00046,Site E,Active High,2,1,157.7,91.5,70.4,0,69,Female,27.1
+S00046,Site E,Active High,4,2,156.2,90.7,76.6,3,69,Female,27.1
+S00046,Site E,Active High,8,3,149.3,83.5,72.8,1,69,Female,27.1
+S00046,Site E,Active High,12,4,154.3,86.2,75.9,1,69,Female,27.1
+S00047,Site B,Placebo,0,0,157.2,81.2,77.2,0,44,Male,25.9
+S00047,Site B,Placebo,2,1,150.4,82.1,81.5,0,44,Male,25.9
+S00047,Site B,Placebo,4,2,161.8,70.2,83.5,0,44,Male,25.9
+S00047,Site B,Placebo,8,3,157.2,73.0,76.1,2,44,Male,25.9
+S00047,Site B,Placebo,12,4,157.3,76.1,76.5,3,44,Male,25.9
+S00048,Site A,Active High,0,0,161.7,92.7,74.6,1,54,Male,30.0
+S00048,Site A,Active High,2,1,159.9,87.6,76.5,1,54,Male,30.0
+S00048,Site A,Active High,4,2,146.4,77.1,74.2,0,54,Male,30.0
+S00048,Site A,Active High,8,3,144.1,70.0,67.9,0,54,Male,30.0
+S00048,Site A,Active High,12,4,138.5,79.1,67.1,0,54,Male,30.0
+S00049,Site D,Placebo,0,0,169.0,84.1,68.5,0,61,Male,36.0
+S00049,Site D,Placebo,2,1,165.0,92.1,70.1,0,61,Male,36.0
+S00049,Site D,Placebo,4,2,166.6,86.9,66.6,0,61,Male,36.0
+S00049,Site D,Placebo,8,3,166.3,86.6,69.3,1,61,Male,36.0
+S00049,Site D,Placebo,12,4,156.1,76.5,69.3,0,61,Male,36.0
+S00050,Site D,Active Low,0,0,152.9,107.5,63.7,2,35,Female,24.6
+S00050,Site D,Active Low,2,1,137.5,107.5,55.6,0,35,Female,24.6
+S00050,Site D,Active Low,4,2,139.6,100.7,60.7,1,35,Female,24.6
+S00050,Site D,Active Low,8,3,134.2,97.4,61.8,2,35,Female,24.6
+S00050,Site D,Active Low,12,4,130.3,97.6,65.5,0,35,Female,24.6
+S00051,Site C,Active High,0,0,150.5,109.3,69.3,0,47,Male,16.0
+S00051,Site C,Active High,2,1,144.3,101.2,82.3,1,47,Male,16.0
+S00051,Site C,Active High,4,2,132.4,91.6,75.8,2,47,Male,16.0
+S00051,Site C,Active High,8,3,140.2,98.1,67.9,0,47,Male,16.0
+S00051,Site C,Active High,12,4,132.5,97.3,80.0,1,47,Male,16.0
+S00052,Site B,Placebo,0,0,140.5,103.3,78.8,1,40,Female,17.9
+S00052,Site B,Placebo,2,1,134.5,105.2,74.7,0,40,Female,17.9
+S00052,Site B,Placebo,4,2,134.0,100.7,71.3,2,40,Female,17.9
+S00052,Site B,Placebo,8,3,140.7,105.2,71.9,1,40,Female,17.9
+S00052,Site B,Placebo,12,4,132.0,97.9,68.4,0,40,Female,17.9
+S00053,Site E,Active Low,0,0,128.7,84.0,68.8,0,59,Male,28.8
+S00053,Site E,Active Low,2,1,131.1,79.8,74.9,0,59,Male,28.8
+S00053,Site E,Active Low,4,2,122.4,87.9,70.4,0,59,Male,28.8
+S00053,Site E,Active Low,8,3,112.2,76.2,76.7,0,59,Male,28.8
+S00053,Site E,Active Low,12,4,115.3,78.0,67.0,1,59,Male,28.8
+S00054,Site E,Active High,0,0,156.5,106.5,59.6,0,38,Male,26.9
+S00054,Site E,Active High,2,1,153.2,101.4,65.8,2,38,Male,26.9
+S00054,Site E,Active High,4,2,140.6,97.0,65.0,1,38,Male,26.9
+S00054,Site E,Active High,8,3,152.0,88.4,65.7,0,38,Male,26.9
+S00054,Site E,Active High,12,4,135.8,92.3,67.2,0,38,Male,26.9
+S00055,Site E,Active Low,0,0,159.6,89.0,86.7,2,61,Female,15.0
+S00055,Site E,Active Low,2,1,165.9,86.9,85.7,2,61,Female,15.0
+S00055,Site E,Active Low,4,2,155.9,87.6,80.2,0,61,Female,15.0
+S00055,Site E,Active Low,8,3,154.8,87.9,85.2,2,61,Female,15.0
+S00055,Site E,Active Low,12,4,155.3,80.9,84.6,0,61,Female,15.0
+S00056,Site D,Active Low,0,0,158.3,113.4,62.2,0,53,Female,28.9
+S00056,Site D,Active Low,2,1,146.5,108.7,61.9,0,53,Female,28.9
+S00056,Site D,Active Low,4,2,135.7,106.6,66.2,1,53,Female,28.9
+S00056,Site D,Active Low,8,3,145.8,105.9,61.2,0,53,Female,28.9
+S00056,Site D,Active Low,12,4,130.6,99.5,61.6,1,53,Female,28.9
+S00057,Site B,Active Low,0,0,133.0,90.2,65.7,0,72,Female,26.6
+S00057,Site B,Active Low,2,1,134.7,98.9,63.4,0,72,Female,26.6
+S00057,Site B,Active Low,4,2,128.6,87.3,70.6,1,72,Female,26.6
+S00057,Site B,Active Low,8,3,141.0,85.9,70.8,0,72,Female,26.6
+S00057,Site B,Active Low,12,4,127.9,83.9,60.3,1,72,Female,26.6
+S00058,Site E,Active High,0,0,138.3,93.7,70.3,0,38,Female,22.9
+S00058,Site E,Active High,2,1,141.3,90.2,60.2,1,38,Female,22.9
+S00058,Site E,Active High,4,2,135.9,90.9,61.2,1,38,Female,22.9
+S00058,Site E,Active High,8,3,136.4,83.8,61.0,1,38,Female,22.9
+S00058,Site E,Active High,12,4,125.4,91.2,63.4,0,38,Female,22.9
+S00059,Site D,Placebo,0,0,145.9,79.4,82.7,0,63,Female,22.9
+S00059,Site D,Placebo,2,1,151.3,87.3,93.7,1,63,Female,22.9
+S00059,Site D,Placebo,4,2,141.5,78.1,81.8,0,63,Female,22.9
+S00059,Site D,Placebo,8,3,141.3,79.9,79.2,0,63,Female,22.9
+S00059,Site D,Placebo,12,4,141.2,89.8,81.9,1,63,Female,22.9
+S00060,Site C,Active Low,0,0,140.4,93.7,55.0,1,34,Female,26.8
+S00060,Site C,Active Low,2,1,139.6,95.7,58.1,0,34,Female,26.8
+S00060,Site C,Active Low,4,2,135.8,84.5,64.2,0,34,Female,26.8
+S00060,Site C,Active Low,8,3,126.4,82.3,62.6,1,34,Female,26.8
+S00060,Site C,Active Low,12,4,122.3,85.7,63.4,0,34,Female,26.8
+S00061,Site D,Active Low,0,0,128.0,85.6,68.1,0,46,Male,25.9
+S00061,Site D,Active Low,2,1,120.4,91.4,73.8,2,46,Male,25.9
+S00061,Site D,Active Low,4,2,116.3,81.9,78.5,0,46,Male,25.9
+S00061,Site D,Active Low,8,3,118.0,84.7,77.8,0,46,Male,25.9
+S00061,Site D,Active Low,12,4,119.8,83.2,73.9,1,46,Male,25.9
+S00062,Site B,Active High,0,0,150.6,91.5,73.5,0,63,Female,28.1
+S00062,Site B,Active High,2,1,143.1,86.5,65.0,1,63,Female,28.1
+S00062,Site B,Active High,4,2,144.1,90.9,70.2,1,63,Female,28.1
+S00062,Site B,Active High,8,3,144.9,87.8,69.7,0,63,Female,28.1
+S00062,Site B,Active High,12,4,142.3,85.0,66.6,0,63,Female,28.1
+S00063,Site C,Placebo,0,0,152.6,91.9,77.4,0,49,Male,30.1
+S00063,Site C,Placebo,2,1,150.6,86.4,69.4,0,49,Male,30.1
+S00063,Site C,Placebo,4,2,156.5,96.5,79.0,0,49,Male,30.1
+S00063,Site C,Placebo,8,3,155.7,94.7,71.2,0,49,Male,30.1
+S00063,Site C,Placebo,12,4,141.2,90.2,68.5,2,49,Male,30.1
+S00064,Site A,Active High,0,0,116.0,80.3,65.9,1,74,Male,20.4
+S00064,Site A,Active High,2,1,112.3,78.9,72.4,1,74,Male,20.4
+S00064,Site A,Active High,4,2,105.5,75.3,71.3,1,74,Male,20.4
+S00064,Site A,Active High,8,3,103.0,64.2,74.0,1,74,Male,20.4
+S00064,Site A,Active High,12,4,100.9,70.9,63.1,0,74,Male,20.4
+S00065,Site D,Placebo,0,0,147.5,77.4,63.3,0,39,Female,30.6
+S00065,Site D,Placebo,2,1,138.1,78.9,64.5,1,39,Female,30.6
+S00065,Site D,Placebo,4,2,135.8,71.6,66.4,1,39,Female,30.6
+S00065,Site D,Placebo,8,3,134.7,65.9,67.8,0,39,Female,30.6
+S00065,Site D,Placebo,12,4,136.3,69.9,65.5,1,39,Female,30.6
+S00066,Site B,Active High,0,0,144.6,73.8,85.7,0,56,Male,22.6
+S00066,Site B,Active High,2,1,140.1,72.6,81.8,0,56,Male,22.6
+S00066,Site B,Active High,4,2,138.2,70.6,82.8,0,56,Male,22.6
+S00066,Site B,Active High,8,3,131.3,67.4,84.6,1,56,Male,22.6
+S00066,Site B,Active High,12,4,131.8,59.4,84.7,0,56,Male,22.6
+S00067,Site C,Active Low,0,0,148.2,82.4,64.9,0,46,Male,23.0
+S00067,Site C,Active Low,2,1,146.4,85.4,68.8,0,46,Male,23.0
+S00067,Site C,Active Low,4,2,142.1,83.3,68.8,3,46,Male,23.0
+S00067,Site C,Active Low,8,3,135.5,81.9,68.2,0,46,Male,23.0
+S00067,Site C,Active Low,12,4,141.7,78.5,62.5,1,46,Male,23.0
+S00068,Site C,Active High,0,0,144.5,104.3,79.5,0,37,Female,28.5
+S00068,Site C,Active High,2,1,139.3,100.2,77.0,1,37,Female,28.5
+S00068,Site C,Active High,4,2,141.6,88.2,77.8,0,37,Female,28.5
+S00068,Site C,Active High,8,3,140.8,93.1,79.3,0,37,Female,28.5
+S00068,Site C,Active High,12,4,130.3,94.9,74.5,0,37,Female,28.5
+S00069,Site D,Active Low,0,0,146.1,104.2,70.4,1,49,Male,29.7
+S00069,Site D,Active Low,2,1,152.1,96.1,72.7,0,49,Male,29.7
+S00069,Site D,Active Low,4,2,147.3,100.9,65.8,1,49,Male,29.7
+S00069,Site D,Active Low,8,3,137.2,92.3,74.4,0,49,Male,29.7
+S00069,Site D,Active Low,12,4,141.8,94.7,66.5,1,49,Male,29.7
+S00070,Site E,Active High,0,0,123.5,70.2,73.6,0,61,Male,24.0
+S00070,Site E,Active High,2,1,120.9,69.3,74.6,0,61,Male,24.0
+S00070,Site E,Active High,4,2,121.7,69.0,75.9,0,61,Male,24.0
+S00070,Site E,Active High,8,3,114.1,60.7,74.4,3,61,Male,24.0
+S00070,Site E,Active High,12,4,112.4,63.2,75.7,1,61,Male,24.0
+S00071,Site E,Placebo,0,0,143.7,90.1,70.0,0,53,Female,17.8
+S00071,Site E,Placebo,2,1,137.8,95.0,76.5,0,53,Female,17.8
+S00071,Site E,Placebo,4,2,137.5,91.9,72.9,0,53,Female,17.8
+S00071,Site E,Placebo,8,3,135.3,95.1,74.5,1,53,Female,17.8
+S00071,Site E,Placebo,12,4,133.8,91.9,72.8,0,53,Female,17.8
+S00072,Site C,Active Low,0,0,146.6,108.6,73.2,0,58,Male,30.3
+S00072,Site C,Active Low,2,1,149.4,112.7,71.5,1,58,Male,30.3
+S00072,Site C,Active Low,4,2,146.9,104.2,68.8,1,58,Male,30.3
+S00072,Site C,Active Low,8,3,140.3,105.6,71.1,1,58,Male,30.3
+S00072,Site C,Active Low,12,4,134.0,104.4,73.4,0,58,Male,30.3
+S00073,Site C,Active High,0,0,146.8,85.4,100.3,2,47,Female,22.2
+S00073,Site C,Active High,2,1,135.0,74.8,87.5,0,47,Female,22.2
+S00073,Site C,Active High,4,2,136.4,76.3,90.3,0,47,Female,22.2
+S00073,Site C,Active High,8,3,133.3,72.3,96.6,1,47,Female,22.2
+S00073,Site C,Active High,12,4,120.7,65.0,87.9,0,47,Female,22.2
+S00074,Site B,Placebo,0,0,158.5,73.2,65.3,0,78,Male,28.0
+S00074,Site B,Placebo,2,1,155.7,76.4,63.6,1,78,Male,28.0
+S00074,Site B,Placebo,4,2,159.0,82.6,64.2,2,78,Male,28.0
+S00074,Site B,Placebo,8,3,153.0,81.2,69.0,0,78,Male,28.0
+S00074,Site B,Placebo,12,4,163.3,74.9,64.9,1,78,Male,28.0
+S00075,Site D,Active High,0,0,134.8,86.7,70.4,1,73,Female,25.9
+S00075,Site D,Active High,2,1,131.5,79.9,62.6,1,73,Female,25.9
+S00075,Site D,Active High,4,2,119.4,81.0,67.1,0,73,Female,25.9
+S00075,Site D,Active High,8,3,118.6,83.0,63.9,1,73,Female,25.9
+S00075,Site D,Active High,12,4,118.1,74.1,60.5,0,73,Female,25.9
+S00076,Site A,Placebo,0,0,145.1,97.7,53.2,0,79,Female,20.8
+S00076,Site A,Placebo,2,1,153.0,87.8,48.7,0,79,Female,20.8
+S00076,Site A,Placebo,4,2,148.5,97.3,54.7,0,79,Female,20.8
+S00076,Site A,Placebo,8,3,147.6,88.8,49.5,0,79,Female,20.8
+S00076,Site A,Placebo,12,4,142.4,97.0,54.6,0,79,Female,20.8
+S00077,Site E,Active Low,0,0,146.5,71.1,90.2,1,47,Male,34.0
+S00077,Site E,Active Low,2,1,149.5,72.0,81.7,0,47,Male,34.0
+S00077,Site E,Active Low,4,2,141.1,71.3,86.0,1,47,Male,34.0
+S00077,Site E,Active Low,8,3,145.4,62.9,85.4,0,47,Male,34.0
+S00077,Site E,Active Low,12,4,127.3,60.9,76.1,1,47,Male,34.0
+S00078,Site D,Active High,0,0,172.7,91.2,86.2,1,76,Male,25.6
+S00078,Site D,Active High,2,1,163.4,96.4,82.9,0,76,Male,25.6
+S00078,Site D,Active High,4,2,163.2,90.1,83.7,0,76,Male,25.6
+S00078,Site D,Active High,8,3,155.0,75.8,89.2,0,76,Male,25.6
+S00078,Site D,Active High,12,4,152.9,78.0,76.9,0,76,Male,25.6
+S00079,Site A,Active Low,0,0,194.7,96.9,78.3,0,35,Male,25.9
+S00079,Site A,Active Low,2,1,188.6,92.6,85.5,0,35,Male,25.9
+S00079,Site A,Active Low,4,2,189.3,97.1,88.5,2,35,Male,25.9
+S00079,Site A,Active Low,8,3,173.0,85.3,86.2,0,35,Male,25.9
+S00079,Site A,Active Low,12,4,182.2,96.9,91.6,1,35,Male,25.9
+S00080,Site C,Active High,0,0,160.2,85.6,66.7,0,77,Male,32.2
+S00080,Site C,Active High,2,1,159.4,75.4,68.9,1,77,Male,32.2
+S00080,Site C,Active High,4,2,156.3,80.5,69.7,1,77,Male,32.2
+S00080,Site C,Active High,8,3,155.6,76.8,59.8,1,77,Male,32.2
+S00080,Site C,Active High,12,4,147.5,69.6,68.8,0,77,Male,32.2
+S00081,Site C,Placebo,0,0,142.4,91.2,70.7,1,47,Male,20.3
+S00081,Site C,Placebo,2,1,146.7,84.3,62.7,0,47,Male,20.3
+S00081,Site C,Placebo,4,2,141.2,78.6,66.8,0,47,Male,20.3
+S00081,Site C,Placebo,8,3,150.1,80.5,62.9,1,47,Male,20.3
+S00081,Site C,Placebo,12,4,137.7,83.8,70.8,2,47,Male,20.3
+S00082,Site B,Active High,0,0,171.8,101.6,74.3,1,47,Male,26.0
+S00082,Site B,Active High,2,1,157.0,101.1,66.0,0,47,Male,26.0
+S00082,Site B,Active High,4,2,158.6,101.5,69.9,0,47,Male,26.0
+S00082,Site B,Active High,8,3,144.3,102.1,72.6,1,47,Male,26.0
+S00082,Site B,Active High,12,4,142.4,99.7,72.3,0,47,Male,26.0
+S00083,Site A,Placebo,0,0,131.0,80.6,80.9,1,61,Female,21.8
+S00083,Site A,Placebo,2,1,133.5,84.5,82.6,0,61,Female,21.8
+S00083,Site A,Placebo,4,2,145.3,88.8,85.4,1,61,Female,21.8
+S00083,Site A,Placebo,8,3,139.5,88.1,81.4,1,61,Female,21.8
+S00083,Site A,Placebo,12,4,138.1,88.3,83.6,2,61,Female,21.8
+S00084,Site B,Active High,0,0,153.5,93.2,92.8,0,47,Male,25.0
+S00084,Site B,Active High,2,1,150.3,100.9,89.0,1,47,Male,25.0
+S00084,Site B,Active High,4,2,146.5,92.6,90.2,0,47,Male,25.0
+S00084,Site B,Active High,8,3,138.3,92.5,92.6,1,47,Male,25.0
+S00084,Site B,Active High,12,4,135.9,84.7,86.2,0,47,Male,25.0
+S00085,Site D,Active Low,0,0,134.0,88.7,97.5,0,34,Female,26.1
+S00085,Site D,Active Low,2,1,142.5,87.1,82.9,0,34,Female,26.1
+S00085,Site D,Active Low,4,2,140.4,86.1,88.3,0,34,Female,26.1
+S00085,Site D,Active Low,8,3,131.5,88.8,91.6,2,34,Female,26.1
+S00085,Site D,Active Low,12,4,136.6,80.2,82.7,0,34,Female,26.1
+S00086,Site E,Placebo,0,0,140.3,101.0,68.6,0,59,Female,27.3
+S00086,Site E,Placebo,2,1,132.7,93.1,73.5,0,59,Female,27.3
+S00086,Site E,Placebo,4,2,142.2,91.7,66.5,0,59,Female,27.3
+S00086,Site E,Placebo,8,3,146.7,97.8,76.1,2,59,Female,27.3
+S00086,Site E,Placebo,12,4,144.4,88.9,75.1,1,59,Female,27.3
+S00087,Site B,Active High,0,0,164.6,87.2,80.3,1,64,Male,28.4
+S00087,Site B,Active High,2,1,169.0,87.8,76.3,1,64,Male,28.4
+S00087,Site B,Active High,4,2,160.1,90.5,75.9,3,64,Male,28.4
+S00087,Site B,Active High,8,3,158.7,77.5,71.1,1,64,Male,28.4
+S00087,Site B,Active High,12,4,141.1,84.3,71.9,1,64,Male,28.4
+S00088,Site B,Placebo,0,0,121.4,85.9,81.9,0,59,Male,21.5
+S00088,Site B,Placebo,2,1,119.7,80.2,83.9,0,59,Male,21.5
+S00088,Site B,Placebo,4,2,124.3,88.0,80.9,2,59,Male,21.5
+S00088,Site B,Placebo,8,3,124.6,81.2,88.8,0,59,Male,21.5
+S00088,Site B,Placebo,12,4,122.5,81.1,83.4,1,59,Male,21.5
+S00089,Site E,Active High,0,0,144.3,84.4,78.8,1,42,Female,30.9
+S00089,Site E,Active High,2,1,136.1,87.9,80.3,2,42,Female,30.9
+S00089,Site E,Active High,4,2,122.9,84.2,78.7,0,42,Female,30.9
+S00089,Site E,Active High,8,3,124.9,78.2,77.9,1,42,Female,30.9
+S00089,Site E,Active High,12,4,118.3,72.3,80.1,2,42,Female,30.9
+S00090,Site B,Active High,0,0,140.0,92.3,91.8,1,56,Female,25.4
+S00090,Site B,Active High,2,1,124.3,92.2,95.0,1,56,Female,25.4
+S00090,Site B,Active High,4,2,125.2,83.0,90.3,0,56,Female,25.4
+S00090,Site B,Active High,8,3,122.9,90.2,81.8,1,56,Female,25.4
+S00090,Site B,Active High,12,4,119.3,81.9,94.8,2,56,Female,25.4
+S00091,Site D,Active Low,0,0,133.5,97.4,76.4,0,69,Female,29.4
+S00091,Site D,Active Low,2,1,131.0,94.3,90.4,1,69,Female,29.4
+S00091,Site D,Active Low,4,2,128.1,93.2,87.7,0,69,Female,29.4
+S00091,Site D,Active Low,8,3,131.2,87.6,87.7,0,69,Female,29.4
+S00091,Site D,Active Low,12,4,114.5,90.5,84.3,2,69,Female,29.4
+S00092,Site E,Active Low,0,0,129.0,100.2,70.4,1,66,Male,20.2
+S00092,Site E,Active Low,2,1,123.9,104.2,67.8,0,66,Male,20.2
+S00092,Site E,Active Low,4,2,130.5,104.5,75.0,0,66,Male,20.2
+S00092,Site E,Active Low,8,3,121.7,101.5,72.0,0,66,Male,20.2
+S00092,Site E,Active Low,12,4,111.7,97.7,74.5,0,66,Male,20.2
+S00093,Site E,Active High,0,0,161.6,78.6,57.1,1,69,Male,28.9
+S00093,Site E,Active High,2,1,156.8,80.7,63.4,1,69,Male,28.9
+S00093,Site E,Active High,4,2,147.4,74.0,69.8,0,69,Male,28.9
+S00093,Site E,Active High,8,3,141.4,74.7,54.9,0,69,Male,28.9
+S00093,Site E,Active High,12,4,135.9,72.3,62.9,0,69,Male,28.9
+S00094,Site D,Active High,0,0,136.1,81.9,95.2,1,67,Male,25.2
+S00094,Site D,Active High,2,1,138.4,80.3,92.8,0,67,Male,25.2
+S00094,Site D,Active High,4,2,129.8,82.1,93.7,1,67,Male,25.2
+S00094,Site D,Active High,8,3,127.1,82.3,82.2,0,67,Male,25.2
+S00094,Site D,Active High,12,4,115.2,71.6,88.1,0,67,Male,25.2
+S00095,Site C,Active High,0,0,124.7,98.1,86.2,0,57,Male,23.1
+S00095,Site C,Active High,2,1,127.9,94.2,90.6,1,57,Male,23.1
+S00095,Site C,Active High,4,2,135.8,88.9,86.9,0,57,Male,23.1
+S00095,Site C,Active High,8,3,113.9,91.3,82.2,1,57,Male,23.1
+S00095,Site C,Active High,12,4,120.3,87.4,81.7,1,57,Male,23.1
+S00096,Site E,Active Low,0,0,143.7,89.8,89.3,0,50,Female,20.8
+S00096,Site E,Active Low,2,1,137.6,88.7,83.3,0,50,Female,20.8
+S00096,Site E,Active Low,4,2,137.2,78.6,77.4,1,50,Female,20.8
+S00096,Site E,Active Low,8,3,151.4,76.3,77.9,0,50,Female,20.8
+S00096,Site E,Active Low,12,4,141.0,78.8,85.0,1,50,Female,20.8
+S00097,Site A,Placebo,0,0,117.5,75.2,74.2,2,77,Male,26.0
+S00097,Site A,Placebo,2,1,116.2,75.5,70.9,1,77,Male,26.0
+S00097,Site A,Placebo,4,2,109.8,74.7,69.7,0,77,Male,26.0
+S00097,Site A,Placebo,8,3,109.9,70.5,67.1,0,77,Male,26.0
+S00097,Site A,Placebo,12,4,117.2,72.6,66.0,0,77,Male,26.0
+S00098,Site B,Placebo,0,0,145.7,82.9,78.6,1,38,Female,30.1
+S00098,Site B,Placebo,2,1,144.8,78.8,77.5,0,38,Female,30.1
+S00098,Site B,Placebo,4,2,151.9,92.6,71.7,0,38,Female,30.1
+S00098,Site B,Placebo,8,3,139.6,86.5,70.4,2,38,Female,30.1
+S00098,Site B,Placebo,12,4,146.4,86.3,69.8,1,38,Female,30.1
+S00099,Site E,Placebo,0,0,141.9,64.1,64.9,0,69,Male,30.3
+S00099,Site E,Placebo,2,1,143.2,65.3,57.5,1,69,Male,30.3
+S00099,Site E,Placebo,4,2,144.4,68.4,62.4,0,69,Male,30.3
+S00099,Site E,Placebo,8,3,145.2,64.4,47.4,0,69,Male,30.3
+S00099,Site E,Placebo,12,4,135.6,66.9,57.6,0,69,Male,30.3
+S00100,Site E,Placebo,0,0,152.6,75.1,84.4,0,30,Female,25.4
+S00100,Site E,Placebo,2,1,149.9,76.9,75.9,2,30,Female,25.4
+S00100,Site E,Placebo,4,2,140.0,76.2,73.2,0,30,Female,25.4
+S00100,Site E,Placebo,8,3,142.7,81.6,74.6,1,30,Female,25.4
+S00100,Site E,Placebo,12,4,140.1,76.5,81.4,0,30,Female,25.4
+S00101,Site C,Active High,0,0,138.1,115.8,74.4,0,71,Male,32.8
+S00101,Site C,Active High,2,1,145.9,107.6,78.7,2,71,Male,32.8
+S00101,Site C,Active High,4,2,125.3,106.4,69.5,0,71,Male,32.8
+S00101,Site C,Active High,8,3,142.5,99.0,68.6,1,71,Male,32.8
+S00101,Site C,Active High,12,4,123.3,95.6,74.2,5,71,Male,32.8
+S00102,Site A,Placebo,0,0,146.2,92.3,64.7,0,43,Male,24.7
+S00102,Site A,Placebo,2,1,145.8,96.0,64.1,0,43,Male,24.7
+S00102,Site A,Placebo,4,2,142.7,88.8,61.5,0,43,Male,24.7
+S00102,Site A,Placebo,8,3,141.8,88.2,59.5,0,43,Male,24.7
+S00102,Site A,Placebo,12,4,139.7,92.5,63.3,0,43,Male,24.7
+S00103,Site C,Placebo,0,0,129.5,82.9,68.8,0,33,Male,21.3
+S00103,Site C,Placebo,2,1,136.8,84.8,81.1,0,33,Male,21.3
+S00103,Site C,Placebo,4,2,128.7,83.7,71.9,0,33,Male,21.3
+S00103,Site C,Placebo,8,3,139.7,80.3,74.0,1,33,Male,21.3
+S00103,Site C,Placebo,12,4,132.4,87.3,66.9,0,33,Male,21.3
+S00104,Site C,Active High,0,0,137.5,79.4,73.6,1,45,Male,30.2
+S00104,Site C,Active High,2,1,140.2,78.6,75.3,0,45,Male,30.2
+S00104,Site C,Active High,4,2,126.9,78.2,73.2,2,45,Male,30.2
+S00104,Site C,Active High,8,3,129.3,65.8,75.3,1,45,Male,30.2
+S00104,Site C,Active High,12,4,121.5,67.0,80.1,0,45,Male,30.2
+S00105,Site C,Placebo,0,0,168.7,100.9,83.2,0,72,Male,26.6
+S00105,Site C,Placebo,2,1,157.9,104.0,84.2,0,72,Male,26.6
+S00105,Site C,Placebo,4,2,166.1,103.2,85.4,3,72,Male,26.6
+S00105,Site C,Placebo,8,3,165.9,99.6,83.1,0,72,Male,26.6
+S00105,Site C,Placebo,12,4,159.1,97.5,87.7,2,72,Male,26.6
+S00106,Site A,Placebo,0,0,150.7,90.8,79.1,0,74,Female,21.9
+S00106,Site A,Placebo,2,1,147.1,87.6,73.4,1,74,Female,21.9
+S00106,Site A,Placebo,4,2,141.0,99.7,70.4,0,74,Female,21.9
+S00106,Site A,Placebo,8,3,140.6,89.7,73.3,0,74,Female,21.9
+S00106,Site A,Placebo,12,4,146.7,87.2,72.2,2,74,Female,21.9
+S00107,Site A,Active High,0,0,158.0,84.7,86.3,0,75,Female,28.6
+S00107,Site A,Active High,2,1,144.2,76.4,80.6,0,75,Female,28.6
+S00107,Site A,Active High,4,2,148.1,74.4,79.2,0,75,Female,28.6
+S00107,Site A,Active High,8,3,138.4,71.9,77.2,0,75,Female,28.6
+S00107,Site A,Active High,12,4,136.1,70.1,82.1,2,75,Female,28.6
+S00108,Site D,Placebo,0,0,163.1,88.0,88.3,0,59,Female,22.9
+S00108,Site D,Placebo,2,1,161.3,86.0,86.5,0,59,Female,22.9
+S00108,Site D,Placebo,4,2,158.1,89.0,88.3,1,59,Female,22.9
+S00108,Site D,Placebo,8,3,173.6,88.5,91.9,1,59,Female,22.9
+S00108,Site D,Placebo,12,4,152.4,85.4,83.5,0,59,Female,22.9
+S00109,Site B,Active Low,0,0,156.7,81.6,69.6,0,75,Female,19.7
+S00109,Site B,Active Low,2,1,164.7,79.6,74.8,1,75,Female,19.7
+S00109,Site B,Active Low,4,2,152.2,76.4,71.9,0,75,Female,19.7
+S00109,Site B,Active Low,8,3,155.3,71.0,65.2,1,75,Female,19.7
+S00109,Site B,Active Low,12,4,156.6,72.2,64.7,1,75,Female,19.7
+S00110,Site A,Placebo,0,0,133.9,88.0,75.1,0,34,Male,32.9
+S00110,Site A,Placebo,2,1,117.7,81.8,75.5,1,34,Male,32.9
+S00110,Site A,Placebo,4,2,129.0,80.8,75.0,0,34,Male,32.9
+S00110,Site A,Placebo,8,3,124.2,84.4,67.7,0,34,Male,32.9
+S00110,Site A,Placebo,12,4,127.0,86.7,78.9,1,34,Male,32.9
+S00111,Site B,Active High,0,0,162.5,82.1,67.9,0,44,Female,19.4
+S00111,Site B,Active High,2,1,159.7,82.9,65.2,0,44,Female,19.4
+S00111,Site B,Active High,4,2,152.8,80.8,73.4,1,44,Female,19.4
+S00111,Site B,Active High,8,3,163.0,78.2,66.8,0,44,Female,19.4
+S00111,Site B,Active High,12,4,138.0,72.4,62.5,0,44,Female,19.4
+S00112,Site B,Active High,0,0,167.6,83.6,68.0,0,75,Male,30.4
+S00112,Site B,Active High,2,1,163.2,90.0,70.1,3,75,Male,30.4
+S00112,Site B,Active High,4,2,154.9,84.2,61.2,1,75,Male,30.4
+S00112,Site B,Active High,8,3,148.9,81.0,70.4,0,75,Male,30.4
+S00112,Site B,Active High,12,4,137.6,78.2,71.2,2,75,Male,30.4
+S00113,Site D,Active High,0,0,160.8,77.9,75.3,1,35,Male,26.3
+S00113,Site D,Active High,2,1,158.5,76.4,72.3,0,35,Male,26.3
+S00113,Site D,Active High,4,2,147.4,67.9,76.9,0,35,Male,26.3
+S00113,Site D,Active High,8,3,145.6,68.8,75.9,0,35,Male,26.3
+S00113,Site D,Active High,12,4,140.2,71.3,74.4,2,35,Male,26.3
+S00114,Site A,Active Low,0,0,146.9,86.4,70.5,0,31,Male,28.3
+S00114,Site A,Active Low,2,1,144.6,78.2,70.9,1,31,Male,28.3
+S00114,Site A,Active Low,4,2,134.3,70.7,69.4,0,31,Male,28.3
+S00114,Site A,Active Low,8,3,139.8,77.3,68.7,0,31,Male,28.3
+S00114,Site A,Active Low,12,4,124.8,72.0,73.6,1,31,Male,28.3
+S00115,Site D,Active Low,0,0,146.1,95.9,81.5,1,34,Female,19.9
+S00115,Site D,Active Low,2,1,154.6,101.8,84.4,0,34,Female,19.9
+S00115,Site D,Active Low,4,2,157.6,99.9,79.9,1,34,Female,19.9
+S00115,Site D,Active Low,8,3,162.7,99.6,81.6,0,34,Female,19.9
+S00115,Site D,Active Low,12,4,155.2,99.6,73.3,3,34,Female,19.9
+S00116,Site A,Placebo,0,0,144.8,104.1,100.2,0,33,Female,26.0
+S00116,Site A,Placebo,2,1,141.6,108.4,93.4,0,33,Female,26.0
+S00116,Site A,Placebo,4,2,135.0,107.0,103.0,1,33,Female,26.0
+S00116,Site A,Placebo,8,3,137.9,104.9,91.1,1,33,Female,26.0
+S00116,Site A,Placebo,12,4,141.8,98.7,89.4,1,33,Female,26.0
+S00117,Site E,Placebo,0,0,170.7,97.6,55.3,1,38,Male,17.0
+S00117,Site E,Placebo,2,1,163.3,99.2,60.3,1,38,Male,17.0
+S00117,Site E,Placebo,4,2,168.5,99.4,63.4,0,38,Male,17.0
+S00117,Site E,Placebo,8,3,166.5,95.3,60.0,0,38,Male,17.0
+S00117,Site E,Placebo,12,4,156.0,90.6,58.2,0,38,Male,17.0
+S00118,Site E,Active High,0,0,167.7,87.6,77.2,0,51,Male,30.0
+S00118,Site E,Active High,2,1,164.8,82.2,83.4,1,51,Male,30.0
+S00118,Site E,Active High,4,2,154.6,75.5,78.8,4,51,Male,30.0
+S00118,Site E,Active High,8,3,149.8,77.7,81.1,0,51,Male,30.0
+S00118,Site E,Active High,12,4,139.4,75.6,79.5,0,51,Male,30.0
+S00119,Site A,Active Low,0,0,136.1,82.5,76.3,0,43,Male,27.2
+S00119,Site A,Active Low,2,1,127.6,79.6,73.2,0,43,Male,27.2
+S00119,Site A,Active Low,4,2,127.4,75.4,75.7,2,43,Male,27.2
+S00119,Site A,Active Low,8,3,125.4,78.9,78.2,1,43,Male,27.2
+S00119,Site A,Active Low,12,4,122.1,67.6,77.8,0,43,Male,27.2
+S00120,Site E,Active High,0,0,156.8,90.6,67.1,0,56,Female,24.5
+S00120,Site E,Active High,2,1,160.1,95.0,62.7,0,56,Female,24.5
+S00120,Site E,Active High,4,2,151.5,92.5,70.3,0,56,Female,24.5
+S00120,Site E,Active High,8,3,142.3,85.4,59.2,3,56,Female,24.5
+S00120,Site E,Active High,12,4,141.4,92.2,66.9,0,56,Female,24.5
+S00121,Site C,Active High,0,0,157.2,87.0,72.3,0,75,Male,20.9
+S00121,Site C,Active High,2,1,158.4,76.7,67.9,0,75,Male,20.9
+S00121,Site C,Active High,4,2,148.4,79.1,79.6,2,75,Male,20.9
+S00121,Site C,Active High,8,3,141.0,67.5,75.5,1,75,Male,20.9
+S00121,Site C,Active High,12,4,135.7,68.1,67.0,0,75,Male,20.9
+S00122,Site C,Active High,0,0,159.3,100.7,66.5,1,68,Female,17.2
+S00122,Site C,Active High,2,1,155.8,104.2,68.9,2,68,Female,17.2
+S00122,Site C,Active High,4,2,155.2,98.8,65.8,1,68,Female,17.2
+S00122,Site C,Active High,8,3,140.6,91.2,73.4,2,68,Female,17.2
+S00122,Site C,Active High,12,4,150.9,89.3,65.2,2,68,Female,17.2
+S00123,Site A,Placebo,0,0,172.6,93.3,83.6,0,67,Female,25.7
+S00123,Site A,Placebo,2,1,164.1,91.6,84.3,0,67,Female,25.7
+S00123,Site A,Placebo,4,2,165.7,92.3,83.3,0,67,Female,25.7
+S00123,Site A,Placebo,8,3,167.1,86.9,76.7,0,67,Female,25.7
+S00123,Site A,Placebo,12,4,168.7,92.1,85.6,1,67,Female,25.7
+S00124,Site A,Active Low,0,0,142.0,88.5,65.5,1,46,Male,28.2
+S00124,Site A,Active Low,2,1,140.7,97.7,74.8,0,46,Male,28.2
+S00124,Site A,Active Low,4,2,135.3,80.2,63.8,2,46,Male,28.2
+S00124,Site A,Active Low,8,3,132.1,81.7,63.9,0,46,Male,28.2
+S00124,Site A,Active Low,12,4,125.7,81.3,65.3,0,46,Male,28.2
+S00125,Site A,Active High,0,0,148.1,87.4,77.6,0,72,Male,28.2
+S00125,Site A,Active High,2,1,148.2,86.2,82.2,1,72,Male,28.2
+S00125,Site A,Active High,4,2,143.3,85.4,83.7,0,72,Male,28.2
+S00125,Site A,Active High,8,3,142.3,80.5,82.3,0,72,Male,28.2
+S00125,Site A,Active High,12,4,132.1,74.6,82.3,2,72,Male,28.2
+S00126,Site C,Active High,0,0,127.7,84.1,71.3,0,58,Male,32.5
+S00126,Site C,Active High,2,1,123.4,82.6,56.9,1,58,Male,32.5
+S00126,Site C,Active High,4,2,124.1,76.3,62.6,1,58,Male,32.5
+S00126,Site C,Active High,8,3,121.7,70.0,60.8,0,58,Male,32.5
+S00126,Site C,Active High,12,4,116.0,74.7,60.1,0,58,Male,32.5
+S00127,Site B,Placebo,0,0,145.3,96.8,85.7,0,53,Female,29.7
+S00127,Site B,Placebo,2,1,146.6,91.7,85.0,0,53,Female,29.7
+S00127,Site B,Placebo,4,2,141.0,95.7,75.5,0,53,Female,29.7
+S00127,Site B,Placebo,8,3,156.4,100.4,77.7,0,53,Female,29.7
+S00127,Site B,Placebo,12,4,149.1,99.8,80.3,0,53,Female,29.7
+S00128,Site D,Active Low,0,0,128.8,83.8,58.1,0,57,Female,28.7
+S00128,Site D,Active Low,2,1,120.7,83.4,63.0,1,57,Female,28.7
+S00128,Site D,Active Low,4,2,119.8,80.5,60.4,0,57,Female,28.7
+S00128,Site D,Active Low,8,3,114.7,77.5,57.5,0,57,Female,28.7
+S00128,Site D,Active Low,12,4,111.3,75.2,58.0,1,57,Female,28.7
+S00129,Site C,Active High,0,0,150.4,86.3,73.7,0,31,Male,31.0
+S00129,Site C,Active High,2,1,136.8,90.5,71.7,0,31,Male,31.0
+S00129,Site C,Active High,4,2,144.3,81.5,74.4,0,31,Male,31.0
+S00129,Site C,Active High,8,3,131.1,77.5,66.3,1,31,Male,31.0
+S00129,Site C,Active High,12,4,137.4,75.9,62.2,1,31,Male,31.0
+S00130,Site A,Placebo,0,0,129.4,72.0,72.6,0,48,Male,28.2
+S00130,Site A,Placebo,2,1,139.9,71.3,75.1,1,48,Male,28.2
+S00130,Site A,Placebo,4,2,128.5,71.3,73.6,0,48,Male,28.2
+S00130,Site A,Placebo,8,3,137.9,76.7,71.7,1,48,Male,28.2
+S00130,Site A,Placebo,12,4,129.5,69.8,72.9,0,48,Male,28.2
+S00131,Site A,Active High,0,0,142.8,103.8,75.3,0,62,Female,26.8
+S00131,Site A,Active High,2,1,140.8,98.6,74.1,0,62,Female,26.8
+S00131,Site A,Active High,4,2,125.9,95.0,81.1,0,62,Female,26.8
+S00131,Site A,Active High,8,3,126.2,102.5,75.8,0,62,Female,26.8
+S00131,Site A,Active High,12,4,131.8,96.0,71.9,0,62,Female,26.8
+S00132,Site A,Placebo,0,0,151.9,80.2,55.8,0,74,Male,18.3
+S00132,Site A,Placebo,2,1,137.8,80.3,58.1,0,74,Male,18.3
+S00132,Site A,Placebo,4,2,140.2,82.1,59.2,1,74,Male,18.3
+S00132,Site A,Placebo,8,3,137.5,83.7,63.3,1,74,Male,18.3
+S00132,Site A,Placebo,12,4,132.8,76.4,62.9,3,74,Male,18.3
+S00133,Site C,Active Low,0,0,167.4,91.4,72.8,1,63,Female,25.8
+S00133,Site C,Active Low,2,1,160.8,85.3,69.7,0,63,Female,25.8
+S00133,Site C,Active Low,4,2,158.0,82.5,72.5,2,63,Female,25.8
+S00133,Site C,Active Low,8,3,152.3,79.5,77.3,1,63,Female,25.8
+S00133,Site C,Active Low,12,4,150.4,80.0,68.5,2,63,Female,25.8
+S00134,Site C,Active Low,0,0,153.8,103.1,72.3,0,40,Male,26.5
+S00134,Site C,Active Low,2,1,151.1,101.6,67.6,0,40,Male,26.5
+S00134,Site C,Active Low,4,2,142.6,98.8,64.2,0,40,Male,26.5
+S00134,Site C,Active Low,8,3,149.8,96.2,69.6,2,40,Male,26.5
+S00134,Site C,Active Low,12,4,144.0,95.5,72.2,2,40,Male,26.5
+S00135,Site B,Active High,0,0,178.2,97.2,77.6,1,40,Male,26.7
+S00135,Site B,Active High,2,1,174.8,103.7,73.3,0,40,Male,26.7
+S00135,Site B,Active High,4,2,174.4,98.5,71.0,0,40,Male,26.7
+S00135,Site B,Active High,8,3,163.3,93.9,66.6,1,40,Male,26.7
+S00135,Site B,Active High,12,4,153.0,88.0,74.3,1,40,Male,26.7
+S00136,Site E,Active Low,0,0,164.4,84.3,76.9,0,61,Male,28.1
+S00136,Site E,Active Low,2,1,161.0,85.1,71.5,1,61,Male,28.1
+S00136,Site E,Active Low,4,2,158.1,81.7,76.3,0,61,Male,28.1
+S00136,Site E,Active Low,8,3,160.6,81.8,78.3,1,61,Male,28.1
+S00136,Site E,Active Low,12,4,155.2,83.6,79.3,1,61,Male,28.1
+S00137,Site E,Active Low,0,0,136.2,87.3,71.3,0,31,Male,22.6
+S00137,Site E,Active Low,2,1,132.9,85.6,85.5,3,31,Male,22.6
+S00137,Site E,Active Low,4,2,129.0,82.8,84.0,3,31,Male,22.6
+S00137,Site E,Active Low,8,3,128.0,80.2,72.4,2,31,Male,22.6
+S00137,Site E,Active Low,12,4,125.6,78.8,74.2,0,31,Male,22.6
+S00138,Site D,Active Low,0,0,150.5,92.9,80.2,1,81,Female,29.2
+S00138,Site D,Active Low,2,1,157.9,90.0,81.5,0,81,Female,29.2
+S00138,Site D,Active Low,4,2,151.5,81.1,83.2,1,81,Female,29.2
+S00138,Site D,Active Low,8,3,151.6,85.2,77.9,0,81,Female,29.2
+S00138,Site D,Active Low,12,4,139.9,82.8,76.4,1,81,Female,29.2
+S00139,Site A,Active High,0,0,143.9,77.1,82.0,0,68,Male,24.1
+S00139,Site A,Active High,2,1,144.6,75.6,81.8,0,68,Male,24.1
+S00139,Site A,Active High,4,2,132.4,84.5,86.7,2,68,Male,24.1
+S00139,Site A,Active High,8,3,129.1,76.9,84.8,1,68,Male,24.1
+S00139,Site A,Active High,12,4,131.4,68.8,81.6,0,68,Male,24.1
+S00140,Site A,Active High,0,0,159.0,84.2,61.8,0,53,Female,31.5
+S00140,Site A,Active High,2,1,146.2,82.9,62.0,0,53,Female,31.5
+S00140,Site A,Active High,4,2,152.7,86.1,62.4,1,53,Female,31.5
+S00140,Site A,Active High,8,3,139.1,77.7,59.7,0,53,Female,31.5
+S00140,Site A,Active High,12,4,140.1,71.7,58.3,1,53,Female,31.5
+S00141,Site B,Placebo,0,0,160.7,93.4,75.6,0,36,Female,25.4
+S00141,Site B,Placebo,2,1,144.3,93.9,68.7,0,36,Female,25.4
+S00141,Site B,Placebo,4,2,140.3,81.8,73.0,1,36,Female,25.4
+S00141,Site B,Placebo,8,3,150.4,95.9,77.0,0,36,Female,25.4
+S00141,Site B,Placebo,12,4,146.9,91.2,75.6,2,36,Female,25.4
+S00142,Site D,Placebo,0,0,170.9,108.7,82.9,0,42,Male,25.0
+S00142,Site D,Placebo,2,1,166.1,100.2,82.1,0,42,Male,25.0
+S00142,Site D,Placebo,4,2,181.0,99.8,83.8,0,42,Male,25.0
+S00142,Site D,Placebo,8,3,173.9,98.3,85.5,1,42,Male,25.0
+S00142,Site D,Placebo,12,4,170.6,102.0,79.3,1,42,Male,25.0
+S00143,Site A,Active High,0,0,135.3,82.9,75.7,0,65,Female,21.7
+S00143,Site A,Active High,2,1,128.4,77.2,79.9,2,65,Female,21.7
+S00143,Site A,Active High,4,2,116.6,80.1,83.7,0,65,Female,21.7
+S00143,Site A,Active High,8,3,122.2,77.7,75.5,0,65,Female,21.7
+S00143,Site A,Active High,12,4,112.9,69.6,73.8,0,65,Female,21.7
+S00144,Site A,Placebo,0,0,133.6,95.2,93.5,0,51,Female,19.8
+S00144,Site A,Placebo,2,1,129.9,97.0,84.0,1,51,Female,19.8
+S00144,Site A,Placebo,4,2,131.8,97.5,91.0,0,51,Female,19.8
+S00144,Site A,Placebo,8,3,132.4,92.6,91.8,0,51,Female,19.8
+S00144,Site A,Placebo,12,4,128.0,95.2,93.5,0,51,Female,19.8
+S00145,Site D,Placebo,0,0,139.7,82.3,87.0,0,65,Female,33.0
+S00145,Site D,Placebo,2,1,152.3,83.0,77.1,0,65,Female,33.0
+S00145,Site D,Placebo,4,2,141.3,81.5,87.3,0,65,Female,33.0
+S00145,Site D,Placebo,8,3,140.0,83.1,83.9,1,65,Female,33.0
+S00145,Site D,Placebo,12,4,135.9,80.9,79.8,0,65,Female,33.0
+S00146,Site B,Active High,0,0,155.5,102.9,62.4,0,44,Male,30.2
+S00146,Site B,Active High,2,1,152.7,95.6,56.1,2,44,Male,30.2
+S00146,Site B,Active High,4,2,158.1,92.3,55.7,1,44,Male,30.2
+S00146,Site B,Active High,8,3,143.5,82.2,59.0,1,44,Male,30.2
+S00146,Site B,Active High,12,4,137.7,87.9,51.2,0,44,Male,30.2
+S00147,Site E,Placebo,0,0,141.7,104.3,70.8,0,67,Male,23.9
+S00147,Site E,Placebo,2,1,145.0,105.3,78.7,0,67,Male,23.9
+S00147,Site E,Placebo,4,2,134.2,103.5,74.4,0,67,Male,23.9
+S00147,Site E,Placebo,8,3,145.5,97.4,72.6,2,67,Male,23.9
+S00147,Site E,Placebo,12,4,150.1,105.7,80.2,0,67,Male,23.9
+S00148,Site B,Placebo,0,0,163.1,70.0,88.3,1,69,Female,24.2
+S00148,Site B,Placebo,2,1,156.2,71.7,87.6,0,69,Female,24.2
+S00148,Site B,Placebo,4,2,154.8,71.3,88.6,0,69,Female,24.2
+S00148,Site B,Placebo,8,3,153.9,76.9,88.9,1,69,Female,24.2
+S00148,Site B,Placebo,12,4,145.0,77.0,90.2,0,69,Female,24.2
+S00149,Site B,Placebo,0,0,175.3,96.7,74.0,1,62,Female,21.6
+S00149,Site B,Placebo,2,1,172.3,94.2,73.8,1,62,Female,21.6
+S00149,Site B,Placebo,4,2,167.6,87.4,81.2,1,62,Female,21.6
+S00149,Site B,Placebo,8,3,176.6,95.7,77.1,1,62,Female,21.6
+S00149,Site B,Placebo,12,4,161.5,93.5,69.8,0,62,Female,21.6
+S00150,Site D,Active High,0,0,149.7,87.3,84.6,0,54,Male,20.7
+S00150,Site D,Active High,2,1,152.0,94.4,87.2,0,54,Male,20.7
+S00150,Site D,Active High,4,2,141.7,84.0,90.9,1,54,Male,20.7
+S00150,Site D,Active High,8,3,137.0,84.2,91.3,1,54,Male,20.7
+S00150,Site D,Active High,12,4,147.7,75.4,90.0,1,54,Male,20.7
+S00151,Site C,Placebo,0,0,154.0,84.1,85.3,0,60,Male,27.8
+S00151,Site C,Placebo,2,1,152.4,81.6,90.1,1,60,Male,27.8
+S00151,Site C,Placebo,4,2,149.7,89.6,79.4,0,60,Male,27.8
+S00151,Site C,Placebo,8,3,145.7,84.1,77.2,3,60,Male,27.8
+S00151,Site C,Placebo,12,4,142.3,86.3,77.2,0,60,Male,27.8
+S00152,Site E,Active High,0,0,133.0,83.6,79.1,0,37,Female,28.9
+S00152,Site E,Active High,2,1,134.1,79.5,81.1,1,37,Female,28.9
+S00152,Site E,Active High,4,2,119.6,75.3,80.9,0,37,Female,28.9
+S00152,Site E,Active High,8,3,125.5,67.5,80.2,1,37,Female,28.9
+S00152,Site E,Active High,12,4,123.0,72.4,82.0,0,37,Female,28.9
+S00153,Site B,Active Low,0,0,144.2,93.3,57.5,2,36,Male,27.1
+S00153,Site B,Active Low,2,1,122.6,95.2,65.2,0,36,Male,27.1
+S00153,Site B,Active Low,4,2,138.2,86.9,61.6,1,36,Male,27.1
+S00153,Site B,Active Low,8,3,138.6,89.0,65.9,1,36,Male,27.1
+S00153,Site B,Active Low,12,4,130.9,83.6,65.0,0,36,Male,27.1
+S00154,Site D,Active High,0,0,158.1,94.6,82.2,1,65,Male,15.0
+S00154,Site D,Active High,2,1,140.9,82.5,78.3,1,65,Male,15.0
+S00154,Site D,Active High,4,2,144.9,89.1,85.0,0,65,Male,15.0
+S00154,Site D,Active High,8,3,138.8,87.9,85.6,0,65,Male,15.0
+S00154,Site D,Active High,12,4,129.6,86.6,85.4,0,65,Male,15.0
+S00155,Site A,Active Low,0,0,165.1,103.2,75.4,0,33,Male,27.1
+S00155,Site A,Active Low,2,1,156.1,97.0,71.6,0,33,Male,27.1
+S00155,Site A,Active Low,4,2,148.3,98.1,67.2,1,33,Male,27.1
+S00155,Site A,Active Low,8,3,160.7,90.5,68.8,1,33,Male,27.1
+S00155,Site A,Active Low,12,4,133.9,86.9,82.1,1,33,Male,27.1
+S00156,Site A,Active Low,0,0,171.6,89.8,63.6,1,45,Female,29.3
+S00156,Site A,Active Low,2,1,166.4,92.9,65.5,0,45,Female,29.3
+S00156,Site A,Active Low,4,2,164.2,88.7,67.6,1,45,Female,29.3
+S00156,Site A,Active Low,8,3,171.1,88.7,69.5,1,45,Female,29.3
+S00156,Site A,Active Low,12,4,160.0,87.8,68.5,1,45,Female,29.3
+S00157,Site D,Active Low,0,0,139.7,73.0,75.3,0,32,Female,26.2
+S00157,Site D,Active Low,2,1,138.2,86.0,79.9,0,32,Female,26.2
+S00157,Site D,Active Low,4,2,142.8,82.1,73.0,1,32,Female,26.2
+S00157,Site D,Active Low,8,3,133.8,76.0,76.4,0,32,Female,26.2
+S00157,Site D,Active Low,12,4,139.8,73.9,78.7,0,32,Female,26.2
+S00158,Site C,Active Low,0,0,130.6,75.5,68.7,0,65,Female,26.0
+S00158,Site C,Active Low,2,1,139.8,80.2,70.3,1,65,Female,26.0
+S00158,Site C,Active Low,4,2,133.3,80.1,68.5,0,65,Female,26.0
+S00158,Site C,Active Low,8,3,128.7,78.9,66.6,1,65,Female,26.0
+S00158,Site C,Active Low,12,4,129.5,76.6,70.0,0,65,Female,26.0
+S00159,Site A,Placebo,0,0,146.6,99.6,65.7,0,80,Male,27.4
+S00159,Site A,Placebo,2,1,138.3,86.5,63.2,1,80,Male,27.4
+S00159,Site A,Placebo,4,2,138.0,99.7,65.3,0,80,Male,27.4
+S00159,Site A,Placebo,8,3,137.6,94.1,65.6,1,80,Male,27.4
+S00159,Site A,Placebo,12,4,124.0,93.5,66.0,0,80,Male,27.4
+S00160,Site E,Active High,0,0,143.2,87.7,78.0,0,57,Male,25.3
+S00160,Site E,Active High,2,1,134.4,78.2,78.1,1,57,Male,25.3
+S00160,Site E,Active High,4,2,128.0,88.1,71.9,0,57,Male,25.3
+S00160,Site E,Active High,8,3,134.9,75.9,71.9,0,57,Male,25.3
+S00160,Site E,Active High,12,4,140.5,78.0,80.2,1,57,Male,25.3
+S00161,Site E,Placebo,0,0,170.7,88.2,52.4,0,36,Female,18.8
+S00161,Site E,Placebo,2,1,160.1,88.3,49.3,1,36,Female,18.8
+S00161,Site E,Placebo,4,2,161.6,89.2,49.2,1,36,Female,18.8
+S00161,Site E,Placebo,8,3,165.1,94.6,50.9,0,36,Female,18.8
+S00161,Site E,Placebo,12,4,148.7,89.8,47.9,1,36,Female,18.8
+S00162,Site E,Active High,0,0,144.3,88.9,74.4,0,49,Female,27.5
+S00162,Site E,Active High,2,1,149.7,80.9,73.7,1,49,Female,27.5
+S00162,Site E,Active High,4,2,133.4,80.5,75.5,0,49,Female,27.5
+S00162,Site E,Active High,8,3,119.1,84.6,74.8,0,49,Female,27.5
+S00162,Site E,Active High,12,4,119.5,73.9,72.4,2,49,Female,27.5
+S00163,Site C,Active High,0,0,151.5,63.5,56.4,1,54,Female,24.4
+S00163,Site C,Active High,2,1,147.3,68.0,64.2,0,54,Female,24.4
+S00163,Site C,Active High,4,2,142.9,56.0,57.7,0,54,Female,24.4
+S00163,Site C,Active High,8,3,147.7,62.1,64.5,1,54,Female,24.4
+S00163,Site C,Active High,12,4,137.3,55.7,69.8,1,54,Female,24.4
+S00164,Site C,Active High,0,0,146.8,89.2,56.6,0,56,Male,22.6
+S00164,Site C,Active High,2,1,134.5,83.8,68.4,0,56,Male,22.6
+S00164,Site C,Active High,4,2,128.6,83.1,54.0,1,56,Male,22.6
+S00164,Site C,Active High,8,3,127.8,83.3,61.5,1,56,Male,22.6
+S00164,Site C,Active High,12,4,122.8,78.5,56.3,0,56,Male,22.6
+S00165,Site C,Active Low,0,0,163.6,83.9,84.5,0,63,Female,26.5
+S00165,Site C,Active Low,2,1,167.7,88.4,92.5,0,63,Female,26.5
+S00165,Site C,Active Low,4,2,163.1,77.4,87.5,1,63,Female,26.5
+S00165,Site C,Active Low,8,3,173.1,87.5,90.0,1,63,Female,26.5
+S00165,Site C,Active Low,12,4,159.3,78.9,88.6,1,63,Female,26.5
+S00166,Site A,Active High,0,0,150.1,90.4,80.5,1,49,Female,17.7
+S00166,Site A,Active High,2,1,147.5,88.4,91.4,0,49,Female,17.7
+S00166,Site A,Active High,4,2,140.4,81.6,92.1,1,49,Female,17.7
+S00166,Site A,Active High,8,3,129.1,83.2,78.1,0,49,Female,17.7
+S00166,Site A,Active High,12,4,123.2,81.1,82.4,0,49,Female,17.7
+S00167,Site E,Active High,0,0,175.0,90.3,75.4,1,44,Female,34.0
+S00167,Site E,Active High,2,1,175.2,91.0,66.9,1,44,Female,34.0
+S00167,Site E,Active High,4,2,157.1,90.5,76.2,1,44,Female,34.0
+S00167,Site E,Active High,8,3,156.5,84.4,70.4,0,44,Female,34.0
+S00167,Site E,Active High,12,4,153.1,82.7,68.9,0,44,Female,34.0
+S00168,Site E,Active High,0,0,150.0,92.0,80.4,1,31,Female,22.7
+S00168,Site E,Active High,2,1,144.7,90.2,88.1,1,31,Female,22.7
+S00168,Site E,Active High,4,2,130.3,86.2,84.4,0,31,Female,22.7
+S00168,Site E,Active High,8,3,135.7,87.7,85.0,0,31,Female,22.7
+S00168,Site E,Active High,12,4,129.3,78.3,85.0,0,31,Female,22.7
+S00169,Site C,Active High,0,0,125.6,73.9,75.2,0,71,Female,26.6
+S00169,Site C,Active High,2,1,127.9,69.9,78.3,0,71,Female,26.6
+S00169,Site C,Active High,4,2,112.5,62.1,83.2,0,71,Female,26.6
+S00169,Site C,Active High,8,3,116.0,62.4,75.2,1,71,Female,26.6
+S00169,Site C,Active High,12,4,105.5,60.7,82.3,0,71,Female,26.6
+S00170,Site C,Placebo,0,0,146.3,93.1,56.8,0,63,Male,31.1
+S00170,Site C,Placebo,2,1,145.2,99.7,53.8,0,63,Male,31.1
+S00170,Site C,Placebo,4,2,155.4,101.1,56.5,1,63,Male,31.1
+S00170,Site C,Placebo,8,3,149.9,98.0,64.8,0,63,Male,31.1
+S00170,Site C,Placebo,12,4,147.1,97.0,59.0,1,63,Male,31.1
+S00171,Site A,Active Low,0,0,126.1,90.0,70.3,0,42,Female,29.1
+S00171,Site A,Active Low,2,1,131.5,85.2,80.4,0,42,Female,29.1
+S00171,Site A,Active Low,4,2,137.3,84.0,74.1,0,42,Female,29.1
+S00171,Site A,Active Low,8,3,132.6,79.9,68.2,0,42,Female,29.1
+S00171,Site A,Active Low,12,4,126.0,80.0,74.7,0,42,Female,29.1
+S00172,Site A,Placebo,0,0,169.0,89.3,79.8,0,76,Male,19.0
+S00172,Site A,Placebo,2,1,179.8,83.8,76.4,0,76,Male,19.0
+S00172,Site A,Placebo,4,2,175.5,90.3,79.7,0,76,Male,19.0
+S00172,Site A,Placebo,8,3,162.6,89.3,78.4,1,76,Male,19.0
+S00172,Site A,Placebo,12,4,164.9,84.9,79.6,0,76,Male,19.0
+S00173,Site A,Active Low,0,0,139.0,80.9,82.2,0,66,Male,29.1
+S00173,Site A,Active Low,2,1,150.7,82.2,87.7,0,66,Male,29.1
+S00173,Site A,Active Low,4,2,140.9,75.7,82.0,1,66,Male,29.1
+S00173,Site A,Active Low,8,3,135.0,76.3,83.3,1,66,Male,29.1
+S00173,Site A,Active Low,12,4,137.2,75.2,69.9,0,66,Male,29.1
+S00174,Site B,Placebo,0,0,171.5,77.7,76.2,0,76,Female,26.0
+S00174,Site B,Placebo,2,1,165.9,74.5,73.1,1,76,Female,26.0
+S00174,Site B,Placebo,4,2,151.2,77.0,69.5,0,76,Female,26.0
+S00174,Site B,Placebo,8,3,161.9,73.5,72.3,1,76,Female,26.0
+S00174,Site B,Placebo,12,4,165.3,84.1,77.7,1,76,Female,26.0
+S00175,Site E,Active High,0,0,169.5,98.7,58.4,1,63,Male,24.7
+S00175,Site E,Active High,2,1,163.0,97.3,60.8,0,63,Male,24.7
+S00175,Site E,Active High,4,2,167.6,94.4,53.8,0,63,Male,24.7
+S00175,Site E,Active High,8,3,161.9,92.7,60.0,0,63,Male,24.7
+S00175,Site E,Active High,12,4,159.5,89.3,52.7,0,63,Male,24.7
+S00176,Site A,Active Low,0,0,127.5,73.2,57.9,0,57,Male,23.3
+S00176,Site A,Active Low,2,1,134.0,77.8,57.0,1,57,Male,23.3
+S00176,Site A,Active Low,4,2,125.7,70.9,63.7,1,57,Male,23.3
+S00176,Site A,Active Low,8,3,131.1,65.2,64.0,1,57,Male,23.3
+S00176,Site A,Active Low,12,4,125.6,70.8,57.2,3,57,Male,23.3
+S00177,Site C,Active High,0,0,141.0,81.3,76.6,1,63,Male,22.7
+S00177,Site C,Active High,2,1,142.7,76.3,92.0,0,63,Male,22.7
+S00177,Site C,Active High,4,2,134.6,70.3,78.4,1,63,Male,22.7
+S00177,Site C,Active High,8,3,135.8,73.6,73.4,1,63,Male,22.7
+S00177,Site C,Active High,12,4,116.5,69.2,80.3,0,63,Male,22.7
+S00178,Site C,Active Low,0,0,145.8,79.3,60.4,1,45,Female,21.1
+S00178,Site C,Active Low,2,1,143.5,68.2,56.2,0,45,Female,21.1
+S00178,Site C,Active Low,4,2,141.8,80.0,49.3,0,45,Female,21.1
+S00178,Site C,Active Low,8,3,136.2,74.8,56.3,1,45,Female,21.1
+S00178,Site C,Active Low,12,4,134.6,73.3,61.8,0,45,Female,21.1
+S00179,Site E,Active High,0,0,152.3,102.4,65.5,2,53,Male,36.4
+S00179,Site E,Active High,2,1,152.2,104.9,68.8,0,53,Male,36.4
+S00179,Site E,Active High,4,2,146.9,98.6,64.1,0,53,Male,36.4
+S00179,Site E,Active High,8,3,138.1,93.0,67.6,2,53,Male,36.4
+S00179,Site E,Active High,12,4,121.5,92.0,70.2,0,53,Male,36.4
+S00180,Site C,Placebo,0,0,174.1,108.8,69.5,0,64,Male,25.6
+S00180,Site C,Placebo,2,1,178.9,110.9,63.3,0,64,Male,25.6
+S00180,Site C,Placebo,4,2,174.1,107.7,71.8,1,64,Male,25.6
+S00180,Site C,Placebo,8,3,169.5,99.1,66.6,0,64,Male,25.6
+S00180,Site C,Placebo,12,4,162.1,110.7,68.7,0,64,Male,25.6
+S00181,Site B,Placebo,0,0,129.2,81.8,84.1,0,35,Male,30.0
+S00181,Site B,Placebo,2,1,129.4,89.6,83.1,1,35,Male,30.0
+S00181,Site B,Placebo,4,2,125.2,88.8,84.1,1,35,Male,30.0
+S00181,Site B,Placebo,8,3,128.6,81.8,81.3,1,35,Male,30.0
+S00181,Site B,Placebo,12,4,126.2,80.4,82.5,2,35,Male,30.0
+S00182,Site C,Active Low,0,0,157.8,80.1,67.7,0,34,Male,32.4
+S00182,Site C,Active Low,2,1,153.2,70.1,74.2,1,34,Male,32.4
+S00182,Site C,Active Low,4,2,159.5,65.2,77.5,0,34,Male,32.4
+S00182,Site C,Active Low,8,3,154.4,65.2,72.5,0,34,Male,32.4
+S00182,Site C,Active Low,12,4,153.8,62.8,72.3,2,34,Male,32.4
+S00183,Site C,Active Low,0,0,168.2,71.3,85.9,0,32,Female,29.7
+S00183,Site C,Active Low,2,1,165.8,73.8,84.7,0,32,Female,29.7
+S00183,Site C,Active Low,4,2,160.5,72.8,85.5,0,32,Female,29.7
+S00183,Site C,Active Low,8,3,153.6,72.0,76.9,0,32,Female,29.7
+S00183,Site C,Active Low,12,4,153.6,67.0,78.6,1,32,Female,29.7
+S00184,Site A,Placebo,0,0,146.6,85.7,92.8,0,65,Female,19.5
+S00184,Site A,Placebo,2,1,152.8,82.3,94.3,1,65,Female,19.5
+S00184,Site A,Placebo,4,2,155.9,78.4,92.1,0,65,Female,19.5
+S00184,Site A,Placebo,8,3,156.7,86.5,86.1,1,65,Female,19.5
+S00184,Site A,Placebo,12,4,146.6,85.8,89.6,1,65,Female,19.5
+S00185,Site A,Active Low,0,0,145.5,84.2,82.2,1,45,Female,23.3
+S00185,Site A,Active Low,2,1,144.4,80.5,84.1,0,45,Female,23.3
+S00185,Site A,Active Low,4,2,148.3,85.6,75.3,0,45,Female,23.3
+S00185,Site A,Active Low,8,3,137.9,76.5,68.4,0,45,Female,23.3
+S00185,Site A,Active Low,12,4,136.0,78.6,78.9,0,45,Female,23.3
+S00186,Site B,Active Low,0,0,139.0,62.9,63.0,0,42,Male,22.0
+S00186,Site B,Active Low,2,1,136.7,66.1,66.4,0,42,Male,22.0
+S00186,Site B,Active Low,4,2,125.3,60.9,62.9,0,42,Male,22.0
+S00186,Site B,Active Low,8,3,130.6,66.6,67.4,0,42,Male,22.0
+S00186,Site B,Active Low,12,4,130.8,62.3,60.7,1,42,Male,22.0
+S00187,Site D,Placebo,0,0,147.3,89.7,70.2,1,68,Male,26.5
+S00187,Site D,Placebo,2,1,135.6,90.7,63.7,0,68,Male,26.5
+S00187,Site D,Placebo,4,2,147.7,90.4,63.4,1,68,Male,26.5
+S00187,Site D,Placebo,8,3,153.7,91.3,69.3,1,68,Male,26.5
+S00187,Site D,Placebo,12,4,143.5,89.3,65.1,2,68,Male,26.5
+S00188,Site A,Active High,0,0,160.0,109.0,85.8,0,42,Female,19.5
+S00188,Site A,Active High,2,1,158.7,105.4,83.6,2,42,Female,19.5
+S00188,Site A,Active High,4,2,160.5,102.0,81.5,2,42,Female,19.5
+S00188,Site A,Active High,8,3,152.3,101.5,85.6,0,42,Female,19.5
+S00188,Site A,Active High,12,4,143.1,97.9,77.0,0,42,Female,19.5
+S00189,Site E,Placebo,0,0,153.7,96.9,77.1,1,81,Female,25.8
+S00189,Site E,Placebo,2,1,159.7,101.8,82.2,1,81,Female,25.8
+S00189,Site E,Placebo,4,2,144.2,95.9,79.7,2,81,Female,25.8
+S00189,Site E,Placebo,8,3,146.2,93.8,84.8,1,81,Female,25.8
+S00189,Site E,Placebo,12,4,148.3,95.4,78.9,0,81,Female,25.8
+S00190,Site D,Active High,0,0,105.7,87.0,96.0,0,41,Male,28.5
+S00190,Site D,Active High,2,1,130.8,72.4,91.7,1,41,Male,28.5
+S00190,Site D,Active High,4,2,120.9,83.7,89.1,1,41,Male,28.5
+S00190,Site D,Active High,8,3,104.9,79.6,94.4,1,41,Male,28.5
+S00190,Site D,Active High,12,4,102.1,71.7,80.7,3,41,Male,28.5
+S00191,Site E,Placebo,0,0,125.2,86.3,75.0,0,36,Female,24.7
+S00191,Site E,Placebo,2,1,127.5,84.6,77.0,0,36,Female,24.7
+S00191,Site E,Placebo,4,2,118.5,86.4,73.3,0,36,Female,24.7
+S00191,Site E,Placebo,8,3,121.1,83.0,73.9,1,36,Female,24.7
+S00191,Site E,Placebo,12,4,122.0,84.5,78.3,0,36,Female,24.7
+S00192,Site B,Active Low,0,0,143.6,72.5,98.6,0,46,Male,21.6
+S00192,Site B,Active Low,2,1,136.4,79.2,93.7,0,46,Male,21.6
+S00192,Site B,Active Low,4,2,136.2,71.2,88.3,1,46,Male,21.6
+S00192,Site B,Active Low,8,3,137.9,73.2,90.5,0,46,Male,21.6
+S00192,Site B,Active Low,12,4,130.5,73.1,91.8,2,46,Male,21.6
+S00193,Site A,Placebo,0,0,131.7,86.4,76.5,0,79,Female,37.1
+S00193,Site A,Placebo,2,1,125.8,95.4,76.2,1,79,Female,37.1
+S00193,Site A,Placebo,4,2,122.2,87.9,70.0,1,79,Female,37.1
+S00193,Site A,Placebo,8,3,131.0,83.5,73.7,0,79,Female,37.1
+S00193,Site A,Placebo,12,4,125.6,85.3,67.6,1,79,Female,37.1
+S00194,Site D,Active High,0,0,145.1,91.8,59.4,1,81,Male,28.4
+S00194,Site D,Active High,2,1,150.0,86.7,58.5,1,81,Male,28.4
+S00194,Site D,Active High,4,2,141.4,75.3,66.9,0,81,Male,28.4
+S00194,Site D,Active High,8,3,132.3,91.5,55.5,0,81,Male,28.4
+S00194,Site D,Active High,12,4,128.3,88.1,56.2,1,81,Male,28.4
+S00195,Site B,Active Low,0,0,188.2,89.2,76.1,1,69,Male,30.5
+S00195,Site B,Active Low,2,1,176.3,89.5,83.9,0,69,Male,30.5
+S00195,Site B,Active Low,4,2,171.5,85.6,82.1,2,69,Male,30.5
+S00195,Site B,Active Low,8,3,178.9,83.2,77.8,0,69,Male,30.5
+S00195,Site B,Active Low,12,4,169.2,85.8,72.9,0,69,Male,30.5
+S00196,Site D,Active Low,0,0,157.9,80.9,68.2,0,80,Female,28.7
+S00196,Site D,Active Low,2,1,158.2,83.4,75.5,0,80,Female,28.7
+S00196,Site D,Active Low,4,2,151.0,80.8,70.6,0,80,Female,28.7
+S00196,Site D,Active Low,8,3,152.0,76.9,66.0,0,80,Female,28.7
+S00196,Site D,Active Low,12,4,146.5,70.1,73.1,1,80,Female,28.7
+S00197,Site D,Active High,0,0,140.1,92.6,64.8,1,37,Male,20.5
+S00197,Site D,Active High,2,1,142.6,85.9,67.5,0,37,Male,20.5
+S00197,Site D,Active High,4,2,148.2,87.0,71.1,0,37,Male,20.5
+S00197,Site D,Active High,8,3,139.4,81.8,71.0,0,37,Male,20.5
+S00197,Site D,Active High,12,4,135.3,74.4,63.3,2,37,Male,20.5
+S00198,Site C,Placebo,0,0,153.0,76.2,86.1,2,78,Female,30.9
+S00198,Site C,Placebo,2,1,172.7,77.4,80.6,0,78,Female,30.9
+S00198,Site C,Placebo,4,2,165.2,74.6,77.6,4,78,Female,30.9
+S00198,Site C,Placebo,8,3,158.5,78.6,86.1,0,78,Female,30.9
+S00198,Site C,Placebo,12,4,167.9,78.6,78.7,0,78,Female,30.9
+S00199,Site C,Active High,0,0,174.1,91.1,75.7,0,43,Male,24.4
+S00199,Site C,Active High,2,1,159.6,86.6,74.1,0,43,Male,24.4
+S00199,Site C,Active High,4,2,155.5,84.8,69.8,0,43,Male,24.4
+S00199,Site C,Active High,8,3,159.1,87.9,73.7,0,43,Male,24.4
+S00199,Site C,Active High,12,4,147.0,81.6,73.9,2,43,Male,24.4
+S00200,Site A,Active High,0,0,178.9,78.0,65.8,0,78,Male,33.2
+S00200,Site A,Active High,2,1,177.6,70.0,62.1,1,78,Male,33.2
+S00200,Site A,Active High,4,2,164.6,66.0,65.9,0,78,Male,33.2
+S00200,Site A,Active High,8,3,169.0,61.0,56.6,1,78,Male,33.2
+S00200,Site A,Active High,12,4,167.5,58.6,65.6,0,78,Male,33.2

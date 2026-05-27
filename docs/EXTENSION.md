@@ -1,0 +1,203 @@
+# 后续扩展说明
+
+本文档说明如何添加新分析方法、新示例数据、新主题和新表格类型。当前项目的关键约定是：**每个分析方法必须有对应示例数据，并且前端参数配置要能自动填入默认值**。
+
+## 添加新分析方法
+
+### 1. 创建示例数据生成函数
+
+在 `app/services/sample_service.py` 中添加函数：
+
+```python
+def make_new_method_example() -> pd.DataFrame:
+    n = 200
+    np.random.seed(42)
+    return pd.DataFrame({
+        "age": np.random.normal(55, 12, n).astype(int),
+        "bmi": np.random.normal(25, 4, n).round(1),
+        "treatment": np.random.choice(["Drug A", "Drug B", "Placebo"], n),
+        "outcome": np.random.binomial(1, 0.4, n),
+        "biomarker": np.random.normal(100, 20, n).round(1),
+    })
+```
+
+注册到 `EXAMPLE_MAKERS`：
+
+```python
+EXAMPLE_MAKERS = {
+    # existing examples
+    "new_method_example": make_new_method_example,
+}
+```
+
+应用启动时会在缺失时自动生成 `data/examples/new_method_example.csv`。
+
+### 2. 添加后端分析逻辑
+
+在 `app/services/stats_service.py`（统计方法）或 `app/services/ml_service.py`（ML方法）中添加：
+
+```python
+def run_new_method(df: pd.DataFrame, **params) -> dict:
+    """New analysis method implementation."""
+    # 计算逻辑
+    tables = []
+    charts = []
+    diagnostics = []
+
+    # 返回统一结构
+    return {
+        "tables": tables,
+        "charts": charts,
+        "diagnostics": diagnostics,
+        "discussion": "分析讨论文本...",
+    }
+```
+
+### 3. 注册方法到 METHOD_CATALOG
+
+在 `app/main.py` 的 `METHOD_CATALOG` 中添加：
+
+```python
+"new_method": {
+    "id": "new_method",
+    "name": "新分析方法",
+    "category": "advanced_stats",  # advanced_stats | ml_models | integrated_tools
+    "description": "方法说明文字",
+    "example_dataset": "new_method_example",
+    "default_params": {
+        "group_var": "treatment",
+        "outcome_var": "outcome",
+    },
+},
+```
+
+### 4. 添加前端方法配置
+
+在 `app/static/js/methodConfigs.js` 中添加：
+
+```javascript
+new_method: {
+  id: "new_method",
+  name: "新分析方法",
+  category: "advanced_stats",
+  description: "分析方法的简要描述",
+  icon: "N",
+  exampleDataset: "new_method_example",
+  defaultParams: {
+    group_var: "treatment",
+    outcome_var: "outcome",
+  },
+},
+```
+
+### 5. 添加变量选择槽位
+
+在 `app/static/js/variableSelect.js` 的 `getMethodVarSlots()` 中添加：
+
+```javascript
+new_method: [
+  { name: "group_var", label: "分组变量", optional: false },
+  { name: "outcome_var", label: "结局变量", optional: false },
+  { name: "covariates", label: "协变量（多选）", optional: true, multiple: true },
+],
+```
+
+## 添加新图表主题
+
+在 `app/static/js/chartThemes.js` 的 `CHART_THEMES` 中添加新主题对象：
+
+```javascript
+myNewTheme: {
+  name: "我的主题",
+  fontFamily: "'Noto Sans SC', 'Microsoft YaHei', sans-serif",
+  bgColor: "#ffffff",
+  plotBgColor: "#ffffff",
+  gridColor: "rgba(0,0,0,0.06)",
+  zeroLineColor: "rgba(0,0,0,0.15)",
+  titleColor: "#1a1a1a",
+  axisColor: "#1a1a1a",
+  axisLineColor: "#1a1a1a",
+  ink: "#1a1a1a",
+  colorway: ["#2E6F9E", "#D95F59", "#2A9D8F", "#E9A93A", "#6F5AA7"],
+  markerLine: "#ffffff",
+  opacity: 0.90,
+  titleFontSize: 17,
+  axisFontSize: 12,
+  tickFontSize: 11,
+  legendFontSize: 11,
+},
+```
+
+在 `app/static/index.html` 的主题选择器中添加对应选项。
+
+## 添加新的三线表类型
+
+### 1. 后端表格函数
+
+在 `app/services/table_service.py` 中添加：
+
+```python
+def build_my_table(df: pd.DataFrame, variables: list[str] | None = None) -> dict:
+    rows = []
+    # 计算逻辑
+    return {
+        "columns": ["Variable", "Value"],
+        "rows": rows,
+        "n_total": len(df),
+    }
+```
+
+### 2. FastAPI 路由
+
+在 `app/main.py` 中添加：
+
+```python
+@app.post("/api/table/my-table")
+def my_table(req: TableRequest) -> dict:
+    df = _get_df(req)
+    return build_my_table(df, req.variables)
+```
+
+### 3. 前端入口
+
+在 `app/static/index.html` 中添加表类型按钮，在 `app/static/js/tableGenerator.js` 中添加对应 endpoint 分支。
+
+## 添加新数据格式
+
+编辑 `app/services/io_service.py`：
+
+1. 在 `SUPPORTED_EXTENSIONS` 中添加后缀。
+2. 在 `read_file()` 中添加读取逻辑。
+3. 返回前调用 `normalize_dataframe(df)`，保持缺失值、空行和列名处理一致。
+
+## UI 扩展规则
+
+- 方法选择列表默认单列纵向排列，新增方法无需改 CSS。
+- 每个方法卡片应提供 `name`、`description` 和 `exampleDataset`。
+- 不要让分析依赖 `STATE.previewRows`；预览只用于展示，分析应使用完整数据接口。
+- 新增方法后，`chart_service.py` 可能需要添加对应的图表生成函数。
+- 出版级导出由 `chart_service.py` 中的 matplotlib 函数处理；如需高质量 PDF 导出，确保对应方法有 matplotlib 图表生成器。
+
+## 验证命令
+
+每次新增方法或接口后建议运行：
+
+```bash
+python tests\smoke.py
+python -m compileall app
+node --check app\static\js\methodConfigs.js
+node --check app\static\js\charts.js
+node --check app\static\js\tableGenerator.js
+```
+
+也可以启动临时端口验证新接口：
+
+```bash
+python -m uvicorn app.main:app --host 127.0.0.1 --port 8872
+```
+
+```bash
+curl -X POST http://127.0.0.1:8872/api/analyze \
+  -H "Content-Type: application/json" \
+  -d '{"method_id": "gee", "use_demo": true, "dataset_name": "gee_example", "params": {"group_var": "arm"}}'
+```
