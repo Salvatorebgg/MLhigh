@@ -2,27 +2,26 @@
 
 **Clinical Advanced Statistics & Machine Learning One-Click Platform**
 
-面向临床科研数据的高级统计建模与机器学习全流程分析平台。提供 12 类高级统计方法、8 种机器学习模型和 4 项综合分析工具，每种方法均配备真实临床示例数据、自动参数配置和一键化全流程分析。
+面向临床科研数据的高级统计建模与机器学习全流程分析平台。提供 13 类高级统计方法、8 种机器学习模型和 4 项综合分析工具，每种方法均配备对应示例数据、自动参数配置和一键化全流程分析。
 
-## 当前版本重点
+## 核心特性
 
-- **方法优先工作流**：用户先在左侧方法目录中选择目标分析方法，再加载对应示例数据或上传自己的数据。
-- **示例数据一一对应**：每个方法配置都声明 `exampleDataset`，前端选择方法后自动绑定对应示例和默认参数。
-- **完整数据生成分析**：通过 `/api/dataset/data` 接口获取完整列式数据，不依赖前端预览数据。
-- **一键化全流程**：选择方法 → 加载示例 → 点击"运行分析" → 自动完成数据概览、模型结果、可视化和诊断评估。
-- **CNS 出版级图形**：默认启用 CNS 出版主题，统一优化色板、字体、线宽，支持 Plotly 交互图和 matplotlib 出版级导出。
-- **深度结果讨论**：每个方法自动生成基于实际结果的分析讨论，包含临床解释和统计推断。
-- **三线表变量多选生效**：前端多选变量会传入后端表格生成接口。
-- **多格式导出**：支持 PNG / SVG / CSV / Excel / HTML 导出图表和表格。
+- **方法优先工作流**：先在左侧方法目录中选择分析方法，再加载示例数据或上传自己的数据——方法决定变量槽位和默认参数。
+- **示例数据一一对应**：25 种方法各配备对应示例数据集，选择方法后自动绑定，开箱即用。
+- **一键化全流程**：选择方法 → 加载示例 → 运行分析 → 自动输出数据概览、模型结果、可视化图表和诊断评估。
+- **CNS 出版级图形**：11 种图表主题（CNS/CHARLS/Nature/Lancet/NEJM/Science 等），支持 Plotly 交互图和 matplotlib 出版级导出。
+- **深度结果讨论**：每个方法自动生成基于实际分析结果的临床讨论和统计推断文本。
+- **三线表一键生成**：基线资料表（自动 P 值计算）、描述统计表、缺失值统计表，支持多变量选择。
+- **多格式导出**：图表支持 PNG / SVG / PDF / TIFF，表格支持 CSV / Excel / HTML 导出。
 
 ## 功能概览
 
 - **多格式数据上传**：CSV / TSV / TXT / XLSX / XLS / XLSM
 - **智能变量识别**：连续变量、分类变量、二分类变量、日期变量、ID 变量、分组变量、结局候选变量
-- **12 类高级统计方法**：GEE、倾向性评分匹配、敏感性分析、反事实推断、复杂生存分析、马尔可夫模型、贝叶斯统计、拉丁方方差分析、荟萃分析、中介效应、混合效应模型、复杂抽样分析
+- **13 类高级统计方法**：GEE、倾向性评分匹配、敏感性分析、反事实推断、复杂生存分析、马尔可夫模型、贝叶斯统计、拉丁方方差分析、荟萃分析、中介效应、混合效应模型、复杂抽样分析、LDSC 遗传共病分析
 - **8 种机器学习模型**：逻辑回归、Lasso/岭回归、KNN、XGBoost、随机森林、SVM、决策树、1D-CNN
 - **4 项综合工具**：特征工程、模型比较、降维分析、聚类分析
-- **24 个示例数据集**：覆盖纵向临床数据、观察性研究、生存数据、组学数据等场景
+- **25 个示例数据集**：覆盖纵向临床数据、观察性研究、生存数据、组学数据、遗传数据等场景
 - **三线表一键生成**：基线资料表、描述统计表、缺失值统计表，支持自动 P 值计算
 - **多主题图表**：CNS 出版、CHARLS 临床、Nature、Lancet、NEJM、Science、暖色调、冷色调、柔和马卡龙、深色低调、单色灰阶
 - **多格式导出**：PNG / SVG / PDF / CSV / Excel / HTML
@@ -109,6 +108,7 @@ flowchart LR
 | 中介效应分析 | `mediation` | `mediation_example` |
 | 混合效应模型 | `mixed_effects` | `mixed_effects_example` |
 | 复杂抽样分析 | `nhanes_analysis` | `nhanes_analysis_example` |
+| LDSC 共病分析 | `ldsc` | `ldsc_example` |
 
 ### 机器学习模型
 
@@ -132,11 +132,14 @@ flowchart LR
 | 降维分析 | `dim_reduction` | `dim_reduction_example` |
 | 聚类分析 | `cluster` | `cluster_example` |
 
+> **说明**：除 LDSC 示例使用手工构造的真实格式数据外，其余 24 个示例数据集均由 `app/services/sample_service.py` 中的生成器函数在首次启动时自动生成，确保每个方法都有可直接运行的演示数据。
+
 ## 项目结构
 
 ```text
 MLhigh/
 ├── README.md
+├── LICENSE
 ├── requirements.txt
 ├── pyproject.toml
 ├── run.py
@@ -147,41 +150,43 @@ MLhigh/
 │   ├── services/
 │   │   ├── io_service.py        # 上传、示例、编码/分隔符识别、数据读取
 │   │   ├── variable_service.py  # 变量类型识别和数据摘要
-│   │   ├── sample_service.py    # 示例数据生成函数（24个数据集）
-│   │   ├── stats_service.py     # 高级统计方法核心实现
-│   │   ├── ml_service.py        # 机器学习模型核心实现
+│   │   ├── sample_service.py    # 示例数据生成函数（24个生成器）
+│   │   ├── stats_service.py     # 高级统计方法核心实现（13种）
+│   │   ├── ml_service.py        # 机器学习模型核心实现（8+4种）
 │   │   ├── chart_service.py     # 图表生成服务（Plotly + matplotlib）
 │   │   ├── table_service.py     # 三线表数据生成
 │   │   ├── report_service.py    # 结果讨论/报告生成
 │   │   └── export_service.py    # 表格和配置导出
 │   └── static/
 │       ├── index.html
-│       ├── vendor/plotly.min.js
-│       ├── css/
+│       ├── styles.css            # 主样式文件
+│       ├── vendor/
+│       │   └── plotly.min.js    # 本地捆绑 Plotly.js
+│       ├── css/                  # 模块化 CSS（主题/布局/组件/表格）
 │       │   ├── theme.css
 │       │   ├── layout.css
 │       │   ├── components.css
 │       │   └── tables.css
 │       └── js/
-│           ├── utils.js
-│           ├── upload.js
-│           ├── dataPreview.js
-│           ├── variableSelect.js
-│           ├── methodConfigs.js      # 方法目录定义
-│           ├── chartThemes.js       # 图表主题和色板
-│           ├── charts.js             # 图表渲染
-│           ├── tableGenerator.js
-│           ├── app.js                # 主应用逻辑
-│           └── download.js
+│           ├── utils.js          # 全局状态管理和工具函数
+│           ├── methodConfigs.js  # 方法目录定义
+│           ├── app.js            # 主应用逻辑
+│           ├── upload.js         # 文件上传
+│           ├── dataPreview.js    # 数据预览渲染
+│           ├── variableSelect.js # 变量选择槽位
+│           ├── charts.js         # 图表渲染
+│           ├── chartThemes.js    # 11种出版级图表主题
+│           ├── tableGenerator.js # 三线表生成
+│           └── download.js       # 图表和数据导出
 ├── data/
-│   ├── examples/
-│   └── uploads/
-├── outputs/
+│   ├── examples/                # 25个示例数据集（CSV）
+│   └── uploads/                 # 用户上传文件
+├── outputs/                     # 分析导出输出
 ├── docs/
-│   ├── INTEGRATION.md
-│   └── EXTENSION.md
+│   ├── INTEGRATION.md           # 二次集成说明
+│   └── EXTENSION.md             # 后续扩展说明
 └── tests/
-    └── smoke.py
+    └── smoke.py                 # 核心服务冒烟测试
 ```
 
 ## API 概览

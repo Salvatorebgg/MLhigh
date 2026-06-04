@@ -4,10 +4,10 @@
 
 本平台采用 FastAPI + 原生前端 SPA 的轻量架构：
 
-- **后端**：Python FastAPI，负责上传、读取、变量识别、高级统计、机器学习、三线表和导出。
-- **前端**：HTML / CSS / JavaScript，无前端框架依赖。
-- **图表**：本地 Plotly.js，图表配置集中在 `app/services/chart_service.py`，渲染后统一经过 CNS 出版级后处理。
-- **数据链路**：先选方法，再加载对应示例或上传数据；分析通过 `/api/analyze` 进行全流程计算。
+- **后端**：Python FastAPI（`app/main.py`），负责上传、读取、变量识别、13 类高级统计、8 种 ML 模型、4 项综合工具、三线表和导出。
+- **前端**：HTML / CSS / JavaScript（`app/static/`），无前端框架依赖，主样式为 `styles.css`，附加模块化 CSS 在 `css/` 目录。
+- **图表**：本地捆绑 Plotly.js（`vendor/plotly.min.js`），11 种出版级主题，图表配置集中在 `app/services/chart_service.py`。
+- **数据链路**：先选方法，再加载对应示例或上传数据；分析通过 `/api/analyze` 进行全流程计算，28 个 API 端点。
 
 ## 推荐集成方式
 
@@ -116,18 +116,24 @@ const table = await tableResp.json();
 
 ## 关键接口
 
-| 端点 | 用途 |
-|---|---|
-| `/api/upload` | 上传文件并返回预览、变量类型和摘要 |
-| `/api/read-sheet` | 切换 Excel 工作表 |
-| `/api/examples` | 获取示例数据列表 |
-| `/api/examples/{name}` | 获取示例预览和变量类型 |
-| `/api/dataset/data` | 获取完整列式数据 |
-| `/api/methods` | 获取方法目录 |
-| `/api/analyze` | 一键运行分析方法 |
-| `/api/table/baseline` | 生成基线三线表 |
-| `/api/table/descriptive` | 生成描述统计表 |
-| `/api/table/missing` | 生成缺失统计表 |
+| 端点 | 方法 | 用途 |
+|---|---|---|
+| `/api/health` | GET | 健康检查 |
+| `/api/upload` | POST | 上传文件并返回预览、变量类型和摘要 |
+| `/api/read-sheet` | POST | 切换 Excel 工作表 |
+| `/api/examples` | GET | 获取示例数据列表 |
+| `/api/examples/{name}` | GET | 获取示例预览和变量类型 |
+| `/api/examples/{name}/download` | GET | 下载单个示例 CSV |
+| `/api/dataset/data` | POST | 获取完整列式数据 |
+| `/api/methods` | GET | 获取方法目录（含参数配置） |
+| `/api/analyze` | POST | 一键运行分析方法 |
+| `/api/table/baseline` | POST | 生成基线资料三线表 |
+| `/api/table/descriptive` | POST | 生成描述统计表 |
+| `/api/table/missing` | POST | 生成缺失值统计表 |
+| `/api/export/table-csv` | POST | 导出表格为 CSV |
+| `/api/export/table-excel` | POST | 导出表格为 Excel |
+| `/api/export/table-html` | POST | 导出表格为 HTML |
+| `/api/export/chart/publication` | POST | 导出出版级图表（PNG/SVG/PDF） |
 
 ## CORS 配置
 
@@ -197,8 +203,9 @@ CMD ["python", "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "
 
 ## 注意事项
 
-- 前端默认加载本地 `app/static/vendor/plotly.min.js`，避免 CDN 失败导致图表渲染或 PNG/SVG 导出不可用。
-- 图表区 PNG/SVG 使用 `Plotly.toImage` 导出当前画布；CSV 优先导出当前分析所选变量对应的完整源数据。
-- 出版级导出调用 `/api/export/chart/publication` 生成 matplotlib/seaborn PNG/SVG/PDF。
+- 前端默认加载本地 `app/static/vendor/plotly.min.js`，避免 CDN 失败导致图表渲染或导出不可用。
+- 图表导出：Plotly 交互图通过前端 `Plotly.toImage` 导出 PNG/SVG；TIFF 通过前端 Canvas 编码实现（不经过后端 API）；出版级静态图通过 `/api/export/chart/publication` 调用 matplotlib 生成 PNG/SVG/PDF。
 - 分析结果渲染推荐使用 `renderAllCharts` 和 `renderResultTables`，不要直接操作 DOM。
-- 新增方法时必须同时维护示例数据、`exampleDataset` 和默认参数映射，确保用户点击方法即可得到可运行示例。
+- 新增方法时必须同时维护：示例数据（`sample_service.py`）、方法目录注册（`main.py` METHOD_CATALOG）、路由注册（`STATS_ROUTER` / `ML_ROUTER`）、前端配置（`methodConfigs.js`）和变量槽位（`variableSelect.js`）。
+- 所有 25 个示例数据集中，24 个由 `EXAMPLE_MAKERS` 自动生成，LDSC 为手工构造的真实格式数据。
+- 变量识别依赖完整列式数据，不要仅传预览行进行分析。

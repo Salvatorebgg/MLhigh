@@ -189,6 +189,15 @@ METHOD_CATALOG = {
             {"key": "outcome_var", "label": "结局变量", "type": "select", "default": "sbp"},
         ],
     },
+    "ldsc": {
+        "id": "ldsc", "name": "LDSC 共病分析", "icon": "LDS",
+        "category": "advanced_stats",
+        "description": "遗传力估计 (h²) 与多性状遗传相关性 (rg) 共病分析",
+        "example_dataset": "ldsc_example",
+        "params": [
+            {"key": "group_var", "label": "分组变量（可选）", "type": "select", "default": ""},
+        ],
+    },
     # ML models
     "ml_lr": {
         "id": "ml_lr", "name": "逻辑回归", "icon": "LR",
@@ -429,6 +438,13 @@ def run_analysis(req: MethodRequest) -> dict:
     else:
         raise HTTPException(status_code=400, detail=f"Method '{method_id}' not implemented")
 
+    if not results.get("diagnostics"):
+        results["diagnostics"] = make_fallback_diagnostics(
+            df,
+            params,
+            METHOD_CATALOG[method_id]["name"],
+        )
+
     # Add discussion if missing
     if not results.get("discussion"):
         results["discussion"] = generate_discussion(method_id, results, df)
@@ -467,6 +483,13 @@ def generate_report(req: MethodRequest) -> dict:
         results = ML_ROUTER[method_id](df, params)
     else:
         raise HTTPException(status_code=400, detail=f"Method '{method_id}' not implemented")
+
+    if not results.get("diagnostics"):
+        results["diagnostics"] = make_fallback_diagnostics(
+            df,
+            params,
+            METHOD_CATALOG[method_id]["name"],
+        )
 
     report = generate_method_report(method_id, results, df)
     return {"report": report, "method_id": method_id}
@@ -552,6 +575,173 @@ def export_chart_config_endpoint(req: ExportRequest) -> FileResponse:
 
 
 # ── Helpers ────────────────────────────────────────────────
+
+def make_fallback_diagnostics(df: pd.DataFrame, params: dict, method_name: str) -> list[dict]:
+    """Create generic, method-aware diagnostics when a runner has no custom plots."""
+    try:
+        import plotly.graph_objects as go
+    except Exception:
+        return []
+
+    diagnostics: list[dict] = []
+    key_cols = _diagnostic_key_columns(df, params)
+    if not key_cols:
+        key_cols = list(df.columns[: min(12, len(df.columns))])
+
+    # Completeness is a useful diagnostic for every clinical workflow.
+    completeness = (df[key_cols].notna().mean() * 100).sort_values()
+    fig_complete = go.Figure()
+    fig_complete.add_trace(go.Bar(
+        x=np.round(completeness.values, 1),
+        y=list(completeness.index),
+        orientation="h",
+        marker=dict(
+            color=np.round(completeness.values, 1),
+            colorscale=[[0, "#c0616e"], [0.7, "#f6c453"], [1, "#0d7377"]],
+            cmin=0,
+            cmax=100,
+            line=dict(color="white", width=0.7),
+        ),
+        text=[f"{v:.1f}%" for v in completeness.values],
+        textposition="auto",
+        hovertemplate="%{y}<br>非缺失率=%{x:.1f}%<extra></extra>",
+    ))
+    fig_complete.update_layout(
+        title=f"{method_name} · 数据完整性诊断",
+        xaxis_title="非缺失率 (%)",
+        yaxis_title="变量",
+        height=520,
+        margin=dict(l=120, r=40, t=72, b=56),
+        paper_bgcolor="white",
+        plot_bgcolor="white",
+    )
+    diagnostics.append({"title": "数据完整性诊断", "plotly": fig_complete.to_json()})
+
+    distribution_fig = _make_distribution_diagnostic(df, params, key_cols, method_name, go)
+    if distribution_fig is not None:
+        diagnostics.append({"title": "关键变量分布诊断", "plotly": distribution_fig.to_json()})
+
+    return diagnostics
+
+
+def _diagnostic_key_columns(df: pd.DataFrame, params: dict) -> list[str]:
+    keys = [
+        "outcome_var", "predictor_var", "treatment_var", "group_var", "time_var",
+        "event_var", "subject_var", "cluster_var", "baseline_var", "size_var",
+        "weight_var", "strata_var", "target", "id_var",
+    ]
+    cols: list[str] = []
+    for key in keys:
+        value = params.get(key)
+        if isinstance(value, list):
+            cols.extend([v for v in value if isinstance(v, str)])
+        elif isinstance(value, str):
+            cols.append(value)
+    for value in params.get("value_vars", []) or []:
+        if isinstance(value, str):
+            cols.append(value)
+    seen = set()
+    return [c for c in cols if c in df.columns and not (c in seen or seen.add(c))][:16]
+
+
+def _make_distribution_diagnostic(df: pd.DataFrame, params: dict, key_cols: list[str], method_name: str, go):
+    numeric_cols = [
+        c for c in key_cols
+        if c in df.columns and pd.api.types.is_numeric_dtype(df[c])
+    ]
+    if not numeric_cols:
+        numeric_cols = [
+            c for c in df.select_dtypes(include=[np.number]).columns
+            if df[c].notna().sum() > 0
+        ][:4]
+
+    group_col = _first_valid_column(df, params, ["group_var", "treatment_var", "target"])
+    if group_col and numeric_cols:
+        value_col = next((c for c in numeric_cols if c != group_col), None)
+        if value_col:
+            plot_df = df[[group_col, value_col]].dropna()
+        else:
+            plot_df = pd.DataFrame()
+        if not plot_df.empty and group_col in plot_df.columns and value_col in plot_df.columns:
+            group_series = plot_df[group_col].astype(str)
+            top_groups = group_series.value_counts().head(12).index
+            plot_df = plot_df[group_series.isin(top_groups)]
+            fig = go.Figure()
+            for group_name, group_df in plot_df.groupby(plot_df[group_col].astype(str), sort=False):
+                fig.add_trace(go.Box(
+                    y=group_df[value_col],
+                    name=str(group_name),
+                    boxmean=True,
+                    marker=dict(size=4),
+                    line=dict(width=1.4),
+                    hovertemplate=f"{group_col}={group_name}<br>{value_col}=%{{y:.3g}}<extra></extra>",
+                ))
+            fig.update_layout(
+                title=f"{method_name} · {value_col} 分组分布",
+                xaxis_title=group_col,
+                yaxis_title=value_col,
+                height=520,
+                margin=dict(l=72, r=40, t=72, b=86),
+                paper_bgcolor="white",
+                plot_bgcolor="white",
+            )
+            return fig
+
+    if numeric_cols:
+        fig = go.Figure()
+        for col in numeric_cols[:4]:
+            values = df[col].dropna()
+            if values.empty:
+                continue
+            fig.add_trace(go.Histogram(
+                x=values,
+                name=col,
+                opacity=0.72,
+                nbinsx=32,
+                hovertemplate=f"{col}<br>值=%{{x:.3g}}<br>计数=%{{y}}<extra></extra>",
+            ))
+        if fig.data:
+            fig.update_layout(
+                title=f"{method_name} · 关键数值变量分布",
+                xaxis_title="取值",
+                yaxis_title="计数",
+                barmode="overlay",
+                height=520,
+                margin=dict(l=72, r=40, t=72, b=64),
+                paper_bgcolor="white",
+                plot_bgcolor="white",
+            )
+            return fig
+
+    cat_col = group_col or next((c for c in key_cols if c in df.columns), None)
+    if cat_col:
+        counts = df[cat_col].astype(str).replace({"nan": "缺失"}).value_counts().head(15)
+        fig = go.Figure(go.Bar(
+            x=counts.index,
+            y=counts.values,
+            marker=dict(color="#0d7377", line=dict(color="white", width=0.7)),
+            hovertemplate="%{x}<br>样本数=%{y}<extra></extra>",
+        ))
+        fig.update_layout(
+            title=f"{method_name} · {cat_col} 样本结构",
+            xaxis_title=cat_col,
+            yaxis_title="样本数",
+            height=520,
+            margin=dict(l=72, r=40, t=72, b=96),
+            paper_bgcolor="white",
+            plot_bgcolor="white",
+        )
+        return fig
+
+    return None
+
+
+def _first_valid_column(df: pd.DataFrame, params: dict, keys: list[str]) -> str | None:
+    for key in keys:
+        value = params.get(key)
+        if isinstance(value, str) and value in df.columns:
+            return value
+    return None
 
 def _sanitize_numpy(obj):
     """Recursively convert numpy types to native Python types for JSON serialization."""

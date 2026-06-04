@@ -4,9 +4,11 @@
 
 ## 添加新分析方法
 
-### 1. 创建示例数据生成函数
+### 1. 准备示例数据
 
-在 `app/services/sample_service.py` 中添加函数：
+**方式 A（推荐）：自动生成**
+
+在 `app/services/sample_service.py` 中添加生成器函数：
 
 ```python
 def make_new_method_example() -> pd.DataFrame:
@@ -32,9 +34,13 @@ EXAMPLE_MAKERS = {
 
 应用启动时会在缺失时自动生成 `data/examples/new_method_example.csv`。
 
+**方式 B：手工构造数据文件**
+
+如果方法需要真实格式数据（如 LDSC 遗传共病分析），直接将 CSV 文件放入 `data/examples/` 目录，无需注册 `EXAMPLE_MAKERS`。需确保文件编码为 UTF-8 BOM。
+
 ### 2. 添加后端分析逻辑
 
-在 `app/services/stats_service.py`（统计方法）或 `app/services/ml_service.py`（ML方法）中添加：
+在 `app/services/stats_service.py`（统计方法）或 `app/services/ml_service.py`（ML/工具方法）中添加分析函数：
 
 ```python
 def run_new_method(df: pd.DataFrame, **params) -> dict:
@@ -51,6 +57,14 @@ def run_new_method(df: pd.DataFrame, **params) -> dict:
         "diagnostics": diagnostics,
         "discussion": "分析讨论文本...",
     }
+```
+
+然后将函数注册到对应路由字典：
+- 统计方法 → `STATS_ROUTER`（`stats_service.py` 末尾）
+- ML/工具方法 → `ML_ROUTER`（`ml_service.py` 末尾）
+
+```python
+STATS_ROUTER["new_method"] = run_new_method   # 或 ML_ROUTER
 ```
 
 ### 3. 注册方法到 METHOD_CATALOG
@@ -173,21 +187,27 @@ def my_table(req: TableRequest) -> dict:
 ## UI 扩展规则
 
 - 方法选择列表默认单列纵向排列，新增方法无需改 CSS。
-- 每个方法卡片应提供 `name`、`description` 和 `exampleDataset`。
-- 不要让分析依赖 `STATE.previewRows`；预览只用于展示，分析应使用完整数据接口。
+- 每个方法卡片应提供 `name`、`description`、`icon`、`category` 和 `exampleDataset`。
+- 不要让分析依赖 `STATE.previewRows`；预览只用于展示，分析应使用 `/api/dataset/data` 接口获取完整数据。
 - 新增方法后，`chart_service.py` 可能需要添加对应的图表生成函数。
-- 出版级导出由 `chart_service.py` 中的 matplotlib 函数处理；如需高质量 PDF 导出，确保对应方法有 matplotlib 图表生成器。
+- 出版级导出由 `chart_service.py` 中的 matplotlib 函数处理；如需高质量 PDF/TIFF 导出，确保对应方法有 matplotlib 图表生成器。
+- 需要新图表类型时，在 `chartThemes.js` 中可选添加主题，所有图表渲染自动继承当前选定主题。
 
 ## 验证命令
 
 每次新增方法或接口后建议运行：
 
 ```bash
-python tests\smoke.py
-python -m compileall app
+# Python 端验证
+python tests\smoke.py                      # 示例数据生成、变量识别、表格服务
+python -m compileall app                   # 语法检查
+
+# 前端 JS 语法检查
 node --check app\static\js\methodConfigs.js
 node --check app\static\js\charts.js
 node --check app\static\js\tableGenerator.js
+node --check app\static\js\upload.js
+node --check app\static\js\download.js
 ```
 
 也可以启动临时端口验证新接口：
@@ -197,7 +217,14 @@ python -m uvicorn app.main:app --host 127.0.0.1 --port 8872
 ```
 
 ```bash
+# 验证分析方法
 curl -X POST http://127.0.0.1:8872/api/analyze \
   -H "Content-Type: application/json" \
-  -d '{"method_id": "gee", "use_demo": true, "dataset_name": "gee_example", "params": {"group_var": "arm"}}'
+  -d '{"method_id": "new_method", "use_demo": true, "dataset_name": "new_method_example", "params": {"group_var": "treatment"}}'
+
+# 验证健康检查
+curl http://127.0.0.1:8872/api/health
+
+# 验证方法目录
+curl http://127.0.0.1:8872/api/methods
 ```

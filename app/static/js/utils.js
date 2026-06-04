@@ -18,6 +18,8 @@ const STATE = {
   datasetName: null,
   currentPlotlyData: null,
   currentPlotlyLayout: null,
+  currentChartBundle: null,
+  currentRenderedPlots: [],
   currentTableData: null,
   currentChartSourceData: null,
   currentChartParams: null,

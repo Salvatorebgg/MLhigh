@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   initChartThemeSelect();
   initExportButtons();
   initChartTitleInput();
+  initDownloadMenu();
   loadExampleList();
   bootEmptyState();
 
@@ -19,6 +20,17 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const tableGenBtn = el('generateTableBtn');
   if (tableGenBtn) tableGenBtn.addEventListener('click', generateTable);
+
+  // Close download menu on outside click
+  document.addEventListener('click', (e) => {
+    const menu = el('chartDownloadMenu');
+    const btn = el('chartDownloadBtn');
+    if (menu && btn && !menu.hidden) {
+      if (!menu.contains(e.target) && !btn.contains(e.target)) {
+        closeDownloadMenu();
+      }
+    }
+  });
 });
 
 // ── Method Category Tabs ──────────────────────────────
@@ -68,6 +80,8 @@ function selectMethod(methodId) {
   loadMethodWorkspace(methodId);
   STATE.currentPlotlyData = null;
   STATE.currentPlotlyLayout = null;
+  STATE.currentChartBundle = null;
+  STATE.currentRenderedPlots = [];
   STATE.currentChartSourceData = null;
 
   const config = getMethodConfig(methodId);
@@ -96,12 +110,24 @@ function selectMethod(methodId) {
   updateDatasetMeta();
   const dlBtn = el('downloadExampleBtn');
   if (dlBtn) dlBtn.hidden = true;
+  // Reset download list to show current method info
+  const dlList = el('downloadList');
+  if (dlList && config) {
+    dlList.innerHTML = config.example_dataset
+      ? `<a class="download-link" href="/api/examples/${config.example_dataset}/download" download="${config.example_dataset}.csv"><span>${config.example_dataset}</span><small>示例</small></a>`
+      : '<span class="hint-text">选择方法后可下载对应示例</span>';
+  }
 }
 
 function resetResultsPanel() {
   disconnectResizeObserver();
+  STATE.currentChartBundle = null;
+  STATE.currentRenderedPlots = [];
+  STATE.currentPlotlyData = null;
+  STATE.currentPlotlyLayout = null;
   const vizContainer = el('chartPreviewContainer');
   if (vizContainer) {
+    vizContainer.classList.remove('chart-gallery');
     vizContainer.innerHTML = '<div class="empty-state">选择分析方法并加载数据后，点击"运行分析"</div>';
   }
   const exportBar = el('chartExportBar');
@@ -174,7 +200,10 @@ async function runAnalysis() {
     const result = await apiPost('/api/analyze', payload);
 
     // Save chart data for re-rendering
-    STATE.currentPlotlyData = result.charts || [];
+    STATE.currentChartBundle = result.charts || [];
+    STATE.currentRenderedPlots = [];
+    STATE.currentPlotlyData = null;
+    STATE.currentPlotlyLayout = null;
     STATE.currentChartSourceData = result.data_summary || {};
 
     // Render results
@@ -197,13 +226,10 @@ async function runAnalysis() {
     setStatus('分析完成');
     toast(`${result.method_name || STATE.activeMethodId} 分析完成`, 'success');
 
-    // Switch to visualization tab
-    const tabs = qsa('.result-tabs .tab');
-    const vizTab = Array.from(tabs).find(t => t.dataset.tab === 'visualization');
-    if (vizTab) vizTab.click();
-
-    // Observe chart containers for responsive resizing
-    initResizeObserver();
+    // Switch to chart tab
+    const tabs = qsa('.workspace-tabs .tab');
+    const chartTab = Array.from(tabs).find(t => t.dataset.tab === 'chart');
+    if (chartTab) chartTab.click();
 
   } catch (e) {
     toast('分析失败: ' + e.message, 'error');
@@ -216,33 +242,25 @@ async function runAnalysis() {
 
 // ── ResizeObserver for responsive charts ───────────────
 function initResizeObserver() {
-  disconnectResizeObserver();
-  if (!window.Plotly) return;
-  STATE.currentChartResizeObserver = new ResizeObserver((entries) => {
-    entries.forEach(entry => {
-      const plotEl = entry.target.querySelector('.js-plotly-plot');
-      if (plotEl && plotEl._fullLayout) {
-        Plotly.Plots.resize(plotEl);
-      }
-    });
-  });
-  qsa('.result-chart-container').forEach(el => {
-    STATE.currentChartResizeObserver.observe(el);
-  });
+  // Kept for older callers; chart-specific observers are installed in charts.js.
 }
 
 function disconnectResizeObserver() {
-  if (STATE.currentChartResizeObserver) {
-    STATE.currentChartResizeObserver.disconnect();
-    STATE.currentChartResizeObserver = null;
-  }
+  const observers = Array.isArray(STATE.currentChartResizeObserver)
+    ? STATE.currentChartResizeObserver
+    : (STATE.currentChartResizeObserver ? [STATE.currentChartResizeObserver] : []);
+  observers.forEach(observer => {
+    if (observer && typeof observer.disconnect === 'function') observer.disconnect();
+  });
+  STATE.currentChartResizeObserver = null;
 }
 
-// ── Center Panel Tabs ──────────────────────────────────
+// ── Center Panel Tabs (workspace tabs) ────────────────
 function initCenterTabs() {
-  qsa('.result-tabs .tab').forEach(tab => {
+  // Workspace tabs in the center panel
+  qsa('.workspace-tabs .tab').forEach(tab => {
     tab.addEventListener('click', function() {
-      qsa('.result-tabs .tab').forEach(t => t.classList.remove('active'));
+      qsa('.workspace-tabs .tab').forEach(t => t.classList.remove('active'));
       qsa('.tab-panel').forEach(p => p.classList.remove('active'));
       this.classList.add('active');
       const target = el(`tab-${this.dataset.tab}`);
@@ -350,15 +368,35 @@ function initTableTypeTabs() {
 // ── Export Buttons ──────────────────────────────────────
 function initExportButtons() {
   document.addEventListener('click', function(e) {
+    // Download menu options (new dropdown)
+    const downloadOption = e.target.closest('.download-option');
+    if (downloadOption) {
+      e.preventDefault();
+      const fmt = downloadOption.dataset.fmt;
+      if (fmt === 'png') downloadChartImage('png');
+      else if (fmt === 'svg') downloadChartImage('svg');
+      else if (fmt === 'tiff') downloadChartImage('tiff');
+      else if (fmt === 'pdf') downloadChartImage('pdf');
+      else if (fmt === 'csv') downloadChartCSV();
+      else if (fmt === 'publication') downloadPublicationChart();
+      closeDownloadMenu();
+      return;
+    }
+
+    // Legacy export buttons
     const exportBtn = e.target.closest('.export-btn');
     if (exportBtn) {
       e.preventDefault();
       const fmt = exportBtn.dataset.fmt;
       if (fmt === 'png') downloadChartImage('png');
       else if (fmt === 'svg') downloadChartImage('svg');
+      else if (fmt === 'tiff') downloadChartImage('tiff');
+      else if (fmt === 'pdf') downloadChartImage('pdf');
       else if (fmt === 'csv') downloadChartCSV();
       else if (fmt === 'publication') downloadPublicationChart();
     }
+
+    // Table export buttons
     const tableExportBtn = e.target.closest('.table-export-btn');
     if (tableExportBtn) {
       e.preventDefault();
@@ -369,6 +407,17 @@ function initExportButtons() {
       else if (texp === 'clipboard') copyTableToClipboard();
     }
   });
+}
+
+// ── Download Menu ───────────────────────────────────────
+function initDownloadMenu() {
+  const btn = el('chartDownloadBtn');
+  if (btn) {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleDownloadMenu();
+    });
+  }
 }
 
 // ── Appearance Controls ────────────────────────────────
@@ -599,25 +648,27 @@ function renderAppearanceControls() {
 function rerenderExistingCharts() {
   const container = el('chartPreviewContainer');
   if (!container || !window.Plotly) return;
-  const plotEls = container.querySelectorAll('.js-plotly-plot');
-  if (plotEls.length === 0) return;
-
   const theme = getActiveTheme();
   const palette = getActivePalette() || theme.colorway || ['#2E6F9E', '#D95F59', '#2A9D8F', '#E9A93A', '#6F5AA7'];
 
-  plotEls.forEach(plotEl => {
-    try {
-      const existingData = plotEl.data;
-      if (!existingData) return;
-      const traces = polishTracesForPublication(existingData, theme, palette);
-      let layout = plotEl.layout || {};
-      layout = applyThemeLayout(layout, theme);
-      layout = polishLayoutForPublication(layout, '', theme);
-      Plotly.react(plotEl, traces, layout);
-    } catch (e) {
-      console.error('Chart re-render error:', e);
-    }
-  });
+  if (Array.isArray(STATE.currentChartBundle) && STATE.currentChartBundle.length > 0) {
+    renderAllCharts(STATE.currentChartBundle);
+  } else {
+    const plotEls = container.querySelectorAll('.js-plotly-plot');
+    plotEls.forEach(plotEl => {
+      try {
+        const existingData = plotEl.data;
+        if (!existingData) return;
+        const traces = polishTracesForPublication(existingData, theme, palette);
+        let layout = plotEl.layout || {};
+        layout = applyThemeLayout(layout, theme);
+        layout = polishLayoutForPublication(layout, '', theme);
+        Plotly.react(plotEl, traces, layout);
+      } catch (e) {
+        console.error('Chart re-render error:', e);
+      }
+    });
+  }
 
   // Also re-render diagnostic charts
   const diagContainer = el('diagnosticsContainer');
@@ -700,7 +751,7 @@ function updateDatasetMeta() {
 async function loadExampleList() {
   try {
     const examples = await apiGet('/api/examples');
-    const list = el('downloadList');
+    const list = el('exampleList');
     if (!list) return;
     const nameMap = {};
     Object.values(METHOD_CATALOG || {}).forEach(m => {
@@ -712,7 +763,10 @@ async function loadExampleList() {
         <span>${label}</span><small>${ex.col_count || '-'}列</small>
       </a>`;
     }).join('');
-  } catch (e) {}
+  } catch (e) {
+    const list = el('exampleList');
+    if (list) list.innerHTML = '<span class="hint-text">示例列表加载失败</span>';
+  }
 }
 
 // ── Bootstrap ──────────────────────────────────────────

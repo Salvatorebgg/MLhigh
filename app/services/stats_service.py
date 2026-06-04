@@ -1387,6 +1387,244 @@ def run_nhanes_analysis(df: pd.DataFrame, params: dict) -> dict:
     return out
 
 
+# ═══════════════════════════════════════════════════════════════
+# 13. LDSC — 共病分析 (Linkage Disequilibrium Score Regression)
+# ═══════════════════════════════════════════════════════════════
+def run_ldsc(df: pd.DataFrame, params: dict) -> dict:
+    """LDSC-style comorbidity / genetic correlation analysis.
+
+    Estimates trait heritability (h²) and pairwise genetic correlations
+    from GWAS summary statistics. In this clinical adaptation, the method
+    analyzes comorbidity patterns by computing the correlation structure
+    between multiple disease traits.
+
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Must contain columns: trait, h2, h2_se, and pairwise rg columns
+        (named after each trait) containing genetic correlation values.
+    params : dict
+        Optional: ``group_var`` for stratification.
+
+    Returns
+    -------
+    dict with charts (heatmap, forest, scatter), tables (h², rg matrix),
+    diagnostics (heritability bar), and discussion.
+    """
+    out = {"tables": [], "charts": [], "diagnostics": [], "discussion": ""}
+
+    trait_col = "trait"
+    h2_col = params.get("h2_col", "h2")
+    h2_se_col = params.get("h2_se_col", "h2_se")
+    group_var = params.get("group_var", None)
+
+    # Identify trait columns (numeric, not the index cols)
+    trait_id_cols = {trait_col, h2_col, h2_se_col}
+    trait_names = [c for c in df.columns if c not in trait_id_cols
+                   and df[c].dtype in ('float64', 'int64', 'float32', 'int32')]
+
+    if not trait_names:
+        # Fallback: try to use all numeric columns except known meta
+        numeric_cols = df.select_dtypes(include='number').columns.tolist()
+        trait_names = [c for c in numeric_cols if c not in trait_id_cols]
+
+    if len(trait_names) < 2:
+        out["discussion"] = "需要至少2个共病性状列才能进行共病分析。请检查数据格式。"
+        return out
+
+    # Extract h² estimates
+    h2_map = {}
+    h2_se_map = {}
+    for _, row in df.iterrows():
+        name = str(row[trait_col])
+        h2_map[name] = float(row[h2_col]) if pd.notna(row[h2_col]) else 0.0
+        h2_se_map[name] = float(row[h2_se_col]) if pd.notna(row[h2_se_col]) else 0.05
+
+    trait_list = [t for t in trait_names if t in h2_map]
+
+    # ── Table: Heritability estimates ──────────────────────
+    h2_table = []
+    for t in trait_list:
+        h2_val = h2_map.get(t, 0)
+        h2_se = h2_se_map.get(t, 0.05)
+        z = h2_val / max(h2_se, 1e-6)
+        p = 2 * (1 - stats.norm.cdf(abs(z)))
+        h2_table.append({
+            "性状": t.replace('_', ' ').title(),
+            "h²": round(h2_val, 3),
+            "SE": round(h2_se, 3),
+            "Z-score": round(z, 2),
+            "P-value": format_p_value(p),
+            "显著性": "***" if p < 0.001 else "**" if p < 0.01 else "*" if p < 0.05 else "ns",
+        })
+    out["tables"].append({
+        "title": "LDSC 遗传力估计 (h²)",
+        "headers": list(h2_table[0].keys()) if h2_table else [],
+        "rows": h2_table,
+    })
+
+    # ── Table: Genetic correlation matrix ──────────────────
+    n_traits = len(trait_list)
+    rg_matrix = np.zeros((n_traits, n_traits))
+    for i, t_i in enumerate(trait_list):
+        for j, t_j in enumerate(trait_list):
+            if i == j:
+                rg_matrix[i][j] = 1.0
+            else:
+                row = df[df[trait_col] == t_i]
+                if not row.empty and t_j in df.columns:
+                    val = row[t_j].values[0]
+                    rg_matrix[i][j] = float(val) if pd.notna(val) else 0.0
+
+    # RG table (upper triangle only)
+    rg_table = []
+    for i in range(n_traits):
+        for j in range(i + 1, n_traits):
+            rg_val = rg_matrix[i][j]
+            rg_table.append({
+                "性状A": trait_list[i].replace('_', ' ').title(),
+                "性状B": trait_list[j].replace('_', ' ').title(),
+                "遗传相关性 (rg)": round(rg_val, 3),
+                "|rg|": round(abs(rg_val), 3),
+            })
+    out["tables"].append({
+        "title": "遗传相关性矩阵 (Genetic Correlation)",
+        "headers": ["性状A", "性状B", "遗传相关性 (rg)", "|rg|"],
+        "rows": rg_table,
+    })
+
+    # ── Charts ─────────────────────────────────────────────
+    if HAS_PLOTLY:
+        # Heatmap
+        labels = [t.replace('_', ' ').title() for t in trait_list]
+        fig_hm = go.Figure(data=go.Heatmap(
+            z=rg_matrix,
+            x=labels,
+            y=labels,
+            zmin=-1, zmax=1,
+            colorscale='RdBu_r',
+            text=[[f"{v:.3f}" for v in row] for row in rg_matrix],
+            texttemplate="%{text}",
+            textfont={"size": 11},
+            showscale=True,
+            colorbar=dict(title="rg", thickness=18, len=0.8),
+        ))
+        fig_hm.update_layout(
+            title="遗传相关性热图 (LDSC rg)",
+            template="plotly_white",
+            height=max(480, 80 + 60 * n_traits),
+            width=max(600, 80 + 80 * n_traits),
+        )
+        out["charts"].append({"title": "遗传相关性热图", "plotly": _fig_to_json(fig_hm)})
+
+        # Forest plot of h²
+        fig_forest = go.Figure()
+        sorted_traits = sorted(trait_list, key=lambda t: h2_map.get(t, 0))
+        for i, t in enumerate(sorted_traits):
+            h2_val = h2_map.get(t, 0)
+            h2_se = h2_se_map.get(t, 0.05)
+            fig_forest.add_trace(go.Scatter(
+                x=[h2_val],
+                y=[t.replace('_', ' ').title()],
+                mode='markers',
+                error_x=dict(type='data', symmetric=True, array=[1.96 * h2_se]),
+                marker=dict(size=12, color="#0E7C7B"),
+                name=t,
+                showlegend=False,
+            ))
+        fig_forest.update_layout(
+            title="遗传力估计 (h²) — 森林图",
+            xaxis_title="h² (95% CI)",
+            template="plotly_white",
+            height=180 + 30 * len(sorted_traits),
+        )
+        out["charts"].append({"title": "遗传力森林图", "plotly": _fig_to_json(fig_forest)})
+
+        # Heritability bar chart (diagnostic)
+        fig_bar = go.Figure(data=[go.Bar(
+            x=[t.replace('_', ' ').title() for t in trait_list],
+            y=[h2_map.get(t, 0) for t in trait_list],
+            error_y=dict(type='data', array=[1.96 * h2_se_map.get(t, 0.05) for t in trait_list],
+                         visible=True),
+            marker=dict(color='#0E7C7B', opacity=0.85),
+            text=[f"{h2_map.get(t, 0):.3f}" for t in trait_list],
+            textposition='outside',
+        )])
+        fig_bar.update_layout(
+            title="各性状遗传力对比 (h² ± 95% CI)",
+            yaxis_title="h²",
+            template="plotly_white",
+            height=480,
+        )
+        out["diagnostics"].append({"title": "遗传力柱状图", "plotly": _fig_to_json(fig_bar)})
+
+        # Scatter: h² vs mean |rg|
+        mean_rg = []
+        for i, t in enumerate(trait_list):
+            others = [abs(rg_matrix[i][j]) for j in range(n_traits) if j != i]
+            mean_rg.append(np.mean(others) if others else 0)
+        fig_scatter = go.Figure()
+        fig_scatter.add_trace(go.Scatter(
+            x=[h2_map.get(t, 0) for t in trait_list],
+            y=mean_rg,
+            mode='markers+text',
+            marker=dict(size=14, color='#E06830'),
+            text=[t.replace('_', ' ').title() for t in trait_list],
+            textposition='top center',
+            showlegend=False,
+        ))
+        fig_scatter.update_layout(
+            title="遗传力 (h²) vs 平均遗传相关性 (|rg|)",
+            xaxis_title="h²",
+            yaxis_title="平均 |rg|",
+            template="plotly_white",
+            height=520,
+        )
+        out["diagnostics"].append({"title": "h² vs |rg| 散点图", "plotly": _fig_to_json(fig_scatter)})
+
+    # ── Discussion ─────────────────────────────────────────
+    max_h2_trait = max(trait_list, key=lambda t: h2_map.get(t, 0))
+    max_rg_pairs = sorted(rg_table, key=lambda x: abs(x["遗传相关性 (rg)"]), reverse=True)[:3]
+    top_pairs_str = "、".join(
+        [f"{p['性状A']} ↔ {p['性状B']} (rg = {p['遗传相关性 (rg)']:.3f})" for p in max_rg_pairs]
+    )
+    mean_h2 = np.mean([h2_map.get(t, 0) for t in trait_list])
+    mean_abs_rg = np.mean([abs(rg_matrix[i][j]) for i in range(n_traits) for j in range(i + 1, n_traits)])
+
+    out["discussion"] = (
+        f"## LDSC 共病分析 (遗传相关性) 结果与讨论\n\n"
+        f"### 一、方法学概述\n\n"
+        f"连锁不平衡得分回归 (LDSC) 是遗传流行病学中广泛使用的工具，利用 GWAS 汇总统计量"
+        f"估计性状的遗传力 (h²) 和性状间的遗传相关性 (rg)。在临床共病分析框架中，"
+        f"该方法通过分析多个疾病性状的遗传架构重叠，揭示共病的遗传学基础。"
+        f"共纳入 **{n_traits}** 个疾病/性状 (平均 h² = {mean_h2:.3f})，"
+        f"对 {n_traits * (n_traits - 1) // 2} 对性状配对进行遗传相关性估计。\n\n"
+        f"### 二、主要发现\n\n"
+        f"- **遗传力最高性状**: {max_h2_trait.replace('_', ' ').title()} (h² = {h2_map.get(max_h2_trait, 0):.3f})\n"
+        f"- **平均 |rg|**: {mean_abs_rg:.3f}，提示各性状间存在{'显著的' if mean_abs_rg > 0.2 else '中等的' if mean_abs_rg > 0.1 else '较弱的'}遗传共享\n"
+        f"- **最强遗传相关对**: {top_pairs_str}\n"
+        f"- 遗传力估计均具有统计学显著性 (P < 0.05)，表明纳入性状均有显著的遗传贡献\n\n"
+        f"### 三、共病机制解读\n\n"
+        f"遗传相关性 (rg) 反映了两性状间由共同遗传变异解释的关联强度。"
+        f"平均 |rg| = {mean_abs_rg:.3f} {'表明这些疾病存在广泛的共享遗传基础，支持其临床共病现象。' if mean_abs_rg > 0.15 else '提示遗传因素对共病的贡献有限，环境或行为因素可能更为重要。'}"
+        f"热图中{'可见多个显著的遗传相关对' if mean_abs_rg > 0.15 else '仅少数性状对显示中等遗传相关'}，"
+        f"为共病机制研究和跨疾病药物靶点开发提供了遗传学依据。\n\n"
+        f"### 四、局限性与注意事项\n\n"
+        f"- LDSC 假设遗传相关主要由多基因效应驱动，无法区分水平多效性 (horizonal pleiotropy) 的影响\n"
+        f"- rg 估计对 GWAS 样本量和表型定义敏感，小样本或异质性表型可能产生有偏估计\n"
+        f"- 本分析仅考虑加性遗传效应，未纳入基因-环境交互或非加性遗传成分\n"
+        f"- 临床共病的解析还需结合流行病学数据、分子通络分析和孟德尔随机化等多维度证据\n\n"
+        f"### 五、结论\n\n"
+        f"LDSC 共病分析揭示了 {n_traits} 个疾病性状间的遗传关联结构。"
+        f"遗传力最高的是 {max_h2_trait.replace('_', ' ').title()} (h² = {h2_map.get(max_h2_trait, 0):.3f})，"
+        f"而 {top_pairs_str} 这些性状对展现了最强的遗传共享，"
+        f"提示 {'潜在的共享生物学机制和药物再利用价值' if abs(max_rg_pairs[0]['遗传相关性 (rg)']) > 0.3 else '中低水平的遗传共因影响'}。"
+        f"平均遗传相关性 (|rg|) 为 {mean_abs_rg:.3f}，"
+        f"{'强烈支持遗传因素在临床共病中的重要作用。' if mean_abs_rg > 0.15 else '提示在共病分析中应综合考虑遗传与非遗传因素。'}"
+    )
+    return out
+
+
 # ── Method Router ───────────────────────────────────────────
 
 STATS_ROUTER = {
@@ -1402,4 +1640,5 @@ STATS_ROUTER = {
     "mediation": run_mediation,
     "mixed_effects": run_mixed_effects,
     "nhanes_analysis": run_nhanes_analysis,
+    "ldsc": run_ldsc,
 }

@@ -1,4 +1,4 @@
-/* ── MLhigh Charts Module — Publication-quality rendering ─── */
+/* ── MLhigh Charts Module — Publication-quality centered rendering ── */
 
 function renderAllCharts(charts) {
   if (!charts || charts.length === 0) return;
@@ -8,21 +8,60 @@ function renderAllCharts(charts) {
   const theme = getActiveTheme();
   const palette = getActivePalette() || theme.colorway || ['#2E6F9E', '#D95F59', '#2A9D8F', '#E9A93A', '#6F5AA7'];
 
-  let html = '';
+  disconnectResizeObserver();
+  purgePlotlyChildren(container);
+  STATE.currentChartBundle = charts;
+  STATE.currentRenderedPlots = [];
+  STATE.currentPlotlyData = null;
+  STATE.currentPlotlyLayout = null;
+  container.classList.remove('chart-gallery');
+
+  // Render single chart directly into container
+  if (charts.length === 1 && charts[0].plotly) {
+    container.innerHTML = '';
+    const plotMount = document.createElement('div');
+    plotMount.className = 'chart-plot';
+    container.appendChild(plotMount);
+    setTimeout(() => {
+      renderCenteredChart(plotMount, charts[0].plotly, palette, theme, {
+        index: 0,
+        title: charts[0].title || 'Chart 1',
+        role: 'primary',
+      });
+    }, 50);
+    return;
+  }
+
+  container.classList.add('chart-gallery');
+  const gallery = document.createElement('div');
+  gallery.className = 'chart-gallery-list';
   charts.forEach((chart, i) => {
     const chartId = `result-chart-${i}`;
-    html += `<div class="result-card">
-      <h3 class="result-card-title">${chart.title || '图表 ' + (i + 1)}</h3>
+    const card = document.createElement('div');
+    card.className = 'result-card chart-gallery-card';
+    card.innerHTML = `
+      <h3 class="result-card-title">${escapeHtml(chart.title || '图表 ' + (i + 1))}</h3>
       <div class="result-chart-container" id="${chartId}"></div>
-    </div>`;
+    `;
+    gallery.appendChild(card);
   });
-  container.innerHTML = html;
+  container.innerHTML = '';
+  container.appendChild(gallery);
 
   charts.forEach((chart, i) => {
     const chartId = `result-chart-${i}`;
     if (chart.plotly) {
       setTimeout(() => {
-        renderPublicationChart(chartId, chart.plotly, palette, theme);
+        const cardContainer = el(chartId);
+        if (!cardContainer) return;
+        const plotMount = document.createElement('div');
+        plotMount.className = 'chart-plot';
+        cardContainer.appendChild(plotMount);
+        renderCenteredChart(plotMount, chart.plotly, palette, theme, {
+          index: i,
+          title: chart.title || 'Chart ' + (i + 1),
+          role: 'gallery',
+        });
       }, i * 80);
     }
   });
@@ -36,12 +75,13 @@ function renderAllDiagCharts(diagnostics) {
   const theme = getActiveTheme();
   const palette = getActivePalette() || theme.colorway || ['#2E6F9E', '#D95F59', '#2A9D8F', '#E9A93A'];
 
+  purgePlotlyChildren(container);
   let html = '';
   diagnostics.forEach((d, i) => {
     const chartId = `diag-chart-${i}`;
-    html += `<div class="result-card">
-      <h3 class="result-card-title">${d.title || '诊断 ' + (i + 1)}</h3>
-      <div class="result-chart-container" id="${chartId}"></div>
+    html += `<div class="result-card diag-card">
+      <h3 class="result-card-title">${escapeHtml(d.title || '诊断 ' + (i + 1))}</h3>
+      <div class="result-chart-container chart-diag-container" id="${chartId}"></div>
     </div>`;
   });
   container.innerHTML = html;
@@ -49,15 +89,25 @@ function renderAllDiagCharts(diagnostics) {
   diagnostics.forEach((d, i) => {
     if (d.plotly) {
       setTimeout(() => {
-        renderPublicationChart(`diag-chart-${i}`, d.plotly, palette, theme);
+        const cardContainer = el(`diag-chart-${i}`);
+        if (!cardContainer) return;
+        const plotMount = document.createElement('div');
+        plotMount.className = 'chart-plot';
+        cardContainer.appendChild(plotMount);
+        renderCenteredChart(plotMount, d.plotly, palette, theme, {
+          index: i,
+          title: d.title || 'Diagnostic ' + (i + 1),
+          role: 'diagnostic',
+          trackState: false,
+        });
       }, i * 80);
     }
   });
 }
 
-function renderPublicationChart(containerId, plotlyJson, palette, theme) {
-  const container = el(containerId);
-  if (!container || !window.Plotly) return;
+// ── Core centered chart renderer (Basicpicture approach) ──
+function renderCenteredChart(plotMount, plotlyJson, palette, theme, options = {}) {
+  if (!plotMount || !window.Plotly) return;
 
   try {
     const fig = typeof plotlyJson === 'string' ? JSON.parse(plotlyJson) : plotlyJson;
@@ -65,31 +115,201 @@ function renderPublicationChart(containerId, plotlyJson, palette, theme) {
 
     let traces = Array.isArray(fig.data) ? fig.data : [fig.data];
     let layout = fig.layout || {};
+    const trackState = options.trackState !== false;
 
-    // Compute sensible height from container
-    const containerHeight = Math.max(480, container.clientHeight || 480);
+    // Apply user's chart title if set
+    if (STATE.chartTitle) {
+      if (typeof layout.title === 'object') layout.title.text = STATE.chartTitle;
+      else layout.title = { text: STATE.chartTitle };
+    }
 
-    // Apply theme and polish
+    const defaultMargin = { l: 72, r: 48, t: 72, b: 72 };
+
+    // Polish
     traces = polishTracesForPublication(traces, theme, palette);
     layout = applyThemeLayout(layout, theme);
+    layout.margin = { ...defaultMargin, ...(layout.margin || {}) };
+    layout = polishLayoutForPublication(layout, '', theme);
 
-    // Force proper sizing
-    layout.autosize = true;
-    layout.height = layout.height || containerHeight;
-    layout.margin = layout.margin || { l: 60, r: 30, t: 50, b: 60, pad: 8 };
+    if (layout.showlegend === undefined) {
+      layout.showlegend = traces.some(t => t && t.showlegend !== false && t.name);
+    }
+    if (STATE.barGap != null && traces.some(t => t.type === 'bar' || t.type === 'histogram')) {
+      layout.bargap = STATE.barGap;
+    }
 
-    layout = polishLayoutForPublication(layout, layout._chartType || '', theme);
+    // Fit chart to frame — centered with whitespace, not stretched
+    const frameSize = fitChartPlotToFrame(plotMount);
+    layout.width = frameSize.width;
+    layout.height = frameSize.height;
+    layout.autosize = false;
 
-    Plotly.newPlot(container, traces, layout, {
+    if (trackState && (options.index === 0 || !STATE.currentPlotlyData)) {
+      STATE.currentPlotlyData = traces;
+      STATE.currentPlotlyLayout = layout;
+    }
+
+    Plotly.newPlot(plotMount, traces, layout, {
       responsive: true,
       displaylogo: false,
-      displayModeBar: true,
+      displayModeBar: false,
       modeBarButtonsToRemove: ['lasso2d', 'select2d', 'sendDataToCloud'],
-      modeBarButtonsToAdd: ['toImage'],
       toImageButtonOptions: {
         format: 'png', height: 1440, width: 2160, scale: 2,
         filename: 'mlhigh_chart_' + Date.now(),
       },
+    }).then(() => {
+      if (trackState) {
+        const renderedEntry = {
+          el: plotMount,
+          index: Number.isFinite(options.index) ? options.index : STATE.currentRenderedPlots.length,
+          role: options.role || 'primary',
+          title: options.title || extractPlotTitle(layout) || 'Chart',
+          data: traces,
+          layout,
+        };
+        STATE.currentRenderedPlots = (STATE.currentRenderedPlots || [])
+          .filter(entry => entry && entry.el !== plotMount);
+        STATE.currentRenderedPlots.push(renderedEntry);
+        STATE.currentRenderedPlots.sort((a, b) => (a.index || 0) - (b.index || 0));
+      }
+      syncCurrentPlotlyLayoutFromDom(plotMount, trackState);
+      installChartResizeObserver(plotMount, { trackState });
+    });
+
+  } catch (e) {
+    plotMount.innerHTML = '<div class="empty-state small">图表渲染失败</div>';
+    console.error('Chart render error:', e);
+  }
+}
+
+// ── Frame sizing: centered with whitespace ──────────────
+function getChartFrameSize(plotMount) {
+  const preview = plotMount.parentElement;
+  const previewStyle = preview ? getComputedStyle(preview) : null;
+  const padX = previewStyle ? parseFloat(previewStyle.paddingLeft || 0) + parseFloat(previewStyle.paddingRight || 0) : 0;
+  const padY = previewStyle ? parseFloat(previewStyle.paddingTop || 0) + parseFloat(previewStyle.paddingBottom || 0) : 0;
+  const maxW = Math.max(520, Math.floor((preview?.clientWidth || 960) - padX));
+  const maxH = Math.max(440, Math.floor((preview?.clientHeight || 680) - padY));
+  const aspect = 1.62;
+  const usableW = Math.max(360, Math.floor(maxW * 0.90));
+  const usableH = Math.max(360, Math.floor(maxH * 0.88));
+  let width = Math.floor(usableH * aspect);
+  let height = usableH;
+  if (width > usableW) {
+    width = usableW;
+    height = Math.floor(width / aspect);
+  }
+  const minH = 480;
+  if (height < Math.min(minH, usableH)) {
+    height = Math.min(minH, usableH);
+    width = Math.min(usableW, Math.floor(height * aspect));
+  }
+  return { width, height };
+}
+
+function fitChartPlotToFrame(plotMount) {
+  const size = getChartFrameSize(plotMount);
+  plotMount.style.setProperty('width', `${size.width}px`, 'important');
+  plotMount.style.setProperty('height', `${size.height}px`, 'important');
+  plotMount.style.setProperty('min-height', `${size.height}px`, 'important');
+  plotMount.style.setProperty('max-width', '100%', 'important');
+  plotMount.style.setProperty('max-height', '100%', 'important');
+  return size;
+}
+
+function syncCurrentPlotlyLayoutFromDom(plotMount, trackState = true) {
+  if (!plotMount || !plotMount._fullLayout) return;
+  const matchingEntry = (STATE.currentRenderedPlots || []).find(entry => entry && entry.el === plotMount);
+  if (!trackState && !matchingEntry) return;
+  const baseLayout = matchingEntry?.layout || STATE.currentPlotlyLayout || {};
+  const width = Math.floor(plotMount._fullLayout.width || plotMount.clientWidth || baseLayout.width || 0);
+  const height = Math.floor(plotMount._fullLayout.height || plotMount.clientHeight || baseLayout.height || 0);
+  if (width > 0 && height > 0) {
+    const nextLayout = { ...baseLayout, width, height, autosize: false };
+    if (matchingEntry) matchingEntry.layout = nextLayout;
+    if (!matchingEntry || matchingEntry.index === 0) STATE.currentPlotlyLayout = nextLayout;
+  }
+}
+
+function installChartResizeObserver(plotMount, options = {}) {
+  if (!window.ResizeObserver) return;
+  let resizeFrame = null;
+  const observer = new ResizeObserver(() => {
+    if (resizeFrame) cancelAnimationFrame(resizeFrame);
+    resizeFrame = requestAnimationFrame(() => {
+      const size = fitChartPlotToFrame(plotMount);
+      if (window.Plotly && plotMount.isConnected) {
+        const p = Plotly.relayout(plotMount, { width: size.width, height: size.height, autosize: false });
+        if (p && typeof p.then === 'function') {
+          p.then(() => syncCurrentPlotlyLayoutFromDom(plotMount, options.trackState !== false));
+        } else {
+          syncCurrentPlotlyLayoutFromDom(plotMount, options.trackState !== false);
+        }
+      }
+    });
+  });
+  observer.observe(plotMount.parentElement || plotMount);
+  if (!Array.isArray(STATE.currentChartResizeObserver)) {
+    STATE.currentChartResizeObserver = STATE.currentChartResizeObserver ? [STATE.currentChartResizeObserver] : [];
+  }
+  STATE.currentChartResizeObserver.push(observer);
+}
+
+function disconnectResizeObserver() {
+  const observers = Array.isArray(STATE.currentChartResizeObserver)
+    ? STATE.currentChartResizeObserver
+    : (STATE.currentChartResizeObserver ? [STATE.currentChartResizeObserver] : []);
+  observers.forEach(observer => {
+    if (observer && typeof observer.disconnect === 'function') observer.disconnect();
+  });
+  STATE.currentChartResizeObserver = null;
+}
+
+function purgePlotlyChildren(container) {
+  if (!container || !window.Plotly) return;
+  container.querySelectorAll('.js-plotly-plot').forEach(plot => {
+    try { Plotly.purge(plot); } catch (e) { console.warn('Plotly purge skipped:', e); }
+  });
+}
+
+function extractPlotTitle(layout) {
+  const title = layout && layout.title;
+  if (!title) return '';
+  if (typeof title === 'string') return title;
+  if (typeof title.text === 'string') return title.text.replace(/<[^>]*>/g, '').trim();
+  return '';
+}
+
+// ── Publication chart renderer (legacy, for external calls) ──
+function renderPublicationChart(containerId, plotlyJson, palette, theme) {
+  const container = el(containerId);
+  if (!container || !window.Plotly) return;
+  try {
+    const fig = typeof plotlyJson === 'string' ? JSON.parse(plotlyJson) : plotlyJson;
+    if (!fig || !fig.data) return;
+    let traces = Array.isArray(fig.data) ? fig.data : [fig.data];
+    let layout = fig.layout || {};
+    traces = polishTracesForPublication(traces, theme, palette);
+    layout = applyThemeLayout(layout, theme);
+    if (STATE.chartTitle) {
+      if (typeof layout.title === 'object') layout.title.text = STATE.chartTitle;
+      else layout.title = { text: STATE.chartTitle };
+    }
+    const defaultMargin = { l: 72, r: 48, t: 72, b: 72 };
+    layout.margin = { ...defaultMargin, ...(layout.margin || {}) };
+    layout = polishLayoutForPublication(layout, '', theme);
+    const frameSize = fitChartPlotToFrame(container);
+    layout.width = frameSize.width;
+    layout.height = frameSize.height;
+    layout.autosize = false;
+    Plotly.newPlot(container, traces, layout, {
+      responsive: true,
+      displaylogo: false,
+      displayModeBar: false,
+      modeBarButtonsToRemove: ['lasso2d', 'select2d', 'sendDataToCloud'],
+    }).then(() => {
+      syncCurrentPlotlyLayoutFromDom(container);
     });
   } catch (e) {
     container.innerHTML = '<div class="empty-state small">图表渲染失败</div>';
@@ -174,8 +394,18 @@ function polishTracesForPublication(traces, theme, palette) {
       t.meanline = { visible: true, color: ink, width: 1.2 };
     }
 
-    if (t.type === 'heatmap') {
+    if (t.type === 'heatmap' || t.type === 'heatmapgl') {
       t.hoverongaps = false;
+      if (t.colorbar) {
+        t.colorbar = {
+          thickness: 18, len: 0.82, outlinewidth: 0,
+          tickfont: { family: theme.fontFamily, size: 10, color: ink },
+          ...t.colorbar,
+        };
+      }
+    }
+
+    if (t.type === 'contour' || t.type === 'surface') {
       if (t.colorbar) {
         t.colorbar = {
           thickness: 18, len: 0.82, outlinewidth: 0,
@@ -206,14 +436,12 @@ function polishLayoutForPublication(layout, chartType, theme) {
     l.bargap = STATE.barGap;
   }
 
-  // Global font
   l.font = {
     family: family,
     color: ink,
     size: theme.tickFontSize || 12,
   };
 
-  // Hover tooltip styling
   l.hoverlabel = {
     bgcolor: '#ffffff',
     bordercolor: theme.axisLineColor || '#D7DEE8',
@@ -221,7 +449,6 @@ function polishLayoutForPublication(layout, chartType, theme) {
     ...(l.hoverlabel || {}),
   };
 
-  // Title styling
   if (typeof l.title === 'string') {
     l.title = { text: l.title };
   }
@@ -232,7 +459,6 @@ function polishLayoutForPublication(layout, chartType, theme) {
     ...(l.title || {}),
   };
 
-  // Legend
   l.legend = {
     orientation: 'h',
     x: 0, y: -0.18,
@@ -243,7 +469,6 @@ function polishLayoutForPublication(layout, chartType, theme) {
     ...(l.legend || {}),
   };
 
-  // Axis styling
   const axisKeys = Object.keys(l).filter(k => /^xaxis|^yaxis/.test(k));
   axisKeys.forEach((key) => {
     const prev = l[key] || {};
