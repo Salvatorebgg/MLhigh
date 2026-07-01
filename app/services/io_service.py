@@ -18,17 +18,28 @@ MISSING_MARKERS = {"", "NA", "N/A", "NULL", "null", "None", "none", "NaN", "nan"
 
 async def save_upload(file: UploadFile) -> dict:
     """Save uploaded file and return metadata."""
-    ext = Path(file.filename).suffix.lower()
+    original_name = Path(file.filename or "upload.csv").name
+    ext = Path(original_name).suffix.lower()
     if ext not in SUPPORTED_EXTENSIONS:
         raise ValueError(f"不支持的文件格式: {ext}。支持: {', '.join(sorted(SUPPORTED_EXTENSIONS))}")
 
     upload_id = uuid.uuid4().hex[:12]
-    safe_name = f"{upload_id}_{file.filename}"
+    safe_name = f"{upload_id}_{original_name}"
     dest = UPLOADS_DIR / safe_name
-    async with aiofiles.open(dest, "wb") as f:
-        while chunk := await file.read(1024 * 1024):
-            await f.write(chunk)
-    return {"upload_id": upload_id, "path": str(dest), "filename": file.filename, "ext": ext}
+    max_bytes = int(MAX_UPLOAD_MB * 1024 * 1024)
+    total_bytes = 0
+    try:
+        async with aiofiles.open(dest, "wb") as f:
+            while chunk := await file.read(1024 * 1024):
+                total_bytes += len(chunk)
+                if total_bytes > max_bytes:
+                    raise ValueError(f"文件超过 {MAX_UPLOAD_MB} MB 上传上限")
+                await f.write(chunk)
+    except Exception:
+        if dest.exists():
+            dest.unlink()
+        raise
+    return {"upload_id": upload_id, "path": str(dest), "filename": original_name, "ext": ext}
 
 
 def normalize_dataframe(df: pd.DataFrame) -> pd.DataFrame:

@@ -4,7 +4,7 @@
 
 本平台采用 FastAPI + 原生前端 SPA 的轻量架构：
 
-- **后端**：Python FastAPI（`app/main.py`），负责上传、读取、变量识别、13 类高级统计、8 种 ML 模型、4 项综合工具、三线表和导出。
+- **后端**：Python FastAPI（`app/main.py`），负责上传、读取、变量识别、13 类高级统计、13 个机器学习/工具方法、三线表和导出。
 - **前端**：HTML / CSS / JavaScript（`app/static/`），无前端框架依赖，主样式为 `styles.css`，附加模块化 CSS 在 `css/` 目录。
 - **图表**：本地捆绑 Plotly.js（`vendor/plotly.min.js`），11 种出版级主题，图表配置集中在 `app/services/chart_service.py`。
 - **数据链路**：先选方法，再加载对应示例或上传数据；分析通过 `/api/analyze` 进行全流程计算，28 个 API 端点。
@@ -20,20 +20,20 @@ python run.py
 默认访问：
 
 ```text
-http://127.0.0.1:8868
+http://127.0.0.1:28872
 ```
 
 主站可以用 iframe 或普通链接集成：
 
 ```html
-<iframe src="http://127.0.0.1:8868" width="100%" height="860"></iframe>
-<a href="http://127.0.0.1:8868" target="_blank" rel="noreferrer">打开临床高级统计平台</a>
+<iframe src="http://127.0.0.1:28872" width="100%" height="860"></iframe>
+<a href="http://127.0.0.1:28872" target="_blank" rel="noreferrer">打开临床高级统计平台</a>
 ```
 
 如果默认端口被占用，可指定新端口：
 
 ```bash
-python -m uvicorn app.main:app --host 127.0.0.1 --port 8872
+python -m uvicorn app.main:app --host 127.0.0.1 --port 28872
 ```
 
 ### 方式二：挂载到 FastAPI 主应用
@@ -63,7 +63,7 @@ http://your-site.com/mlhigh
 const formData = new FormData();
 formData.append("file", file);
 
-const uploadResp = await fetch("http://127.0.0.1:8868/api/upload", {
+const uploadResp = await fetch("http://127.0.0.1:28872/api/upload", {
   method: "POST",
   body: formData,
 });
@@ -73,7 +73,7 @@ const upload = await uploadResp.json();
 运行分析：
 
 ```javascript
-const analyzeResp = await fetch("http://127.0.0.1:8868/api/analyze", {
+const analyzeResp = await fetch("http://127.0.0.1:28872/api/analyze", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
@@ -90,7 +90,7 @@ const result = await analyzeResp.json();
 生成基线资料表：
 
 ```javascript
-const tableResp = await fetch("http://127.0.0.1:8868/api/table/baseline", {
+const tableResp = await fetch("http://127.0.0.1:28872/api/table/baseline", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
@@ -154,14 +154,14 @@ app.add_middleware(
 ### Uvicorn
 
 ```bash
-python -m uvicorn app.main:app --host 0.0.0.0 --port 8868
+python -m uvicorn app.main:app --host 0.0.0.0 --port 28872
 ```
 
 ### Gunicorn + Uvicorn Worker
 
 ```bash
 pip install gunicorn
-gunicorn app.main:app -w 4 -k uvicorn.workers.UvicornWorker -b 0.0.0.0:8868
+gunicorn app.main:app -w 4 -k uvicorn.workers.UvicornWorker -b 0.0.0.0:28872
 ```
 
 ### Nginx 反向代理
@@ -172,7 +172,7 @@ server {
     server_name mlhigh.yourdomain.com;
 
     location / {
-        proxy_pass http://127.0.0.1:8868;
+        proxy_pass http://127.0.0.1:28872;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         client_max_body_size 200M;
@@ -188,8 +188,8 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
-EXPOSE 8868
-CMD ["python", "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8868"]
+EXPOSE 28872
+CMD ["python", "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "28872"]
 ```
 
 ## 数据和会话隔离
@@ -206,6 +206,6 @@ CMD ["python", "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "
 - 前端默认加载本地 `app/static/vendor/plotly.min.js`，避免 CDN 失败导致图表渲染或导出不可用。
 - 图表导出：Plotly 交互图通过前端 `Plotly.toImage` 导出 PNG/SVG；TIFF 通过前端 Canvas 编码实现（不经过后端 API）；出版级静态图通过 `/api/export/chart/publication` 调用 matplotlib 生成 PNG/SVG/PDF。
 - 分析结果渲染推荐使用 `renderAllCharts` 和 `renderResultTables`，不要直接操作 DOM。
-- 新增方法时必须同时维护：示例数据（`sample_service.py`）、方法目录注册（`main.py` METHOD_CATALOG）、路由注册（`STATS_ROUTER` / `ML_ROUTER`）、前端配置（`methodConfigs.js`）和变量槽位（`variableSelect.js`）。
-- 所有 25 个示例数据集中，24 个由 `EXAMPLE_MAKERS` 自动生成，LDSC 为手工构造的真实格式数据。
+- 新增方法时必须同时维护：示例数据（`sample_service.py`）、方法目录注册（`main.py` METHOD_CATALOG）、参数配置、路由注册（`STATS_ROUTER` / `ML_ROUTER`），以及前端主流程（`app/static/js/app.js`）是否需要新增控件逻辑。
+- 当前 26 个示例数据均按方法一一绑定，不再维护综合示例数据。
 - 变量识别依赖完整列式数据，不要仅传预览行进行分析。

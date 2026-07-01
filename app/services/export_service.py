@@ -20,6 +20,17 @@ def export_to_csv(data: list[dict] | pd.DataFrame, filename: str) -> Path:
     return dest
 
 
+def export_to_txt(data: list[dict] | pd.DataFrame, filename: str) -> Path:
+    """Export data to tab-delimited TXT file."""
+    if isinstance(data, list):
+        df = pd.DataFrame(data)
+    else:
+        df = data
+    dest = OUTPUTS_DIR / f"{filename}.txt"
+    df.to_csv(dest, index=False, sep="\t", encoding="utf-8-sig")
+    return dest
+
+
 def export_to_excel(data: list[dict] | pd.DataFrame, filename: str, sheet_name: str = "Sheet1") -> Path:
     """Export data to Excel file."""
     if isinstance(data, list):

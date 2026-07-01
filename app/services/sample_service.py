@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import numpy as np
 import pandas as pd
@@ -7,10 +7,8 @@ SEED = 42
 rng = np.random.default_rng(SEED)
 
 
-# ═══════════════════════════════════════════════════════════════
-# Shared clinical variable generators
-# ═══════════════════════════════════════════════════════════════
-
+# 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?# Shared clinical variable generators
+# 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?
 def _clin_age(n, mean=56, sd=14, lo=20, hi=90):
     return rng.normal(mean, sd, n).clip(lo, hi).astype(int)
 
@@ -30,10 +28,8 @@ def _clin_ids(n, prefix="P"):
     return [f"{prefix}{str(i).zfill(5)}" for i in range(1, n + 1)]
 
 
-# ═══════════════════════════════════════════════════════════════
-# Advanced Statistics Examples
-# ═══════════════════════════════════════════════════════════════
-
+# 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?# Advanced Statistics Examples
+# 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?
 def make_gee_example() -> pd.DataFrame:
     """Longitudinal RCT: 5 timepoints, 3 arms, rich covariates, within-subject correlation."""
     n = 200
@@ -120,6 +116,7 @@ def make_propensity_score_example() -> pd.DataFrame:
         "comorbidity_count": comorbidity,
         "prev_hospitalizations": prev_hosp,
         "treatment": treatment,
+        "treatment_group": np.where(treatment == 1, "Treated", "Control"),
         "outcome_continuous": y_continuous,
         "outcome_binary": y_binary,
     })
@@ -219,6 +216,7 @@ def make_counterfactual_example() -> pd.DataFrame:
         "comorbidity_count": comorbidity,
         "previous_medications": prev_meds,
         "treatment": treatment,
+        "treatment_group": np.where(treatment == 1, "Treated", "Control"),
         "outcome_continuous": np.round(outcome, 2),
         "outcome_binary": outcome_bin,
     })
@@ -269,6 +267,7 @@ def make_survival_advanced_example() -> pd.DataFrame:
         "age": age, "sex": sex,
         "stage": stage, "grade": grade, "histology": histology,
         "treatment": treatment,
+        "treatment_group": np.where(treatment == "Palliative", "Palliative", "Active"),
         "bmi": bmi, "albumin": albumin, "ldh": ldh,
         "hemoglobin": hemoglobin, "wbc": wbc, "platelets": platelets,
         "nlr": nlr, "ecog": ecog,
@@ -422,7 +421,7 @@ def make_meta_analysis_example() -> pd.DataFrame:
         ("Changsha Xiangya", 115, 0.58, 0.09, "RCT", "Low", "China"),
         ("Mayo Clinic, MN", 220, 0.64, 0.07, "RCT", "Low", "USA"),
         ("Mass General, MA", 195, 0.71, 0.08, "RCT", "Low", "USA"),
-        ("Charité, Berlin", 168, 0.66, 0.09, "RCT", "Low", "Germany"),
+        ("Charit茅, Berlin", 168, 0.66, 0.09, "RCT", "Low", "Germany"),
         ("St Thomas', London", 155, 0.60, 0.10, "Observational", "Unclear", "UK"),
         ("Karolinska, Stockholm", 138, 0.75, 0.11, "RCT", "Low", "Sweden"),
         ("Toronto General", 178, 0.69, 0.08, "RCT", "Low", "Canada"),
@@ -448,7 +447,7 @@ def make_meta_analysis_example() -> pd.DataFrame:
 
 
 def make_mediation_example() -> pd.DataFrame:
-    """Mediation: X→M1→M2→Y with multiple mediators and confounders."""
+    """Mediation: X鈫扢1鈫扢2鈫扽 with multiple mediators and confounders."""
     n = 450
     age = _clin_age(n, 52, 14)
     sex = rng.choice(["Male", "Female"], n)
@@ -584,10 +583,8 @@ def make_nhanes_analysis_example() -> pd.DataFrame:
     })
 
 
-# ═══════════════════════════════════════════════════════════════
-# Machine Learning Examples
-# ═══════════════════════════════════════════════════════════════
-
+# 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?# Machine Learning Examples
+# 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?
 def make_ml_lr_example() -> pd.DataFrame:
     """Binary classification: 20 clinical predictors, non-linear relationships, interactions."""
     n = 800
@@ -694,11 +691,11 @@ def make_ml_knn_example() -> pd.DataFrame:
     """Multi-class disease: 4 diseases, 8 biomarkers, overlapping clusters."""
     n = 500
     # 4 disease types with overlapping feature distributions
-    diseases = ["Rheumatoid Arthritis", "Systemic Lupus", "Sjögren's Syndrome", "Mixed CTD"]
+    diseases = ["Rheumatoid Arthritis", "Systemic Lupus", "Sj枚gren's Syndrome", "Mixed CTD"]
     centers = {
         "Rheumatoid Arthritis": [3, 5, 2, 4, 6, 3, 5, 7],
         "Systemic Lupus": [6, 3, 7, 2, 4, 8, 3, 5],
-        "Sjögren's Syndrome": [2, 8, 4, 6, 3, 2, 7, 4],
+        "Sj枚gren's Syndrome": [2, 8, 4, 6, 3, 2, 7, 4],
         "Mixed CTD": [5, 5, 5, 5, 5, 5, 5, 5],
     }
     data = []
@@ -846,6 +843,7 @@ def make_ml_rf_example() -> pd.DataFrame:
         "hemoglobin": hemoglobin, "nlr": nlr,
         "smoking": smoking, "family_history": family_hx,
         "stage": stage, "treatment": treatment,
+        "treatment_group": np.where(treatment == "Palliative", "Palliative", "Active"),
         "tumor_size_cm": tumor_size,
         "risk_score": np.round(risk, 3),
         "survival_time": time, "survival_event": event,
@@ -984,10 +982,8 @@ def make_ml_cnn_example() -> pd.DataFrame:
     return pd.DataFrame(records)
 
 
-# ═══════════════════════════════════════════════════════════════
-# Integrated Tools Examples
-# ═══════════════════════════════════════════════════════════════
-
+# 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?# Integrated Tools Examples
+# 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?
 def make_feature_engineering_example() -> pd.DataFrame:
     """Rich data with missing values, mixed types, outliers, skewed distributions."""
     n = 500
@@ -1145,9 +1141,318 @@ def make_cluster_example() -> pd.DataFrame:
     return pd.DataFrame(data)
 
 
-# ═══════════════════════════════════════════════════════════════
-# Registry
-# ═══════════════════════════════════════════════════════════════
+# 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?# Registry
+# 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?
+def make_ml_ridge_example() -> pd.DataFrame:
+    """Ridge regression example with correlated clinical predictors."""
+    df = make_ml_lasso_example().copy()
+    numeric = df.select_dtypes(include=[np.number]).columns.tolist()
+    if len(numeric) >= 3:
+        df["renal_metabolic_index"] = np.round(
+            0.45 * df[numeric[0]].astype(float)
+            + 0.35 * df[numeric[1]].astype(float)
+            + 0.20 * df[numeric[2]].astype(float)
+            + rng.normal(0, 1.5, len(df)),
+            3,
+        )
+    return df
+
+
+def make_ldsc_example() -> pd.DataFrame:
+    """Compact LDSC-style trait heritability and genetic correlation matrix."""
+    traits = ["diabetes", "hypertension", "cad", "stroke", "ckd", "copd"]
+    h2 = {
+        "diabetes": 0.18,
+        "hypertension": 0.24,
+        "cad": 0.21,
+        "stroke": 0.16,
+        "ckd": 0.14,
+        "copd": 0.11,
+    }
+    corr = {
+        "diabetes": [1.00, 0.42, 0.36, 0.30, 0.33, 0.12],
+        "hypertension": [0.42, 1.00, 0.48, 0.41, 0.28, 0.10],
+        "cad": [0.36, 0.48, 1.00, 0.46, 0.24, 0.16],
+        "stroke": [0.30, 0.41, 0.46, 1.00, 0.21, 0.11],
+        "ckd": [0.33, 0.28, 0.24, 0.21, 1.00, 0.09],
+        "copd": [0.12, 0.10, 0.16, 0.11, 0.09, 1.00],
+    }
+    rows = []
+    for trait in traits:
+        row = {
+            "trait": trait,
+            "h2": round(h2[trait] + rng.normal(0, 0.008), 3),
+            "h2_se": round(float(np.clip(rng.normal(0.035, 0.006), 0.015, 0.070)), 3),
+        }
+        row.update({name: corr[trait][i] for i, name in enumerate(traits)})
+        rows.append(row)
+    return pd.DataFrame(rows)
+
+
+def make_target_trial_emulation_example() -> pd.DataFrame:
+    """Observational cohort shaped for target trial emulation with IPTW."""
+    n = 720
+    age = _clin_age(n, 64, 11)
+    sex = rng.choice(["Male", "Female"], n)
+    bmi = _clin_bmi(n, 27.0, 5.0)
+    sbp = _clin_sbp(n, 138, 18)
+    hba1c = np.round(rng.normal(7.1, 1.2, n).clip(4.8, 12.8), 1)
+    egfr = np.round(rng.normal(76, 20, n).clip(18, 130), 1)
+    baseline_risk = np.round(
+        0.025 * age + 0.040 * bmi + 0.020 * sbp + 0.32 * hba1c - 0.012 * egfr
+        + 0.35 * (sex == "Male") + rng.normal(0, 0.6, n),
+        3,
+    )
+    ps_linear = -2.3 + 0.55 * baseline_risk + 0.22 * (sex == "Male") + 0.018 * sbp - 0.010 * egfr
+    ps = 1 / (1 + np.exp(-ps_linear))
+    treatment = (rng.random(n) < ps).astype(int)
+    followup_months = rng.choice([6, 9, 12, 15, 18, 24], n, p=[0.08, 0.10, 0.46, 0.14, 0.12, 0.10])
+    event_logit = -3.5 + 0.68 * treatment + 0.62 * baseline_risk + 0.018 * age + 0.18 * (hba1c > 8)
+    event_prob = 1 / (1 + np.exp(-event_logit))
+    event_12m = (rng.random(n) < event_prob).astype(int)
+    return pd.DataFrame({
+        "patient_id": _clin_ids(n),
+        "age": age,
+        "sex": sex,
+        "bmi": bmi,
+        "sbp": sbp,
+        "hba1c": hba1c,
+        "egfr": egfr,
+        "baseline_risk": baseline_risk,
+        "treatment": treatment,
+        "treatment_group": np.where(treatment == 1, "New treatment", "Usual care"),
+        "followup_months": followup_months,
+        "event_12m": event_12m,
+    })
+
+
+def make_doubly_robust_aipw_example() -> pd.DataFrame:
+    """Binary treatment cohort for AIPW doubly robust causal estimation."""
+    n = 680
+    age = _clin_age(n, 59, 13)
+    sex = rng.choice(["Male", "Female"], n)
+    bmi = _clin_bmi(n)
+    baseline_score = np.round(rng.normal(48, 12, n).clip(10, 90), 1)
+    comorbidity_count = rng.poisson(1.7, n).clip(0, 7)
+    crp = np.round(rng.lognormal(1.0, 0.75, n).clip(0.1, 90), 2)
+    albumin = np.round(rng.normal(39, 5, n).clip(20, 52), 1)
+    ps_linear = -2.0 + 0.025 * age + 0.045 * bmi + 0.018 * baseline_score + 0.28 * comorbidity_count + 0.20 * (sex == "Male")
+    ps = 1 / (1 + np.exp(-ps_linear))
+    treatment = (rng.random(n) < ps).astype(int)
+    potential_gain = 4.2 + 0.05 * baseline_score - 0.35 * comorbidity_count + rng.normal(0, 1.2, n)
+    y0 = 32 + 0.32 * baseline_score + 0.08 * age - 0.25 * albumin + 0.18 * crp + rng.normal(0, 5.0, n)
+    y1 = y0 + potential_gain
+    outcome = np.where(treatment == 1, y1, y0)
+    responder = (outcome > np.quantile(outcome, 0.58)).astype(int)
+    return pd.DataFrame({
+        "patient_id": _clin_ids(n),
+        "age": age,
+        "sex": sex,
+        "bmi": bmi,
+        "baseline_score": baseline_score,
+        "comorbidity_count": comorbidity_count,
+        "crp": crp,
+        "albumin": albumin,
+        "treatment": treatment,
+        "outcome": np.round(outcome, 2),
+        "responder": responder,
+    })
+
+
+def make_ml_stacking_example() -> pd.DataFrame:
+    """Clinical tabular prediction data for stacked ensemble modelling."""
+    n = 760
+    age = _clin_age(n, 61, 12)
+    sex = rng.choice([0, 1], n)
+    bmi = _clin_bmi(n)
+    sbp = _clin_sbp(n, 136, 18)
+    hba1c = np.round(rng.normal(6.8, 1.1, n).clip(4.5, 12), 1)
+    egfr = np.round(rng.normal(74, 21, n).clip(15, 135), 1)
+    nlr = np.round(rng.lognormal(0.85, 0.55, n).clip(0.4, 18), 2)
+    albumin = np.round(rng.normal(39, 5, n).clip(20, 54), 1)
+    prior_admission = rng.poisson(0.8, n).clip(0, 6)
+    lp = (
+        -5.2 + 0.035 * age + 0.34 * sex + 0.045 * bmi + 0.018 * sbp
+        + 0.42 * hba1c - 0.010 * egfr + 0.25 * np.log1p(nlr)
+        - 0.045 * albumin + 0.38 * prior_admission
+        + 0.16 * (age > 70) * (hba1c > 7.5)
+        + rng.normal(0, 0.35, n)
+    )
+    prob = 1 / (1 + np.exp(-lp))
+    adverse_event = (rng.random(n) < prob).astype(int)
+    return pd.DataFrame({
+        "patient_id": _clin_ids(n),
+        "age": age,
+        "sex": sex,
+        "bmi": bmi,
+        "sbp": sbp,
+        "hba1c": hba1c,
+        "egfr": egfr,
+        "nlr": nlr,
+        "albumin": albumin,
+        "prior_admission": prior_admission,
+        "adverse_event": adverse_event,
+    })
+
+
+def make_ml_mlp_example() -> pd.DataFrame:
+    """Tabular deep-learning style acute-care prediction dataset."""
+    n = 720
+    age = _clin_age(n, 58, 15)
+    sex = rng.choice([0, 1], n)
+    bmi = _clin_bmi(n)
+    heart_rate = np.round(rng.normal(86, 18, n).clip(40, 160), 1)
+    spo2 = np.round(rng.normal(95, 4, n).clip(70, 100), 1)
+    respiratory_rate = np.round(rng.normal(19, 5, n).clip(7, 42), 1)
+    creatinine = np.round(rng.normal(86, 31, n).clip(30, 360), 1)
+    lactate = np.round(rng.lognormal(0.45, 0.55, n).clip(0.4, 12), 2)
+    crp = np.round(rng.lognormal(1.4, 0.8, n).clip(0.2, 160), 2)
+    systolic_bp = np.round(rng.normal(122, 22, n).clip(65, 220), 1)
+    temp = np.round(rng.normal(37.1, 0.8, n).clip(34.5, 41.5), 1)
+    lp = (
+        0.2 + 0.020 * age + 0.22 * sex + 0.025 * heart_rate - 0.075 * spo2
+        + 0.050 * respiratory_rate + 0.004 * creatinine + 0.55 * lactate
+        + 0.008 * crp - 0.018 * systolic_bp + 0.35 * np.maximum(temp - 37.5, 0)
+        + 0.12 * (lactate > 2.5) * (spo2 < 93)
+        + rng.normal(0, 0.45, n)
+    )
+    prob = 1 / (1 + np.exp(-lp))
+    icu_transfer = (rng.random(n) < prob).astype(int)
+    return pd.DataFrame({
+        "patient_id": _clin_ids(n),
+        "age": age,
+        "sex": sex,
+        "bmi": bmi,
+        "heart_rate": heart_rate,
+        "spo2": spo2,
+        "respiratory_rate": respiratory_rate,
+        "creatinine": creatinine,
+        "lactate": lactate,
+        "crp": crp,
+        "systolic_bp": systolic_bp,
+        "temperature": temp,
+        "icu_transfer": icu_transfer,
+    })
+
+
+def make_ml_elastic_net_example() -> pd.DataFrame:
+    """Elastic Net regression example with correlated renal-metabolic predictors."""
+    n = 620
+    age = _clin_age(n, 61, 12)
+    sex = rng.choice([0, 1], n)
+    bmi = _clin_bmi(n, 27.5, 5.2)
+    sbp = _clin_sbp(n, 136, 18)
+    hba1c = np.round(rng.normal(7.0, 1.2, n).clip(4.5, 12.5), 1)
+    egfr = np.round(rng.normal(78, 21, n).clip(15, 135), 1)
+    albumin = np.round(rng.normal(40, 5, n).clip(20, 54), 1)
+    crp = np.round(rng.lognormal(0.9, 0.7, n).clip(0.1, 90), 2)
+    uacr = np.round(rng.lognormal(3.1, 0.9, n).clip(2, 1800), 1)
+    renal_decline_score = np.round(
+        18 + 0.10 * age + 0.18 * bmi + 0.045 * sbp + 1.9 * hba1c
+        - 0.18 * egfr - 0.25 * albumin + 0.35 * np.log1p(crp)
+        + 0.018 * np.log1p(uacr) * age + 1.1 * sex + rng.normal(0, 5.0, n),
+        2,
+    )
+    return pd.DataFrame({
+        "patient_id": _clin_ids(n),
+        "age": age, "sex": sex, "bmi": bmi, "sbp": sbp,
+        "hba1c": hba1c, "egfr": egfr, "albumin": albumin,
+        "crp": crp, "uacr": uacr,
+        "renal_decline_score": renal_decline_score,
+    })
+
+
+def make_ml_deepsurv_example() -> pd.DataFrame:
+    """Oncology survival data for DeepSurv-style neural Cox risk modelling."""
+    n = 640
+    age = _clin_age(n, 63, 11)
+    sex = rng.choice([0, 1], n)
+    bmi = _clin_bmi(n, 24.8, 4.2)
+    albumin = np.round(rng.normal(38, 6, n).clip(18, 53), 1)
+    ldh = np.round(rng.lognormal(5.2, 0.42, n).clip(80, 950), 0)
+    nlr = np.round(rng.lognormal(0.9, 0.55, n).clip(0.5, 18), 2)
+    tumor_size = np.round(rng.lognormal(2.8, 0.55, n).clip(0.4, 14), 1)
+    stage_num = rng.choice([1, 2, 3, 4], n, p=[0.18, 0.26, 0.34, 0.22])
+    risk = (
+        0.028 * age + 0.18 * sex - 0.035 * bmi - 0.030 * albumin
+        + 0.003 * ldh + 0.18 * np.log1p(nlr) + 0.11 * tumor_size
+        + 0.42 * (stage_num >= 3) + 0.48 * (stage_num == 4)
+        + rng.normal(0, 0.45, n)
+    )
+    hazard = np.exp(risk - 4.0)
+    time_months = np.round(rng.exponential(1 / np.clip(hazard, 0.004, 0.4), n)).clip(1, 96).astype(int)
+    censor = rng.integers(12, 96, n)
+    event = (time_months <= censor).astype(int)
+    observed_time = np.minimum(time_months, censor)
+    return pd.DataFrame({
+        "patient_id": _clin_ids(n),
+        "age": age, "sex": sex, "bmi": bmi, "albumin": albumin,
+        "ldh": ldh, "nlr": nlr, "tumor_size_cm": tumor_size,
+        "stage_num": stage_num,
+        "time_months": observed_time,
+        "event": event,
+    })
+
+
+def make_ml_deephit_example() -> pd.DataFrame:
+    """Competing-risk survival data for DeepHit-style discrete-time risk prediction."""
+    n = 680
+    age = _clin_age(n, 60, 13)
+    sex = rng.choice([0, 1], n)
+    bmi = _clin_bmi(n, 26.0, 4.8)
+    egfr = np.round(rng.normal(76, 20, n).clip(15, 135), 1)
+    hba1c = np.round(rng.normal(6.9, 1.1, n).clip(4.5, 12.5), 1)
+    albumin = np.round(rng.normal(39, 5, n).clip(20, 54), 1)
+    nlr = np.round(rng.lognormal(0.8, 0.55, n).clip(0.4, 16), 2)
+    lp_cvd = -4.2 + 0.032 * age + 0.42 * sex + 0.025 * bmi + 0.25 * hba1c - 0.010 * egfr
+    lp_renal = -4.0 + 0.018 * age + 0.35 * hba1c - 0.030 * egfr - 0.035 * albumin + 0.18 * np.log1p(nlr)
+    p_cvd = 1 / (1 + np.exp(-lp_cvd))
+    p_renal = 1 / (1 + np.exp(-lp_renal))
+    draw = rng.random(n)
+    event_type = np.where(draw < p_cvd, 1, np.where(draw < p_cvd + p_renal, 2, 0))
+    base_time = rng.exponential(28, n) + 3
+    time_months = np.round(base_time * np.where(event_type == 0, 1.7, np.where(event_type == 1, 0.9, 1.1))).clip(1, 72).astype(int)
+    return pd.DataFrame({
+        "patient_id": _clin_ids(n),
+        "age": age, "sex": sex, "bmi": bmi, "egfr": egfr,
+        "hba1c": hba1c, "albumin": albumin, "nlr": nlr,
+        "time_months": time_months,
+        "event_type": event_type,
+    })
+
+
+def make_marginal_structural_model_example() -> pd.DataFrame:
+    """Longitudinal treatment data with time-varying confounding for MSM."""
+    n_subjects = 260
+    records = []
+    for i in range(1, n_subjects + 1):
+        age = rng.integers(35, 84)
+        sex = rng.choice(["Male", "Female"])
+        baseline_severity = rng.normal(45, 11)
+        prior_treatment = 0
+        for month in [0, 3, 6, 9, 12]:
+            time_varying_severity = baseline_severity + 0.8 * month - 3.5 * prior_treatment + rng.normal(0, 5)
+            ps = 1 / (1 + np.exp(-(-2.0 + 0.035 * age + 0.050 * time_varying_severity + 0.45 * prior_treatment)))
+            treatment = int(rng.random() < ps)
+            outcome = (
+                55 + 0.42 * baseline_severity + 0.35 * time_varying_severity
+                - 5.2 * treatment - 2.0 * prior_treatment + 0.06 * age
+                + rng.normal(0, 6)
+            )
+            records.append({
+                "subject_id": f"S{i:05d}",
+                "month": month,
+                "age": age,
+                "sex": sex,
+                "baseline_severity": round(baseline_severity, 2),
+                "time_varying_severity": round(time_varying_severity, 2),
+                "prior_treatment": prior_treatment,
+                "treatment": treatment,
+                "outcome": round(outcome, 2),
+            })
+            prior_treatment = treatment
+    return pd.DataFrame(records)
+
 
 EXAMPLE_MAKERS = {
     "gee_example": make_gee_example,
@@ -1162,8 +1467,12 @@ EXAMPLE_MAKERS = {
     "mediation_example": make_mediation_example,
     "mixed_effects_example": make_mixed_effects_example,
     "nhanes_analysis_example": make_nhanes_analysis_example,
+    "ldsc_example": make_ldsc_example,
+    "target_trial_emulation_example": make_target_trial_emulation_example,
+    "doubly_robust_aipw_example": make_doubly_robust_aipw_example,
     "ml_lr_example": make_ml_lr_example,
     "ml_lasso_example": make_ml_lasso_example,
+    "ml_ridge_example": make_ml_ridge_example,
     "ml_knn_example": make_ml_knn_example,
     "ml_xgboost_example": make_ml_xgboost_example,
     "ml_rf_example": make_ml_rf_example,
@@ -1174,4 +1483,12 @@ EXAMPLE_MAKERS = {
     "model_comparison_example": make_model_comparison_example,
     "dim_reduction_example": make_dim_reduction_example,
     "cluster_example": make_cluster_example,
+    "ml_stacking_example": make_ml_stacking_example,
+    "ml_mlp_example": make_ml_mlp_example,
+    "ml_elastic_net_example": make_ml_elastic_net_example,
+    "ml_deepsurv_example": make_ml_deepsurv_example,
+    "ml_deephit_example": make_ml_deephit_example,
+    "marginal_structural_model_example": make_marginal_structural_model_example,
 }
+
+

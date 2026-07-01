@@ -32,7 +32,20 @@ const STATE = {
   markerShape: 'circle',
   markerOpacity: 0.88,
   lineWidth: 2.5,
-  barGap: 0.15,
+  lineDash: 'solid',
+  lineShape: 'linear',
+  barStyle: 'solid',
+  barWidth: 0.62,
+  histogramBins: 24,
+  boxPoints: 'outliers',
+  violinPoints: 'outliers',
+  pieHole: 0,
+  heatmapColorscale: 'Blues',
+  sankeyNodePad: 16,
+  sankeyNodeThickness: 18,
+  chartWidth: 760,
+  chartHeight: 600,
+  chartTitleFontSize: 18,
   chartTitle: '',
   methodWorkspaces: {},
   lastTableData: null,
@@ -146,7 +159,7 @@ function saveActiveMethodWorkspace() {
 function loadMethodWorkspace(methodId) {
   const workspace = STATE.methodWorkspaces[methodId];
   if (!workspace) {
-    resetDatasetState();
+    // v4: 方法切换不能清空已经上传/加载的数据。数据属于整个流程，不属于单个方法。
     STATE.currentChartParams = null;
     return;
   }

@@ -17,6 +17,7 @@ class MethodRequest(BaseModel):
     use_demo: bool = False
     dataset_name: str | None = None
     params: dict = Field(default_factory=dict)
+    role_vars: dict = Field(default_factory=dict)
 
 
 class TableRequest(BaseModel):

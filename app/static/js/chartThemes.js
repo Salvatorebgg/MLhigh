@@ -2,7 +2,7 @@
 
 const CHART_THEMES = {
   cnsTheme: {
-    name: 'CNS 出版',
+    name: '临床研究通用出版',
     fontFamily: "'Arial', 'Helvetica Neue', 'Noto Sans SC', sans-serif",
     bgColor: '#FFFFFF',
     plotBgColor: '#FFFFFF',
@@ -69,7 +69,7 @@ const CHART_THEMES = {
   },
 
   natureStyleTheme: {
-    name: 'Nature',
+    name: 'Nature 系配色',
     fontFamily: "'Arial', 'Helvetica Neue', 'Noto Sans SC', sans-serif",
     bgColor: '#FFFFFF',
     plotBgColor: '#FFFFFF',

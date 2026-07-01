@@ -690,7 +690,9 @@ def make_coefficient_plot(coef_dict, errors_dict=None, title="Coefficient Plot",
         ))
     fig.update_layout(**_make_plotly_layout(title, "Coefficient Value", "", height))
     fig.update_yaxes(automargin=True)
-    fig.add_vline(x=0, line_dash="dash", line_color="#666666", line_width=1)
+    fig.add_vline(x=0, line_width=1.6, line_color="#111827")
+    fig.update_layout(yaxis=dict(showline=False, zeroline=False),
+                      xaxis=dict(zeroline=False))
     return fig
 
 
@@ -712,6 +714,9 @@ def make_reg_path(alphas, coef_paths, feature_names=None, title="Regularization 
         ))
     fig.update_layout(**_make_plotly_layout(title, "Alpha (log scale)", "Coefficient", height))
     fig.update_xaxes(type="log")
+    fig.add_hline(y=0, line_width=1.6, line_color="#111827")
+    fig.update_layout(xaxis=dict(showline=False, zeroline=False),
+                      yaxis=dict(zeroline=False))
     return fig
 
 
