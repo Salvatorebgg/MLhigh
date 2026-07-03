@@ -267,29 +267,11 @@ const CHART_THEMES = {
   },
 };
 
-const COLOR_PALETTES = {
-  default: null,
-  tableau10: ['#4E79A7', '#F28E2B', '#E15759', '#76B7B2', '#59A14F', '#EDC948', '#B07AA1', '#FF9DA7', '#9C755F', '#BAB0AC'],
-  set2: ['#66C2A5', '#FC8D62', '#8DA0CB', '#E78AC3', '#A6D854', '#FFD92F', '#E5C494', '#B3B3B3'],
-  paired: ['#A6CEE3', '#1F78B4', '#B2DF8A', '#33A02C', '#FB9A99', '#E31A1C', '#FDBF6F', '#FF7F00', '#CAB2D6', '#6A3D9A'],
-  dark2: ['#1B9E77', '#D95F02', '#7570B3', '#E7298A', '#66A61E', '#E6AB02', '#A6761D', '#666666'],
-  accent: ['#7FC97F', '#BEAED4', '#FDC086', '#FFFF99', '#386CB0', '#F0027F', '#BF5B17', '#666666'],
-  viridis: ['#440154', '#482878', '#3E4989', '#31688E', '#26828E', '#1F9E89', '#35B779', '#6DCD59', '#B4DE2C', '#FDE725'],
-  plasma: ['#0D0887', '#4B03A1', '#7D03A8', '#A82296', '#CB4679', '#E56B5D', '#F89441', '#FDC328', '#F0F921'],
-};
-
 function getActiveTheme() {
   return CHART_THEMES[STATE.chartTheme] || CHART_THEMES.cnsTheme;
 }
 
 function getActivePalette() {
-  const paletteName = STATE.chartPalette || 'default';
-  if (paletteName === 'custom' && STATE.customPalette && STATE.customPalette.length > 0) {
-    return STATE.customPalette;
-  }
-  if (paletteName !== 'default' && COLOR_PALETTES[paletteName]) {
-    return COLOR_PALETTES[paletteName];
-  }
   return null;
 }
 

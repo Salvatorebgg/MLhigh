@@ -356,6 +356,7 @@ function setActiveTab(tab) {
   domAll('.nav-step').forEach(button => button.classList.toggle('active', button.dataset.tab === tab));
   domAll('.tab-panel').forEach(panel => panel.classList.toggle('active', panel.id === `tab-${tab}`));
   if (tab === 'result') {
+    updateResultMethodSummary();
     setResultTab(APP.activeResultTab || 'chart');
     rerenderCurrentCharts();
   }
@@ -706,6 +707,7 @@ async function selectMethod(methodId) {
   if (variableMethodName) variableMethodName.textContent = method.name;
   const dataMethodName = dom('dataMethodName');
   if (dataMethodName) dataMethodName.textContent = method.name;
+  updateResultMethodSummary(method);
   const dataMethodHint = dom('dataMethodHint');
   if (dataMethodHint) dataMethodHint.textContent = `当前方法：${method.name}。请加载或上传数据后点击「下一步」进入变量选择界面。`;
   const selectedMethodLabel = dom('selectedMethodLabel');
@@ -1461,6 +1463,13 @@ function getActiveMethod() {
   return APP.methodMap.get(STATE.activeMethodId);
 }
 
+function updateResultMethodSummary(method = getActiveMethod()) {
+  const resultMethodName = dom('resultMethodName');
+  if (resultMethodName) {
+    resultMethodName.textContent = method ? method.name : '尚未选择方法';
+  }
+}
+
 function getMethodWorkspace() {
   const method = getActiveMethod();
   if (!method) return {};
@@ -1526,7 +1535,8 @@ async function runAnalysis() {
 
 function clearResults() {
   APP.lastResult = null;
-  dom('resultSummary').textContent = '运行分析后显示结果。';
+  updateResultMethodSummary();
+  dom('resultSummary').textContent = '右侧是结果区域，运行分析后可在此查看可视化、统计结果和结果解读。';
   dom('chartPreviewContainer').innerHTML = '<div id="chartActivePlot" class="chart-active-plot"><div class="empty-state">完成分析后展示结果图形。</div></div>';
   dom('chartVariantTabs').innerHTML = '';
   dom('resultTablesContainer').innerHTML = '<div class="empty-state small">表格结果将在分析后显示。</div>';
@@ -1534,7 +1544,11 @@ function clearResults() {
 }
 
 function renderResults(result) {
-  dom('resultSummary').textContent = `${result.method_name || result.method_id || '分析'} · ${STATE.fileName || STATE.datasetName || ''}`;
+  updateResultMethodSummary();
+  const datasetLabel = STATE.fileName || STATE.datasetName || '';
+  dom('resultSummary').textContent = datasetLabel
+    ? `右侧是结果区域，当前结果来自 ${datasetLabel}。可在此查看可视化、统计结果和结果解读。`
+    : '右侧是结果区域，可在此查看可视化、统计结果和结果解读。';
   renderResultTables(result.tables || []);
   renderDiscussion(result.discussion || '');
   if (typeof renderAllCharts === 'function') {
@@ -1765,13 +1779,6 @@ function bindChartControls() {
     STATE.chartTheme = event.target.value;
     rerenderCurrentCharts();
   });
-  const paletteSelect = dom('chartPaletteSelect');
-  if (paletteSelect) {
-    paletteSelect.addEventListener('change', event => {
-      STATE.chartPalette = event.target.value;
-      rerenderCurrentCharts();
-    });
-  }
   dom('chartTitleInput').addEventListener('input', event => {
     STATE.chartTitle = event.target.value;
     rerenderCurrentCharts();
@@ -1791,6 +1798,7 @@ function renderAppearanceControls() {
   const traceTypes = new Set();
   const traceModes = new Set();
   const traceNames = [];
+  const MAX_TRACE_COLOR_CONTROLS = 20;
   traces.forEach((t, i) => {
     const type = (t && t.type) || 'scatter';
     traceTypes.add(type);
@@ -1800,7 +1808,9 @@ function renderAppearanceControls() {
     if (!mode.includes('markers') && !mode.includes('lines') && type === 'scatter') {
       traceModes.add('markers');
     }
-    traceNames.push({ name: t.name || `变量${i + 1}`, index: i });
+    if (traceNames.length < MAX_TRACE_COLOR_CONTROLS) {
+      traceNames.push({ name: t.name || `变量${i + 1}`, index: i });
+    }
   });
 
   const hasMarkers = traceModes.has('markers');
@@ -1813,33 +1823,159 @@ function renderAppearanceControls() {
   const hasHeatmap = traceTypes.has('heatmap') || traceTypes.has('heatmapgl') || traceTypes.has('contour') || traceTypes.has('surface');
   const hasSankey = traceTypes.has('sankey');
   const hasScatter = traceTypes.has('scatter') || traceTypes.has('scattergl');
+  const layoutShapes = Array.isArray(STATE.currentPlotlyLayout?.shapes) ? STATE.currentPlotlyLayout.shapes : [];
+  const approxSame = (a, b) => Math.abs(Number(a) - Number(b)) < 1e-9;
+  const isFullSpan = (a, b) => approxSame(a, 0) && approxSame(b, 1);
+  const isGeneratedAxisShape = (shape) => {
+    const name = String(shape?.name || '');
+    return name.startsWith('v27_axis_')
+      || name.startsWith('v25_axis_')
+      || name.startsWith('v21_arrow_')
+      || name.startsWith('v20_arrow_')
+      || name === 'custom_arrow_axis_v19'
+      || /(^|_)axis(_|$)/i.test(name);
+  };
+  const isSolidZeroBaseline = (shape) => {
+    const dash = String(shape?.line?.dash || 'solid').toLowerCase();
+    if (dash && dash !== 'solid') return false;
+    const xref = String(shape?.xref || '');
+    const yref = String(shape?.yref || '');
+    const isHorizontalZero = approxSame(shape?.y0, 0)
+      && approxSame(shape?.y1, 0)
+      && isFullSpan(shape?.x0, shape?.x1)
+      && /paper|domain/.test(xref);
+    const isVerticalZero = approxSame(shape?.x0, 0)
+      && approxSame(shape?.x1, 0)
+      && isFullSpan(shape?.y0, shape?.y1)
+      && /paper|domain/.test(yref);
+    return isHorizontalZero || isVerticalZero;
+  };
+  const isAdjustableReferenceLine = (shape) => {
+    if (!shape || shape.type !== 'line' || isGeneratedAxisShape(shape)) return false;
+    return !isSolidZeroBaseline(shape);
+  };
+  const hasReferenceLines = layoutShapes.some(isAdjustableReferenceLine);
+  const hasLabels = traces.some(t => {
+    if (!t) return false;
+    const type = String(t.type || '');
+    return Array.isArray(t.text)
+      || typeof t.text === 'string'
+      || Boolean(t.texttemplate)
+      || (Array.isArray(t.labels) && t.labels.length > 0)
+      || (type === 'sankey' && Array.isArray(t.node?.label) && t.node.label.length > 0);
+  });
+
+  const toColorInputValue = (value, fallback = '#2563eb') => {
+    const raw = String(value || '').trim();
+    if (/^#[0-9a-f]{6}$/i.test(raw)) return raw;
+    if (/^#[0-9a-f]{3}$/i.test(raw)) {
+      return `#${raw.slice(1).split('').map(c => c + c).join('')}`;
+    }
+    return fallback;
+  };
+  const defaultCategoryColor = (index) => {
+    if (typeof getChartTraceDisplayColor === 'function') {
+      return toColorInputValue(getChartTraceDisplayColor(index), '#2563eb');
+    }
+    const fallback = ['#2E6F9E', '#D95F59', '#2A9D8F', '#E9A93A', '#6F5AA7', '#7C8B52'];
+    return fallback[index % fallback.length];
+  };
+  const activeCategoryColors = (STATE.userBarCategoryColorsByChart || {})[activeIdx] || {};
+  const categoryColorItems = [];
+  const seenCategoryLabels = new Set();
+  const barTraces = traces.filter(t => t && String(t.type || '') === 'bar');
+  const barLabels = (t) => {
+    const source = t.orientation === 'h' ? t.y : t.x;
+    return (Array.isArray(source) ? source : []).map(value => String(value));
+  };
+  const isSingleBarPerTrace = barTraces.length > 1
+    && barTraces.every(t => barLabels(t).length === 1);
+  const isGroupedCategoricalBar = barTraces.length > 1
+    && barTraces.every(t => barLabels(t).length > 0)
+    && barTraces.every(t => barLabels(t).join('\u0001') === barLabels(barTraces[0]).join('\u0001'));
+  const addCategoryColorItem = (label, color) => {
+    const key = String(label ?? '').trim();
+    if (!key || seenCategoryLabels.has(key)) return;
+    seenCategoryLabels.add(key);
+    categoryColorItems.push({
+      label: key,
+      color: toColorInputValue(activeCategoryColors[key] || color || defaultCategoryColor(categoryColorItems.length), defaultCategoryColor(categoryColorItems.length)),
+    });
+  };
+  traces.forEach((t, traceIndex) => {
+    if (!t) return;
+    const type = String(t.type || 'scatter');
+    const markerColor = t.marker && t.marker.color;
+    const markerColors = Array.isArray(markerColor) ? markerColor : [];
+    if (type === 'bar') {
+      if (isSingleBarPerTrace) return;
+      if (isGroupedCategoricalBar) return;
+      const source = t.orientation === 'h' ? t.y : t.x;
+      (Array.isArray(source) ? source : []).forEach((label, pointIndex) => {
+        addCategoryColorItem(label, markerColors[pointIndex] || defaultCategoryColor(pointIndex));
+      });
+    } else if ((type === 'scatter' || type === 'scattergl') && Array.isArray(t.x)) {
+      const mode = String(t.mode || 'markers');
+      const hasCategoricalX = t.x.length > 1 && t.x.some(value => !Number.isFinite(Number(value)));
+      const textLabels = Array.isArray(t.text) && t.text.length === t.x.length
+        ? t.text.map(value => String(value ?? '').trim())
+        : [];
+      const pointLabels = textLabels.some(Boolean) ? textLabels : (hasCategoricalX ? t.x : []);
+      if (pointLabels.length && (mode.includes('markers') || !mode.includes('lines'))) {
+        pointLabels.forEach((label, pointIndex) => {
+          addCategoryColorItem(label, markerColors[pointIndex] || defaultCategoryColor(pointIndex + traceIndex));
+        });
+      }
+    }
+  });
 
   /* Per-trace color controls */
   const activeColors = (STATE.userTraceColorsByChart || {})[activeIdx] || [];
   const activeColorsArr = Array.isArray(activeColors) ? activeColors : [];
-  const traceColorHTML = traceNames.length > 0 ? `
+  const traceColorHTML = traceNames.length > 0 && !hasHeatmap ? `
     <div class="color-controls-section">
       <span class="color-controls-label">变量颜色</span>
       <div class="color-buttons-grid">
-        ${traceNames.map((t, i) => {
-          const color = activeColorsArr[i] || (traces[i] && traces[i].marker && typeof traces[i].marker.color === 'string' ? traces[i].marker.color : (traces[i] && traces[i].line && traces[i].line.color) || '#2563eb');
+        ${traceNames.map((t) => {
+          const trace = traces[t.index];
+          const rawColor = activeColorsArr[t.index] || (trace && trace.marker && typeof trace.marker.color === 'string' ? trace.marker.color : (trace && trace.line && trace.line.color) || '#2563eb');
+          const color = toColorInputValue(rawColor, defaultCategoryColor(t.index));
           return `
-          <div class="color-row" data-trace-index="${i}">
+          <div class="color-row" data-trace-index="${t.index}">
             <span class="color-trace-name">${escapeHtml(t.name)}</span>
-            <input class="color-picker-input" data-trace-color="${i}" type="color" value="${escapeHtml(color)}" title="${escapeHtml(t.name)} 颜色" />
+            <input class="color-picker-input" data-trace-color="${t.index}" type="color" value="${escapeHtml(color)}" title="${escapeHtml(t.name)} 颜色" />
           </div>
           `;
         }).join('')}
       </div>
     </div>
   ` : '';
+  const categoryColorHTML = categoryColorItems.length > 1 && !hasHeatmap ? `
+    <div class="color-controls-section">
+      <span class="color-controls-label">类别颜色</span>
+      <div class="color-buttons-grid">
+        ${categoryColorItems.map(item => `
+          <div class="color-row" data-category-color-row="${escapeHtml(item.label)}">
+            <span class="color-trace-name">${escapeHtml(item.label)}</span>
+            <input class="color-picker-input" data-category-color="${escapeHtml(item.label)}" type="color" value="${escapeHtml(item.color)}" title="${escapeHtml(item.label)} 颜色" />
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  ` : '';
 
   /* Dynamic controls based on detected trace types */
   let dynamicControls = '';
-  if (hasMarkers || hasBars || hasBox || hasViolin || (hasScatter && !hasLines)) {
+  const hasMarkerPointControls = hasMarkers || hasBox || hasViolin || (hasScatter && !hasLines);
+  const hasOpacityControls = hasMarkerPointControls || hasBars || hasHistogram;
+  if (hasMarkerPointControls) {
     dynamicControls += `
       <label class="field"><span>点大小</span><input data-chart-state="markerSize" type="number" min="2" max="30" step="1" value="${Number(STATE.markerSize || 8)}" /></label>
       <label class="field"><span>点形状</span><select data-chart-state="markerShape"><option value="circle" ${(STATE.markerShape||'circle')==='circle'?'selected':''}>circle</option><option value="square" ${STATE.markerShape==='square'?'selected':''}>square</option><option value="diamond" ${STATE.markerShape==='diamond'?'selected':''}>diamond</option><option value="cross" ${STATE.markerShape==='cross'?'selected':''}>cross</option></select></label>
+    `;
+  }
+  if (hasOpacityControls) {
+    dynamicControls += `
       <label class="field"><span>透明度</span><input data-chart-state="markerOpacity" type="number" min="0.15" max="1" step="0.05" value="${Number(STATE.markerOpacity || 0.88)}" /></label>
     `;
   }
@@ -1847,11 +1983,17 @@ function renderAppearanceControls() {
     dynamicControls += `
       <label class="field"><span>线宽</span><input data-chart-state="lineWidth" type="number" min="0.5" max="12" step="0.5" value="${Number(STATE.lineWidth || 2.5)}" /></label>
       <label class="field"><span>线型</span><select data-chart-state="lineDash"><option value="solid" ${(STATE.lineDash||'solid')==='solid'?'selected':''}>solid</option><option value="dash" ${STATE.lineDash==='dash'?'selected':''}>dash</option><option value="dot" ${STATE.lineDash==='dot'?'selected':''}>dot</option><option value="dashdot" ${STATE.lineDash==='dashdot'?'selected':''}>dashdot</option></select></label>
-      <label class="field"><span>线条形状</span><select data-chart-state="lineShape">
-        <option value="linear" ${(STATE.lineShape||'linear')==='linear'?'selected':''}>直线连接</option>
-        <option value="spline" ${STATE.lineShape==='spline'?'selected':''}>光滑曲线</option>
-        <option value="hv" ${STATE.lineShape==='hv'?'selected':''}>阶梯(HV)</option>
-        <option value="vh" ${STATE.lineShape==='vh'?'selected':''}>阶梯(VH)</option>
+    `;
+  }
+  if (hasReferenceLines) {
+    dynamicControls += `
+      <label class="field"><span>参考线颜色</span><input data-chart-state="referenceLineColor" type="color" value="${escapeHtml(toColorInputValue(STATE.referenceLineColor || '#64748b', '#64748b'))}" /></label>
+      <label class="field"><span>参考线宽</span><input data-chart-state="referenceLineWidth" type="number" min="0.5" max="10" step="0.5" value="${Number(STATE.referenceLineWidth || 1.8)}" /></label>
+      <label class="field"><span>参考线线型</span><select data-chart-state="referenceLineDash">
+        <option value="solid" ${(STATE.referenceLineDash||'dash')==='solid'?'selected':''}>solid</option>
+        <option value="dash" ${(STATE.referenceLineDash||'dash')==='dash'?'selected':''}>dash</option>
+        <option value="dot" ${STATE.referenceLineDash==='dot'?'selected':''}>dot</option>
+        <option value="dashdot" ${STATE.referenceLineDash==='dashdot'?'selected':''}>dashdot</option>
       </select></label>
     `;
   }
@@ -1890,17 +2032,7 @@ function renderAppearanceControls() {
   }
   if (hasHeatmap) {
     dynamicControls += `
-      <label class="field"><span>热图色阶</span><select data-chart-state="heatmapColorscale">
-        <option value="Blues" ${(STATE.heatmapColorscale||'Blues')==='Blues'?'selected':''}>Blues</option>
-        <option value="Viridis" ${STATE.heatmapColorscale==='Viridis'?'selected':''}>Viridis</option>
-        <option value="RdBu" ${STATE.heatmapColorscale==='RdBu'?'selected':''}>RdBu</option>
-        <option value="RdBu_r" ${STATE.heatmapColorscale==='RdBu_r'?'selected':''}>RdBu_r</option>
-        <option value="YlOrRd" ${STATE.heatmapColorscale==='YlOrRd'?'selected':''}>YlOrRd</option>
-        <option value="Plasma" ${STATE.heatmapColorscale==='Plasma'?'selected':''}>Plasma</option>
-        <option value="Cividis" ${STATE.heatmapColorscale==='Cividis'?'selected':''}>Cividis</option>
-        <option value="Teal" ${STATE.heatmapColorscale==='Teal'?'selected':''}>Teal</option>
-        <option value="Greys" ${STATE.heatmapColorscale==='Greys'?'selected':''}>Greys</option>
-      </select></label>
+      <label class="field"><span>热图透明度</span><input id="heatmapOpacityInput" data-chart-state="heatmapOpacity" type="range" min="0.15" max="1" step="0.05" value="${Number(STATE.heatmapOpacity ?? 0.88)}" /></label>
     `;
   }
   if (hasSankey) {
@@ -1912,6 +2044,7 @@ function renderAppearanceControls() {
 
   container.innerHTML = `
     ${traceColorHTML}
+    ${categoryColorHTML}
     <div class="size-grid">
       <label class="field">
         <span>图片宽度</span>
@@ -1931,17 +2064,32 @@ function renderAppearanceControls() {
       <input data-chart-state="chartTitleFontSize" type="number" min="10" max="40" step="1" value="${Number(STATE.chartTitleFontSize || 18)}" />
     </label>
     <div class="compact-grid">
+      <label class="field">
+        <span>坐标轴标题字号</span>
+        <input data-chart-state="axisTitleFontSize" type="number" min="8" max="32" step="1" value="${Number(STATE.axisTitleFontSize || 13)}" />
+      </label>
+      <label class="field">
+        <span>坐标轴刻度字号</span>
+        <input data-chart-state="axisTickFontSize" type="number" min="8" max="28" step="1" value="${Number(STATE.axisTickFontSize || 11)}" />
+      </label>
+      ${hasLabels ? `
+        <label class="field">
+          <span>标签字号</span>
+          <input data-chart-state="labelFontSize" type="number" min="8" max="32" step="1" value="${Number(STATE.labelFontSize || 12)}" />
+        </label>
+      ` : ''}
+    </div>
+    <div class="compact-grid">
       ${dynamicControls}
     </div>
   `;
 
   syncSelectValue('markerShape', STATE.markerShape || 'circle');
   syncSelectValue('lineDash', STATE.lineDash || 'solid');
-  syncSelectValue('lineShape', STATE.lineShape || 'linear');
+  syncSelectValue('referenceLineDash', STATE.referenceLineDash || 'dash');
   syncSelectValue('barStyle', STATE.barStyle || 'solid');
   syncSelectValue('boxPoints', STATE.boxPoints || 'outliers');
   syncSelectValue('violinPoints', STATE.violinPoints || 'outliers');
-  syncSelectValue('heatmapColorscale', STATE.heatmapColorscale || 'Blues');
   bindSizeControls();
   domAll('[data-chart-state]', container).forEach(input => {
     input.addEventListener('change', updateChartStateFromInput);
@@ -1951,6 +2099,10 @@ function renderAppearanceControls() {
   domAll('[data-trace-color]', container).forEach(input => {
     input.addEventListener('input', updateTraceColorFromInput);
     input.addEventListener('change', updateTraceColorFromInput);
+  });
+  domAll('[data-category-color]', container).forEach(input => {
+    input.addEventListener('input', updateCategoryColorFromInput);
+    input.addEventListener('change', updateCategoryColorFromInput);
   });
 }
 
@@ -1994,7 +2146,7 @@ function updateChartStateFromInput(event) {
   const input = event.currentTarget;
   const key = input.dataset.chartState;
   if (!key) return;
-  STATE[key] = input.type === 'number' ? Number(input.value) : input.value;
+  STATE[key] = (input.type === 'number' || input.type === 'range') ? Number(input.value) : input.value;
   rerenderCurrentCharts();
 }
 
@@ -2006,6 +2158,17 @@ function updateTraceColorFromInput(event) {
   if (!STATE.userTraceColorsByChart) STATE.userTraceColorsByChart = {};
   if (!STATE.userTraceColorsByChart[activeIdx]) STATE.userTraceColorsByChart[activeIdx] = [];
   STATE.userTraceColorsByChart[activeIdx][traceIndex] = input.value;
+  rerenderCurrentCharts();
+}
+
+function updateCategoryColorFromInput(event) {
+  const input = event.currentTarget;
+  const label = input.dataset.categoryColor;
+  if (!label) return;
+  const activeIdx = Number.isFinite(STATE.activeChartIndex) ? STATE.activeChartIndex : 0;
+  if (!STATE.userBarCategoryColorsByChart) STATE.userBarCategoryColorsByChart = {};
+  if (!STATE.userBarCategoryColorsByChart[activeIdx]) STATE.userBarCategoryColorsByChart[activeIdx] = {};
+  STATE.userBarCategoryColorsByChart[activeIdx][label] = input.value;
   rerenderCurrentCharts();
 }
 

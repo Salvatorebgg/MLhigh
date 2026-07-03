@@ -498,7 +498,7 @@ def test_type_specific_controls(cdp: CDP) -> None:
         ("箱线图验收", [{"type": "box", "y": [1, 2, 3, 4, 8]}], ["boxPointsSelect", "lineWidthInput"]),
         ("小提琴图验收", [{"type": "violin", "y": [1, 2, 2, 3, 4]}], ["violinPointsSelect", "lineWidthInput"]),
         ("饼图验收", [{"type": "pie", "labels": ["A", "B"], "values": [4, 6]}], ["pieHoleInput"]),
-        ("热图验收", [{"type": "heatmap", "z": [[1, 2], [3, 4]]}], ["heatmapColorscaleSelect"]),
+        ("热图验收", [{"type": "heatmap", "x": ["A", "B"], "y": ["A", "B"], "z": [[1, -0.4], [-0.4, 1]]}], ["heatmapOpacityInput"]),
         ("桑基图验收", [{"type": "sankey", "node": {"label": ["A", "B"]}, "link": {"source": [0], "target": [1], "value": [5]}}], ["sankeyNodePadInput", "sankeyNodeThicknessInput"]),
     ]
     for title, traces, controls in cases:
@@ -515,6 +515,18 @@ def test_type_specific_controls(cdp: CDP) -> None:
             )
             assert heatmap_axis["yRange"][0] > heatmap_axis["yRange"][1], heatmap_axis
             assert heatmap_axis["xSide"] == "bottom" and heatmap_axis["ySide"] == "left", heatmap_axis
+            assert not cdp.evaluate("Boolean(document.querySelector('[data-chart-state=\"heatmapColorscale\"], [data-heatmap-var-color]'))")
+            heatmap_theme = cdp.evaluate(
+                """(() => ({
+                  colorscale: STATE.currentPlotlyData[0].colorscale,
+                  expected: getActiveTheme().divergentScale,
+                  zmid: STATE.currentPlotlyData[0].zmid,
+                }))()"""
+            )
+            assert heatmap_theme["colorscale"] == heatmap_theme["expected"], heatmap_theme
+            assert heatmap_theme["zmid"] == 0, heatmap_theme
+            dispatch_control(cdp, "heatmapOpacityInput", 0.45)
+            wait_for(cdp, "STATE.currentPlotlyData?.[0]?.opacity === 0.45", 10, "heatmap opacity")
 
     dispatch_control(cdp, "sankeyNodePadInput", 24)
     dispatch_control(cdp, "sankeyNodeThicknessInput", 26)

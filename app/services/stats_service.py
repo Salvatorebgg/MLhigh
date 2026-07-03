@@ -548,9 +548,27 @@ def run_target_trial_emulation(df: pd.DataFrame, params: dict) -> dict:
     treatment_var = params.get("treatment_var", "treatment")
     outcome_var = params.get("outcome_var", "event_12m")
     time_var = params.get("time_var", "followup_months")
-    covariates = [c for c in params.get("feature_vars", []) if c in df.columns and c not in {treatment_var, outcome_var, time_var}]
+
+    def _is_tte_covariate(col: str) -> bool:
+        if col not in df.columns or col in {treatment_var, outcome_var, time_var, "patient_id"}:
+            return False
+        name = str(col).lower()
+        if name.endswith("id") or name in {"id", "subject_id", "patient_id", "sample_id"}:
+            return False
+        if re.search(r"(treat|therapy|intervention|exposure|outcome|event|death|survival|followup|time|month|date)", name):
+            return False
+        try:
+            if df[col].nunique(dropna=True) <= 20:
+                tmp = df[[col, treatment_var]].dropna()
+                if not tmp.empty and tmp.groupby(col)[treatment_var].nunique().max() == 1:
+                    return False
+        except Exception:
+            pass
+        return True
+
+    covariates = [c for c in params.get("feature_vars", []) if _is_tte_covariate(c)]
     if not covariates:
-        covariates = [c for c in df.columns if c not in {treatment_var, outcome_var, time_var, "patient_id"} and not str(c).lower().endswith("id")][:12]
+        covariates = [c for c in df.columns if _is_tte_covariate(c)][:12]
     keep_cols = [treatment_var, outcome_var, time_var] + covariates
     work = df.dropna(subset=[treatment_var, outcome_var, time_var]).copy()
     if work.empty or work[treatment_var].nunique() != 2:
@@ -620,11 +638,31 @@ def run_target_trial_emulation(df: pd.DataFrame, params: dict) -> dict:
         fig.update_layout(title="倾向评分重叠诊断", xaxis_title="P(T=1|X)", yaxis_title="频数", barmode="overlay", template="plotly_white", height=520)
         out["charts"].append({"title": "倾向评分重叠诊断", "plotly": _fig_to_json(fig)})
 
+        balance_rows = sorted(smd_rows, key=lambda r: max(r["加权前SMD"], r["加权后SMD"]), reverse=True)
+        balance_labels = [r["协变量"] for r in balance_rows]
         fig2 = go.Figure()
-        fig2.add_trace(go.Bar(x=[r["协变量"] for r in smd_rows], y=[r["加权前SMD"] for r in smd_rows], name="加权前"))
-        fig2.add_trace(go.Bar(x=[r["协变量"] for r in smd_rows], y=[r["加权后SMD"] for r in smd_rows], name="加权后"))
-        fig2.add_hline(y=0.1, line_dash="dash", line_color="red", annotation_text="0.1")
-        fig2.update_layout(title="协变量平衡 Love Plot", xaxis_title="协变量", yaxis_title="SMD", barmode="group", template="plotly_white", height=540)
+        fig2.add_trace(go.Scatter(
+            x=[r["加权前SMD"] for r in balance_rows],
+            y=balance_labels,
+            mode="markers",
+            name="加权前",
+            marker=dict(size=10, color="#e11d8a", symbol="circle"),
+        ))
+        fig2.add_trace(go.Scatter(
+            x=[r["加权后SMD"] for r in balance_rows],
+            y=balance_labels,
+            mode="markers",
+            name="加权后",
+            marker=dict(size=10, color="#2563eb", symbol="diamond"),
+        ))
+        fig2.add_vline(x=0.1, line_dash="dash", line_color="red", annotation_text="0.1")
+        fig2.update_layout(
+            title="协变量平衡 Love Plot",
+            xaxis_title="标准化均差 SMD",
+            yaxis_title="协变量",
+            template="plotly_white",
+            height=max(500, 110 + 46 * len(balance_rows)),
+        )
         out["charts"].append({"title": "协变量平衡图", "plotly": _fig_to_json(fig2)})
 
         ci = work.groupby(time_var)[outcome_var].mean().reset_index()
@@ -1265,8 +1303,34 @@ def run_bayesian(df: pd.DataFrame, params: dict) -> dict:
     out["tables"].append({"title": "贝叶斯后验估计", "headers": list(bayes_results[0].keys()), "rows": bayes_results})
 
     if HAS_PLOTLY:
-        fig.update_layout(title="后验分布", xaxis_title=outcome_var, yaxis_title="密度",
-                          template="plotly_white", height=520)
+        fig.update_layout(
+            title="后验分布",
+            xaxis=dict(
+                title=outcome_var,
+                showline=True, linewidth=1.8, linecolor="#26313D",
+                ticks="outside", ticklen=5, tickwidth=1.0,
+                tickcolor="#26313D",
+                showgrid=True, gridcolor="rgba(31,41,55,0.07)", gridwidth=0.8,
+                zeroline=False,
+            ),
+            yaxis=dict(
+                title="密度",
+                showline=True, linewidth=1.8, linecolor="#26313D",
+                ticks="outside", ticklen=5, tickwidth=1.0,
+                tickcolor="#26313D",
+                showgrid=True, gridcolor="rgba(31,41,55,0.07)", gridwidth=0.8,
+                rangemode="tozero",  # density ≥ 0 — never extend below zero
+                zeroline=True, zerolinewidth=1.0, zerolinecolor="#26313D",
+            ),
+            plot_bgcolor="#fafcfb", paper_bgcolor="#ffffff",
+            font=dict(family="Arial, Helvetica, 'Noto Sans SC', sans-serif",
+                      color="#111827", size=12),
+            legend=dict(orientation="h", x=0, y=-0.18, xanchor="left",
+                        bgcolor="rgba(255,255,255,0)", borderwidth=0,
+                        font=dict(size=11, color="#111827")),
+            height=520,
+            margin=dict(l=65, r=30, t=55, b=65, pad=8),
+        )
         out["charts"].append({"title": "后验分布图", "plotly": _fig_to_json(fig)})
 
     diff = bayes_results[0]["后验均值"] - bayes_results[1]["后验均值"] if len(bayes_results) >= 2 else 0
@@ -1485,13 +1549,59 @@ def run_meta_analysis(df: pd.DataFrame, params: dict) -> dict:
                           template="plotly_white", height=200 + 30 * len(names))
         out["charts"].append({"title": "森林图", "plotly": _fig_to_json(fig)})
 
-        # Funnel plot
+        # Standard funnel plot: effect size against SE with straight pseudo-95% CI limits.
         fig2 = go.Figure()
-        fig2.add_trace(go.Scatter(x=effects, y=1 / ses, mode="markers",
-                                   marker=dict(size=10, color="#0E7C7B"), name="研究"))
-        fig2.add_vline(x=pooled_re, line_dash="dash", line_color="gray")
-        fig2.update_layout(title="漏斗图", xaxis_title="效应量", yaxis_title="精度 (1/SE)",
-                           xaxis=dict(zeroline=False), template="plotly_white", height=520)
+
+        funnel_center = float(pooled_re)
+        se_axis_max = float(np.max(ses) * 1.08)
+        se_line = np.array([0.0, se_axis_max])
+        left_limit = funnel_center - 1.96 * se_line
+        right_limit = funnel_center + 1.96 * se_line
+
+        fig2.add_trace(go.Scatter(
+            x=list(left_limit),
+            y=list(se_line),
+            mode="lines",
+            line=dict(color="#2F80C9", width=1.8),
+            name="95% CI 左界",
+            hoverinfo="skip",
+        ))
+        fig2.add_trace(go.Scatter(
+            x=list(right_limit),
+            y=list(se_line),
+            mode="lines",
+            line=dict(color="#E06830", width=1.8),
+            name="95% CI 右界",
+            hoverinfo="skip",
+        ))
+        fig2.add_trace(go.Scatter(
+            x=[funnel_center, funnel_center],
+            y=[0, se_axis_max],
+            mode="lines",
+            line=dict(color="#64748B", width=1.5, dash="dash"),
+            name="合并效应",
+            hoverinfo="skip",
+        ))
+        fig2.add_trace(go.Scatter(
+            x=effects,
+            y=ses,
+            mode="markers",
+            text=[str(n) for n in names],
+            marker=dict(size=9, color="#0E7C7B", opacity=0.78, line=dict(color="white", width=0.6)),
+            name="研究",
+            hovertemplate="%{text}<br>效应量=%{x:.3f}<br>SE=%{y:.3f}<extra></extra>",
+        ))
+
+        x_values = np.concatenate([effects, left_limit, right_limit, np.array([funnel_center])])
+        x_min, x_max = float(np.min(x_values)), float(np.max(x_values))
+        x_pad = (x_max - x_min) * 0.08 if x_max > x_min else 0.1
+        fig2.update_layout(
+            title="漏斗图", xaxis_title="效应量", yaxis_title="标准误 (SE)",
+            xaxis=dict(zeroline=False, range=[x_min - x_pad, x_max + x_pad]),
+            yaxis=dict(range=[se_axis_max, 0], zeroline=False),
+            template="plotly_white", height=520,
+        )
+        out["charts"].append({"title": "漏斗图", "plotly": _fig_to_json(fig2)})
         out["diagnostics"].append({"title": "漏斗图", "plotly": _fig_to_json(fig2)})
 
     n_studies = len(names)
@@ -1694,14 +1804,24 @@ def run_mixed_effects(df: pd.DataFrame, params: dict) -> dict:
         out["tables"].append({"title": "固定效应", "headers": list(coef_table.columns), "rows": coef_table.to_dict(orient="records")})
 
     if HAS_PLOTLY:
-        centers = sorted(df_clean[random_var].unique())
+        max_trend_lines = 20
+        centers = sorted(df_clean[random_var].dropna().astype(str).unique())
+        shown_centers = centers[:max_trend_lines]
+        is_limited = len(centers) > max_trend_lines
         fig = go.Figure()
-        for c in centers:
-            sub = df_clean[df_clean[random_var] == c]
+        random_labels = df_clean[random_var].astype(str)
+        for c in shown_centers:
+            sub = df_clean[random_labels == c]
             agg = sub.groupby(time_var)[outcome_var].mean().reset_index()
             fig.add_trace(go.Scatter(x=agg[time_var], y=agg[outcome_var], mode="lines+markers", name=str(c)))
-        fig.update_layout(title="各中心纵向趋势", xaxis_title=time_var, yaxis_title=outcome_var,
-                          template="plotly_white", height=530)
+        chart_title = f"各中心纵向趋势（前{max_trend_lines}个）" if is_limited else "各中心纵向趋势"
+        fig.update_layout(
+            title=chart_title,
+            xaxis_title=time_var,
+            yaxis_title=outcome_var,
+            template="plotly_white",
+            height=530,
+        )
         out["charts"].append({"title": "各中心纵向趋势", "plotly": _fig_to_json(fig)})
 
     n_subjects_me = df_clean["subject_id"].nunique()
@@ -2471,7 +2591,24 @@ def run_propensity_score(df: pd.DataFrame, params: dict) -> dict:
         fig2.add_trace(go.Scatter(x=line_x, y=line_y, mode='lines', showlegend=False, hoverinfo='skip', line=dict(color='#94a3b8', width=1.2)))
         fig2.add_trace(go.Scatter(x=[0] * nshow, y=treated_ps, mode='markers', name='治疗组', marker=dict(size=7, color='#ef4444')))
         fig2.add_trace(go.Scatter(x=[1] * nshow, y=control_ps, mode='markers', name='匹配对照', marker=dict(size=7, color='#2563eb')))
-        fig2.update_layout(title='匹配对倾向评分连线图', xaxis=dict(title='匹配状态', tickmode='array', tickvals=[0,1], ticktext=['治疗组','匹配对照']), yaxis_title='Propensity Score', template='plotly_white', height=520)
+        fig2.update_layout(
+            title='匹配对倾向评分连线图',
+            xaxis=dict(
+                title='匹配状态',
+                tickmode='array',
+                tickvals=[0, 1],
+                ticktext=['治疗组', '匹配对照'],
+            ),
+            yaxis=dict(
+                title='Propensity Score',
+                range=[0.8, 1.02],
+                tickmode='array',
+                tickvals=[0.8, 0.85, 0.9, 0.95, 1.0],
+                ticktext=['0.80', '0.85', '0.90', '0.95', '1.00'],
+            ),
+            template='plotly_white',
+            height=520,
+        )
         _ensure_chart(out, '匹配对倾向评分连线图', fig2)
         if outcome_var in matched_df.columns and pd.api.types.is_numeric_dtype(matched_df[outcome_var]):
             fig3=go.Figure()
@@ -2541,12 +2678,47 @@ def run_mediation(df: pd.DataFrame, params: dict) -> dict:
         fig.add_trace(go.Bar(x=['总效应 c','路径 a','路径 b','直接效应 c\'','间接效应 a×b'], y=[c,a,b,c_prime,ab]))
         fig.update_layout(title='中介路径系数图', xaxis_title='路径', yaxis_title='效应值', template='plotly_white', height=520)
         _ensure_chart(out, '中介路径系数图', fig)
-        # effect decomposition
+        # effect decomposition: show the observed total effect next to its c' + a*b components
         total = c if abs(c) > 1e-8 else c_prime + ab
         fig2=go.Figure()
-        fig2.add_trace(go.Bar(x=['效应分解'], y=[c_prime], name='直接效应'))
-        fig2.add_trace(go.Bar(x=['效应分解'], y=[ab], name='间接效应'))
-        fig2.update_layout(title='总效应分解图', xaxis_title='', yaxis_title='效应值', barmode='stack', template='plotly_white', height=520)
+        fig2.add_trace(go.Bar(
+            x=['总效应 c', '分解：c′ + a×b'],
+            y=[total, None],
+            name='总效应',
+            marker_color='#4A5568',
+            text=[f'{total:.4f}', ''],
+            textposition='outside',
+            hovertemplate='%{x}<br>效应值=%{y:.4f}<extra></extra>',
+        ))
+        fig2.add_trace(go.Bar(
+            x=['总效应 c', '分解：c′ + a×b'],
+            y=[None, c_prime],
+            name="直接效应 c′",
+            marker_color='#2563EB',
+            text=['', f'{c_prime:.4f}'],
+            textposition='outside',
+            hovertemplate='%{x}<br>直接效应=%{y:.4f}<extra></extra>',
+        ))
+        fig2.add_trace(go.Bar(
+            x=['总效应 c', '分解：c′ + a×b'],
+            y=[None, ab],
+            name='间接效应 a×b',
+            marker_color='#0E7C7B',
+            text=['', f'{ab:.4f}'],
+            textposition='outside',
+            hovertemplate='%{x}<br>间接效应=%{y:.4f}<extra></extra>',
+        ))
+        fig2.add_hline(y=0, line_color='#64748B', line_width=1)
+        fig2.update_layout(
+            title='总效应分解图（c ≈ c′ + a×b）',
+            xaxis_title='',
+            yaxis_title='效应值',
+            barmode='relative',
+            template='plotly_white',
+            height=520,
+            legend=dict(orientation='h', y=-0.18),
+            margin=dict(l=70, r=30, t=70, b=90),
+        )
         _ensure_chart(out, '总效应分解图', fig2)
         # relation scatter
         fig3=go.Figure()
@@ -2584,12 +2756,6 @@ def run_mixed_effects(df: pd.DataFrame, params: dict) -> dict:
         fig.add_trace(go.Scatter(x=[mn,mx], y=[mn,mx], mode='lines', name='理想拟合', line=dict(dash='dash', width=2)))
         fig.update_layout(title='混合模型观测值 vs 拟合值', xaxis_title='拟合值', yaxis_title='观测值', template='plotly_white', height=520)
         _ensure_chart(out, '观测值 vs 拟合值', fig)
-        # subject spaghetti
-        fig2=go.Figure(); sample_ids=_safe_subject_sample(df_clean, subject_var, 18)
-        for sid, sdf in df_clean[df_clean[subject_var].astype(str).isin(sample_ids)].sort_values([subject_var, time_var]).groupby(subject_var):
-            fig2.add_trace(go.Scatter(x=sdf[time_var], y=sdf[outcome_var], mode='lines+markers', name=str(sid), showlegend=False, opacity=0.45))
-        fig2.update_layout(title='受试者个体轨迹图', xaxis_title=time_var, yaxis_title=outcome_var, template='plotly_white', height=520)
-        _ensure_chart(out, '受试者个体轨迹图', fig2)
     except Exception:
         pass
     return out
@@ -3158,26 +3324,39 @@ def run_ldsc(df: pd.DataFrame, params: dict) -> dict:
         out["charts"].append({"title": "性状间遗传相关性热图", "plotly": _fig_to_json(heatmap)})
 
         forest_order = summary.sort_values("h²", ascending=True)
-        forest = go.Figure(data=go.Scatter(
-            x=forest_order["h²"],
-            y=forest_order["性状"],
-            mode="markers",
-            marker=dict(size=11, color="#2563eb"),
-            error_x=dict(
-                type="data",
-                symmetric=False,
-                array=forest_order["95%CI上限"] - forest_order["h²"],
-                arrayminus=forest_order["h²"] - forest_order["95%CI下限"],
-                thickness=1.5,
-                width=5,
-            ),
-            hovertemplate="%{y}<br>h²=%{x:.3f}<extra></extra>",
-        ))
-        forest.add_vline(x=0, line_dash="dash", line_color="#94a3b8")
+        forest = go.Figure()
+        for _, row in forest_order.iterrows():
+            h2_value = float(row["h²"])
+            ci_low = float(row["95%CI下限"])
+            ci_high = float(row["95%CI上限"])
+            trait_name = str(row["性状"])
+            forest.add_trace(go.Scatter(
+                x=[h2_value],
+                y=[trait_name],
+                mode="markers",
+                name=trait_name,
+                showlegend=False,
+                marker=dict(size=11, color="#2563eb"),
+                error_x=dict(
+                    type="data",
+                    symmetric=False,
+                    array=[max(ci_high - h2_value, 0)],
+                    arrayminus=[max(h2_value - ci_low, 0)],
+                    thickness=1.5,
+                    width=5,
+                    color="#2563eb",
+                ),
+                hovertemplate=f"{trait_name}<br>h²=%{{x:.3f}}<extra></extra>",
+            ))
+        x_lower = float(min(0, forest_order["95%CI下限"].min()))
+        x_upper = float(max(0, forest_order["95%CI上限"].max()))
+        x_pad = max((x_upper - x_lower) * 0.08, 0.02)
+        forest.add_vline(x=0, line_dash="dash", line_color="#64748b", line_width=1.5)
         forest.update_layout(
             title="各性状遗传力及 95% 置信区间",
             xaxis_title="遗传力 h²",
             yaxis_title="性状",
+            xaxis=dict(range=[x_lower - x_pad, x_upper + x_pad]),
             template="plotly_white",
             height=max(460, 90 + 62 * n_traits),
             showlegend=False,
@@ -3623,6 +3802,21 @@ def run_counterfactual(df: pd.DataFrame, params: dict) -> dict:
             line_y.extend([float(y0_pred[i]), float(y1_pred[i]), None])
             y0_show.append(float(y0_pred[i]))
             y1_show.append(float(y1_pred[i]))
+        pair_y_title = "模型预测潜在结局" if not is_binary_outcome else "模型预测事件概率"
+        pair_y_axis = {"title": pair_y_title}
+        pair_values = np.array(y0_show + y1_show, dtype=float)
+        pair_values = pair_values[np.isfinite(pair_values)]
+        if pair_values.size:
+            pair_min = float(np.min(pair_values))
+            pair_max = float(np.max(pair_values))
+            pair_span = max(pair_max - pair_min, 1e-9)
+            pair_pad = max(pair_span * 0.12, 0.04 if is_binary_outcome else 0.5)
+            pair_lower = pair_min - pair_pad
+            pair_upper = pair_max + pair_pad
+            if is_binary_outcome:
+                pair_lower = max(0.0, pair_lower)
+                pair_upper = min(1.0, pair_upper)
+            pair_y_axis["range"] = [pair_lower, pair_upper]
         fig2 = go.Figure()
         fig2.add_trace(go.Scatter(x=line_x, y=line_y, mode="lines", showlegend=False,
                                   hoverinfo="skip", line=dict(width=1)))
@@ -3631,7 +3825,7 @@ def run_counterfactual(df: pd.DataFrame, params: dict) -> dict:
         fig2.update_layout(
             title="反事实潜在结局配对图",
             xaxis=dict(title="反事实处理状态", tickmode="array", tickvals=[0, 1], ticktext=["Y(0)", "Y(1)"]),
-            yaxis_title="模型预测潜在结局" if not is_binary_outcome else "模型预测事件概率",
+            yaxis=pair_y_axis,
             template="plotly_white",
             height=560,
         )

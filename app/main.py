@@ -336,7 +336,7 @@ METHOD_CATALOG = {
         "description": "PCA、t-SNE 高维数据可视化",
         "example_dataset": "dim_reduction_example",
         "params": [
-            {"key": "group_var", "label": "分组变量", "type": "select", "default": "group"},
+            {"key": "group_var", "label": "分组变量", "type": "select", "default": "subtype"},
         ],
     },
     "cluster": {
@@ -601,8 +601,12 @@ METHOD_PARAM_EXTENSIONS = {
         {"key": "threshold", "label": "分类阈值", "type": "number", "default": 0.50, "min": 0.05, "max": 0.95, "step": 0.01},
     ],
     "dim_reduction": [
-        {"key": "n_components", "label": "降维维度", "type": "select", "default": "2", "options": ["2", "3"]},
+        {"key": "n_components", "label": "PCA主成分数", "type": "number", "default": 10, "min": 2, "max": 50, "step": 1},
         {"key": "perplexity", "label": "t-SNE perplexity", "type": "number", "default": 30, "min": 5, "max": 60, "step": 1},
+        {"key": "tsne_learning_rate", "label": "t-SNE学习率", "type": "number", "default": 200, "min": 10, "max": 1000, "step": 10},
+        {"key": "umap_n_neighbors", "label": "UMAP邻居数", "type": "number", "default": 15, "min": 2, "max": 100, "step": 1},
+        {"key": "umap_min_dist", "label": "UMAP最小距离", "type": "number", "default": 0.1, "min": 0.0, "max": 0.99, "step": 0.01},
+        {"key": "standardize", "label": "特征标准化", "type": "select", "default": "zscore", "options": ["zscore", "none"]},
         {"key": "random_state", "label": "随机种子", "type": "number", "default": 42, "min": 0, "max": 9999, "step": 1},
     ],
     "cluster": [
@@ -738,7 +742,8 @@ PARAM_CONTROL_BOOSTS = {
     ],
     "dim_reduction": [
         {"key": "feature_vars", "label": "降维特征变量", "type": "multi_select", "default": []},
-        {"key": "method", "label": "降维方法", "type": "select", "default": "pca_tsne", "options": ["pca", "tsne", "pca_tsne"]},
+        {"key": "group_var", "label": "分组变量", "type": "select", "default": "subtype"},
+        {"key": "method", "label": "降维方法", "type": "select", "default": "all", "options": ["pca", "tsne", "umap", "pca_tsne", "all"]},
     ],
     "cluster": [
         {"key": "feature_vars", "label": "聚类特征变量", "type": "multi_select", "default": []},

@@ -124,6 +124,10 @@ def _feature_cols_from_params(df: pd.DataFrame, params: dict, target: str, limit
     cols = [c for c in raw if c in df.columns and c != target]
     if not cols:
         cols = [c for c in df.columns if c not in [target, "patient_id", "subject_id", "sample_id"]]
+    target_lower = str(target or "").lower()
+    if target_lower in {"risk_category", "high_risk"}:
+        derived = {"risk_score", "risk_category", "high_risk"}
+        cols = [c for c in cols if c.lower() not in derived or c == target]
     if limit:
         cols = cols[:limit]
     return cols
@@ -1094,13 +1098,13 @@ def run_feature_engineering(df: pd.DataFrame, params: dict) -> dict:
     feature_frame = df[requested_features] if requested_features else df
     num_cols = feature_frame.select_dtypes(include=[np.number]).columns.tolist()
     num_cols = [c for c in num_cols if feature_frame[c].nunique(dropna=True) > 1]
-    cat_cols = df.select_dtypes(exclude=[np.number]).columns.tolist()
+    cat_cols = feature_frame.select_dtypes(exclude=[np.number]).columns.tolist()
 
     # Missing summary
     missing = pd.DataFrame({
-        "变量": df.columns,
-        "缺失数": df.isna().sum().values,
-        "缺失比例": np.round(df.isna().sum().values / len(df) * 100, 2),
+        "变量": feature_frame.columns,
+        "缺失数": feature_frame.isna().sum().values,
+        "缺失比例": np.round(feature_frame.isna().sum().values / len(feature_frame) * 100, 2),
     }).sort_values("缺失比例", ascending=False)
     missing = missing[missing["缺失比例"] > 0]
     out["tables"].append({"title": "缺失值统计", "headers": list(missing.columns),
@@ -1109,20 +1113,117 @@ def run_feature_engineering(df: pd.DataFrame, params: dict) -> dict:
     # Variable summary
     var_summary = pd.DataFrame({
         "变量类型": ["连续变量", "分类变量", "含缺失变量", "总变量"],
-        "数量": [len(num_cols), len(cat_cols), len(missing), len(df.columns)],
+        "数量": [len(num_cols), len(cat_cols), len(missing), len(feature_frame.columns)],
     })
     out["tables"].append({"title": "变量概览", "headers": list(var_summary.columns),
                           "rows": var_summary.to_dict(orient="records")})
 
     if HAS_PLOTLY:
+        palette = ["#2563eb", "#0f766e", "#f59e0b", "#ef4444", "#7c3aed", "#0891b2"]
+        id_like = {"patient_id", "subject_id", "sample_id", "id"}
+        all_missing = pd.DataFrame({
+            "变量": feature_frame.columns,
+            "缺失比例": np.round(feature_frame.isna().sum().values / len(feature_frame) * 100, 2),
+            "完整比例": np.round(100 - feature_frame.isna().sum().values / len(feature_frame) * 100, 2),
+        }).sort_values("缺失比例", ascending=True)
+
+        fig_types = go.Figure()
+        high_card_cols = [
+            c for c in feature_frame.columns
+            if str(c).lower() in id_like
+            or (not pd.api.types.is_numeric_dtype(feature_frame[c]) and feature_frame[c].nunique(dropna=True) > min(50, max(10, len(feature_frame) * 0.25)))
+        ]
+        type_counts = {
+            "连续变量": len(num_cols),
+            "分类变量": len([c for c in cat_cols if c not in high_card_cols]),
+            "ID/高基数字段": len(high_card_cols),
+            "含缺失变量": len(missing),
+        }
+        fig_types.add_trace(go.Bar(
+            x=list(type_counts.keys()),
+            y=list(type_counts.values()),
+            marker=dict(color=["#2563eb", "#0f766e", "#64748b", "#ef4444"], line=dict(color="#ffffff", width=0.8)),
+            text=list(type_counts.values()),
+            textposition="outside",
+            hovertemplate="%{x}: %{y}<extra></extra>",
+        ))
+        fig_types.update_layout(
+            title="变量类型与数据质量概览",
+            xaxis_title="类型",
+            yaxis_title="变量数",
+            template="plotly_white",
+            height=440,
+            margin=dict(l=70, r=34, t=70, b=70),
+            showlegend=False,
+        )
+        out["charts"].append({"title": "变量类型与数据质量概览", "plotly": _fig_to_json(fig_types)})
+
+        if len(all_missing):
+            miss_top = all_missing.sort_values("缺失比例", ascending=False).head(20).sort_values("缺失比例")
+            fig_miss = go.Figure()
+            fig_miss.add_trace(go.Bar(
+                x=miss_top["缺失比例"],
+                y=miss_top["变量"],
+                orientation="h",
+                marker=dict(color=np.where(miss_top["缺失比例"] >= 20, "#ef4444", np.where(miss_top["缺失比例"] > 0, "#f59e0b", "#0f766e")).tolist()),
+                text=[f"{v:.1f}%" for v in miss_top["缺失比例"]],
+                textposition="outside",
+                hovertemplate="变量: %{y}<br>缺失比例: %{x:.2f}%<extra></extra>",
+            ))
+            fig_miss.update_layout(
+                title="变量缺失比例排行",
+                xaxis_title="缺失比例（%）",
+                yaxis_title="变量",
+                template="plotly_white",
+                height=max(460, 26 * len(miss_top) + 160),
+                margin=dict(l=130, r=60, t=70, b=70),
+                showlegend=False,
+            )
+            fig_miss.update_xaxes(range=[0, max(5, float(miss_top["缺失比例"].max()) * 1.18)])
+            out["charts"].append({"title": "变量缺失比例排行", "plotly": _fig_to_json(fig_miss)})
+
         # Missingness heatmap
         if len(missing) > 0:
-            missing_data = df.isna().astype(int)
+            miss_cols = missing.head(25)["变量"].tolist()
+            row_step = max(1, int(np.ceil(len(feature_frame) / 220)))
+            sampled = feature_frame.iloc[::row_step][miss_cols]
+            missing_data = sampled.isna().astype(int)
             fig = go.Figure(data=go.Heatmap(z=missing_data.values.T, colorscale=[[0, "#E8F4F3"], [1, "#E06830"]],
-                                            x=[str(i) for i in range(len(df))],
-                                            y=df.columns.tolist(), showscale=True))
-            fig.update_layout(title="缺失值热图", template="plotly_white", height=500 + 15 * len(df.columns))
+                                            x=[str(i) for i in sampled.index],
+                                            y=miss_cols, showscale=True,
+                                            colorbar=dict(title="缺失")))
+            fig.update_layout(
+                title="缺失值热图",
+                xaxis_title="样本序号（抽样显示）" if row_step > 1 else "样本序号",
+                yaxis_title="变量",
+                template="plotly_white",
+                height=max(460, 24 * len(miss_cols) + 160),
+                margin=dict(l=130, r=42, t=70, b=74),
+            )
             out["charts"].append({"title": "缺失值热图", "plotly": _fig_to_json(fig)})
+
+            if len(miss_cols) >= 2:
+                miss_ind = feature_frame[miss_cols].isna().astype(int)
+                co = miss_ind.corr().fillna(0)
+                fig_co = go.Figure(data=go.Heatmap(
+                    z=co.values,
+                    x=miss_cols,
+                    y=miss_cols,
+                    zmin=-1,
+                    zmax=1,
+                    colorscale="RdBu",
+                    colorbar=dict(title="r"),
+                    hovertemplate="%{y} 与 %{x}<br>缺失相关: %{z:.2f}<extra></extra>",
+                ))
+                fig_co.update_layout(
+                    title="缺失模式共现热图",
+                    xaxis_title="变量",
+                    yaxis_title="变量",
+                    template="plotly_white",
+                    height=560,
+                    margin=dict(l=120, r=40, t=70, b=120),
+                )
+                out["diagnostics"].append({"title": "缺失模式共现热图", "plotly": _fig_to_json(fig_co)})
 
         if len(num_cols) >= 2:
             numeric = feature_frame[num_cols].replace([np.inf, -np.inf], np.nan)
@@ -1159,7 +1260,8 @@ def run_feature_engineering(df: pd.DataFrame, params: dict) -> dict:
                         y=z_values,
                         name=col,
                         boxpoints="outliers",
-                        marker=dict(size=4),
+                        marker=dict(size=4, color=palette[len(fig_box.data) % len(palette)]),
+                        line=dict(color=palette[len(fig_box.data) % len(palette)]),
                     ))
                 if fig_box.data:
                     fig_box.update_layout(
@@ -1172,6 +1274,138 @@ def run_feature_engineering(df: pd.DataFrame, params: dict) -> dict:
                     )
                     out["charts"].append({"title": "标准化特征分布", "plotly": _fig_to_json(fig_box)})
 
+            dist_cols = numeric.notna().sum().sort_values(ascending=False).head(6).index.tolist()
+            fig_dist = go.Figure()
+            for i, col in enumerate(dist_cols):
+                values = pd.to_numeric(numeric[col], errors="coerce").dropna()
+                if len(values) < 5:
+                    continue
+                fig_dist.add_trace(go.Violin(
+                    y=values,
+                    name=col,
+                    box_visible=True,
+                    meanline_visible=True,
+                    points=False,
+                    line_color=palette[i % len(palette)],
+                    fillcolor=palette[i % len(palette)],
+                    opacity=0.55,
+                    hovertemplate=f"{col}<br>值: %{{y:.3f}}<extra></extra>",
+                ))
+            if fig_dist.data:
+                fig_dist.update_layout(
+                    title="主要数值变量原始分布",
+                    xaxis_title="变量",
+                    yaxis_title="原始值",
+                    template="plotly_white",
+                    height=520,
+                    showlegend=False,
+                    margin=dict(l=74, r=34, t=70, b=96),
+                )
+                out["charts"].append({"title": "主要数值变量原始分布", "plotly": _fig_to_json(fig_dist)})
+
+            skew_rows = []
+            outlier_rows = []
+            for col in numeric.columns:
+                values = pd.to_numeric(numeric[col], errors="coerce").dropna()
+                if len(values) < 8 or values.nunique() <= 1:
+                    continue
+                skew_val = float(stats.skew(values, nan_policy="omit"))
+                if np.isfinite(skew_val):
+                    skew_rows.append({"变量": col, "偏度": skew_val, "绝对偏度": abs(skew_val)})
+                q1, q3 = np.percentile(values, [25, 75])
+                iqr = q3 - q1
+                if np.isfinite(iqr) and iqr > 0:
+                    lo, hi = q1 - 1.5 * iqr, q3 + 1.5 * iqr
+                    outlier_pct = float(((values < lo) | (values > hi)).mean() * 100)
+                    outlier_rows.append({"变量": col, "异常值比例": outlier_pct})
+
+            if skew_rows:
+                skew_df = pd.DataFrame(skew_rows).sort_values("绝对偏度", ascending=False).head(12).sort_values("绝对偏度")
+                fig_skew = go.Figure()
+                fig_skew.add_trace(go.Bar(
+                    x=skew_df["偏度"],
+                    y=skew_df["变量"],
+                    orientation="h",
+                    marker=dict(color=np.where(skew_df["偏度"] >= 0, "#2563eb", "#ef4444").tolist()),
+                    text=[f"{v:.2f}" for v in skew_df["偏度"]],
+                    textposition="outside",
+                    hovertemplate="变量: %{y}<br>偏度: %{x:.3f}<extra></extra>",
+                ))
+                fig_skew.update_layout(
+                    title="数值变量偏度排行",
+                    xaxis_title="偏度",
+                    yaxis_title="变量",
+                    template="plotly_white",
+                    height=max(450, 28 * len(skew_df) + 150),
+                    margin=dict(l=130, r=56, t=70, b=70),
+                    showlegend=False,
+                )
+                _style_zero_baseline(fig_skew, horizontal=False)
+                out["diagnostics"].append({"title": "数值变量偏度排行", "plotly": _fig_to_json(fig_skew)})
+
+            if outlier_rows:
+                outlier_df = pd.DataFrame(outlier_rows).sort_values("异常值比例", ascending=False).head(12).sort_values("异常值比例")
+                fig_out = go.Figure()
+                fig_out.add_trace(go.Bar(
+                    x=outlier_df["异常值比例"],
+                    y=outlier_df["变量"],
+                    orientation="h",
+                    marker=dict(color=np.where(outlier_df["异常值比例"] >= 5, "#ef4444", "#f59e0b").tolist()),
+                    text=[f"{v:.1f}%" for v in outlier_df["异常值比例"]],
+                    textposition="outside",
+                    hovertemplate="变量: %{y}<br>IQR异常值比例: %{x:.2f}%<extra></extra>",
+                ))
+                fig_out.update_layout(
+                    title="IQR 异常值比例排行",
+                    xaxis_title="异常值比例（%）",
+                    yaxis_title="变量",
+                    template="plotly_white",
+                    height=max(450, 28 * len(outlier_df) + 150),
+                    margin=dict(l=130, r=56, t=70, b=70),
+                    showlegend=False,
+                )
+                fig_out.update_xaxes(range=[0, max(3, float(outlier_df["异常值比例"].max()) * 1.22)])
+                out["diagnostics"].append({"title": "IQR 异常值比例排行", "plotly": _fig_to_json(fig_out)})
+
+        cat_plot_cols = []
+        for col in cat_cols:
+            if str(col).lower() in id_like:
+                continue
+            nunique = feature_frame[col].nunique(dropna=True)
+            if 1 < nunique <= 20:
+                cat_plot_cols.append(col)
+        if cat_plot_cols:
+            cat_rows = []
+            for col in cat_plot_cols[:6]:
+                counts = feature_frame[col].fillna("缺失").astype(str).value_counts().head(8)
+                total = max(1, int(counts.sum()))
+                for level, count in counts.items():
+                    cat_rows.append({
+                        "变量-类别": f"{col} = {level}",
+                        "频数": int(count),
+                        "比例": float(count / total * 100),
+                    })
+            cat_df = pd.DataFrame(cat_rows).sort_values("频数", ascending=True)
+            fig_cat = go.Figure()
+            fig_cat.add_trace(go.Bar(
+                x=cat_df["频数"],
+                y=cat_df["变量-类别"],
+                orientation="h",
+                marker=dict(color="#0f766e", line=dict(color="#ffffff", width=0.6)),
+                customdata=np.round(cat_df["比例"], 1),
+                hovertemplate="%{y}<br>频数: %{x}<br>变量内比例: %{customdata}%<extra></extra>",
+            ))
+            fig_cat.update_layout(
+                title="分类变量类别频数",
+                xaxis_title="频数",
+                yaxis_title="变量 = 类别",
+                template="plotly_white",
+                height=max(520, 22 * len(cat_df) + 130),
+                margin=dict(l=190, r=34, t=70, b=70),
+                showlegend=False,
+            )
+            out["charts"].append({"title": "分类变量类别频数", "plotly": _fig_to_json(fig_cat)})
+
     n_missing = len(missing)
     missing_pct = missing["缺失比例"].max() if n_missing > 0 else 0
     high_missing = missing[missing["缺失比例"] > 20] if n_missing > 0 else pd.DataFrame()
@@ -1179,9 +1413,9 @@ def run_feature_engineering(df: pd.DataFrame, params: dict) -> dict:
     out["discussion"] = (
         f"## 特征工程与数据质量评估报告\n\n"
         f"### 一、数据集概况\n"
-        f"本数据集包含 **{len(df)}** 条记录和 **{len(df.columns)}** 个变量，"
+        f"本次特征工程范围包含 **{len(feature_frame)}** 条记录和 **{len(feature_frame.columns)}** 个变量，"
         f"其中连续型变量 {len(num_cols)} 个，分类型变量 {len(cat_cols)} 个。"
-        f"数据质量是机器学习建模成功的基础，本报告从缺失值、变量类型和数据完整性三个维度进行系统评估。\n\n"
+        f"数据质量是机器学习建模成功的基础，本报告从缺失值、变量类型、分布形态、相关结构和异常值五个维度进行系统评估。\n\n"
         f"### 二、缺失值分析\n"
         f"{'**数据完整性良好：**所有变量均无缺失值，可直接进入建模流程。' if n_missing == 0 else f'共有 **{n_missing}** 个变量存在缺失值，最高缺失比例为 {missing_pct:.1f}%。'}\n\n"
         f"{'缺失值热图显示了缺失模式的空间分布。' if n_missing > 0 else ''}"
@@ -1409,22 +1643,91 @@ def _hex_to_rgba(hex_color, alpha):
     return f"rgba({r},{g},{b},{alpha})"
 
 
+def _auto_dim_group_var(df: pd.DataFrame, params: dict, feature_cols: list[str]) -> str | None:
+    requested = params.get("group_var") or params.get("group") or params.get("label_var")
+    if requested in df.columns and requested not in feature_cols:
+        return requested
+    feature_set = set(feature_cols)
+    id_like = {"id", "sample_id", "subject_id", "patient_id"}
+    preferred = ("subtype", "group", "class", "cluster", "label", "type", "batch", "sex", "gender", "分组", "类别", "亚型")
+    candidates = []
+    for col in df.columns:
+        if col in feature_set or str(col).lower() in id_like:
+            continue
+        nunique = df[col].nunique(dropna=True)
+        if 2 <= nunique <= min(12, max(2, len(df) // 8)):
+            counts = df[col].dropna().value_counts()
+            if len(counts) and counts.min() >= 3:
+                name = str(col).lower()
+                priority = 0 if any(key in name for key in preferred) else 1
+                candidates.append((priority, nunique, col))
+    if not candidates:
+        return None
+    candidates.sort(key=lambda x: (x[0], x[1], str(x[2])))
+    return candidates[0][2]
+
+
 def run_dim_reduction(df: pd.DataFrame, params: dict) -> dict:
     out = {"tables": [], "charts": [], "diagnostics": [], "discussion": ""}
-    group_var = params.get("group_var", "group")
-    feature_cols = [c for c in df.columns if c not in ["sample_id", group_var]]
-    X_raw = df[feature_cols].copy()
-    for col in X_raw.columns:
-        if X_raw[col].dtype == object:
-            X_raw[col] = X_raw[col].astype("category").cat.codes
-    X_raw = X_raw.dropna()
-    X = StandardScaler().fit_transform(X_raw)
+    def int_param(key, default, lo, hi):
+        try:
+            val = int(float(params.get(key, default)))
+        except Exception:
+            val = default
+        return max(lo, min(hi, val))
 
-    groups = df.loc[X_raw.index, group_var].values if group_var in df.columns else None
+    def float_param(key, default, lo, hi):
+        try:
+            val = float(params.get(key, default))
+        except Exception:
+            val = default
+        return max(lo, min(hi, val))
+
+    def coords_2d(arr):
+        arr = np.asarray(arr, dtype=float)
+        if arr.ndim == 1:
+            arr = arr.reshape(-1, 1)
+        if arr.shape[1] == 1:
+            return np.column_stack([arr[:, 0], np.zeros(arr.shape[0])])
+        return arr[:, :2]
+
+    requested_features = [c for c in (params.get("feature_vars") or []) if c in df.columns]
+    id_like = {"id", "sample_id", "subject_id", "patient_id"}
+    if requested_features:
+        feature_cols = [c for c in requested_features if pd.api.types.is_numeric_dtype(df[c]) and df[c].nunique(dropna=True) > 1]
+    else:
+        feature_cols = [
+            c for c in df.columns
+            if str(c).lower() not in id_like
+            and pd.api.types.is_numeric_dtype(df[c])
+            and df[c].nunique(dropna=True) > 1
+        ]
+    group_var = _auto_dim_group_var(df, params, feature_cols)
+    X_raw = df[feature_cols].replace([np.inf, -np.inf], np.nan).dropna()
+    standardize = str(params.get("standardize", "zscore") or "zscore")
+    X = StandardScaler().fit_transform(X_raw) if standardize != "none" else X_raw.astype(float).values
+
+    method = str(params.get("method", "all") or "all").lower()
+    if method not in {"pca", "tsne", "umap", "pca_tsne", "all"}:
+        method = "all"
+    show_pca = method in {"pca", "pca_tsne", "all"}
+    show_tsne = method in {"tsne", "pca_tsne", "all"}
+    show_umap = method in {"umap", "all"}
+    random_state = int_param("random_state", 42, 0, 9999)
+
+    groups = None
+    if group_var in df.columns:
+        group_series = df.loc[X_raw.index, group_var].fillna("缺失").astype(str)
+        if group_series.nunique(dropna=True) >= 2:
+            groups = group_series.values
 
     # PCA
-    pca = PCA(n_components=min(10, X.shape[1]))
+    max_pca_components = max(1, min(X.shape[0], X.shape[1]))
+    requested_pca_components = int_param("n_components", 10, 2, 50)
+    pca_components = min(requested_pca_components, max_pca_components)
+    pca = PCA(n_components=pca_components, random_state=random_state)
     X_pca = pca.fit_transform(X)
+    X_pca_2d = coords_2d(X_pca)
     explained = pca.explained_variance_ratio_
     cumsum = np.cumsum(explained)
     out["tables"].append({"title": "PCA 解释方差",
@@ -1434,45 +1737,60 @@ def run_dim_reduction(df: pd.DataFrame, params: dict) -> dict:
                                     for i in range(min(10, len(explained)))]})
 
     # t-SNE
-    perplexity = max(5, min(30, X.shape[0] // 4))
-    tsne = TSNE(n_components=2, random_state=42, perplexity=perplexity, init="pca")
-    X_tsne = tsne.fit_transform(X)
+    perplexity_requested = int_param("perplexity", 30, 2, 60)
+    perplexity = min(perplexity_requested, max(1, X.shape[0] - 1))
+    tsne_learning_rate = float_param("tsne_learning_rate", 200, 10, 1000)
+    X_tsne = None
+    if show_tsne and X.shape[0] >= 4 and perplexity < X.shape[0]:
+        tsne = TSNE(
+            n_components=2,
+            random_state=random_state,
+            perplexity=perplexity,
+            learning_rate=tsne_learning_rate,
+            init="pca",
+        )
+        X_tsne = tsne.fit_transform(X)
 
     # UMAP (optional, requires umap-learn)
     X_umap = None
-    if HAS_UMAP:
+    umap_n_neighbors = int_param("umap_n_neighbors", 15, 2, 100)
+    umap_n_neighbors = min(umap_n_neighbors, max(2, X.shape[0] - 1))
+    umap_min_dist = float_param("umap_min_dist", 0.1, 0.0, 0.99)
+    if show_umap and HAS_UMAP:
         try:
-            n_neighbors = max(5, min(15, X.shape[0] - 1))
-            reducer = umap.UMAP(n_components=2, random_state=42,
-                                n_neighbors=n_neighbors, min_dist=0.1)
+            reducer = umap.UMAP(n_components=2, random_state=random_state,
+                                n_neighbors=umap_n_neighbors, min_dist=umap_min_dist)
             X_umap = reducer.fit_transform(X)
         except Exception:
             X_umap = None
 
     if HAS_PLOTLY:
+        title_suffix = "（95% 置信椭圆）" if groups is not None else "（未指定分组）"
         # PCA — leftmost / primary visualization
-        out["charts"].append({
-            "title": "PCA可视化",
-            "plotly": _fig_to_json(_embedding_figure(
-                X_pca, groups, "PCA 降维可视化（95% 置信椭圆）",
-                f"PC1 ({explained[0]*100:.1f}%)",
-                f"PC2 ({explained[1]*100:.1f}%)" if len(explained) > 1 else "PC2")),
-        })
+        if show_pca:
+            out["charts"].append({
+                "title": "PCA可视化",
+                "plotly": _fig_to_json(_embedding_figure(
+                    X_pca_2d, groups, f"PCA 降维可视化{title_suffix}",
+                    f"PC1 ({explained[0]*100:.1f}%)",
+                    f"PC2 ({explained[1]*100:.1f}%)" if len(explained) > 1 else "PC2")),
+            })
 
         # t-SNE
-        out["charts"].append({
-            "title": "t-SNE可视化",
-            "plotly": _fig_to_json(_embedding_figure(
-                X_tsne, groups, "t-SNE 降维可视化（95% 置信椭圆）",
-                "t-SNE 1", "t-SNE 2")),
-        })
+        if X_tsne is not None:
+            out["charts"].append({
+                "title": "t-SNE可视化",
+                "plotly": _fig_to_json(_embedding_figure(
+                    X_tsne, groups, f"t-SNE 降维可视化{title_suffix}",
+                    "t-SNE 1", "t-SNE 2")),
+            })
 
         # UMAP
         if X_umap is not None:
             out["charts"].append({
                 "title": "UMAP可视化",
                 "plotly": _fig_to_json(_embedding_figure(
-                    X_umap, groups, "UMAP 降维可视化（95% 置信椭圆）",
+                    X_umap, groups, f"UMAP 降维可视化{title_suffix}",
                     "UMAP 1", "UMAP 2")),
             })
 
@@ -1489,7 +1807,8 @@ def run_dim_reduction(df: pd.DataFrame, params: dict) -> dict:
     n_components_90 = int(np.argmax(cumsum >= 0.9) + 1) if np.any(cumsum >= 0.9) else len(cumsum)
     n_samples = X.shape[0]
     n_dims = X.shape[1]
-    umap_status = "已纳入 UMAP 非线性流形嵌入" if X_umap is not None else "（UMAP 组件不可用，已自动跳过）"
+    umap_status = "已纳入 UMAP 非线性流形嵌入" if X_umap is not None else "（UMAP 未选择、组件不可用或计算失败，已自动跳过）"
+    group_note = f"本次按 **{group_var}** 分组绘制 95% 置信椭圆。" if groups is not None else "本次未识别到合适的离散分组变量，因此散点图不叠加置信椭圆。"
 
     out["discussion"] = (
         f"## 降维分析（PCA / t-SNE / UMAP）结果与讨论\n\n"
@@ -1501,11 +1820,13 @@ def run_dim_reduction(df: pd.DataFrame, params: dict) -> dict:
         f"t-SNE 擅长揭示数据中的聚类结构和局部模式。\n"
         f"- **UMAP（统一流形近似与投影）**：基于流形学习与拓扑结构的非线性降维方法，"
         f"在保持局部结构的同时较 t-SNE 更好地保留全局结构，且计算效率更高。{umap_status}。\n\n"
-        f"每个降维散点图均叠加各组别的 **95% 置信椭圆**（基于协方差矩阵特征分解），"
-        f"用于直观展示组内离散程度与组间分离情况，符合高水平 SCI 期刊的绘图规范。\n\n"
-        f"本分析对 {n_samples} 个样本的 {n_dims} 维标准化特征进行降维，"
-        f"PCA 提取前 {min(10, n_dims)} 个主成分，t-SNE 与 UMAP 均嵌入至二维空间"
-        f"（t-SNE perplexity = {perplexity}）。\n\n"
+        f"{group_note}"
+        f"{'椭圆基于协方差矩阵特征分解，用于直观展示组内离散程度与组间分离情况。' if groups is not None else ''}\n\n"
+        f"本分析对 {n_samples} 个样本的 {n_dims} 维{'标准化' if standardize != 'none' else '原始尺度'}特征进行降维，"
+        f"PCA 提取前 {pca_components} 个主成分，t-SNE/UMAP 嵌入至二维空间。"
+        f"当前参数：方法 = {method}，t-SNE perplexity = {perplexity}，"
+        f"t-SNE 学习率 = {tsne_learning_rate:g}，UMAP 邻居数 = {umap_n_neighbors}，"
+        f"UMAP min_dist = {umap_min_dist:g}，标准化 = {standardize}。\n\n"
         f"### 二、主要发现\n"
         f"**PCA 结果：**\n"
         f"- 第一主成分（PC1）解释了 {explained[0]*100:.1f}% 的总方差\n"
@@ -1919,12 +2240,19 @@ def run_ml_cnn_fast(df: pd.DataFrame, params: dict) -> dict:
     if subject_var:
         agg = df.groupby(subject_var)[numeric_cols].agg(["mean", "std"]).fillna(0)
         X = agg.values
+        feature_names = [f"{col}_{stat}" for col, stat in agg.columns]
         y = df.groupby(subject_var)[target].first().values
     else:
         X = df[numeric_cols].fillna(df[numeric_cols].median()).values
+        feature_names = numeric_cols
         y = df[target].values
-    if y.dtype == object:
-        y = LabelEncoder().fit_transform(y)
+    y_arr = np.asarray(y)
+    if y_arr.dtype == object:
+        y = LabelEncoder().fit_transform(pd.Series(y_arr).astype(str))
+    else:
+        uniq_y = np.unique(y_arr)
+        if len(uniq_y) and not np.array_equal(uniq_y, np.arange(len(uniq_y))):
+            y = LabelEncoder().fit_transform(y_arr)
     scaler = StandardScaler()
     X_s = scaler.fit_transform(X)
     try:
@@ -1934,9 +2262,17 @@ def run_ml_cnn_fast(df: pd.DataFrame, params: dict) -> dict:
     model = LogisticRegression(max_iter=300, random_state=42)
     model.fit(X_train, y_train)
     y_pred = model.predict(X_test)
+    y_prob = None
+    prob_matrix = None
     try:
-        y_prob = model.predict_proba(X_test)[:, 1]
-        auc = round(roc_auc_score(y_test, y_prob), 4) if len(np.unique(y_test)) == 2 else None
+        prob_matrix = np.asarray(model.predict_proba(X_test), dtype=float)
+        if len(np.unique(y_test)) == 2 and prob_matrix.shape[1] >= 2:
+            y_prob = prob_matrix[:, 1]
+            auc = round(roc_auc_score(y_test, y_prob), 4)
+        elif prob_matrix.shape[1] >= 3:
+            auc = round(roc_auc_score(y_test, prob_matrix, multi_class="ovr", average="macro"), 4)
+        else:
+            auc = None
     except Exception:
         auc = None
     metrics = [
@@ -1948,6 +2284,41 @@ def run_ml_cnn_fast(df: pd.DataFrame, params: dict) -> dict:
     ]
     out["tables"].append({"title": "时序特征快速分类模型性能", "headers": ["指标", "值"], "rows": metrics})
     if HAS_PLOTLY:
+        if y_prob is not None:
+            out["charts"].append({"title": "1D-CNN ROC 曲线", "plotly": _fig_to_json(_fig_roc(y_test, y_prob, "1D-CNN ROC 曲线"))})
+            out["charts"].append({"title": "1D-CNN PR 曲线", "plotly": _fig_to_json(_fig_pr(y_test, y_prob, "1D-CNN PR 曲线"))})
+            out["charts"].append({"title": "1D-CNN 校准曲线", "plotly": _fig_to_json(_fig_calibration(y_test, y_prob, "1D-CNN 校准曲线"))})
+            out["charts"].append({"title": "1D-CNN 预测概率分布", "plotly": _fig_to_json(_fig_prob_dist(y_test, y_prob, "1D-CNN 预测概率分布"))})
+        elif prob_matrix is not None and prob_matrix.shape[1] >= 3:
+            out["charts"].append({"title": "1D-CNN 多分类 ROC 曲线", "plotly": _fig_to_json(_fig_multiclass_roc(y_test, prob_matrix, model.classes_, "1D-CNN 多分类 ROC 曲线"))})
+
+        if subject_var and "time" in df.columns and numeric_cols:
+            trend = df.groupby([target, "time"])[numeric_cols[: min(4, len(numeric_cols))]].mean().reset_index()
+            fig_trend = go.Figure()
+            palette = ['#2563eb', '#ef4444', '#0f766e', '#7c3aed', '#f59e0b', '#0891b2']
+            trace_i = 0
+            for lab in sorted(trend[target].dropna().unique()):
+                sub = trend[trend[target] == lab]
+                for col in numeric_cols[: min(4, len(numeric_cols))]:
+                    fig_trend.add_trace(go.Scatter(
+                        x=sub["time"],
+                        y=sub[col],
+                        mode="lines",
+                        name=f"{col} | 类别 {lab}",
+                        line=dict(width=2.5, color=palette[trace_i % len(palette)]),
+                    ))
+                    trace_i += 1
+            fig_trend.update_layout(
+                title="按结局分组的平均时序轨迹",
+                xaxis_title="时间点",
+                yaxis_title="平均值",
+                template="plotly_white",
+                height=520,
+                legend=dict(orientation="h", x=0.02, y=-0.18, xanchor="left", yanchor="top"),
+                margin=dict(l=70, r=34, t=70, b=90),
+            )
+            out["charts"].append({"title": "平均时序轨迹", "plotly": _fig_to_json(fig_trend)})
+
         cm = confusion_matrix(y_test, y_pred)
         fig = ff.create_annotated_heatmap(cm, colorscale="Blues")
         fig.update_layout(title="混淆矩阵", template="plotly_white", height=430)
@@ -1961,10 +2332,24 @@ def run_ml_cnn_fast(df: pd.DataFrame, params: dict) -> dict:
                 fig2.add_trace(go.Scatter(x=emb[mask,0], y=emb[mask,1], mode="markers", name=str(lab), marker=dict(size=6, opacity=.72)))
             fig2.update_layout(title="时序聚合特征 PCA 投影", template="plotly_white", height=430)
             out["diagnostics"].append({"title": "PCA投影", "plotly": _fig_to_json(fig2)})
+        if hasattr(model, "coef_") and len(feature_names):
+            coef = np.asarray(model.coef_, dtype=float)
+            if coef.ndim == 2 and coef.shape[0] > 1:
+                coef_values = np.mean(np.abs(coef), axis=0)
+                coef_title = "时序聚合特征平均绝对系数图"
+                coef_axis = "平均绝对系数"
+            else:
+                coef_values = np.ravel(coef)
+                coef_title = "时序聚合特征系数图"
+                coef_axis = "系数"
+            if len(coef_values) == len(feature_names):
+                out["diagnostics"].append({"title": coef_title, "plotly": _fig_to_json(_fig_coef_or_importance(feature_names, coef_values, coef_title, y_title=coef_axis))})
     out["discussion"] = (
         "## 时序分类快速模型结果与讨论\n\n"
         "本模块使用受试者层面的时序聚合特征（均值、标准差）替代耗时的神经网络训练，"
         f"在交互界面中快速完成分类评估。模型准确率为 {metrics[0]['值']}，F1 为 {metrics[2]['值']}。"
+        "当目标变量为二分类且模型可输出概率时，结果区会显示 ROC、PR、校准曲线和预测概率分布；"
+        "多分类目标则显示 one-vs-rest 多分类 ROC。"
     )
     return out
 
@@ -2199,6 +2584,18 @@ def _make_cv_curve_chart(alphas, mean_mse, std_mse, best_alpha, title):
     std_mse = np.asarray(std_mse, dtype=float)
     upper = mean_mse + std_mse
     lower = mean_mse - std_mse
+    y_values = np.concatenate([mean_mse, upper, lower])
+    y_values = y_values[np.isfinite(y_values)]
+    yaxis_range = None
+    if len(y_values):
+        y_min = float(np.min(y_values))
+        y_max = float(np.max(y_values))
+        span = max(y_max - y_min, abs(y_max) * 0.08, 1e-6)
+        y_low = y_min - span * 0.12
+        y_high = y_max + span * 0.16
+        if y_min >= 0:
+            y_low = max(0.0, y_low)
+        yaxis_range = [y_low, y_high]
     fig = go.Figure()
     fig.add_trace(go.Scatter(
         x=x.tolist(),
@@ -2246,6 +2643,8 @@ def _make_cv_curve_chart(alphas, mean_mse, std_mse, best_alpha, title):
         height=520,
         margin=dict(l=78, r=42, t=78, b=72),
     )
+    if yaxis_range:
+        fig.update_yaxes(range=yaxis_range)
     return fig
 
 
@@ -2404,7 +2803,7 @@ def run_ml_ridge(df: pd.DataFrame, params: dict) -> dict:
         target = numeric_cols[-1] if numeric_cols else df.columns[-1]
 
     X, y, X_s, feature_cols = _prepare_regularized_xy(df, params, target)
-    alphas = np.logspace(-3, 3, 70)
+    alphas = np.logspace(-3, 5, 90)
     try:
         cv_requested = int(float(params.get("cv_folds", 5) or 5))
     except Exception:
@@ -2553,11 +2952,64 @@ def _fig_confusion(cm, title):
 
 
 def _fig_calibration(y_true, y_prob, title):
-    prob_true, prob_pred = calibration_curve(y_true, y_prob, n_bins=6, strategy='quantile')
+    y_true = np.asarray(y_true, dtype=int)
+    y_prob = np.asarray(y_prob, dtype=float)
+    valid = np.isfinite(y_prob)
+    y_true = y_true[valid]
+    y_prob = np.clip(y_prob[valid], 0, 1)
+    n_bins = min(6, max(4, int(np.sqrt(max(len(y_prob), 1)))))
+    quantiles = np.linspace(0, 1, n_bins + 1)
+    edges = np.unique(np.quantile(y_prob, quantiles)) if len(y_prob) else np.array([0, 1])
+    if len(edges) < 3:
+        edges = np.linspace(0, 1, n_bins + 1)
+    rows = []
+    for i in range(len(edges) - 1):
+        lo, hi = float(edges[i]), float(edges[i + 1])
+        if i == len(edges) - 2:
+            mask = (y_prob >= lo) & (y_prob <= hi)
+        else:
+            mask = (y_prob >= lo) & (y_prob < hi)
+        if not np.any(mask):
+            continue
+        rows.append({
+            "mean_pred": float(np.mean(y_prob[mask])),
+            "event_rate": float(np.mean(y_true[mask])),
+            "n": int(np.sum(mask)),
+        })
+    prob_pred = np.array([r["mean_pred"] for r in rows], dtype=float)
+    prob_true = np.array([r["event_rate"] for r in rows], dtype=float)
+    counts = np.array([r["n"] for r in rows], dtype=int)
     fig = go.Figure()
-    fig.add_trace(go.Scatter(x=prob_pred, y=prob_true, mode='lines+markers', name='校准曲线', line=dict(width=3, color='#7c3aed'), marker=dict(size=8)))
-    fig.add_trace(go.Scatter(x=[0,1], y=[0,1], mode='lines', name='理想校准', line=dict(width=2, dash='dash', color='#6b7280')))
-    fig.update_layout(title=title, xaxis_title='预测概率', yaxis_title='观察事件率', template='plotly_white', height=520)
+    fig.add_trace(go.Scatter(
+        x=[0, 1],
+        y=[0, 1],
+        mode='lines',
+        name='理想校准',
+        line=dict(width=2, dash='dash', color='#6b7280'),
+        hoverinfo='skip',
+    ))
+    if len(prob_pred):
+        fig.add_trace(go.Scatter(
+            x=prob_pred,
+            y=prob_true,
+            mode='lines+markers',
+            name='分箱校准',
+            line=dict(width=3, color='#2563eb'),
+            marker=dict(size=np.clip(7 + counts * 0.10, 8, 14), color='#2563eb', line=dict(color='white', width=0.8)),
+            customdata=counts.tolist(),
+            hovertemplate='平均预测概率: %{x:.3f}<br>观察事件率: %{y:.3f}<br>样本数: %{customdata}<extra></extra>',
+        ))
+    fig.update_layout(
+        title=title,
+        xaxis_title='预测概率',
+        yaxis_title='观察事件率',
+        template='plotly_white',
+        height=520,
+        margin=dict(l=70, r=34, t=70, b=68),
+        legend=dict(orientation='h', x=0.02, y=-0.16, xanchor='left', yanchor='top'),
+    )
+    fig.update_xaxes(range=[0, 1], tick0=0, dtick=0.2)
+    fig.update_yaxes(range=[0, 1.05], tickvals=[0, 0.2, 0.4, 0.6, 0.8, 1.0])
     return fig
 
 
@@ -2592,22 +3044,83 @@ def _fig_coef_or_importance(names, values, title, x_title='特征', y_title='系
 
 
 def _fig_pca_class_scatter(X, y, title):
-    arr = np.asarray(X)
-    if arr.shape[1] == 1:
-        comps = np.column_stack([arr[:,0], np.zeros(arr.shape[0])])
+    arr = np.asarray(X, dtype=float)
+    arr = np.nan_to_num(arr, nan=0.0, posinf=0.0, neginf=0.0)
+    scaler = StandardScaler()
+    arr_s = scaler.fit_transform(arr)
+    explained = np.array([1.0, 0.0])
+    if arr_s.shape[1] == 1:
+        comps = np.column_stack([arr_s[:, 0], np.zeros(arr_s.shape[0])])
     else:
-        comps = PCA(n_components=2, random_state=42).fit_transform(arr)
+        pca = PCA(n_components=2, random_state=42)
+        comps = pca.fit_transform(arr_s)
+        explained = pca.explained_variance_ratio_
     fig = go.Figure()
     y = np.asarray(y)
     palette = ['#2563eb', '#ef4444', '#0f766e', '#7c3aed']
+    def ellipse_trace(points, color, name):
+        if points.shape[0] < 3:
+            return None
+        cov = np.cov(points[:, 0], points[:, 1])
+        if not np.all(np.isfinite(cov)) or np.linalg.matrix_rank(cov) < 2:
+            return None
+        vals, vecs = np.linalg.eigh(cov)
+        vals = np.maximum(vals, 1e-9)
+        order = vals.argsort()[::-1]
+        vals, vecs = vals[order], vecs[:, order]
+        theta = np.linspace(0, 2 * np.pi, 160)
+        scale = np.sqrt(stats.chi2.ppf(0.95, 2))
+        circle = np.vstack([np.cos(theta), np.sin(theta)])
+        ellipse = (vecs @ (np.sqrt(vals)[:, None] * scale * circle)).T + points.mean(axis=0)
+        return go.Scatter(
+            x=ellipse[:, 0],
+            y=ellipse[:, 1],
+            mode='lines',
+            name=f'{name} 95%椭圆',
+            line=dict(color=color, width=1.8, dash='dash'),
+            hoverinfo='skip',
+            showlegend=True,
+        )
     for i, cls in enumerate(np.unique(y)):
         mask = y == cls
+        color = palette[i % len(palette)]
+        points = comps[mask]
         fig.add_trace(go.Scatter(
-            x=comps[mask,0], y=comps[mask,1], mode='markers', name=f'类别 {cls}',
-            marker=dict(size=8, color=palette[i % len(palette)], line=dict(color='#ffffff', width=0.6), opacity=0.82),
+            x=points[:, 0],
+            y=points[:, 1],
+            mode='markers',
+            name=f'类别 {cls}',
+            marker=dict(size=8, color=color, line=dict(color='#ffffff', width=0.6), opacity=0.78),
             hovertemplate='PC1: %{x:.3f}<br>PC2: %{y:.3f}<extra></extra>',
         ))
-    fig.update_layout(title=title, xaxis_title='PC1', yaxis_title='PC2', template='plotly_white', height=520)
+        if points.size:
+            center = points.mean(axis=0)
+            fig.add_trace(go.Scatter(
+                x=[center[0]],
+                y=[center[1]],
+                mode='markers',
+                name=f'类别 {cls} 中心',
+                marker=dict(size=12, color=color, symbol='diamond', line=dict(color='#111827', width=1.1)),
+                hovertemplate='类别中心<br>PC1: %{x:.3f}<br>PC2: %{y:.3f}<extra></extra>',
+                showlegend=False,
+            ))
+        ell = ellipse_trace(points, color, f'类别 {cls}')
+        if ell is not None:
+            fig.add_trace(ell)
+    x_pad = max((np.nanmax(comps[:, 0]) - np.nanmin(comps[:, 0])) * 0.10, 0.5) if len(comps) else 0.5
+    y_pad = max((np.nanmax(comps[:, 1]) - np.nanmin(comps[:, 1])) * 0.10, 0.5) if len(comps) else 0.5
+    fig.update_layout(
+        title=title,
+        xaxis_title=f'PC1 ({explained[0] * 100:.1f}%)',
+        yaxis_title=f'PC2 ({explained[1] * 100:.1f}%)',
+        template='plotly_white',
+        height=520,
+        margin=dict(l=70, r=34, t=70, b=74),
+        legend=dict(orientation='h', x=0.02, y=-0.16, xanchor='left', yanchor='top'),
+    )
+    if len(comps):
+        fig.update_xaxes(range=[float(np.nanmin(comps[:, 0]) - x_pad), float(np.nanmax(comps[:, 0]) + x_pad)])
+        fig.update_yaxes(range=[float(np.nanmin(comps[:, 1]) - y_pad), float(np.nanmax(comps[:, 1]) + y_pad)], scaleanchor='x', scaleratio=1)
     return fig
 
 

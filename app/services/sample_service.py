@@ -688,23 +688,24 @@ def make_ml_lasso_example() -> pd.DataFrame:
 
 
 def make_ml_knn_example() -> pd.DataFrame:
-    """Multi-class disease: 4 diseases, 8 biomarkers, overlapping clusters."""
+    """Multi-class disease: 4 diseases, 8 biomarkers, partially overlapping clusters."""
     n = 500
-    # 4 disease types with overlapping feature distributions
-    diseases = ["Rheumatoid Arthritis", "Systemic Lupus", "Sj枚gren's Syndrome", "Mixed CTD"]
+    # Keep the example clinically separable, but not so clean that KNN gets perfect ROC curves.
+    diseases = ["Rheumatoid Arthritis", "Systemic Lupus", "Sjogren's Syndrome", "Mixed CTD"]
     centers = {
-        "Rheumatoid Arthritis": [3, 5, 2, 4, 6, 3, 5, 7],
-        "Systemic Lupus": [6, 3, 7, 2, 4, 8, 3, 5],
-        "Sj枚gren's Syndrome": [2, 8, 4, 6, 3, 2, 7, 4],
-        "Mixed CTD": [5, 5, 5, 5, 5, 5, 5, 5],
+        "Rheumatoid Arthritis": [4.6, 5.2, 4.1, 4.8, 5.4, 4.2, 5.1, 5.6],
+        "Systemic Lupus": [5.4, 4.7, 5.8, 4.1, 4.6, 5.7, 4.4, 5.0],
+        "Sjogren's Syndrome": [4.1, 5.8, 4.7, 5.3, 4.3, 4.0, 5.6, 4.6],
+        "Mixed CTD": [5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0],
     }
     data = []
     for i in range(n):
         disease = rng.choice(diseases)
         c = centers[disease]
+        patient_shift = rng.normal(0, 0.45)
         features = {}
         for j in range(8):
-            val = c[j] + rng.normal(0, 1.1)
+            val = c[j] + patient_shift + rng.normal(0, 1.85)
             features[f"biomarker_{j + 1}"] = np.round(val, 2)
         features["patient_id"] = f"P{str(i + 1).zfill(5)}"
         features["disease"] = disease
@@ -927,55 +928,52 @@ def make_ml_dt_example() -> pd.DataFrame:
 
 
 def make_ml_cnn_example() -> pd.DataFrame:
-    """1D-CNN: multi-channel physiological time series for event classification."""
+    """1D-CNN: multi-channel physiological time series with overlapping event risk."""
     n_subjects = 250
     timepoints = 60
     channels = ["heart_rate", "blood_pressure", "oxygen_saturation",
                 "respiratory_rate", "temperature", "cardiac_output"]
     records = []
     for s in range(1, n_subjects + 1):
-        label = rng.choice([0, 1], p=[0.52, 0.48])
         age = rng.integers(32, 82)
         sex = rng.choice(["Male", "Female"])
         bmi = _clin_bmi(1)[0]
+        latent_acuity = rng.normal(0, 1) + 0.018 * (age - 56) + 0.045 * (bmi - 25)
+        event_prob = 1 / (1 + np.exp(-(0.15 + 0.85 * latent_acuity)))
+        label = int(rng.binomial(1, np.clip(event_prob, 0.08, 0.92)))
+        trajectory_severity = 0.38 * label + 0.42 * latent_acuity + rng.normal(0, 0.65)
+        phase_shift = rng.uniform(0, 2 * np.pi)
 
         # Subject-specific baselines
-        base_hr = rng.normal(78, 10)
-        base_bp = rng.normal(128, 14)
-        base_o2 = rng.normal(97.5, 1.5)
-        base_rr = rng.normal(16.5, 2.5)
-        base_temp = rng.normal(36.8, 0.3)
-        base_co = rng.normal(5.0, 0.8)
+        base_hr = rng.normal(78 + 1.8 * latent_acuity, 12)
+        base_bp = rng.normal(128 + 2.2 * latent_acuity, 16)
+        base_o2 = rng.normal(96.8 - 0.35 * latent_acuity, 2.1)
+        base_rr = rng.normal(16.5 + 0.35 * latent_acuity, 2.8)
+        base_temp = rng.normal(36.8, 0.35)
+        base_co = rng.normal(5.0 - 0.12 * latent_acuity, 0.9)
 
-        # Event trajectory
+        # Event-related trajectories are intentionally noisy and overlapping.
         for t in range(timepoints):
-            if label == 1:
-                # Event pattern: progressive deterioration
-                phase = t / timepoints
-                hr_drift = 0.15 * t + 3 * np.sin(phase * 3 * np.pi) * (1 if phase > 0.3 else 0.3)
-                bp_drift = 0.08 * t + 2 * (phase > 0.4)
-                o2_drift = -0.04 * t - 1.5 * (phase > 0.5)
-                rr_drift = 0.05 * t + 1.5 * (phase > 0.35)
-                temp_drift = 0.005 * t + 0.4 * (phase > 0.5)
-                co_drift = -0.01 * t - 0.5 * (phase > 0.45)
-            else:
-                # Stable pattern
-                hr_drift = rng.normal(0, 1.5)
-                bp_drift = rng.normal(0, 2)
-                o2_drift = rng.normal(0, 0.3)
-                rr_drift = rng.normal(0, 0.8)
-                temp_drift = rng.normal(0, 0.08)
-                co_drift = rng.normal(0, 0.2)
+            phase = t / max(timepoints - 1, 1)
+            late_phase = max(phase - 0.45, 0)
+            circadian = np.sin(phase * 2 * np.pi + phase_shift)
+            transient = rng.normal(0, 0.35) * (phase > rng.uniform(0.25, 0.85))
+            hr_drift = trajectory_severity * (0.035 * t + 1.2 * late_phase) + 1.1 * circadian + transient
+            bp_drift = trajectory_severity * (0.020 * t + 1.5 * late_phase) + 1.8 * np.sin(phase * np.pi + phase_shift / 2)
+            o2_drift = -trajectory_severity * (0.012 * t + 0.7 * late_phase) + 0.25 * circadian
+            rr_drift = trajectory_severity * (0.016 * t + 0.9 * late_phase) + 0.45 * circadian
+            temp_drift = trajectory_severity * (0.0018 * t + 0.12 * late_phase) + 0.05 * circadian
+            co_drift = -trajectory_severity * (0.0035 * t + 0.22 * late_phase) + 0.08 * circadian
 
             records.append({
                 "subject_id": f"S{str(s).zfill(5)}",
                 "time": t,
-                "heart_rate": np.round(np.clip(base_hr + hr_drift + rng.normal(0, 2), 40, 140), 1),
-                "blood_pressure": np.round(np.clip(base_bp + bp_drift + rng.normal(0, 3.5), 60, 200), 1),
-                "oxygen_saturation": np.round(np.clip(base_o2 + o2_drift + rng.normal(0, 0.5), 75, 100), 1),
-                "respiratory_rate": np.round(np.clip(base_rr + rr_drift + rng.normal(0, 1.2), 6, 35), 1),
-                "temperature": np.round(np.clip(base_temp + temp_drift + rng.normal(0, 0.12), 35, 40), 1),
-                "cardiac_output": np.round(np.clip(base_co + co_drift + rng.normal(0, 0.3), 2, 9), 2),
+                "heart_rate": np.round(np.clip(base_hr + hr_drift + rng.normal(0, 4.5), 40, 140), 1),
+                "blood_pressure": np.round(np.clip(base_bp + bp_drift + rng.normal(0, 7.0), 60, 200), 1),
+                "oxygen_saturation": np.round(np.clip(base_o2 + o2_drift + rng.normal(0, 1.1), 75, 100), 1),
+                "respiratory_rate": np.round(np.clip(base_rr + rr_drift + rng.normal(0, 1.9), 6, 35), 1),
+                "temperature": np.round(np.clip(base_temp + temp_drift + rng.normal(0, 0.18), 35, 40), 1),
+                "cardiac_output": np.round(np.clip(base_co + co_drift + rng.normal(0, 0.45), 2, 9), 2),
                 "label": label,
                 "age": age, "sex": sex, "bmi": bmi,
             })

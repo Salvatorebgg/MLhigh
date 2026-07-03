@@ -73,9 +73,19 @@ def set_publication_style(figsize=(8, 5.5), dpi=300):
 
 
 def _add_axis_arrows(ax):
-    """Add subtle L-shaped axis arrows for publication style."""
+    """Add subtle L-shaped axis arrows for publication style.
+    Hides all matplotlib spines so the custom axis lines form a
+    gapless, perfectly joined L-corner at the origin — no rendering
+    gap between x and y axes.
+    """
     xlim = ax.get_xlim()
     ylim = ax.get_ylim()
+    # Hide all native spines so only our gapless L-axes are visible
+    for spine_name in ("top", "right", "bottom", "left"):
+        ax.spines[spine_name].set_visible(False)
+    # Turn off native ticks — custom axis lines handle the look
+    ax.tick_params(left=False, bottom=False)
+    # Draw the L-shaped axes that meet perfectly at (xlim[0], ylim[0])
     ax.plot(
         [xlim[0], xlim[1]], [ylim[0], ylim[0]],
         color="#26313D", linewidth=1.2, clip_on=False, zorder=10,
@@ -796,25 +806,65 @@ def make_state_prob_plot(time_points, prob_matrix, state_labels, title="State Pr
     return fig
 
 
-def make_funnel_plot(se, effect_sizes, title="Funnel Plot", height=520):
-    """Plotly funnel plot for meta-analysis (publication bias)."""
+def make_funnel_plot(se, effect_sizes, title="Funnel Plot", height=520, pooled_effect=None, tau2=0):
+    """Plotly funnel plot for meta-analysis with straight pseudo-95% CI limits."""
     if not HAS_PLOTLY:
         return None
+    se_arr = np.asarray(se, dtype=float)
+    es_arr = np.asarray(effect_sizes, dtype=float)
+    valid = np.isfinite(se_arr) & np.isfinite(es_arr) & (se_arr > 0)
+    se_arr = se_arr[valid]
+    es_arr = es_arr[valid]
     fig = go.Figure()
+    if len(se_arr) == 0:
+        fig.update_layout(**_make_plotly_layout(title, "Effect Size", "Standard Error (SE)", height))
+        return fig
+
+    mean_eff = pooled_effect if pooled_effect is not None else float(np.mean(es_arr))
+    se_axis_max = float(np.max(se_arr) * 1.08)
+    se_line = np.array([0.0, se_axis_max])
+    left_limit = mean_eff - 1.96 * se_line
+    right_limit = mean_eff + 1.96 * se_line
+
     fig.add_trace(go.Scatter(
-        x=effect_sizes, y=1 / np.array(se), mode="markers",
+        x=list(left_limit),
+        y=list(se_line),
+        mode="lines",
+        name="95% CI Lower",
+        line=dict(color="#2F80C9", width=1.8),
+        hoverinfo="skip",
+    ))
+    fig.add_trace(go.Scatter(
+        x=list(right_limit),
+        y=list(se_line),
+        mode="lines",
+        name="95% CI Upper",
+        line=dict(color="#E06830", width=1.8),
+        hoverinfo="skip",
+    ))
+    fig.add_trace(go.Scatter(
+        x=[mean_eff, mean_eff],
+        y=[0, se_axis_max],
+        mode="lines",
+        name="Pooled Effect",
+        line=dict(color="#64748B", width=1.5, dash="dash"),
+        hoverinfo="skip",
+    ))
+    fig.add_trace(go.Scatter(
+        x=es_arr,
+        y=se_arr,
+        mode="markers",
         marker=dict(color=CNS_PALETTE[0], size=10, opacity=0.7,
                     line=dict(color="white", width=0.5)),
-        showlegend=False,
+        name="Studies",
     ))
-    mean_eff = np.mean(effect_sizes)
-    max_se = max(1 / np.array(se))
-    fig.add_trace(go.Scatter(
-        x=[mean_eff, mean_eff], y=[0, max_se * 1.1],
-        mode="lines", line=dict(color="#666666", width=1.5, dash="dash"),
-        showlegend=False,
-    ))
-    fig.update_layout(**_make_plotly_layout(title, "Effect Size", "1/SE (Precision)", height))
+
+    x_values = np.concatenate([es_arr, left_limit, right_limit, np.array([mean_eff])])
+    x_min, x_max = float(np.min(x_values)), float(np.max(x_values))
+    x_pad = (x_max - x_min) * 0.08 if x_max > x_min else 0.1
+    fig.update_layout(**_make_plotly_layout(title, "Effect Size", "Standard Error (SE)", height))
+    fig.update_xaxes(range=[x_min - x_pad, x_max + x_pad], zeroline=False)
+    fig.update_yaxes(range=[se_axis_max, 0], zeroline=False)
     return fig
 
 

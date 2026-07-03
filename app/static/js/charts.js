@@ -911,7 +911,7 @@ function polishTracesForPublication(traces, theme, palette) {
     if (t.type === 'scatter') {
       const mode = String(t.mode || 'markers');
       if (mode.includes('lines')) {
-        t.line = { ...(t.line || {}), color: traceColor, width: lineWidth, dash: lineDash };
+        t.line = { ...(t.line || {}), color: traceColor, width: lineWidth, dash: (t.line && t.line.dash) || lineDash };
       }
       if (mode.includes('markers')) {
         t.marker = { ...(t.marker || {}), color: traceColor, size: markerSize, symbol: markerShape, opacity, line: { color: '#ffffff', width: 0.6 } };
@@ -2813,20 +2813,35 @@ function renderAllDiagCharts(diagnostics) {
 
   function catMaps(data) {
     const vx = [], hy = [];
+    const verticalSeries = [];
+    const horizontalSeries = [];
     (data || []).forEach(t => {
       if (!t || t.type !== "bar") return;
       if (t.orientation === "h") {
-        (Array.isArray(t.y) ? t.y : []).forEach(v => { if (!Number.isFinite(Number(v))) hy.push(String(v)); });
+        const labels = (Array.isArray(t.y) ? t.y : []).map(String);
+        horizontalSeries.push(labels);
+        labels.forEach(v => { if (!Number.isFinite(Number(v))) hy.push(String(v)); });
       } else {
-        (Array.isArray(t.x) ? t.x : []).forEach(v => { if (!Number.isFinite(Number(v))) vx.push(String(v)); });
+        const labels = (Array.isArray(t.x) ? t.x : []).map(String);
+        verticalSeries.push(labels);
+        labels.forEach(v => { if (!Number.isFinite(Number(v))) vx.push(String(v)); });
       }
     });
     const v = uniq(vx), h = uniq(hy);
+    const sameLabels = (series) => series.length > 1
+      && series.every(labels => labels.length > 0)
+      && series.every(labels => labels.join("\u0001") === series[0].join("\u0001"));
+    const singleBarPerTrace = (series) => series.length > 1
+      && series.every(labels => labels.length === 1);
     return {
       verticalLabels: v,
       horizontalLabels: h,
       verticalMap: new Map(v.map((x, i) => [x, i])),
       horizontalMap: new Map(h.map((x, i) => [x, i])),
+      groupedVerticalBars: sameLabels(verticalSeries),
+      groupedHorizontalBars: sameLabels(horizontalSeries),
+      singleVerticalBarPerTrace: singleBarPerTrace(verticalSeries),
+      singleHorizontalBarPerTrace: singleBarPerTrace(horizontalSeries),
     };
   }
 
@@ -2883,11 +2898,53 @@ function renderAllDiagCharts(diagnostics) {
     return colors.categories[String(label)] || fallback;
   }
 
+  function clampOpacity(value, fallback = 0.88) {
+    const numeric = Number(value);
+    if (!Number.isFinite(numeric)) return fallback;
+    return Math.max(0.05, Math.min(1, numeric));
+  }
+
+  function flatNumericMatrix(values) {
+    if (!Array.isArray(values)) return [];
+    return values.flatMap(row => Array.isArray(row) ? row : [row]).map(Number).filter(Number.isFinite);
+  }
+
+  function sameLabels(a, b) {
+    if (!Array.isArray(a) || !Array.isArray(b) || a.length !== b.length || !a.length) return false;
+    return a.every((value, index) => String(value) === String(b[index]));
+  }
+
+  function titleText(layout) {
+    const title = layout && layout.title;
+    if (!title) return "";
+    return typeof title === "string" ? title : String(title.text || "");
+  }
+
+  function isCorrelationHeatmap(trace, layout) {
+    const text = `${titleText(layout)} ${trace.name || ""}`.toLowerCase();
+    if (/相关|correlation|corr|rg/.test(text)) return true;
+    const values = flatNumericMatrix(trace.z);
+    return values.length > 0
+      && sameLabels(trace.x, trace.y)
+      && values.every(value => value >= -1.000001 && value <= 1.000001);
+  }
+
+  function themeHeatmapColorscale(trace, layout) {
+    const theme = typeof getActiveTheme === "function" ? getActiveTheme() : {};
+    if (isCorrelationHeatmap(trace || {}, layout || {}) && Array.isArray(theme.divergentScale)) {
+      return { scale: theme.divergentScale, divergent: true };
+    }
+    if (theme && theme.sequentialScale && Array.isArray(theme.sequentialScale)) {
+      return { scale: theme.sequentialScale, divergent: false };
+    }
+    return { scale: null, divergent: false };
+  }
+
   window.getChartPaletteDisplayColor = (index) => paletteColor(Number(index) || 0);
   window.getChartTraceDisplayColor = (index) => traceDisplayColor(Number(index) || 0);
   window.getChartCategoryDisplayColor = (label, fallback) => categoryDisplayColor(label, fallback || "#2563eb");
 
-  function cleanTrace(trace, i, palette, maps) {
+  function cleanTrace(trace, i, palette, maps, rawLayout) {
     const t = JSON.parse(JSON.stringify(trace || {}));
     const type = String(t.type || "scatter");
     const color = traceDisplayColor(i, palette);
@@ -2895,13 +2952,19 @@ function renderAllDiagCharts(diagnostics) {
     const patternMap = { slash: "/", backslash: "\\", cross: "x", dot: "." };
     const patternShape = patternMap[barStyle] || "";
     const opacity = Number(STATE.markerOpacity ?? 0.88);
+    const labelSize = Number(STATE.labelFontSize || 12);
     if (Number.isFinite(opacity)) t.opacity = opacity;
 
     if (type === "bar") {
       const isH = t.orientation === "h";
       const rawLabels = (isH ? (Array.isArray(t.y) ? t.y : []) : (Array.isArray(t.x) ? t.x : [])).map(String);
 
-      const colors = rawLabels.length ? rawLabels.map(l => categoryDisplayColor(l, color)) : color;
+      const useTraceColor = isH
+        ? (maps.groupedHorizontalBars || maps.singleHorizontalBarPerTrace)
+        : (maps.groupedVerticalBars || maps.singleVerticalBarPerTrace);
+      const colors = useTraceColor
+        ? color
+        : (rawLabels.length ? rawLabels.map((l, j) => categoryDisplayColor(l, paletteColor(j, palette))) : color);
       const outlineColors = Array.isArray(colors) ? colors : color;
       const fillColors = barStyle === "outline"
         ? (Array.isArray(colors) ? colors.map(() => "rgba(255,255,255,0)") : "rgba(255,255,255,0)")
@@ -2918,6 +2981,11 @@ function renderAllDiagCharts(diagnostics) {
       };
       t.width = STATE.barWidth != null ? Number(STATE.barWidth) : 0.55;
       t.textposition = t.textposition || "outside";
+      if (t.text || t.texttemplate) {
+        t.textfont = { ...(t.textfont || {}), size: labelSize };
+        t.insidetextfont = { ...(t.insidetextfont || {}), size: labelSize };
+        t.outsidetextfont = { ...(t.outsidetextfont || {}), size: labelSize };
+      }
       t.cliponaxis = false;
     } else if (type === "scatter" || type === "scattergl") {
       t.type = "scatter";
@@ -2927,16 +2995,32 @@ function renderAllDiagCharts(diagnostics) {
           ...(t.line || {}),
           color,
           width: Number(STATE.lineWidth || 2.2),
-          dash: STATE.lineDash || "solid",
-          shape: STATE.lineShape || "linear",
+          dash: (t.line && t.line.dash) || STATE.lineDash || "solid",
         };
-        if (t.line.shape === "spline") t.line.smoothing = 0.6;
+      }
+      if (t.stackgroup || String(t.fill || "").startsWith("to")) {
+        const areaAlpha = Math.max(0.18, Math.min(0.58, opacity * 0.55));
+        t.fillcolor = withAlpha(color, areaAlpha);
+        t.line = {
+          ...(t.line || {}),
+          color,
+          width: Math.max(1.2, Number(STATE.lineWidth || 2.2) * 0.72),
+        };
       }
       if (mode.includes("markers") || !mode.includes("lines")) {
         const rawMarkerColor = t.marker && t.marker.color;
+        const pointLabels = Array.isArray(t.x) ? t.x.map(String) : [];
+        const textLabels = Array.isArray(t.text) && t.text.length === pointLabels.length
+          ? t.text.map(label => String(label || "").trim())
+          : [];
+        const markerLabels = textLabels.some(Boolean) ? textLabels : pointLabels;
+        const hasCategoricalPointLabels = pointLabels.length > 1
+          && (textLabels.some(Boolean) || pointLabels.some(label => !Number.isFinite(Number(label))));
         t.marker = {
           ...(t.marker || {}),
-          color: Array.isArray(rawMarkerColor) ? rawMarkerColor : color,
+          color: hasCategoricalPointLabels
+            ? markerLabels.map((label, j) => categoryDisplayColor(label, paletteColor(j, palette)))
+            : (Array.isArray(rawMarkerColor) ? rawMarkerColor : color),
           size: Math.max(5, Number(STATE.markerSize || 7)),
           symbol: STATE.markerShape || "circle",
           opacity,
@@ -2944,6 +3028,9 @@ function renderAllDiagCharts(diagnostics) {
         };
       }
       if (!t.mode) t.mode = "markers";
+      if (t.text || t.texttemplate) {
+        t.textfont = { ...(t.textfont || {}), size: labelSize };
+      }
     } else if (type === "histogram") {
       t.marker = {
         ...(t.marker || {}),
@@ -2976,13 +3063,26 @@ function renderAllDiagCharts(diagnostics) {
       t.hole = Number(STATE.pieHole || 0);
       t.textposition = t.textposition || "auto";
       const labels = (Array.isArray(t.labels) ? t.labels : []).map(String);
+      t.textfont = { ...(t.textfont || {}), size: labelSize };
       t.marker = {
         ...(t.marker || {}),
         colors: labels.map((label, index) => categoryDisplayColor(label, paletteColor(index, palette))),
         line: { color: "#ffffff", width: 1 },
       };
-    } else if (type === "heatmap" || type === "contour" || type === "surface") {
-      t.colorscale = STATE.heatmapColorscale || t.colorscale || "Blues";
+    } else if (type === "heatmap" || type === "heatmapgl" || type === "contour" || type === "surface") {
+      // Heatmaps are theme-linked; correlation matrices use the theme's divergent scale.
+      const themeScale = themeHeatmapColorscale(t, rawLayout);
+      t.opacity = clampOpacity(STATE.heatmapOpacity, opacity);
+      if (themeScale.scale) {
+        t.colorscale = themeScale.scale;
+        if (themeScale.divergent) {
+          t.zmid = 0;
+          if (t.zmin == null) t.zmin = -1;
+          if (t.zmax == null) t.zmax = 1;
+        }
+      } else {
+        t.colorscale = t.colorscale || "Blues";
+      }
     } else if (type === "sankey") {
       const labels = (t.node && Array.isArray(t.node.label) ? t.node.label : []).map(String);
       t.node = {
@@ -2992,6 +3092,17 @@ function renderAllDiagCharts(diagnostics) {
         color: labels.map((label, index) => categoryDisplayColor(label, paletteColor(index, palette))),
         line: { color: "#ffffff", width: 0.8 },
       };
+      t.textfont = { ...(t.textfont || {}), size: labelSize };
+      t.node.font = { ...(t.node.font || {}), size: labelSize };
+    }
+    if (t.text || t.texttemplate) {
+      t.textfont = { ...(t.textfont || {}), size: labelSize };
+    }
+    if (t.error_x) {
+      t.error_x = { ...(t.error_x || {}), color };
+    }
+    if (t.error_y) {
+      t.error_y = { ...(t.error_y || {}), color };
     }
     return t;
   }
@@ -3066,52 +3177,64 @@ function renderAllDiagCharts(diagnostics) {
     };
     layout.xaxis = patchAxis(layout.xaxis, false);
     layout.yaxis = patchAxis(layout.yaxis, true);
+    const stripInjectedAxisLayer = () => {
+      layout.annotations = (layout.annotations || []).filter(a => {
+        const name = String((a && a.name) || "");
+        if (name.startsWith("v27_axis_")) return false;
+        return !(a && a.text === "" && a.showarrow === true && a.xref === "paper" && a.yref === "paper");
+      });
+      layout.shapes = (layout.shapes || []).filter(s => {
+        const name = String((s && s.name) || "");
+        return !name.startsWith("v27_axis_");
+      });
+    };
+    const axisHeadPath = (points) => `M ${points.map(p => `${p[0]} ${p[1]}`).join(" L ")} Z`;
     const applyStandardAxes = (arrows = true) => {
       layout.xaxis.side = "bottom";
       layout.yaxis.side = "left";
       layout.xaxis.mirror = false;
       layout.yaxis.mirror = false;
-      // Remove any previously injected arrow-axis annotations.
-      layout.annotations = (layout.annotations || []).filter(a => !String(a && a.name || "").startsWith("v27_axis_arrow"));
+      stripInjectedAxisLayer();
       if (arrows) {
-        // Use a genuine arrow-headed axis: the native baseline is hidden and the
-        // axis itself is drawn as an arrow that terminates in a triangular head.
+        // Draw the axes as one continuous L-shaped path plus filled arrowheads.
+        // This avoids the visual seams caused by mixing native lines and annotations.
         layout.xaxis.showline = false;
         layout.yaxis.showline = false;
-        // Plotly's "side: bottom" tick row sits flush with the data baseline
-        // (y = 0 whenever 0 is inside the range). Paper-y 0, by contrast, is the
-        // very bottom of the plot area, so anchoring the x-axis arrow to paper-0
-        // dropped it an extra row BELOW the zero-flush tick line and left two
-        // parallel horizontal axes. Anchor the x-axis arrow to that same baseline
-        // in DATA coordinates so the single arrow sits exactly on the 0-flush row.
-        const yr = Array.isArray(layout.yaxis.range) ? layout.yaxis.range : null;
-        const baselineY = (yr && yr[0] <= 0 && yr[1] >= 0) ? 0 : (yr ? yr[0] : null);
-        const arrowColor = ink;
-        const xArrow = (baselineY === null)
-          ? {
-              name: "v27_axis_arrow_x",
-              xref: "paper", yref: "paper", axref: "paper", ayref: "paper",
-              x: 1.005, y: 0, ax: 0, ay: 0,
-              showarrow: true, arrowhead: 2, arrowsize: 1.15, arrowwidth: 1.5,
-              arrowcolor: arrowColor, text: "", standoff: 0, startstandoff: 0,
-            }
-          : {
-              name: "v27_axis_arrow_x",
-              xref: "paper", yref: "y", axref: "paper", ayref: "y",
-              x: 1.005, y: baselineY, ax: 0, ay: baselineY,
-              showarrow: true, arrowhead: 2, arrowsize: 1.15, arrowwidth: 1.5,
-              arrowcolor: arrowColor, text: "", standoff: 0, startstandoff: 0,
-            };
-        layout.annotations.push(
-          xArrow,
+        const axisWidth = 1.65;
+        const headDepth = 0.022;
+        const headHalf = 0.010;
+        layout.shapes = [
+          ...(layout.shapes || []),
           {
-            name: "v27_axis_arrow_y",
-            xref: "paper", yref: "paper", axref: "paper", ayref: "paper",
-            x: 0, y: 1.005, ax: 0, ay: 0,
-            showarrow: true, arrowhead: 2, arrowsize: 1.15, arrowwidth: 1.5,
-            arrowcolor: arrowColor, text: "", standoff: 0, startstandoff: 0,
+            name: "v27_axis_path",
+            type: "path",
+            xref: "x domain",
+            yref: "y domain",
+            path: "M 0 1 L 0 0 L 1 0",
+            line: { color: ink, width: axisWidth },
+            layer: "above",
           },
-        );
+          {
+            name: "v27_axis_head_x",
+            type: "path",
+            xref: "x domain",
+            yref: "y domain",
+            path: axisHeadPath([[1, 0], [1 - headDepth, headHalf], [1 - headDepth, -headHalf]]),
+            fillcolor: ink,
+            line: { color: ink, width: 0 },
+            layer: "above",
+          },
+          {
+            name: "v27_axis_head_y",
+            type: "path",
+            xref: "x domain",
+            yref: "y domain",
+            path: axisHeadPath([[0, 1], [-headHalf, 1 - headDepth], [headHalf, 1 - headDepth]]),
+            fillcolor: ink,
+            line: { color: ink, width: 0 },
+            layer: "above",
+          },
+        ];
       } else {
         layout.xaxis.showline = true;
         layout.yaxis.showline = true;
@@ -3120,6 +3243,53 @@ function renderAllDiagCharts(diagnostics) {
         layout.xaxis.linewidth = 1.4;
         layout.yaxis.linewidth = 1.4;
       }
+    };
+    const approxSame = (a, b) => Math.abs(Number(a) - Number(b)) < 1e-9;
+    const isFullSpan = (a, b) => approxSame(a, 0) && approxSame(b, 1);
+    const isGeneratedAxisShape = (shape) => {
+      const name = String((shape && shape.name) || "");
+      return name.startsWith("v27_axis_")
+        || name.startsWith("v25_axis_")
+        || name.startsWith("v21_arrow_")
+        || name.startsWith("v20_arrow_")
+        || name === "custom_arrow_axis_v19"
+        || /(^|_)axis(_|$)/i.test(name);
+    };
+    const isSolidZeroBaseline = (shape) => {
+      const dash = String((shape && shape.line && shape.line.dash) || "solid").toLowerCase();
+      if (dash && dash !== "solid") return false;
+      const xref = String((shape && shape.xref) || "");
+      const yref = String((shape && shape.yref) || "");
+      const isHorizontalZero = approxSame(shape && shape.y0, 0)
+        && approxSame(shape && shape.y1, 0)
+        && isFullSpan(shape && shape.x0, shape && shape.x1)
+        && /paper|domain/.test(xref);
+      const isVerticalZero = approxSame(shape && shape.x0, 0)
+        && approxSame(shape && shape.x1, 0)
+        && isFullSpan(shape && shape.y0, shape && shape.y1)
+        && /paper|domain/.test(yref);
+      return isHorizontalZero || isVerticalZero;
+    };
+    const isAdjustableReferenceLine = (shape) => {
+      if (!shape || shape.type !== "line" || isGeneratedAxisShape(shape)) return false;
+      return !isSolidZeroBaseline(shape);
+    };
+    const applyReferenceLineStyles = () => {
+      const refColor = STATE.referenceLineColor || (theme && theme.axisLineColor) || "#64748b";
+      const refWidth = Math.max(0.5, Number(STATE.referenceLineWidth || 1.8));
+      const refDash = STATE.referenceLineDash || "dash";
+      layout.shapes = (layout.shapes || []).map(shape => {
+        if (!isAdjustableReferenceLine(shape)) return shape;
+        return {
+          ...shape,
+          line: {
+            ...((shape && shape.line) || {}),
+            color: refColor,
+            width: refWidth,
+            dash: refDash,
+          },
+        };
+      });
     };
 
     if (hasDomainTrace) {
@@ -3134,6 +3304,7 @@ function renderAllDiagCharts(diagnostics) {
     }
     if (hasMatrixTrace) {
       applyStandardAxes(false);
+      applyReferenceLineStyles();
       if (!Array.isArray(layout.yaxis.range)) layout.yaxis.autorange = "reversed";
       return layout;
     }
@@ -3175,6 +3346,12 @@ function renderAllDiagCharts(diagnostics) {
     };
     const hasVerticalBar = traces.some(t => String(t.type || "") === "bar" && t.orientation !== "h");
     const hasHorizontalBar = traces.some(t => String(t.type || "") === "bar" && t.orientation === "h");
+    const hasZeroFilledY = traces.some(t => {
+      const type = String(t.type || "scatter");
+      const fill = String(t.fill || "");
+      return ["scatter", "scattergl"].includes(type)
+        && (t.stackgroup || fill === "tozeroy");
+    });
     const xVals = valuesWithError("x");
     const yVals = valuesWithError("y");
     if (!Array.isArray(layout.xaxis.range)) {
@@ -3185,7 +3362,7 @@ function renderAllDiagCharts(diagnostics) {
     }
     if (!Array.isArray(layout.yaxis.range)) {
       const range = rangeFor(yVals, {
-        zeroBaseline: hasVerticalBar,
+        zeroBaseline: hasVerticalBar || hasZeroFilledY || layout.yaxis.rangemode === "tozero",
       });
       if (range) layout.yaxis.range = range;
     }
@@ -3194,6 +3371,7 @@ function renderAllDiagCharts(diagnostics) {
     const yr = Array.isArray(layout.yaxis.range) ? layout.yaxis.range : null;
     if (!xr || !yr || !xr.every(Number.isFinite) || !yr.every(Number.isFinite)) {
       applyStandardAxes();
+      applyReferenceLineStyles();
       if (hasVerticalBar && !yr) layout.yaxis.rangemode = "tozero";
       if (hasHorizontalBar && !xr) layout.xaxis.rangemode = "tozero";
       if (hasHorizontalBar && !Array.isArray(layout.yaxis.range)) {
@@ -3202,9 +3380,9 @@ function renderAllDiagCharts(diagnostics) {
       return layout;
     }
 
-    layout.annotations = (layout.annotations || []).filter(a => !String(a && a.name || "").startsWith("v27_axis_"));
-    layout.shapes = (layout.shapes || []).filter(s => !String(s && s.name || "").includes("axis"));
+    stripInjectedAxisLayer();
     applyStandardAxes();
+    applyReferenceLineStyles();
     if (hasHorizontalBar && !Array.isArray(layout.yaxis.range)) {
       layout.yaxis.autorange = "reversed";
     }
@@ -3246,7 +3424,7 @@ function renderAllDiagCharts(diagnostics) {
     if (!parsed.data.length) { mount.innerHTML = '<div class="empty-state small">当前图形无可渲染数据</div>'; return; }
     const maps = catMaps(parsed.data);
     const safePalette = palette && palette.length ? palette : ["#2563eb", "#ec4899", "#10b981", "#eab308", "#7c3aed"];
-    const traces = parsed.data.map((t, i) => cleanTrace(t, i, safePalette, maps));
+    const traces = parsed.data.map((t, i) => cleanTrace(t, i, safePalette, maps, parsed.layout || {}));
     const size = frameSize(mount, role);
     const layout = buildLayout(parsed.layout || {}, traces, theme || {}, size, maps, role);
 
